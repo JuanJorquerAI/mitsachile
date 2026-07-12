@@ -28,3 +28,14 @@ Log vivo. Actualizar cuando se resuelva algo o llegue el "documento maestro" del
 ## Notas de seguridad
 
 - Credenciales de hosting (cPanel, GoDaddy, BlueHosting, NIC Chile) llegaron en texto plano por correo (`docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf`). Ese PDF está en `.gitignore`. Recomendar al cliente/agencia rotar esas contraseñas y moverlas a un gestor de secretos — quedaron expuestas en un hilo de correo con múltiples destinatarios.
+
+## Hallazgos de la investigación SEO (2026-07-12) — requieren validación urgente con el cliente
+
+7. **⚠️⚠️ CONTRADICCIÓN ENTRE DOS INVESTIGACIONES — resolver antes de tocar Cathelco/Evac/Uson Marine**: el agente de "marca+geo" encontró que ESVA Solutions opera `cathelco.cl` declarándose representante exclusivo de Cathelco/Evac en Latinoamérica (7 países). El agente de "competencia en vivo", investigando por separado, encontró que **`cathelco.cl` tiene el mismo contacto (Francisco De la Iglesia) y la misma dirección (Reñaca) que MITSA** — es decir, sería un activo digital del propio cliente, no de un tercero. Ambos hallazgos vienen de búsquedas en vivo independientes y se contradicen entre sí (¿es ESVA Solutions el operador real y Francisco solo aparece como contacto local, o es un sitio del propio MITSA/grupo bajo otro nombre comercial?). **No asumir ninguna de las dos versiones — preguntar directo a Francisco qué es `cathelco.cl` y si hay canibalización de dominios entre mitsachile.com y ese sitio antes de invertir en SEO/contenido para Cathelco, Evac o Uson Marine.**
+8. **SIHI**: existe "SIHI Chile S.A." establecida desde 1988, con presencia propia — validar si MITSA compite con un distribuidor de marca ya asentado en el término genérico "SIHI Chile".
+9. **Meclube**: "Electrohidráulica" se declara representante exclusivo — mismo tipo de conflicto que Cathelco/Evac, menor escala.
+10. **EQUIMAR tendría sucursales en Iquique y Talcahuano** (hallazgo de agente de investigación, sin verificación cruzada por Juan/Luis) — si se confirma, cambia la prioridad de SEO local (MITSA solo tiene sede en Reñaca).
+11. **Ancora Chile (marca Norwater)**: competidor directo en ósmosis inversa marina y tratamiento de aguas, 30+ años en el mercado — el análisis original (`content/seo-keywords.md` v1) marcaba esa categoría como "sin competencia"; ya no es así, corregir prioridad en v2.
+12. Otros competidores nuevos detectados sin analizar en profundidad: LLALCO (España), Corroxión, Harbor Marine (Perú) — ver `content/research/seo-competencia.md`.
+
+Ver `content/research/` para el detalle completo de las 4 investigaciones (regulatorio, competencia en vivo, marcas+geo, sectorial/local) que sustentan `content/seo-keywords.md` v2.
