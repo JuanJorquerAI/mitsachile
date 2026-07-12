@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+vendor/
+
+# WordPress core (not tracked, only theme/plugin code)
+wp-admin/
+wp-includes/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
+wp-config.php
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+CLAUDE.local.md
+*.local.md
+
+# Docs that contain plaintext credentials (hosting/cPanel/GoDaddy/NIC) —
+# keep locally, never commit. See docs/README.md for handling policy.
+docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf
+
+# OS/editor
+.DS_Store
+*.log

@@ -1,0 +1,265 @@
+/*
+Theme Name: MITSA
+Theme URI: https://mitsachile.com
+Author: AplicacionesWeb
+Author URI: https://aplicacionesweb.cl
+Description: Tema custom clasico para MITSA SpA (mitsachile.com). Sitio corporativo B2B, sin page builder. Andamiaje estructural inicial — el diseno visual final se define en una etapa posterior.
+Version: 0.1.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 6.5
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mitsa
+*/
+
+/* =========================================================================
+   1. RESET MÍNIMO
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0 0 1em;
+}
+
+ul,
+ol {
+	margin: 0 0 1em;
+	padding-left: 1.5em;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration-skip-ink: auto;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+/* Respeta preferencia de movimiento reducido del usuario. */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* =========================================================================
+   2. VARIABLES CSS (placeholders)
+   -------------------------------------------------------------------------
+   Valores provisorios solo para dar estructura visual mínima mientras no
+   exista diseño definitivo. TODO: reemplazar por la paleta y tipografía
+   final una vez que Diseño (Luis) entregue el sistema visual de marca.
+   ========================================================================= */
+
+:root {
+	/* Colores — placeholder, pendiente de manual de marca MITSA */
+	--mitsa-color-primary: #0a4f7a; /* TODO: azul corporativo provisional (referencia: identidad marina/naval) */
+	--mitsa-color-primary-dark: #073a5c;
+	--mitsa-color-secondary: #ff8c00; /* TODO: color de acento provisional */
+	--mitsa-color-text: #1a1a1a;
+	--mitsa-color-text-muted: #5a5a5a;
+	--mitsa-color-bg: #ffffff;
+	--mitsa-color-bg-alt: #f4f6f8;
+	--mitsa-color-border: #d9dee2;
+	--mitsa-color-link: var(--mitsa-color-primary);
+	--mitsa-color-link-hover: var(--mitsa-color-primary-dark);
+
+	/* Tipografía — placeholder, pendiente de definición de marca */
+	--mitsa-font-heading: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* TODO: tipografía definitiva */
+	--mitsa-font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* TODO: tipografía definitiva */
+	--mitsa-font-size-base: 1rem;
+	--mitsa-line-height-base: 1.6;
+
+	/* Espaciado */
+	--mitsa-space-xs: 0.5rem;
+	--mitsa-space-sm: 1rem;
+	--mitsa-space-md: 2rem;
+	--mitsa-space-lg: 4rem;
+
+	/* Layout */
+	--mitsa-content-width: 1200px;
+}
+
+/* =========================================================================
+   3. ESTILOS BASE MÍNIMOS
+   -------------------------------------------------------------------------
+   Solo lo necesario para que la estructura sea legible y usable. No es
+   diseño final — únicamente semántica visual básica y accesible.
+   ========================================================================= */
+
+body {
+	font-family: var(--mitsa-font-body);
+	font-size: var(--mitsa-font-size-base);
+	line-height: var(--mitsa-line-height-base);
+	color: var(--mitsa-color-text);
+	background-color: var(--mitsa-color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--mitsa-font-heading);
+	line-height: 1.25;
+}
+
+a {
+	color: var(--mitsa-color-link);
+}
+
+a:hover,
+a:focus {
+	color: var(--mitsa-color-link-hover);
+}
+
+/* Foco visible accesible para navegación por teclado. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 2px solid var(--mitsa-color-secondary);
+	outline-offset: 2px;
+}
+
+.mitsa-container {
+	width: 100%;
+	max-width: var(--mitsa-content-width);
+	margin-inline: auto;
+	padding-inline: var(--mitsa-space-sm);
+}
+
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	background: var(--mitsa-color-primary);
+	color: #fff;
+	padding: var(--mitsa-space-xs) var(--mitsa-space-sm);
+	z-index: 10000;
+}
+
+.skip-link:focus {
+	top: 0;
+}
+
+.site-header,
+.site-footer {
+	background-color: var(--mitsa-color-bg-alt);
+	border-bottom: 1px solid var(--mitsa-color-border);
+}
+
+.site-footer {
+	border-bottom: 0;
+	border-top: 1px solid var(--mitsa-color-border);
+	margin-top: var(--mitsa-space-lg);
+}
+
+.main-navigation ul {
+	list-style: none;
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--mitsa-space-sm);
+}
+
+.main-navigation a {
+	text-decoration: none;
+	display: inline-block;
+	padding: var(--mitsa-space-xs) 0;
+}
+
+.site-content {
+	padding-block: var(--mitsa-space-md);
+}
+
+.mitsa-form label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.25em;
+}
+
+.mitsa-form input,
+.mitsa-form textarea {
+	width: 100%;
+	padding: var(--mitsa-space-xs);
+	margin-bottom: var(--mitsa-space-sm);
+	border: 1px solid var(--mitsa-color-border);
+	background-color: var(--mitsa-color-bg);
+}
+
+.mitsa-form button {
+	background-color: var(--mitsa-color-primary);
+	color: #fff;
+	border: 0;
+	padding: var(--mitsa-space-xs) var(--mitsa-space-sm);
+	cursor: pointer;
+}
+
+.mitsa-form button:hover {
+	background-color: var(--mitsa-color-primary-dark);
+}
+
+.mitsa-categorias-producto {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--mitsa-space-sm);
+	list-style: none;
+	padding-left: 0;
+}
+
+.mitsa-categorias-producto li {
+	border: 1px solid var(--mitsa-color-border);
+	padding: var(--mitsa-space-sm);
+}
