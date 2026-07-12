@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Avance del proyecto — Rediseño web MITSA</title>
+<style>
+  @page { size: A4; margin: 22mm 20mm 22mm 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: #1f2933;
+    font-size: 10.8pt;
+    line-height: 1.55;
+    margin: 0;
+  }
+  header.doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #1a4d5c;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+  }
+  .brand {
+    font-size: 15pt;
+    font-weight: 700;
+    color: #1a4d5c;
+    letter-spacing: 0.2px;
+  }
+  .brand span { color: #2f8f7a; }
+  .doc-meta {
+    text-align: right;
+    font-size: 9.2pt;
+    color: #52606d;
+  }
+  h1 {
+    font-size: 16pt;
+    color: #12303a;
+    margin: 0 0 4px 0;
+  }
+  .subtitle {
+    font-size: 10.5pt;
+    color: #52606d;
+    margin-bottom: 22px;
+  }
+  h2 {
+    font-size: 12.5pt;
+    color: #1a4d5c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #d3e3df;
+    padding-bottom: 4px;
+    margin-top: 26px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 10.8pt;
+    color: #12303a;
+    margin: 14px 0 4px 0;
+  }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  .callout {
+    background: #eef6f3;
+    border: 1px solid #bfe0d3;
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin: 14px 0;
+    page-break-inside: avoid;
+  }
+  .callout .label {
+    font-weight: 700;
+    color: #1a4d5c;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+  .pending {
+    background: #fff8ec;
+    border: 1px solid #f0d9a6;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    page-break-inside: avoid;
+  }
+  .pending .label {
+    font-weight: 700;
+    color: #a3630f;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 16px 0;
+    font-size: 9.6pt;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #e4e9ec;
+    vertical-align: top;
+  }
+  th {
+    background: #f4f7f6;
+    color: #1a4d5c;
+    font-weight: 700;
+  }
+  .status-ok { color: #2f8f7a; font-weight: 700; }
+  .status-pending { color: #a3630f; font-weight: 700; }
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li {
+    padding-left: 22px;
+    position: relative;
+    margin: 8px 0;
+  }
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    color: #d9922b;
+    font-size: 12pt;
+  }
+  footer {
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid #e4e9ec;
+    font-size: 8.6pt;
+    color: #7b8794;
+  }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<header class="doc-header">
+  <div class="brand">aplicaciones<span>web</span></div>
+  <div class="doc-meta">
+    Quilapán 6826, Huechuraba — Santiago<br>
+    www.aplicacionesweb.cl<br>
+    12 de julio de 2026
+  </div>
+</header>
+
+<h1>Avance del proyecto — Rediseño web MITSA</h1>
+<p class="subtitle">Informe de estado para MITSA SpA · mitsachile.com</p>
+
+<p>Estimado Francisco,</p>
+<p>Junto con saludarte, te compartimos un resumen del avance del proyecto hasta la fecha, y los puntos que necesitamos que MITSA confirme o defina para poder seguir avanzando con la carga de contenido definitivo y el desarrollo del sitio.</p>
+
+<h2>1. Avance realizado</h2>
+
+<h3>Arquitectura y estructura del sitio</h3>
+<ul>
+  <li>Mapa del sitio consolidado a partir del brochure corporativo y la estructura de menú validada: Inicio, Nosotros, Productos, Representadas, Sectores, Servicios y Contacto.</li>
+  <li>Categorías de producto ordenadas en 5 líneas: Aguas y sanitarios, Bombas y fluidos, Propulsión, Confort a bordo y Protección casco (esta última, nueva respecto al sitio actual).</li>
+  <li>Identificado y documentado un problema de contenido del sitio actual (enlace mal dirigido en "Contenedores para Supermercados") para corregir en la migración.</li>
+</ul>
+
+<h3>Contenido</h3>
+<ul>
+  <li>Secciones <strong>Nosotros</strong> y <strong>Productos</strong> redactadas con base en el brochure corporativo, listas para carga.</li>
+  <li>Primer borrador de <strong>Representadas, Sectores, Servicios y Contacto</strong>, a la espera de tu validación (ver sección 3).</li>
+</ul>
+
+<h3>Desarrollo técnico</h3>
+<ul>
+  <li>Estructura base del sitio en WordPress iniciada: tipos de contenido para productos y marcas representadas, plantillas por sección, y la base para instalar Google Analytics 4, Search Console y Tag Manager desde el lanzamiento.</li>
+  <li>Estructura preparada desde el inicio para incorporar en el futuro una versión en inglés, sin necesidad de rediseñar el sitio.</li>
+</ul>
+
+<h3>Estrategia de posicionamiento (SEO)</h3>
+<p>Hicimos una investigación de posicionamiento en buscadores más profunda que el análisis inicial, cruzando el catálogo de MITSA contra la competencia real y contra la normativa del sector.</p>
+
+<div class="callout">
+  <div class="label">Hallazgo principal</div>
+  <p>La ventaja de posicionamiento más fuerte que tiene MITSA hoy no es de marca ni de precio: es <strong>regulatoria</strong>. Desde septiembre de 2024, todo Plan de Gestión de Agua de Lastre debe cumplir el estándar D-2 del Convenio BWM de la OMI, y la autoridad marítima chilena (DIRECTEMAR) ya está fiscalizando activamente en Valparaíso y San Antonio. MITSA representa a Erma First, fabricante de sistemas de tratamiento de agua de lastre (BWTS), y no detectamos ningún competidor posicionado en ese término en Chile. Es la oportunidad de contenido y posicionamiento más clara del proyecto, y recomendamos que sea la prioridad número uno.</p>
+</div>
+
+<p>También identificamos que dos categorías que se asumían "sin competencia" (ósmosis inversa marina y protección catódica/antifouling) sí tienen competidores activos y posicionados, por lo que ajustamos la prioridad de esas líneas. El detalle completo está documentado y disponible si quieren revisarlo con su equipo.</p>
+
+<div class="page-break"></div>
+
+<h2>2. Estado general</h2>
+<table>
+  <tr><th>Área</th><th>Estado</th><th>Detalle</th></tr>
+  <tr><td>Mapa del sitio</td><td class="status-ok">Listo</td><td>Validado contra brochure + menú real</td></tr>
+  <tr><td>Nosotros / Productos</td><td class="status-ok">Listo</td><td>Contenido redactado, base brochure</td></tr>
+  <tr><td>Representadas / Sectores / Servicios / Contacto</td><td class="status-pending">Borrador — pendiente validación</td><td>Requiere tu revisión (sección 3)</td></tr>
+  <tr><td>Estrategia SEO</td><td class="status-ok">Listo</td><td>Investigación completa, con 2 puntos a confirmar</td></tr>
+  <tr><td>Desarrollo del sitio (WordPress)</td><td class="status-pending">En curso</td><td>Estructura base lista, falta diseño visual y contenido definitivo</td></tr>
+</table>
+
+<h2>3. Lo que necesitamos que definan o confirmen</h2>
+<p>Para poder avanzar a la siguiente etapa (carga de contenido definitivo y diseño visual) necesitamos que nos ayuden a cerrar los siguientes puntos:</p>
+
+<ul class="checklist">
+  <li><strong>Documento maestro de contenidos:</strong> estrategia de contenidos, documentación técnica priorizada, casos de éxito, fotografías y catálogos que mencionaron en su momento. Aún no lo tenemos, y es la base para dejar cerradas las secciones que hoy están en borrador.</li>
+  <li><strong>Validación de Representadas, Sectores, Servicios y Contacto:</strong> ya preparamos una propuesta de contenido para estas 4 secciones; necesitamos su revisión y ajustes antes de darlas por definitivas.</li>
+  <li><strong>Relación con cathelco.cl:</strong> en la investigación de posicionamiento encontramos información contradictoria sobre este sitio. No logramos determinar con certeza si es un dominio de MITSA o de su grupo, o de un tercero (ESVA Solutions) que se presenta como representante de Cathelco y Evac en Latinoamérica. Antes de publicar contenido sobre estas marcas, necesitamos que nos confirmen la situación actual.</li>
+  <li><strong>Representación de SIHI y Meclube:</strong> detectamos otras empresas que se presentan públicamente como representantes de estas marcas en Chile. ¿La representación de MITSA sigue vigente para ambas?</li>
+  <li><strong>Marcas Ervor y EGGE:</strong> aparecen mencionadas en el brochure, pero no estaban en la lista de representadas que nos compartieron. ¿Siguen siendo parte del catálogo vigente?</li>
+  <li><strong>Teléfono y correo de contacto corporativo:</strong> no encontramos un teléfono o email corporativo (distinto al de contacto interno) en el material disponible para publicar en la página de Contacto.</li>
+  <li><strong>Dominio final:</strong> vamos a trabajar sobre la base de <strong>mitsachile.com</strong> salvo que nos indiquen lo contrario.</li>
+  <li><strong>Nombre del producto "Contenedores para Supermercados / trituradores orgánicos":</strong> el sitio actual tiene un enlace que no corresponde al nombre del producto. Pedimos confirmar el nombre correcto antes de migrar esa página.</li>
+</ul>
+
+<div class="pending">
+  <div class="label">Recomendación adicional</div>
+  <p>Durante el levantamiento de información recibimos las credenciales de hosting (cPanel, GoDaddy, BlueHosting, NIC Chile) por correo electrónico en texto plano. Por buenas prácticas de seguridad, recomendamos rotar esas contraseñas una vez que hagamos la migración, y evitar compartir credenciales por correo en el futuro (podemos sugerirles una alternativa segura si les sirve).</p>
+</div>
+
+<h2>4. Próximos pasos</h2>
+<ol>
+  <li>Quedamos atentos a sus comentarios sobre los puntos de la sección 3.</li>
+  <li>En paralelo, seguimos avanzando en el desarrollo técnico del sitio y en dejar la estructura de posicionamiento (SEO) lista para cuando el contenido esté definitivo.</li>
+  <li>Coordinamos una reunión breve cuando les acomode para revisar estos puntos en conjunto y destrabar lo que sea necesario.</li>
+</ol>
+
+<p>Quedamos atentos a su respuesta y disponibles para cualquier consulta.</p>
+<p>Saludos cordiales,</p>
+<p><strong>Equipo AplicacionesWeb</strong></p>
+
+<footer>
+  Este documento resume el avance del proyecto de rediseño web de mitsachile.com al 12 de julio de 2026. Documento de trabajo, preparado por AplicacionesWeb para MITSA SpA.
+</footer>
+
+</body>
+</html>
