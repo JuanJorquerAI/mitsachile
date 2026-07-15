@@ -15,6 +15,12 @@ Log vivo. Actualizar cuando se resuelva algo o llegue el "documento maestro" del
 | 2026-07-12 | Sin documento maestro: seguir construyendo sobre contenido borrador ya generado, ajustar cuando llegue | Juan, sesión 2026-07-12 |
 | 2026-07-12 | Página Contacto: solo formulario + dirección confirmada, sin teléfono/email hasta que el cliente los entregue | Juan, sesión 2026-07-12 |
 | 2026-07-12 | Dominio: asumir mitsachile.com hasta aviso contrario del cliente | Juan, sesión 2026-07-12 |
+| 2026-07-14 | Plan de construcción del sitio: `plans/mitsachile-rediseno-web.md` (14 pasos, v2 post-review adversarial) es la guía de ejecución | Sesión 2026-07-14 |
+| 2026-07-14 | ACF versión FREE (sin repeater); specs de producto como textarea `clave\|valor` | Blueprint v2 |
+| 2026-07-14 | Plugin SEO: Yoast; formularios: Contact Form 7; sin reCAPTCHA (honeypot) | Blueprint v2 |
+| 2026-07-14 | URLs: página landing en `/productos/`, CPT sin archive, singles en `/producto/{slug}/`, taxonomía en `/productos/categoria/{term}/` | Blueprint v2 (resuelve colisión rewrite) |
+| 2026-07-14 | Banner/gestión de consentimiento de cookies: fuera de alcance contratado, cotizar aparte (Ley 21.719) | Review del blueprint |
+| 2026-07-14 | Copy nuevo redactado por agencia (fichas producto, Home, casos) nace `draft` — hito de validación con cliente antes de publish | Review del blueprint |
 
 ## Abiertas — requieren decisión del cliente o de Juan/Luis (NO resolver solo)
 
