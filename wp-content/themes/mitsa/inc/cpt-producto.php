@@ -42,9 +42,9 @@ function mitsa_registrar_cpt_producto() {
 		'show_in_menu'       => true,
 		'show_in_rest'       => true,
 		'menu_icon'          => 'dashicons-admin-tools',
-		'has_archive'        => 'productos',
+		'has_archive'        => false,
 		'rewrite'            => array(
-			'slug'       => 'productos',
+			'slug'       => 'producto',
 			'with_front' => false,
 		),
 		'capability_type'    => 'post',

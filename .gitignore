@@ -36,3 +36,5 @@ export/
 .claude/worktrees/
 .claude/scheduled_tasks.lock
 .serena/
+
+.playwright-mcp/
