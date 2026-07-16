@@ -28,3 +28,5 @@ docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf
 # OS/editor
 .DS_Store
 *.log
+export/
+.seo-backups/
