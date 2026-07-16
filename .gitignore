@@ -30,3 +30,7 @@ docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf
 *.log
 wp/
 *.sql
+
+.claude/worktrees/
+.claude/scheduled_tasks.lock
+.serena/
