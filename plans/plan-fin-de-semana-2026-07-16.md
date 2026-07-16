@@ -20,24 +20,29 @@ El gancho: el sitio actual está **invisible en Google** por un `robots.txt` con
 ### Track B — Sitio nuevo navegable (profundidad: Home + Nosotros + Productos)
 Meta: una URL privada que el cliente abre desde el teléfono y ve el sitio nuevo
 tomando forma, con diseño real y contenido real en las 3 secciones validadas.
-- [~] P2 — sistema de diseño + CSS + catálogo de componentes (agente en curso)
+- [x] P2 — sistema de diseño + CSS (40KB) + catálogo de componentes (`docs/componentes.md`)
 - [x] Copy de Home redactado (`content/01-home.md`, borrador)
-- [ ] Integrar Home en `front-page.php` con el diseño de P2
-- [ ] Nosotros con contenido real (`content/02-nosotros.md` 🟢)
-- [ ] Productos: landing + categorías + al menos las fichas estrella (BWTS)
-- [ ] Export estático del WP local → URL privada compartible
-- [ ] (si hay acceso a producción) o staging; si no, export estático
+- [x] Home maquetada en `front-page.php`: hero + 5 categorías + destacado BWTS + marcas + sectores + confianza + CTA
+- [x] Nosotros con contenido real (`content/02-nosotros.md` 🟢, publish)
+- [x] Productos: landing como catálogo de categorías (fix routing CPT sin archive)
+- [x] Footer limpio (widgets por defecto fuera, menú footer poblado), title "MITSA"
+- [x] Responsive verificado (desktop 1280 + móvil 390) con screenshots
+- [x] Export estático del WP local → `export/` (26 páginas, `scripts/export-estatico.sh`)
+- [ ] Publicar export en staging/URL para el cliente (pendiente decisión de hosting)
+- [ ] Fichas de producto individuales (BWTS Erma First) — próxima etapa
 
 ### Track C — Desbloquear cathelco.cl 🔄 en curso
 Resolver la decisión abierta #7 (bloquea el SEO de las marcas principales).
 - [~] Investigación técnica WHOIS/DNS/hosting/contenido (agente en curso)
 - [ ] Veredicto + preguntas concretas para Francisco en DECISIONS.md
 
-### Entregable ancla — Informe para el cliente
-Documento de 1 página (HTML/PDF, estilo del avance del 12-jul): "esto
-encontramos, esto arreglamos, esto viene". Es lo que se le manda a Francisco.
-- [ ] Redactar con resultados reales de A/B/C
-- [ ] Exportar a PDF
+### Entregable ancla — Informe para el cliente ✅
+Documento visual con el hallazgo SEO, la tabla de auditoría, los screenshots del
+sitio nuevo y "qué viene". `docs/entregables/informe-avance-2026-07-16.{html,pdf}`.
+- [x] Redactado con resultados reales de A/B/C
+- [x] Screenshots del sitio nuevo embebidos (portada, productos, nosotros, móvil)
+- [x] Exportado a PDF (1.1M, autocontenido)
+- [ ] Juan revisa y envía a Francisco
 
 ## Autonomía y git
 - Rama por frente; merge a master tras verificación (`php -l` + smoke test).
