@@ -34,7 +34,16 @@
 			<?php endif; ?>
 		</div>
 
-		<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'mitsa' ); ?>">
+		<button
+			class="menu-toggle"
+			aria-controls="mitsa-primary-nav"
+			aria-expanded="false"
+		>
+			<span class="menu-toggle__bars" aria-hidden="true"></span>
+			<span class="menu-toggle__label"><?php esc_html_e( 'Menú', 'mitsa' ); ?></span>
+		</button>
+
+		<nav id="mitsa-primary-nav" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Menú principal', 'mitsa' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
