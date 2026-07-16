@@ -1,0 +1,16 @@
+# robots.txt — mitsachile.com
+# Reemplaza al robots.txt actual, que contiene "Disallow: /" y bloquea
+# la indexación de TODO el sitio en buscadores.
+
+User-agent: *
+Allow: /
+
+# No indexar el área de administración ni endpoints internos de WordPress
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /*?s=
+Disallow: /*?replytocom
+
+Sitemap: https://mitsachile.com/sitemap.xml

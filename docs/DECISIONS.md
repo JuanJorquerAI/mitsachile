@@ -29,11 +29,17 @@ Log vivo. Actualizar cuando se resuelva algo o llegue el "documento maestro" del
 3. **Biblioteca técnica**: qué documentos van con gate de formulario de contacto vs. acceso libre — pendiente de definir por sección.
 4. **Casos de éxito**: nombrar clientes reales (Armada de Chile, ASMAR, astilleros privados, salmoneras, navieras) cuando sea posible; usar "casos representativos" por industria solo si hay problema de confidencialidad puntual (acordado en el hilo de correo del 18-jun).
 5. **Marcas "Ervor" (Finlandia) y "EGGE" (Suiza)**: aparecen en el brochure pero no estaban en la lista original de representadas del cliente — incluidas en `content/04-representadas.md` marcadas "por confirmar", validar antes de publicar.
-6. **Teléfono/email corporativo de MITSA**: no existe en ninguna fuente disponible (brochure, correos, mapas). Página de Contacto sale solo con formulario hasta que el cliente lo entregue (ver decisión arriba).
+6. **Teléfono/email corporativo de MITSA** — ✏️ CORREGIDO 2026-07-16: sí existen, publicados en el propio sitio actual (auditoría de producción). Teléfono **+56 32 2834052**, emails **info@mitsachile.com** y **evacequips@mitsachile.com**, dirección **Av. Vicuña Mackenna 882, Viña del Mar (Reñaca)**. Confirmar con el cliente que siguen vigentes antes de publicarlos en el sitio nuevo; la página de Contacto ya puede incluirlos.
 
 ## Notas de seguridad
 
-- Credenciales de hosting (cPanel, GoDaddy, BlueHosting, NIC Chile) llegaron en texto plano por correo (`docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf`). Ese PDF está en `.gitignore`. Recomendar al cliente/agencia rotar esas contraseñas y moverlas a un gestor de secretos — quedaron expuestas en un hilo de correo con múltiples destinatarios.
+- Credenciales de hosting (cPanel, GoDaddy, BlueHosting, NIC Chile) llegaron en texto plano por correo (`docs/Correo de AplicacionesWeb - Inicio proyecto MITSA.pdf`). Ese PDF está en `.gitignore`. Recomendar al cliente/agencia rotar esas contraseñas y moverlas a un gestor de secretos — quedaron expuestas en un hilo de correo con múltiples destinatarios. **No usar ese PDF como fuente de credenciales para intervenir producción**; pasar por `.env` local (gitignoreado) o canal seguro.
+
+## Auditoría de producción (2026-07-16) — hallazgos verificados con curl crudo
+
+⚠️ **CRÍTICO — el sitio actual está invisible en buscadores.** `https://mitsachile.com/robots.txt` contiene `User-agent: * / Disallow: /` (HTTP 200 confirmado): ordena a todos los buscadores no indexar ninguna página. Búsqueda de "Mitsa Chile tratamiento de aguas" NO devuelve el sitio propio (aparece un blogspot de 2011 y el Facebook). Otros hallazgos: sin `sitemap.xml` (404 en las 3 rutas estándar), sin GA4/GTM/analítica (cero en el HTML — contratado desde el día 1), `http://` no redirige a `https://` (responde 200), tema comercial `logiscargo` + WPBakery + RevSlider (CVEs históricos). Paquete de corrección listo en `docs/entregables/seo-produccion/`. Aplicar en producción requiere credenciales por canal seguro (NO el PDF comprometido).
+- Bug de menú del `CLAUDE.md` confirmado: `/trituradores-organicos/` responde 200.
+- `cathelco.cl` (decisión abierta #7): investigación técnica en curso, ver `content/research/cathelco-investigacion.md`.
 
 ## Hallazgos de la investigación SEO (2026-07-12) — requieren validación urgente con el cliente
 
