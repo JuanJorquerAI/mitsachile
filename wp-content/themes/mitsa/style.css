@@ -355,6 +355,26 @@ hr {
 	margin-bottom: var(--mitsa-space-md);
 }
 
+/* Seccion destacada: franja navy de acento reservada al diferenciador
+   comercial (BWTS/regulatorio) y al CTA de cierre. Reusa los tokens del hero. */
+.mitsa-section--destacado {
+	background: linear-gradient(135deg, var(--mitsa-navy-800) 0%, var(--mitsa-navy-900) 100%);
+	color: var(--mitsa-white);
+}
+
+.mitsa-section--destacado .mitsa-section__title {
+	color: var(--mitsa-white);
+}
+
+.mitsa-section--destacado .mitsa-kicker {
+	color: var(--mitsa-teal-300);
+}
+
+.mitsa-section--destacado p {
+	color: var(--mitsa-slate-300);
+	max-width: 68ch;
+}
+
 /* Encabezado de seccion con kicker (etiqueta superior) */
 .mitsa-kicker {
 	display: inline-block;
