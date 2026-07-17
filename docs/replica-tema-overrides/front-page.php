@@ -92,21 +92,57 @@ if ( $mitsa_hero_src ) {
 		<span class="mitsa-kicker"><?php esc_html_e( 'Por qué MITSA', 'mitsa' ); ?></span>
 		<h2 id="mitsa-servicios-title" class="mitsa-section__title"><?php esc_html_e( 'Respaldo técnico en cada equipo', 'mitsa' ); ?></h2>
 		<ul class="mitsa-grid mitsa-grid--4 mitsa-cards">
-			<li class="mitsa-card">
-				<h3 class="mitsa-card__title"><?php esc_html_e( 'Asistencia técnica', 'mitsa' ); ?></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Le asesoramos en la instalación y puesta en marcha de sus equipos.', 'mitsa' ); ?></p>
+			<li class="mitsa-card mitsa-card--servicio">
+				<div class="mitsa-card__body">
+					<span class="mitsa-card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+							<path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+							<rect x="3" y="13" width="4" height="7" rx="1.6" />
+							<rect x="17" y="13" width="4" height="7" rx="1.6" />
+							<path d="M20 20a3 3 0 0 1-3 3h-3" />
+						</svg>
+					</span>
+					<h3 class="mitsa-card__title"><?php esc_html_e( 'Asistencia técnica', 'mitsa' ); ?></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Le asesoramos en la instalación y puesta en marcha de sus equipos.', 'mitsa' ); ?></p>
+				</div>
 			</li>
-			<li class="mitsa-card">
-				<h3 class="mitsa-card__title"><?php esc_html_e( 'Personal calificado', 'mitsa' ); ?></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Técnicos especializados para mantener sus equipos en funcionamiento.', 'mitsa' ); ?></p>
+			<li class="mitsa-card mitsa-card--servicio">
+				<div class="mitsa-card__body">
+					<span class="mitsa-card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+							<circle cx="10" cy="8" r="4" />
+							<path d="M3 21v-1a6 6 0 0 1 9.2-5.1" />
+							<path d="M15 18.5l2 2 4-4" />
+						</svg>
+					</span>
+					<h3 class="mitsa-card__title"><?php esc_html_e( 'Personal calificado', 'mitsa' ); ?></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Técnicos especializados para mantener sus equipos en funcionamiento.', 'mitsa' ); ?></p>
+				</div>
 			</li>
-			<li class="mitsa-card">
-				<h3 class="mitsa-card__title"><?php esc_html_e( 'Tecnología de punta', 'mitsa' ); ?></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Pioneros en introducir tecnología avanzada del segmento sanitario en Chile.', 'mitsa' ); ?></p>
+			<li class="mitsa-card mitsa-card--servicio">
+				<div class="mitsa-card__body">
+					<span class="mitsa-card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+							<rect x="6" y="6" width="12" height="12" rx="2" />
+							<rect x="9.5" y="9.5" width="5" height="5" rx="1" />
+							<path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2" />
+						</svg>
+					</span>
+					<h3 class="mitsa-card__title"><?php esc_html_e( 'Tecnología de punta', 'mitsa' ); ?></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Pioneros en introducir tecnología avanzada del segmento sanitario en Chile.', 'mitsa' ); ?></p>
+				</div>
 			</li>
-			<li class="mitsa-card">
-				<h3 class="mitsa-card__title"><?php esc_html_e( 'Garantía', 'mitsa' ); ?></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Todos nuestros equipos cuentan con garantía de buen funcionamiento.', 'mitsa' ); ?></p>
+			<li class="mitsa-card mitsa-card--servicio">
+				<div class="mitsa-card__body">
+					<span class="mitsa-card__icon" aria-hidden="true">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+							<path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z" />
+							<path d="M9 12l2 2 4-4" />
+						</svg>
+					</span>
+					<h3 class="mitsa-card__title"><?php esc_html_e( 'Garantía', 'mitsa' ); ?></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Todos nuestros equipos cuentan con garantía de buen funcionamiento.', 'mitsa' ); ?></p>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -143,10 +179,17 @@ if ( $mitsa_noticias->have_posts() ) :
 					$mitsa_noticias->the_post();
 					?>
 					<li class="mitsa-card mitsa-card--caso">
-						<h3 class="mitsa-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p class="mitsa-card__meta"><?php echo esc_html( get_the_date() ); ?></p>
-						<p class="mitsa-card__text"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
-						<a class="mitsa-btn mitsa-btn--ghost" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Leer más', 'mitsa' ); ?></a>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a class="mitsa-card__media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
+								<?php the_post_thumbnail( 'medium_large', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) ); ?>
+							</a>
+						<?php endif; ?>
+						<div class="mitsa-card__body">
+							<h3 class="mitsa-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<p class="mitsa-card__meta"><?php echo esc_html( get_the_date() ); ?></p>
+							<p class="mitsa-card__text"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
+							<a class="mitsa-btn mitsa-btn--ghost" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Leer más', 'mitsa' ); ?></a>
+						</div>
 					</li>
 					<?php
 				endwhile;
