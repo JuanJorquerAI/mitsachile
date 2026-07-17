@@ -21,21 +21,21 @@ La página muestra una grilla de logos de las empresas representadas. Cada logo 
 |---|------------------------------|----------------------------------------|----------|
 | 1 | Finlandia | EVAC (tratamiento aguas servidas / sanitario) | https://mitsachile.com/wp-content/uploads/2016/02/Evac_logo_rgb_300dpi-300x300-1.png |
 | 2 | Dinamarca | BLÜCHER (drenaje acero inoxidable) | https://mitsachile.com/wp-content/uploads/2016/02/blucher-1.png |
-| 3 | Suecia | (marca sueca — archivo `1991321-1.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/1991321-1.png |
+| 3 | Suecia | USON MARINE (identificada 2026-07-17 leyendo el logo) | https://mitsachile.com/wp-content/uploads/2016/02/1991321-1.png |
 | 4 | Francia | ERVOR (aire comprimido / generadores N2-O2) | https://mitsachile.com/wp-content/uploads/2016/02/ervor-1.png |
 | 5 | España | INCORR (anticorrosión) | https://mitsachile.com/wp-content/uploads/2016/02/incorr-2.png |
-| 6 | Inglaterra | (archivo `logo-1-300x300.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/logo-1-300x300.png |
-| 7 | España | (archivo `descarga-300x300-1.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/descarga-300x300-1.png |
+| 6 | Inglaterra | HEPWORTH GROUP (identificada 2026-07-17 leyendo el logo) | https://mitsachile.com/wp-content/uploads/2016/02/logo-1-300x300.png |
+| 7 | España | OSMOFILTER (Tratamiento Integral del Agua — identificada 2026-07-17) | https://mitsachile.com/wp-content/uploads/2016/02/descarga-300x300-1.png |
 | 8 | RT Checa (Rep. Checa) | ESP (archivo `esp-top-logo.png`) | https://mitsachile.com/wp-content/uploads/2016/02/esp-top-logo.png |
-| 9 | RT Checa (Rep. Checa) | (archivo `logo2b2.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/logo2b2.png |
+| 9 | RT Checa (Rep. Checa) | BRAVO MOBARROW (identificada 2026-07-17 leyendo el logo) | https://mitsachile.com/wp-content/uploads/2016/02/logo2b2.png |
 | 10 | Italia | MECLUBE (equipos de lubricación) | https://mitsachile.com/wp-content/uploads/2016/02/meclube-logo-S-1.png |
 | 11 | USA | BURKS (bombas) | https://mitsachile.com/wp-content/uploads/2016/02/burks_logo1-400x151-300x300.png |
 | 12 | Suiza | EGGER (bombas) | https://mitsachile.com/wp-content/uploads/2016/02/egger-logo.png |
 | 13 | Inglaterra | HAIGH (maceradores / trituradores) | https://mitsachile.com/wp-content/uploads/2016/02/haigh-logo.png |
-| 14 | Alemania | (archivo `descarga-1-300x300.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/descarga-1-300x300.png |
+| 14 | Alemania | HERBORNER PUMPENTECHNIK (identificada 2026-07-17 leyendo el logo) | https://mitsachile.com/wp-content/uploads/2016/02/descarga-1-300x300.png |
 | 15 | USA | MOYNO (bombas de cavidad progresiva) | https://mitsachile.com/wp-content/uploads/2016/02/moyno.png |
 | 16 | Alemania | SIHI (Sterling SIHI — bombas) | https://mitsachile.com/wp-content/uploads/2016/02/sihi-logo-2.png |
-| 17 | USA | (archivo `logo23-1.png`, sin nombre legible) | https://mitsachile.com/wp-content/uploads/2016/02/logo23-1.png |
+| 17 | USA | HARWIL (Flow & Level — identificada 2026-07-17 leyendo el logo) | https://mitsachile.com/wp-content/uploads/2016/02/logo23-1.png |
 | 18 | Suiza | BESTA | https://mitsachile.com/wp-content/uploads/2016/02/logo-besta.png |
 | 19 | Argentina | CRAM | https://mitsachile.com/wp-content/uploads/2018/10/logo-cram.png |
 
