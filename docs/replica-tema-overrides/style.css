@@ -1765,3 +1765,560 @@ hr {
 	font-size: var(--mitsa-text-sm);
 	color: var(--mitsa-color-text-muted);
 }
+
+/* =========================================================================
+   18. CAPA DE PULIDO ("cariño") — microinteracciones y motion sobrio
+   -------------------------------------------------------------------------
+   Añadida por la fase de pulido. Reusa EXCLUSIVAMENTE tokens de :root
+   (colores, espacios, radios, sombras, transiciones). Nada de colores
+   nuevos ni dependencias externas.
+
+   Contrato de motion:
+   - Todo hover/transición es sobrio (~180ms) y coherente entre componentes.
+   - Se respeta prefers-reduced-motion SIEMPRE (el bloque global de §5 anula
+     transiciones; además, los reveals se fijan visibles en §18.6).
+   - Los reveals degradan sin JS vía @media (scripting: none).
+
+   Subíndice:
+   18.1 Token de motion de elevación
+   18.2 Cards: elevación e hover (genérico + variantes)
+   18.3 Botones, enlaces y kicker: refuerzo de estados
+   18.4 Layout de páginas interiores (page-hero, panel)
+   18.5 Grid de representadas interactivo (repr-grid / repr-logo)
+   18.6 Scroll-reveal (.mitsa-reveal)
+   18.7 Layout de contacto y datos (.mitsa-contacto-layout / .mitsa-dato)
+   18.8 Noticias: grid, card y single
+   ========================================================================= */
+
+/* --- 18.1 Token de motion de elevación ---------------------------------- */
+:root {
+	/* Curva de elevación de tarjetas/logos: ~180ms, sobria. */
+	--mitsa-motion-lift: 180ms ease;
+}
+
+/* --- 18.2 Cards: elevación e hover -------------------------------------- */
+
+/* La transición ya está declarada en §9 (.mitsa-card). Aquí solo se pule la
+   respuesta al hover/foco. Al ir DESPUÉS en el archivo, unifica la elevación
+   de todas las variantes a -4px sin tocar el color de borde propio de cada
+   variante (producto=teal, caso=navy, etc., definidos antes). */
+.mitsa-card:hover,
+.mitsa-card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: var(--mitsa-shadow-md);
+}
+
+/* Realce del medio de la card enlazada, con la curva de elevación. */
+.mitsa-card--link:hover .mitsa-card__media img,
+.mitsa-card--link:focus-within .mitsa-card__media img {
+	transform: scale(1.04);
+}
+
+/* Variante representada: el logo cobra vida (fondo teal + leve scale). */
+.mitsa-card--representada:hover,
+.mitsa-card--representada:focus-within {
+	border-color: var(--mitsa-color-accent);
+}
+
+.mitsa-card--representada:hover .mitsa-card__media,
+.mitsa-card--representada:focus-within .mitsa-card__media {
+	background-color: var(--mitsa-teal-050);
+	border-bottom-color: var(--mitsa-color-accent);
+}
+
+.mitsa-card--representada:hover .mitsa-card__media img,
+.mitsa-card--representada:focus-within .mitsa-card__media img {
+	transform: scale(1.05);
+}
+
+/* --- 18.3 Botones, enlaces y kicker: refuerzo de estados ---------------- */
+
+/* Los .mitsa-btn ya traen transición (§8). Se refuerza la retroalimentación
+   de los CTA sólidos con sombra más marcada y una leve elevación. */
+.mitsa-btn--primary:hover,
+.mitsa-btn--primary:focus-visible,
+.mitsa-btn--accent:hover,
+.mitsa-btn--accent:focus-visible {
+	box-shadow: var(--mitsa-shadow-md);
+	transform: translateY(-1px);
+}
+
+/* El estado :active (§8) ya baja el botón 1px; se mantiene la coherencia. */
+.mitsa-btn--primary:active,
+.mitsa-btn--accent:active {
+	box-shadow: var(--mitsa-shadow-sm);
+	transform: translateY(1px);
+}
+
+/* Kicker: transición de color para cuando cambia de estado junto a su bloque. */
+.mitsa-kicker {
+	transition: color var(--mitsa-transition);
+}
+
+/* --- 18.4 Layout de páginas interiores ---------------------------------- */
+
+/* Banner de cabecera para páginas interiores: fondo navy (o imagen inline)
+   con overlay para contraste AA del título blanco. Altura ~260–340px. */
+.mitsa-page-hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 260px;
+	padding-block: var(--mitsa-space-xl);
+	background: linear-gradient(135deg, var(--mitsa-navy-800) 0%, var(--mitsa-navy-900) 100%);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: var(--mitsa-white);
+	overflow: hidden;
+}
+
+@media (min-width: 768px) {
+	.mitsa-page-hero {
+		min-height: 320px;
+	}
+}
+
+/* Overlay navy: garantiza contraste del texto cuando hay imagen de fondo
+   (se define inline con style="background-image:url(...)"). */
+.mitsa-page-hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(6, 32, 51, 0.86) 0%, rgba(6, 32, 51, 0.72) 100%);
+	z-index: 0;
+}
+
+/* Rejilla técnica sutil, coherente con el hero de portada. */
+.mitsa-page-hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(rgba(92, 199, 214, 0.05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(92, 199, 214, 0.05) 1px, transparent 1px);
+	background-size: 44px 44px;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.mitsa-page-hero__inner {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 820px;
+}
+
+/* Centrado opcional del contenido del banner. */
+.mitsa-page-hero--center {
+	text-align: center;
+}
+
+.mitsa-page-hero--center .mitsa-page-hero__inner {
+	margin-inline: auto;
+}
+
+.mitsa-page-hero h1 {
+	color: var(--mitsa-white);
+	margin: 0;
+}
+
+.mitsa-page-hero__lead {
+	margin: var(--mitsa-space-sm) 0 0;
+	font-size: var(--mitsa-text-lg);
+	color: var(--mitsa-slate-300);
+	max-width: 62ch;
+}
+
+.mitsa-page-hero--center .mitsa-page-hero__lead {
+	margin-inline: auto;
+}
+
+.mitsa-page-hero .mitsa-kicker {
+	color: var(--mitsa-teal-300);
+}
+
+/* Breadcrumbs sobre el banner oscuro: colores claros legibles. */
+.mitsa-page-hero .mitsa-breadcrumbs {
+	margin-bottom: var(--mitsa-space-sm);
+	color: var(--mitsa-slate-300);
+}
+
+.mitsa-page-hero .mitsa-breadcrumbs a {
+	color: var(--mitsa-slate-300);
+}
+
+.mitsa-page-hero .mitsa-breadcrumbs a:hover,
+.mitsa-page-hero .mitsa-breadcrumbs a:focus {
+	color: var(--mitsa-teal-300);
+}
+
+.mitsa-page-hero .mitsa-breadcrumbs [aria-current="page"] {
+	color: var(--mitsa-white);
+}
+
+.mitsa-page-hero .mitsa-breadcrumbs li:not(:first-child)::before {
+	color: var(--mitsa-slate-400);
+}
+
+/* Panel: bloque con fondo y padding para dar color detrás de los párrafos
+   (p. ej. Misión/Visión). Variantes de superficie y acento. */
+.mitsa-panel {
+	background-color: var(--mitsa-color-surface);
+	border: 1px solid var(--mitsa-color-border);
+	border-radius: var(--mitsa-radius-lg);
+	padding: var(--mitsa-space-lg);
+	box-shadow: var(--mitsa-shadow-xs);
+}
+
+.mitsa-panel > :last-child {
+	margin-bottom: 0;
+}
+
+/* Superficie alterna (slate suave), para alternar ritmo entre paneles. */
+.mitsa-panel--alt {
+	background-color: var(--mitsa-slate-050);
+	box-shadow: none;
+}
+
+/* Acento: superficie teal suave con borde teal fino; ideal para Misión/Visión.
+   Expresa el énfasis como color de fondo (no como filete lateral). */
+.mitsa-panel--accent {
+	background-color: var(--mitsa-teal-050);
+	border-color: var(--mitsa-color-accent);
+}
+
+.mitsa-panel__title {
+	margin-top: 0;
+	margin-bottom: var(--mitsa-space-sm);
+	font-size: var(--mitsa-text-xl);
+}
+
+/* --- 18.5 Grid de representadas interactivo ----------------------------- */
+
+/* Grid de logos de marcas representadas. Se acomoda solo (auto-fill). */
+.mitsa-repr-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	gap: var(--mitsa-space-md);
+}
+
+/* Baldosa de logo interactiva: en reposo, logo en gris atenuado; al pasar el
+   mouse (o recibir foco) recupera color, sube y realza el borde en teal. */
+.mitsa-repr-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 3 / 2;
+	padding: var(--mitsa-space-md);
+	background-color: var(--mitsa-white);
+	border: 1px solid var(--mitsa-color-border);
+	border-radius: var(--mitsa-radius-md);
+	transition: border-color var(--mitsa-motion-lift), box-shadow var(--mitsa-motion-lift), transform var(--mitsa-motion-lift);
+}
+
+.mitsa-repr-logo img {
+	width: auto;
+	max-width: 82%;
+	max-height: 64px;
+	object-fit: contain;
+	filter: grayscale(1);
+	opacity: 0.72;
+	transition: filter var(--mitsa-motion-lift), opacity var(--mitsa-motion-lift), transform var(--mitsa-motion-lift);
+}
+
+.mitsa-repr-logo:hover,
+.mitsa-repr-logo:focus-within {
+	border-color: var(--mitsa-color-accent);
+	box-shadow: var(--mitsa-shadow-sm);
+	transform: translateY(-3px);
+}
+
+.mitsa-repr-logo:hover img,
+.mitsa-repr-logo:focus-within img {
+	filter: grayscale(0);
+	opacity: 1;
+	transform: scale(1.05);
+}
+
+/* --- 18.6 Scroll-reveal (.mitsa-reveal) --------------------------------- */
+
+/* Elementos que entran al viewport se revelan (theme.js añade .is-visible).
+   Stagger opcional: fija --i en el markup (style="--i:1", "--i:2", ...). */
+.mitsa-reveal {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	transition-delay: calc(var(--i, 0) * 70ms);
+	will-change: opacity, transform;
+}
+
+.mitsa-reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+/* Degradación sin JS: si el navegador no ejecuta scripts, mostrar sin animar
+   (evita que el contenido quede invisible para siempre). */
+@media (scripting: none) {
+	.mitsa-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Movimiento reducido: aparecer de inmediato, sin desplazamiento ni retardo,
+   con independencia de que el observer llegue o no a marcar el elemento. */
+@media (prefers-reduced-motion: reduce) {
+	.mitsa-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* --- 18.7 Layout de contacto y datos ------------------------------------ */
+
+/* Contacto: formulario + datos/mapa. Una columna en móvil, dos en escritorio. */
+.mitsa-contacto-layout {
+	display: grid;
+	gap: var(--mitsa-space-lg);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+	.mitsa-contacto-layout {
+		grid-template-columns: 1.15fr 0.85fr;
+		align-items: start;
+	}
+}
+
+/* Lista de datos de contacto. */
+.mitsa-datos {
+	display: flex;
+	flex-direction: column;
+	gap: var(--mitsa-space-md);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Ítem de contacto: icono + label + valor. */
+.mitsa-dato {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--mitsa-space-sm);
+}
+
+.mitsa-dato__icon {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: var(--mitsa-radius-md);
+	background-color: var(--mitsa-teal-050);
+	color: var(--mitsa-color-accent-dark);
+}
+
+.mitsa-dato__icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.mitsa-dato__label {
+	display: block;
+	font-size: var(--mitsa-text-xs);
+	font-weight: 700;
+	letter-spacing: var(--mitsa-letter-wide);
+	text-transform: uppercase;
+	color: var(--mitsa-color-text-muted);
+	margin-bottom: 2px;
+}
+
+.mitsa-dato__value {
+	font-size: var(--mitsa-text-md);
+	color: var(--mitsa-color-text);
+	line-height: var(--mitsa-line-height-tight);
+}
+
+.mitsa-dato__value a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.mitsa-dato__value a:hover,
+.mitsa-dato__value a:focus {
+	color: var(--mitsa-color-accent);
+	text-decoration: underline;
+}
+
+/* --- 18.8 Noticias: grid, card y single -------------------------------- */
+
+/* Grid de noticias (mobile-first, hasta 3 columnas). */
+.mitsa-noticias-grid {
+	display: grid;
+	gap: var(--mitsa-space-md);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+	.mitsa-noticias-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 900px) {
+	.mitsa-noticias-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Tarjeta de noticia: imagen arriba, cuerpo con padding, meta y botón al pie. */
+.mitsa-noticia-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: var(--mitsa-color-surface);
+	border: 1px solid var(--mitsa-color-border);
+	border-radius: var(--mitsa-radius-lg);
+	overflow: hidden;
+	box-shadow: var(--mitsa-shadow-xs);
+	transition: box-shadow var(--mitsa-motion-lift), border-color var(--mitsa-motion-lift), transform var(--mitsa-motion-lift);
+}
+
+.mitsa-noticia-card:hover,
+.mitsa-noticia-card:focus-within {
+	transform: translateY(-4px);
+	box-shadow: var(--mitsa-shadow-md);
+	border-color: var(--mitsa-color-accent);
+}
+
+.mitsa-noticia-card__media {
+	display: block;
+	aspect-ratio: 16 / 9;
+	background-color: var(--mitsa-slate-100);
+	overflow: hidden;
+}
+
+.mitsa-noticia-card__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--mitsa-transition-slow);
+}
+
+.mitsa-noticia-card:hover .mitsa-noticia-card__media img,
+.mitsa-noticia-card:focus-within .mitsa-noticia-card__media img {
+	transform: scale(1.04);
+}
+
+.mitsa-noticia-card__body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--mitsa-space-xs);
+	padding: var(--mitsa-space-md);
+	flex: 1 1 auto;
+}
+
+.mitsa-noticia-card__meta {
+	font-size: var(--mitsa-text-sm);
+	color: var(--mitsa-color-text-muted);
+	margin: 0;
+}
+
+.mitsa-noticia-card__title {
+	font-size: var(--mitsa-text-lg);
+	margin: 0;
+	line-height: var(--mitsa-line-height-tight);
+}
+
+.mitsa-noticia-card__title a {
+	color: var(--mitsa-color-primary-dark);
+	text-decoration: none;
+}
+
+.mitsa-noticia-card__title a:hover,
+.mitsa-noticia-card__title a:focus {
+	color: var(--mitsa-color-accent);
+}
+
+.mitsa-noticia-card__excerpt {
+	font-size: var(--mitsa-text-sm);
+	color: var(--mitsa-color-text-muted);
+	margin: 0;
+}
+
+.mitsa-noticia-card .mitsa-btn {
+	margin-top: auto;
+	align-self: flex-start;
+}
+
+/* Single de noticia: imagen destacada, meta y contenido legible (~70ch). */
+.mitsa-single {
+	max-width: var(--mitsa-content-narrow);
+	margin-inline: auto;
+}
+
+.mitsa-single__media {
+	margin-bottom: var(--mitsa-space-md);
+	border-radius: var(--mitsa-radius-lg);
+	overflow: hidden;
+}
+
+.mitsa-single__media img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.mitsa-single__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--mitsa-space-2xs) var(--mitsa-space-md);
+	margin-bottom: var(--mitsa-space-md);
+	font-size: var(--mitsa-text-sm);
+	color: var(--mitsa-color-text-muted);
+}
+
+.mitsa-single__title {
+	margin-bottom: var(--mitsa-space-sm);
+}
+
+/* Cuerpo del artículo: medida de lectura cómoda y ritmo vertical. */
+.mitsa-single__content {
+	max-width: 70ch;
+	font-size: var(--mitsa-text-md);
+	line-height: var(--mitsa-line-height-base);
+}
+
+.mitsa-single__content > * + * {
+	margin-top: var(--mitsa-space-sm);
+}
+
+.mitsa-single__content h2 {
+	margin-top: var(--mitsa-space-lg);
+}
+
+.mitsa-single__content h3 {
+	margin-top: var(--mitsa-space-md);
+}
+
+.mitsa-single__content img {
+	border-radius: var(--mitsa-radius-md);
+}
+
+.mitsa-single__content a {
+	text-decoration: underline;
+}
+
+.mitsa-single__content blockquote {
+	margin: var(--mitsa-space-md) 0;
+	padding: var(--mitsa-space-xs) var(--mitsa-space-md);
+	border-left: 3px solid var(--mitsa-color-accent);
+	background-color: var(--mitsa-slate-050);
+	color: var(--mitsa-color-primary-dark);
+	font-size: var(--mitsa-text-lg);
+}
