@@ -15,3 +15,16 @@ entorno local, reponer copiando estos sobre la copia del tema en wpactual.
 
 Pendiente: formalizar el tema réplica como tema versionado propio si la réplica
 avanza a producción.
+
+## Assets e identidad visual (config en BD, respaldados en assets/)
+
+El logo original de MITSA era blanco (para el header oscuro de LogisCargo). Se
+recoloreó a navy (#0f2b47) para el header claro del tema mitsa:
+- `assets/logo-mitsa-chile-navy.png` → importado y fijado como `custom_logo` (theme mod).
+- `assets/favicon-isotipo-512.png` → isotipo (elipse) sobre navy, fijado como `site_icon` (option).
+
+Para reponer en wpactual: `wp media import <asset> --path=wpactual --porcelain`,
+luego `wp theme mod set custom_logo <id>` / `wp option update site_icon <id>`.
+
+El hero de la portada usa una foto de fondo (attachment 58, mitza.jpg) con overlay
+navy; las cards de Productos destacados usan fotos reales (attachments 61/62).

@@ -10,9 +10,19 @@
  */
 
 get_header();
+
+// Imagen de fondo del hero (réplica del slider del sitio actual).
+$mitsa_hero_src   = wp_get_attachment_image_url( 58, 'full' );
+$mitsa_hero_style = '';
+if ( $mitsa_hero_src ) {
+	$mitsa_hero_style = sprintf(
+		' style="background-image: linear-gradient(135deg, rgba(10,42,66,0.82) 0%%, rgba(6,32,51,0.90) 100%%), url(%s); background-size: cover; background-position: center;"',
+		esc_url( $mitsa_hero_src )
+	);
+}
 ?>
 
-<section class="mitsa-hero" aria-labelledby="mitsa-hero-title">
+<section class="mitsa-hero mitsa-hero--photo" aria-labelledby="mitsa-hero-title"<?php echo $mitsa_hero_style; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 	<div class="mitsa-container mitsa-hero__inner">
 		<span class="mitsa-kicker"><?php esc_html_e( 'Tecnología para el cuidado del medio ambiente acuático', 'mitsa' ); ?></span>
 		<h1 id="mitsa-hero-title"><?php esc_html_e( 'Todos tenemos una especialidad. La nuestra es servir.', 'mitsa' ); ?></h1>
@@ -52,14 +62,24 @@ get_header();
 		<p><?php esc_html_e( 'Representamos a las compañías inventoras más importantes y líderes del mercado mundial en sus especialidades.', 'mitsa' ); ?></p>
 		<ul class="mitsa-grid mitsa-grid--2 mitsa-cards">
 			<li class="mitsa-card mitsa-card--producto">
-				<h3 class="mitsa-card__title"><a href="<?php echo esc_url( home_url( '/marina-e-industrial/' ) ); ?>"><?php esc_html_e( 'Marina e Industrial', 'mitsa' ); ?></a></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Amplia variedad de productos y equipos para aplicaciones marinas e industriales.', 'mitsa' ); ?></p>
-				<a class="mitsa-btn mitsa-btn--ghost" href="<?php echo esc_url( home_url( '/marina-e-industrial/' ) ); ?>"><?php esc_html_e( 'Ver más', 'mitsa' ); ?></a>
+				<a class="mitsa-card__media" href="<?php echo esc_url( home_url( '/marina-e-industrial/' ) ); ?>" tabindex="-1" aria-hidden="true">
+					<?php echo wp_get_attachment_image( 62, 'medium_large', false, array( 'alt' => __( 'Productos marinos e industriales', 'mitsa' ) ) ); ?>
+				</a>
+				<div class="mitsa-card__body">
+					<h3 class="mitsa-card__title"><a href="<?php echo esc_url( home_url( '/marina-e-industrial/' ) ); ?>"><?php esc_html_e( 'Marina e Industrial', 'mitsa' ); ?></a></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Amplia variedad de productos y equipos para aplicaciones marinas e industriales.', 'mitsa' ); ?></p>
+					<a class="mitsa-btn mitsa-btn--ghost" href="<?php echo esc_url( home_url( '/marina-e-industrial/' ) ); ?>"><?php esc_html_e( 'Ver más', 'mitsa' ); ?></a>
+				</div>
 			</li>
 			<li class="mitsa-card mitsa-card--producto">
-				<h3 class="mitsa-card__title"><a href="<?php echo esc_url( home_url( '/terrestre-y-construccion/' ) ); ?>"><?php esc_html_e( 'Terrestre y Construcción', 'mitsa' ); ?></a></h3>
-				<p class="mitsa-card__text"><?php esc_html_e( 'Las mejores opciones en equipos para el sector terrestre y de la construcción.', 'mitsa' ); ?></p>
-				<a class="mitsa-btn mitsa-btn--ghost" href="<?php echo esc_url( home_url( '/terrestre-y-construccion/' ) ); ?>"><?php esc_html_e( 'Ver más', 'mitsa' ); ?></a>
+				<a class="mitsa-card__media" href="<?php echo esc_url( home_url( '/terrestre-y-construccion/' ) ); ?>" tabindex="-1" aria-hidden="true">
+					<?php echo wp_get_attachment_image( 61, 'medium_large', false, array( 'alt' => __( 'Equipos para el sector terrestre y de la construcción', 'mitsa' ) ) ); ?>
+				</a>
+				<div class="mitsa-card__body">
+					<h3 class="mitsa-card__title"><a href="<?php echo esc_url( home_url( '/terrestre-y-construccion/' ) ); ?>"><?php esc_html_e( 'Terrestre y Construcción', 'mitsa' ); ?></a></h3>
+					<p class="mitsa-card__text"><?php esc_html_e( 'Las mejores opciones en equipos para el sector terrestre y de la construcción.', 'mitsa' ); ?></p>
+					<a class="mitsa-btn mitsa-btn--ghost" href="<?php echo esc_url( home_url( '/terrestre-y-construccion/' ) ); ?>"><?php esc_html_e( 'Ver más', 'mitsa' ); ?></a>
+				</div>
 			</li>
 		</ul>
 	</section>
