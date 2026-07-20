@@ -1519,6 +1519,7 @@ hr {
    ========================================================================= */
 
 .entry-header {
+	margin-top: var(--mitsa-space-md);
 	margin-bottom: var(--mitsa-space-md);
 }
 
@@ -1533,12 +1534,26 @@ hr {
 }
 
 .entry-content {
+	margin-block: var(--mitsa-space-md) var(--mitsa-space-xl);
+}
+
+.entry-content > p,
+.entry-content > h2,
+.entry-content > h3,
+.entry-content > ul,
+.entry-content > ol {
 	max-width: 72ch;
 }
 
 .entry-content > * + * {
-	margin-top: var(--mitsa-space-sm);
+	margin-top: var(--mitsa-space-md);
 }
+
+.entry-content > .mitsa-grid {
+	margin-top: var(--mitsa-space-lg);
+	margin-bottom: var(--mitsa-space-xl);
+}
+
 
 .entry-content h2 {
 	margin-top: var(--mitsa-space-lg);
@@ -1680,8 +1695,12 @@ hr {
 
 .mitsa-lead {
 	font-size: var(--mitsa-text-lg);
+	line-height: 1.6;
 	color: var(--mitsa-color-text-muted);
+	margin-top: var(--mitsa-space-md);
+	margin-bottom: var(--mitsa-space-lg);
 }
+
 
 .mitsa-muted {
 	color: var(--mitsa-color-text-muted);
