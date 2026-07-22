@@ -1,0 +1,4 @@
+interface:
+  display_name: "MITSA Content Optimizer"
+  short_description: "Humaniza y optimiza contenido tecnico MITSA"
+  default_prompt: "Usa $mitsa-content-optimizer para auditar y reescribir un borrador tecnico de MITSA para SEO, GEO y AEO sin inventar experiencia ni afirmaciones."
