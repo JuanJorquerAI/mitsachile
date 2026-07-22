@@ -39,7 +39,8 @@ print("==> 3. Ejecutando el respaldo en el servidor de producción (esto puede t
 token = "mitsa_backup_secure_token_2026"
 backup_url = f"{wp_url}/helper-backup.php?token={token}"
 try:
-    r = requests.get(backup_url, timeout=300)
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+    r = requests.get(backup_url, headers=headers, timeout=300)
     res = r.json()
     if res.get("status") == "success":
         print(f"    Respaldo de BD: {res.get('database')}")
