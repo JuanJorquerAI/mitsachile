@@ -2,6 +2,10 @@
 // scripts/helper-backup.php
 // Script temporal para respaldo en producción.
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 header('Content-Type: application/json');
 ignore_user_abort(true);
 set_time_limit(600);
@@ -25,10 +29,10 @@ preg_match("/define\(\s*['\"]DB_USER['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_c
 preg_match("/define\(\s*['\"]DB_PASSWORD['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_content, $matches_pass);
 preg_match("/define\(\s*['\"]DB_HOST['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_content, $matches_host);
 
-$db_name = $matches_db[1] ?? '';
-$db_user = $matches_user[1] ?? '';
-$db_pass = $matches_pass[1] ?? '';
-$db_host = $matches_host[1] ?? 'localhost';
+$db_name = isset($matches_db[1]) ? $matches_db[1] : '';
+$db_user = isset($matches_user[1]) ? $matches_user[1] : '';
+$db_pass = isset($matches_pass[1]) ? $matches_pass[1] : '';
+$db_host = isset($matches_host[1]) ? $matches_host[1] : 'localhost';
 
 if (!$db_name || !$db_user) {
     echo json_encode(["status" => "error", "message" => "Could not extract database credentials"]);

@@ -63,10 +63,10 @@ preg_match("/define\(\s*['\"]DB_USER['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_c
 preg_match("/define\(\s*['\"]DB_PASSWORD['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_content, $matches_pass);
 preg_match("/define\(\s*['\"]DB_HOST['\"]\s*,\s*['\"](.*)['\"]\s*\)/", $config_content, $matches_host);
 
-$db_name = $matches_db[1] ?? '';
-$db_user = $matches_user[1] ?? '';
-$db_pass = $matches_pass[1] ?? '';
-$db_host = $matches_host[1] ?? 'localhost';
+$db_name = isset($matches_db[1]) ? $matches_db[1] : '';
+$db_user = isset($matches_user[1]) ? $matches_user[1] : '';
+$db_pass = isset($matches_pass[1]) ? $matches_pass[1] : '';
+$db_host = isset($matches_host[1]) ? $matches_host[1] : 'localhost';
 
 $db_status = "failed";
 try {
