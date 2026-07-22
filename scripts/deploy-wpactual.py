@@ -41,13 +41,21 @@ print("    Base de datos local exportada.")
 print("==> 2. Generando paquete zip de wpactual...")
 local_zip_file = os.path.join(staging_dir, "wpactual.zip")
 
-# Crear el ZIP con los archivos del sitio nuevo
+# Crear el ZIP con los archivos del sitio nuevo, reemplazando credenciales en wp-config.php al vuelo
 with zipfile.ZipFile(local_zip_file, 'w', zipfile.ZIP_DEFLATED) as zipf:
     for root, dirs, files in os.walk(wpactual_dir):
         for file in files:
             file_path = os.path.join(root, file)
             rel_path = os.path.relpath(file_path, wpactual_dir)
-            zipf.write(file_path, rel_path)
+            if rel_path == 'wp-config.php':
+                with open(file_path, "r", encoding="utf-8") as f_cfg:
+                    cfg_content = f_cfg.read()
+                cfg_content = cfg_content.replace("'mitsa_actual'", "'mitsachi_mitsawp'")
+                cfg_content = cfg_content.replace("'mitsa_dev'", "'mitsachi_mitsawp'")
+                cfg_content = cfg_content.replace("'mitsa_dev_local_pw'", "'m1t54ch1l3'")
+                zipf.writestr(rel_path, cfg_content)
+            else:
+                zipf.write(file_path, rel_path)
 print("    Paquete wpactual.zip creado.")
 
 print("==> 3. Conectando al FTP de producción para subir el paquete...")
