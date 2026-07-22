@@ -129,9 +129,10 @@ wpcli rewrite structure '/%postname%/' --hard >/dev/null
 wpcli rewrite flush --hard >/dev/null 2>&1 || true
 
 echo "==> Servidor PHP local (puerto ${SITE_PORT})..."
-if ! curl -s -o /dev/null "http://localhost:${SITE_PORT}/"; then
-	nohup php -S "localhost:${SITE_PORT}" -t "$WP_DIR/" "$REPO_ROOT/scripts/router.php" \
+if ! curl -s -o /dev/null "http://127.0.0.1:${SITE_PORT}/"; then
+	nohup php -S "127.0.0.1:${SITE_PORT}" -t "$WP_DIR/" "$REPO_ROOT/scripts/router.php" \
 		> /tmp/mitsa-wp-server.log 2>&1 &
+
 	echo $! > /tmp/mitsa-wp-server.pid
 	sleep 2
 	echo "   Servidor arrancado, PID $(cat /tmp/mitsa-wp-server.pid)"
