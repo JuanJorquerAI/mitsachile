@@ -31,8 +31,8 @@ mkdir -p "$WP_DIR/wp-content/themes"
 ln -sfn "$REPO_ROOT/wp-content/themes/mitsa" "$WP_DIR/wp-content/themes/mitsa"
 wpcli theme activate mitsa >/dev/null
 
-echo "==> Plugins base (ACF free, Contact Form 7)..."
-for slug in advanced-custom-fields contact-form-7; do
+echo "==> Plugins base (ACF free, Contact Form 7, Yoast SEO)..."
+for slug in advanced-custom-fields contact-form-7 wordpress-seo; do
 	if wpcli plugin is-installed "$slug" 2>/dev/null; then
 		wpcli plugin is-active "$slug" 2>/dev/null || wpcli plugin activate "$slug" >/dev/null
 	else

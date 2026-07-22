@@ -83,4 +83,5 @@ add_action( 'widgets_init', 'mitsa_widgets_init' );
 require MITSA_THEME_DIR . '/inc/cpt-producto.php';
 require MITSA_THEME_DIR . '/inc/cpt-representada.php';
 require MITSA_THEME_DIR . '/inc/seo.php';
+require MITSA_THEME_DIR . '/inc/schema.php';
 require MITSA_THEME_DIR . '/inc/analytics.php';
