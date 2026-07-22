@@ -31,7 +31,7 @@ db_pass_local = "mitsa_dev_local_pw"
 db_name_local = "mitsa_actual"
 
 # Exportar base de datos local
-cmd = f"mysqldump -u {db_user_local} -p{db_pass_local} {db_name_local} > {local_sql_file}"
+cmd = f'mysqldump -u {db_user_local} -p{db_pass_local} {db_name_local} > "{local_sql_file}"'
 ret = os.system(cmd)
 if ret != 0:
     print("Error: No se pudo exportar la base de datos local", file=sys.stderr)
