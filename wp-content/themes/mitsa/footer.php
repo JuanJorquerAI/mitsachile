@@ -55,6 +55,9 @@
 				&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>.
 				<?php esc_html_e( 'Todos los derechos reservados.', 'mitsa' ); ?>
 			</p>
+			<p class="site-footer__copy site-footer__credit">
+				<a href="https://aplicacionesweb.cl/" target="_blank" rel="noopener noreferrer">Desarrollado por AplicacionesWeb</a>
+			</p>
 		</div>
 	</div>
 </footer>
