@@ -8,8 +8,13 @@
 $root = $_SERVER['DOCUMENT_ROOT'];
 $path = '/' . ltrim(parse_url($_SERVER['REQUEST_URI'])['path'], '/');
 
-if ($path !== '/' && file_exists($root . $path) && is_file($root . $path)) {
-	return false;
+if ($path !== '/' && file_exists($root . $path)) {
+	if (is_file($root . $path)) {
+		return false;
+	}
+	if (is_dir($root . $path) && file_exists(rtrim($root . $path, '/') . '/index.html')) {
+		return false;
+	}
 }
 
 chdir($root);
