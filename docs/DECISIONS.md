@@ -22,6 +22,7 @@ Log vivo. Actualizar cuando se resuelva algo o llegue el "documento maestro" del
 | 2026-07-14 | Banner/gestión de consentimiento de cookies: fuera de alcance contratado, cotizar aparte (Ley 21.719) | Review del blueprint |
 | 2026-08-26 | Landing SMM Hamburgo 2026 en `/smm2026/`: landing específica en inglés, móvil-first, con vCard de Francisco De la Iglesia, subida a producción en Hostinger (`domains/mitsachile.com/public_html/smm2026/`) y validada con Playwright | Solicitud cliente Francisco De la Iglesia (kit comercial SMM 2026) |
 | 2026-08-26 | SSL & Redirección canónica 301: SSL reinstalado en Hostinger para cubrir `mitsachile.com` y `www.mitsachile.com`; `.htaccess` actualizado para forzar HTTPS y redirigir `www` a sin-`www` (`https://mitsachile.com/`) | Corrección bug certificado SSL / consolidación canónica |
+| 2026-09-01 | Arquitectura Headless + Monorepo: Nueva web 2026 construida en `frontend/` con Astro SSG consumiendo WordPress como backoffice puro (REST API), manteniendo el monorepo unificado para centralizar la estrategia y fee de SEO. | Juan Jorquera, sesión 2026-09-01 |
 
 ## Abiertas — requieren decisión del cliente o de Juan/Luis (NO resolver solo)
 

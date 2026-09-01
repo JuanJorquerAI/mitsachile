@@ -1,0 +1,136 @@
+---
+import type { VisualCardData } from '../../lib/api/types';
+
+interface Props {
+  cards?: VisualCardData[];
+}
+
+const {
+  cards = [
+    {
+      title: "Fragata FF-18 · ICCP",
+      image: "/images/plataforma-offshore-8886341c.jpg",
+      alt: "Protección catódica por corriente impresa ICCP en Fragata FF-18",
+      width: 800,
+      height: 600,
+      loading: "eager"
+    },
+    {
+      title: "OPV Cabo Odger · Sanitarios",
+      image: "/images/buque-de-apoyo-8d5d1037.jpg",
+      alt: "Sistemas sanitarios al vacío EVAC en buque patrullero OPV Cabo Odger",
+      width: 800,
+      height: 600,
+      loading: "eager"
+    },
+    {
+      title: "Magellan Discovery · Agua caliente",
+      image: "/images/wellboat-en-centro-d-6ece81b5.jpg",
+      alt: "Sistemas de generación y distribución de agua caliente a bordo",
+      width: 800,
+      height: 600,
+      loading: "lazy"
+    },
+    {
+      title: "Wellboat · BWTS",
+      image: "/images/astillero-636210b7.jpg",
+      alt: "Tratamiento de agua de lastre BWTS ERMA FIRST en wellboat",
+      width: 800,
+      height: 600,
+      loading: "lazy"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="visual-grid-section" aria-label="Proyectos e instalaciones destacadas">
+  <div class="four-cards-grid">
+    {cards.map((card, idx) => (
+      <article class="card-item">
+        <img
+          src={card.image}
+          alt={card.alt}
+          width={card.width || 800}
+          height={card.height || 600}
+          loading={card.loading || (idx < 2 ? "eager" : "lazy")}
+          decoding="async"
+          fetchpriority={idx === 0 ? "high" : "auto"}
+          class="card-img"
+        />
+        <div class="card-overlay">
+          <h2 class="card-title">{card.title}</h2>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .visual-grid-section {
+    background: #0D1B2A;
+  }
+
+  .four-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: #0D1B2A;
+  }
+
+  .card-item {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    background: #0D1B2A;
+  }
+
+  .card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-item:hover .card-img {
+    transform: scale(1.04);
+  }
+
+  .card-overlay {
+    position: relative;
+    width: 100%;
+    padding: 20px 18px 16px;
+    background: linear-gradient(to top, rgba(13, 27, 42, 0.95) 0%, rgba(13, 27, 42, 0.4) 60%, transparent 100%);
+    z-index: 1;
+  }
+
+  .card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #F8F6F0;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  @media (max-width: 1024px) {
+    .four-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card-item {
+      height: 280px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .four-cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-item {
+      height: 240px;
+    }
+  }
+</style>

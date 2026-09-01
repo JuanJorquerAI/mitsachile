@@ -1,0 +1,174 @@
+---
+import type { CtaBannerSectionData } from '../../lib/api/types';
+
+interface Props {
+  data?: CtaBannerSectionData;
+}
+
+const {
+  data = {
+    heading: "Evaluación técnica sin costo para dimensionar su proyecto",
+    description: "Revise requerimientos de caudal, normativa OMI / DIRECTEMAR, espacio disponible y tiempos de entrega con nuestros ingenieros de aplicación.",
+    primary_button: {
+      label: "Solicitar evaluación técnica",
+      url: "/contacto/?tipo=evaluacion"
+    },
+    secondary_button: {
+      label: "Contactar a ingeniería",
+      url: "/contacto/?tipo=servicio"
+    },
+    background_image: "/images/index-img-7-85955fa0.jpg"
+  }
+} = Astro.props;
+---
+
+<section class="cta-banner-section" aria-labelledby="cta-heading">
+  {data.background_image && (
+    <img
+      src={data.background_image}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      class="cta-bg-img"
+    />
+  )}
+  <div class="cta-overlay" aria-hidden="true"></div>
+  
+  <div class="cta-content">
+    <h2 id="cta-heading" class="cta-title">
+      {data.heading}
+    </h2>
+    <p class="cta-desc">
+      {data.description}
+    </p>
+    <div class="cta-buttons">
+      {data.primary_button && (
+        <a href={data.primary_button.url} class="btn-primary">
+          {data.primary_button.label}
+        </a>
+      )}
+      {data.secondary_button && (
+        <a href={data.secondary_button.url} class="btn-secondary">
+          {data.secondary_button.label}
+        </a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner-section {
+    position: relative;
+    background: #0D1B2A;
+    padding: 120px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cta-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+  }
+
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.9));
+  }
+
+  .cta-content {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .cta-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(32px, 4.5vw, 58px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    color: #F8F6F0;
+    margin: 0 auto 24px;
+    text-wrap: pretty;
+  }
+
+  .cta-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(248, 246, 240, 0.85);
+    margin: 0 auto 32px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: #F8F6F0;
+    color: #0D1B2A;
+    padding: 12px 28px;
+    min-height: 44px;
+    border-radius: 999px;
+    font-family: 'Geist', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, background 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background: #FFFFFF;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(248, 246, 240, 0.3);
+    color: #F8F6F0;
+    padding: 12px 28px;
+    min-height: 44px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: #F8F6F0;
+    background: rgba(248, 246, 240, 0.08);
+  }
+
+  .btn-secondary:focus-visible {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-banner-section {
+      padding: 80px 20px;
+    }
+  }
+</style>

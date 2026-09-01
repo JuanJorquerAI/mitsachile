@@ -1,0 +1,360 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contacto & Asesoría Técnica — MITSA"
+  description="Canales de contacto especializados de MITSA: evaluación de proyectos, cotización de repuestos originales, servicio técnico a bordo y consultas comerciales."
+>
+  <!-- Hero Section with 4 Doors -->
+  <section style="position:relative;background:#0D1B2A;padding:80px 40px 96px;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(#415A77 1px,transparent 1px),linear-gradient(90deg,#415A77 1px,transparent 1px);background-size:88px 88px;opacity:.16"></div>
+    <div style="position:relative;max-width:1040px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div style="display:inline-flex;align-items:center;gap:14px;margin-bottom:16px">
+          <span style="width:44px;height:1px;background:#415A77"></span>
+          <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Canal Directo</span>
+          <span style="width:44px;height:1px;background:#415A77"></span>
+        </div>
+        <h1 style="font:700 clamp(34px,4.8vw,64px)/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0;margin:0 auto 16px;max-width:22ch;text-wrap:pretty">
+          Cuéntenos qué necesita resolver
+        </h1>
+        <p style="font:400 16px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 auto;max-width:60ch">
+          Cada requerimiento pide datos distintos. Elegir la puerta correcta conecta su consulta directo con el especialista correspondiente.
+        </p>
+      </div>
+
+      <!-- 4 Doors Selectors -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px" class="doors-grid" id="doors-container">
+        <button type="button" class="door-card active" data-door="evaluacion" style="background:#F8F6F0;border:none;border-radius:20px;padding:24px;text-align:left;cursor:pointer;transition:transform 0.15s">
+          <div style="font:500 11.5px 'Geist Mono',monospace;color:#415A77;margin-bottom:12px">01</div>
+          <div style="font:600 17px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:8px">Evaluación técnica</div>
+          <p style="font:400 13px/1.6 'Inter',sans-serif;color:#415A77;margin:0 0 14px">Proyecto nuevo o retrofit que requiere dimensionar una solución.</p>
+          <div class="door-status" style="font:600 12px 'Inter',sans-serif;color:#0D1B2A">Seleccionado ●</div>
+        </button>
+
+        <button type="button" class="door-card" data-door="repuestos" style="background:rgba(13,27,42,0.6);border:1px solid rgba(224,225,221,.16);border-radius:20px;padding:24px;text-align:left;cursor:pointer;transition:transform 0.15s">
+          <div style="font:500 11.5px 'Geist Mono',monospace;color:rgba(248,246,240,.4);margin-bottom:12px">02</div>
+          <div style="font:600 17px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Repuestos</div>
+          <p style="font:400 13px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.6);margin:0 0 14px">Identificación y cotización de piezas por número de parte (P/N).</p>
+          <div class="door-status" style="font:500 12px 'Inter',sans-serif;color:rgba(248,246,240,.4)">Elegir esta puerta ○</div>
+        </button>
+
+        <button type="button" class="door-card" data-door="servicio" style="background:rgba(13,27,42,0.6);border:1px solid rgba(224,225,221,.16);border-radius:20px;padding:24px;text-align:left;cursor:pointer;transition:transform 0.15s">
+          <div style="font:500 11.5px 'Geist Mono',monospace;color:rgba(248,246,240,.4);margin-bottom:12px">03</div>
+          <div style="font:600 17px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Servicio técnico</div>
+          <p style="font:400 13px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.6);margin:0 0 14px">Diagnóstico, comisionamiento o asistencia sobre un sistema.</p>
+          <div class="door-status" style="font:500 12px 'Inter',sans-serif;color:rgba(248,246,240,.4)">Elegir esta puerta ○</div>
+        </button>
+
+        <button type="button" class="door-card" data-door="general" style="background:rgba(13,27,42,0.6);border:1px solid rgba(224,225,221,.16);border-radius:20px;padding:24px;text-align:left;cursor:pointer;transition:transform 0.15s">
+          <div style="font:500 11.5px 'Geist Mono',monospace;color:rgba(248,246,240,.4);margin-bottom:12px">04</div>
+          <div style="font:600 17px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Contacto general</div>
+          <p style="font:400 13px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.6);margin:0 0 14px">Consultas comerciales, institucionales o de representación.</p>
+          <div class="door-status" style="font:500 12px 'Inter',sans-serif;color:rgba(248,246,240,.4)">Elegir esta puerta ○</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section style="background:#fff;padding:96px 40px">
+    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start" class="form-container-grid">
+      <div>
+        <div style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#415A77;margin-bottom:14px" id="door-indicator">
+          Puerta 01 · Evaluación técnica
+        </div>
+        <h2 style="font:700 clamp(26px,3vw,38px)/1.06 'Geist',sans-serif;letter-spacing:-.04em;color:#0D1B2A;margin:0 0 28px">
+          Formulario de contacto
+        </h2>
+
+        <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+          <input type="hidden" name="door_type" id="hidden-door-type" value="evaluacion" />
+
+          <!-- Base Fields -->
+          <div style="font:600 13px 'Geist',sans-serif;color:#0D1B2A;padding-bottom:10px;border-bottom:1px solid #E0E1DD;margin-bottom:20px">
+            1. Datos de contacto
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px" class="two-inputs">
+            <div>
+              <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px" for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+            </div>
+            <div>
+              <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px" for="empresa">Empresa o nave *</label>
+              <input type="text" id="empresa" name="empresa" required style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+            </div>
+            <div>
+              <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px" for="correo">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" required style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+            </div>
+            <div>
+              <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px" for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+            </div>
+          </div>
+
+          <!-- Dynamic Door Specific Fields -->
+          <div style="font:600 13px 'Geist',sans-serif;color:#0D1B2A;padding-bottom:10px;border-bottom:1px solid #E0E1DD;margin-bottom:20px">
+            2. Especificación técnica del requerimiento
+          </div>
+
+          <!-- Dynamic Fields Container -->
+          <div id="dynamic-fields">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="two-inputs">
+              <div>
+                <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Solución de interés</label>
+                <select name="solucion" style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none">
+                  <option value="sanitarios">Sanitarios al vacío (EVAC)</option>
+                  <option value="aguas-residuales">Tratamiento aguas residuales (EVAC/EPE)</option>
+                  <option value="bwts">Agua de lastre BWTS (ERMA FIRST)</option>
+                  <option value="iccp-icaf">ICCP / ICAF (Cathelco)</option>
+                  <option value="drenajes">Drenajes inoxidables (BLÜCHER)</option>
+                  <option value="agua-dulce">Desalinizadoras / Agua dulce</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Tipo de nave o instalación</label>
+                <input type="text" name="tipo_instalacion" placeholder="Ej: OPV, Wellboat, Astillero..." style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px">
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px" for="mensaje">Descripción de la necesidad / síntoma</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indique caudales, síntomas, plazos o detalles del buque..." style="width:100%;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:14px 16px;font:400 14px 'Inter',sans-serif;outline:none"></textarea>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <button type="submit" style="background:#0D1B2A;color:#F8F6F0;padding:15px 34px;border-radius:999px;border:none;cursor:pointer;font:600 14.5px 'Geist',sans-serif;transition:background 0.2s">
+              Enviar consulta técnica
+            </button>
+            <span style="font:400 12.5px 'Inter',sans-serif;color:#8E9AA8">
+              Atención técnica de Lunes a Viernes · Reñaca, Viña del Mar
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Guidance Sidebar -->
+      <div>
+        <div style="background:#F8F6F0;border:1px solid #E0E1DD;border-radius:20px;padding:28px;margin-bottom:20px">
+          <div style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#415A77;margin-bottom:16px">
+            Información recomendada
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div>
+              <div style="font:600 14px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:4px">01 · Evaluación técnica</div>
+              <p style="font:400 13px/1.6 'Inter',sans-serif;color:#415A77;margin:0">Solución, tipo de nave, normativa aplicable, plazo estimado y planos.</p>
+            </div>
+            <div style="border-top:1px solid #E0E1DD;padding-top:14px">
+              <div style="font:600 14px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:4px">02 · Repuestos oficiales</div>
+              <p style="font:400 13px/1.6 'Inter',sans-serif;color:#415A77;margin:0">Fabricante, modelo, número de serie, P/N y foto de la placa de datos.</p>
+            </div>
+            <div style="border-top:1px solid #E0E1DD;padding-top:14px">
+              <div style="font:600 14px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:4px">03 · Servicio técnico a bordo</div>
+              <p style="font:400 13px/1.6 'Inter',sans-serif;color:#415A77;margin:0">Equipo, código de alarma, puerto de recalada y ventana de intervención.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:relative;background:#0D1B2A;border-radius:20px;padding:28px;color:#F8F6F0">
+          <div style="font:600 15px 'Geist',sans-serif;margin-bottom:8px">Atención de Emergencias</div>
+          <p style="font:400 13px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 0 16px">
+            Para situaciones críticas de nave detenida o falla en faena:
+          </p>
+          <div style="font:600 16px 'Geist Mono',monospace;color:#F8F6F0">
+            contacto@mitsachile.com
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office & Location Section -->
+  <section style="background:#E0E1DD;padding:88px 40px">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px" class="office-grid">
+      <div>
+        <div style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#415A77;margin-bottom:16px">Sede Central</div>
+        <p style="font:400 14.5px/1.8 'Inter',sans-serif;color:#0D1B2A;margin:0">
+          MITSA SpA<br/>
+          Reñaca, Viña del Mar<br/>
+          Región de Valparaíso, Chile<br/>
+          <strong>contacto@mitsachile.com</strong>
+        </p>
+      </div>
+      <div>
+        <div style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#415A77;margin-bottom:16px">Cobertura Operacional</div>
+        <p style="font:400 14.5px/1.8 'Inter',sans-serif;color:#0D1B2A;margin:0">
+          Arica a Punta Arenas<br/>
+          Presencia en principales astilleros y puertos<br/>
+          Soporte regional Latinoamérica<br/>
+          Lunes a Viernes 08:30 – 18:00 hrs
+        </p>
+      </div>
+      <div style="position:relative;min-height:200px;border-radius:20px;overflow:hidden">
+        <img alt="Oficina MITSA" src="/images/oficina-mitsa-54b17efd.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" loading="lazy" />
+        <span style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(to top,rgba(13,27,42,.92),transparent);font:500 12px 'Inter',sans-serif;color:#F8F6F0">
+          MITSA · Viña del Mar
+        </span>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Client-side Door Selection
+  const doors = document.querySelectorAll('.door-card');
+  const doorIndicator = document.getElementById('door-indicator');
+  const hiddenDoor = document.getElementById('hidden-door-type') as HTMLInputElement;
+  const dynamicContainer = document.getElementById('dynamic-fields');
+
+  const doorConfigs: Record<string, { label: string, fields: string }> = {
+    evaluacion: {
+      label: "Puerta 01 · Evaluación técnica",
+      fields: `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="two-inputs">
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Solución de interés</label>
+            <select name="solucion" style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none">
+              <option value="sanitarios">Sanitarios al vacío (EVAC)</option>
+              <option value="aguas-residuales">Tratamiento aguas residuales (EVAC/EPE)</option>
+              <option value="bwts">Agua de lastre BWTS (ERMA FIRST)</option>
+              <option value="iccp-icaf">ICCP / ICAF (Cathelco)</option>
+              <option value="drenajes">Drenajes inoxidables (BLÜCHER)</option>
+              <option value="agua-dulce">Desalinizadoras / Agua dulce</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Tipo de nave o instalación</label>
+            <input type="text" name="tipo_instalacion" placeholder="Ej: OPV, Wellboat, Astillero..." style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+          </div>
+        </div>
+      `
+    },
+    repuestos: {
+      label: "Puerta 02 · Cotización de Repuestos",
+      fields: `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="two-inputs">
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Fabricante / Marca</label>
+            <select name="fabricante" style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none">
+              <option value="evac">EVAC</option>
+              <option value="cathelco">Cathelco</option>
+              <option value="erma-first">ERMA FIRST</option>
+              <option value="epe">EPE</option>
+              <option value="blucher">BLÜCHER</option>
+              <option value="otro">Otro fabricante</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Número de Parte (P/N) o Modelo</label>
+            <input type="text" name="pn_modelo" placeholder="Ej: P/N 6541234, Mod. EVAC 900..." style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+          </div>
+        </div>
+      `
+    },
+    servicio: {
+      label: "Puerta 03 · Servicio Técnico a Bordo",
+      fields: `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" class="two-inputs">
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Puerto o Ubicación de la nave</label>
+            <input type="text" name="ubicacion" placeholder="Ej: Puerto Montt, Talcahuano, Valparaíso..." style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+          </div>
+          <div>
+            <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Nivel de urgencia</label>
+            <select name="urgencia" style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none">
+              <option value="normal">Normal (próxima recalada programada)</option>
+              <option value="urgente">Urgente (intervención en menos de 48h)</option>
+              <option value="critico">Crítico (nave detenida en puerto)</option>
+            </select>
+          </div>
+        </div>
+      `
+    },
+    general: {
+      label: "Puerta 04 · Contacto General",
+      fields: `
+        <div style="margin-bottom:16px">
+          <label style="display:block;font:500 13px 'Inter',sans-serif;color:#415A77;margin-bottom:7px">Asunto</label>
+          <input type="text" name="asunto" placeholder="Motivo del contacto..." style="width:100%;height:46px;border:1px solid #E0E1DD;border-radius:12px;background:#F8F6F0;padding:0 16px;font:400 14px 'Inter',sans-serif;outline:none" />
+        </div>
+      `
+    }
+  };
+
+  function setDoor(doorKey: string) {
+    if (!doorConfigs[doorKey]) return;
+    
+    doors.forEach(d => {
+      const btn = d as HTMLButtonElement;
+      const status = btn.querySelector('.door-status');
+      const isTarget = btn.getAttribute('data-door') === doorKey;
+      
+      if (isTarget) {
+        btn.style.background = '#F8F6F0';
+        btn.style.border = 'none';
+        const p = btn.querySelector('p');
+        const h = btn.querySelector('div:nth-child(2)');
+        if (p) p.style.color = '#415A77';
+        if (h) (h as HTMLElement).style.color = '#0D1B2A';
+        if (status) {
+          status.textContent = 'Seleccionado ●';
+          (status as HTMLElement).style.color = '#0D1B2A';
+          (status as HTMLElement).style.fontWeight = '600';
+        }
+      } else {
+        btn.style.background = 'rgba(13,27,42,0.6)';
+        btn.style.border = '1px solid rgba(224,225,221,.16)';
+        const p = btn.querySelector('p');
+        const h = btn.querySelector('div:nth-child(2)');
+        if (p) p.style.color = 'rgba(248,246,240,.6)';
+        if (h) (h as HTMLElement).style.color = '#F8F6F0';
+        if (status) {
+          status.textContent = 'Elegir esta puerta ○';
+          (status as HTMLElement).style.color = 'rgba(248,246,240,.4)';
+          (status as HTMLElement).style.fontWeight = '500';
+        }
+      }
+    });
+
+    if (doorIndicator) doorIndicator.textContent = doorConfigs[doorKey].label;
+    if (hiddenDoor) hiddenDoor.value = doorKey;
+    if (dynamicContainer) dynamicContainer.innerHTML = doorConfigs[doorKey].fields;
+  }
+
+  // Handle URL param
+  const urlParams = new URLSearchParams(window.location.search);
+  const tipoParam = urlParams.get('tipo');
+  if (tipoParam && doorConfigs[tipoParam]) {
+    setDoor(tipoParam);
+  }
+
+  // Add click listeners
+  doors.forEach(d => {
+    d.addEventListener('click', () => {
+      const doorKey = d.getAttribute('data-door');
+      if (doorKey) setDoor(doorKey);
+    });
+  });
+</script>
+
+<style>
+  @media (max-width: 900px) {
+    .doors-grid {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    .form-container-grid, .office-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .doors-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .two-inputs {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

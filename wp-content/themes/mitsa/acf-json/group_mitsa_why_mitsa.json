@@ -1,0 +1,124 @@
+{
+    "key": "group_mitsa_why_mitsa",
+    "title": "¿Por qué MITSA? (Diferenciadores y Propuesta de Valor)",
+    "fields": [
+        {
+            "key": "field_mitsa_why_heading",
+            "label": "Título de la Sección (H2)",
+            "name": "why_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "¿Por qué MITSA?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_mitsa_why_subheading",
+            "label": "Bajada \/ Subtítulo",
+            "name": "why_subheading",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Seis razones técnicas que sostienen un proyecto completo, de la especificación al soporte en operación.",
+            "rows": 2,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_mitsa_why_cards",
+            "label": "Tarjetas de Razones Técnicas",
+            "name": "why_cards",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_mitsa_why_c_title",
+                    "label": "Título de la Razón",
+                    "name": "title",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_why_c_desc",
+                    "label": "Descripción",
+                    "name": "desc",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_mitsa_why_c_metric",
+                    "label": "Cifra Destacada (opcional, ej: 40+)",
+                    "name": "metric",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_why_c_dark",
+                    "label": "Fondo Oscuro Destacado",
+                    "name": "is_dark",
+                    "type": "true_false"
+                },
+                {
+                    "key": "field_mitsa_why_c_image",
+                    "label": "Imagen (opcional para tarjeta visual)",
+                    "name": "image",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_why_c_caption",
+                    "label": "Texto sobre imagen (opcional)",
+                    "name": "caption",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 70,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788285824,
+    "local_file": "\/Users\/juanjorquera\/Sites\/mitsachile\/wp\/wp-content\/themes\/mitsa\/acf-json\/group_mitsa_why_mitsa.json"
+}

@@ -1,0 +1,155 @@
+---
+import type { FaqsSectionData } from '../../lib/api/types';
+
+interface Props {
+  data?: FaqsSectionData;
+}
+
+const {
+  data = {
+    heading: "Preguntas frecuentes de ingeniería",
+    items: [
+      {
+        question: "¿Cómo se determina si un buque requiere sistema ICCP o ánodos de sacrificio?",
+        answer: "Depende del perfil operativo, área mojada del casco, tiempo entre diques y costo de ciclo de vida. ICCP ofrece control regulable en tiempo real sin reposición física en cada carena."
+      },
+      {
+        question: "¿Qué certificaciones tienen las plantas de tratamiento de aguas servidas que suministran?",
+        answer: "Equipos certificados bajo la Resolución MEPC.227(64) de la OMI (MARPOL Anexo IV) y aprobados por las principales casas clasificadoras (DNV, Lloyd's Register, ABS, BV)."
+      },
+      {
+        question: "¿MITSA realiza la puesta en marcha en cualquier puerto de Chile?",
+        answer: "Sí, nuestros ingenieros de servicio técnico operan en todo Chile (Arica a Punta Arenas) y en puertos de la región para comisionamiento, pruebas de mar y capacitación."
+      },
+      {
+        question: "¿Cómo solicito repuestos originales de marcas representadas?",
+        answer: "A través de nuestro portal de repuestos o contacto directo, indicando fabricante, modelo, número de serie y número de parte (P/N) de la placa del equipo."
+      }
+    ]
+  }
+} = Astro.props;
+---
+
+<section class="faqs-section" id="faqs" aria-labelledby="faqs-heading">
+  <div class="faqs-container">
+    <h2 id="faqs-heading" class="faqs-title">
+      {data.heading}
+    </h2>
+
+    <div class="faqs-list">
+      {data.items.map((faq) => (
+        <details class="faq-item">
+          <summary class="faq-summary">
+            <span class="faq-question">{faq.question}</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faqs-section {
+    background: #FFFFFF;
+    padding: 96px 40px;
+  }
+
+  .faqs-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faqs-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(30px, 3.6vw, 46px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #0D1B2A;
+    margin: 0 0 34px;
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  .faqs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .faq-item {
+    background: #F8F6F0;
+    border: 1px solid #E0E1DD;
+    border-radius: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .faq-item[open] {
+    border-color: #0D1B2A;
+    background: #FFFFFF;
+    box-shadow: 0 4px 16px rgba(13, 27, 42, 0.04);
+  }
+
+  .faq-summary {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0D1B2A;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-summary:focus-visible {
+    outline: 2px solid #0D1B2A;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .faq-question {
+    padding-right: 12px;
+  }
+
+  .faq-icon {
+    font-size: 20px;
+    font-weight: 400;
+    color: #8E9AA8;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    color: #0D1B2A;
+  }
+
+  .faq-answer {
+    padding-top: 12px;
+  }
+
+  .faq-answer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #415A77;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .faqs-section {
+      padding: 64px 20px;
+    }
+  }
+</style>

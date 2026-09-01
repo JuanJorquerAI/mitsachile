@@ -1,0 +1,81 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = Astro.url.pathname } = Astro.props;
+
+const navItems = [
+  { label: 'Soluciones', href: '/' },
+  { label: 'Industrias', href: '/industrias/' },
+  { label: 'Servicios', href: '/servicios/' },
+  { label: 'Proyectos', href: '/proyectos/' },
+  { label: 'Recursos', href: '/recursos/' },
+];
+
+function isActive(href: string) {
+  if (href === '/' && (currentPath === '/' || currentPath === '')) return true;
+  if (href !== '/' && currentPath.startsWith(href)) return true;
+  return false;
+}
+---
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 28px;background:#F8F6F0;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);border-bottom:1px solid rgba(224,225,221,0.6)">
+  <!-- Logo -->
+  <a href="/" style="display:block;text-decoration:none;flex-shrink:0" aria-label="MITSA Home">
+    <img src="/images/mitsa-27703545.svg" alt="MITSA" style="height:38px;width:auto;display:block" width="120" height="38" />
+  </a>
+
+  <!-- Centered Navigation Pill -->
+  <nav style="margin:0 auto;display:flex;gap:4px;background:#fff;border:1px solid #E0E1DD;border-radius:999px;padding:4px;font:500 13.5px 'Inter',sans-serif;color:#1B263B;box-shadow:0 2px 8px rgba(13,27,42,0.03)" aria-label="Navegación principal">
+    {navItems.map((item) => {
+      const active = isActive(item.href);
+      return active ? (
+        <span style="padding:8px 16px;border-radius:999px;background:#F1F0EC;color:#0D1B2A;font-weight:600">
+          {item.label}
+        </span>
+      ) : (
+        <a href={item.href} style="padding:8px 16px;color:inherit;text-decoration:none;border-radius:999px;transition:background 0.2s" class="nav-link">
+          {item.label}
+        </a>
+      );
+    })}
+  </nav>
+
+  <!-- Right Actions -->
+  <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+    <a href="/contacto/?tipo=repuestos" style="font:500 13.5px 'Inter',sans-serif;color:#1B263B;text-decoration:none" class="nav-repuestos">
+      Repuestos
+    </a>
+    <a href="/contacto/" style="background:#0D1B2A;color:#F8F6F0;padding:11px 22px;border-radius:999px;font:600 13.5px 'Geist',sans-serif;text-decoration:none;transition:transform 0.15s, background 0.2s" class="btn-conversemos">
+      Conversemos
+    </a>
+  </div>
+</header>
+
+<style>
+  .nav-link:hover {
+    background: #F8F6F0;
+    color: #0D1B2A;
+  }
+  .btn-conversemos:hover {
+    background: #1B263B;
+    transform: translateY(-1px);
+  }
+  .nav-repuestos:hover {
+    color: #0D1B2A;
+    text-decoration: underline;
+  }
+  @media (max-width: 860px) {
+    header {
+      padding: 14px 18px !important;
+      flex-wrap: wrap;
+    }
+    nav {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+    }
+  }
+</style>

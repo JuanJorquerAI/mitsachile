@@ -1,0 +1,92 @@
+{
+    "key": "group_mitsa_brands_showcase",
+    "title": "Showcase de Fabricantes y Representadas Oficiales",
+    "fields": [
+        {
+            "key": "field_mitsa_brands_heading",
+            "label": "Título de la Sección (H2)",
+            "name": "brands_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Quién está detrás de cada solución",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_mitsa_brands_repeater",
+            "label": "Marcas Representadas",
+            "name": "brands_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_mitsa_brand_name",
+                    "label": "Nombre de la Marca",
+                    "name": "name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_brand_tagline",
+                    "label": "Especialidad \/ Tagline",
+                    "name": "tagline",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_brand_desc",
+                    "label": "Descripción Corta",
+                    "name": "description",
+                    "type": "textarea",
+                    "rows": 2
+                },
+                {
+                    "key": "field_mitsa_brand_url",
+                    "label": "Enlace a Ficha de Representada",
+                    "name": "url",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788285824,
+    "local_file": "\/Users\/juanjorquera\/Sites\/mitsachile\/wp\/wp-content\/themes\/mitsa\/acf-json\/group_mitsa_brands_showcase.json"
+}

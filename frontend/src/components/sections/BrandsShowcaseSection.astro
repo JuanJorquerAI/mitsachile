@@ -1,0 +1,128 @@
+---
+import type { BrandsSectionData } from '../../lib/api/types';
+
+interface Props {
+  data?: BrandsSectionData;
+}
+
+const {
+  data = {
+    heading: "Quién está detrás de cada solución",
+    items: [
+      { name: "EVAC", tagline: "Sanitarios al vacío", description: "Tratamiento de aguas residuales y gestión de residuos a bordo.", url: "/representadas/" },
+      { name: "Cathelco", tagline: "ICCP & ICAF", description: "Protección catódica por corriente impresa y prevención de bioincrustaciones.", url: "/representadas/" },
+      { name: "ERMA FIRST", tagline: "Agua de lastre (BWTS)", description: "Sistemas certificados D-2 con tecnología de electrólisis y filtración.", url: "/representadas/" },
+      { name: "EPE", tagline: "Tratamiento de efluentes", description: "Plantas de tratamiento y separadores marinos de sentinas.", url: "/representadas/" },
+      { name: "BLÜCHER", tagline: "Drenajes inoxidables", description: "Sistemas de evacuación y tuberías de acero inoxidable AISI 316L.", url: "/representadas/" }
+    ]
+  }
+} = Astro.props;
+---
+
+<section class="brands-showcase-section" id="marcas" aria-labelledby="brands-heading">
+  <h2 id="brands-heading" class="brands-heading">
+    {data.heading}
+  </h2>
+  
+  <div class="brands-grid">
+    {data.items.map((brand) => (
+      <article class="brand-card">
+        <div class="brand-header">
+          <h3 class="brand-name">{brand.name}</h3>
+        </div>
+        <div class="brand-body">
+          <div class="brand-tagline">{brand.tagline}</div>
+          <p class="brand-desc">{brand.description}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .brands-showcase-section {
+    background: #FFFFFF;
+    padding: 96px 40px;
+  }
+
+  .brands-heading {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(30px, 3.6vw, 46px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #0D1B2A;
+    margin: 0 0 34px;
+    text-wrap: pretty;
+  }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .brand-card {
+    background: #F8F6F0;
+    border: 1px solid #E0E1DD;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-3px);
+    border-color: #0D1B2A;
+    box-shadow: 0 8px 24px rgba(13, 27, 42, 0.06);
+  }
+
+  .brand-name {
+    font-family: 'Geist', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0D1B2A;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-tagline {
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0D1B2A;
+    margin-bottom: 4px;
+  }
+
+  .brand-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #415A77;
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .brands-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .brands-showcase-section {
+      padding: 64px 20px;
+    }
+    .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .brands-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

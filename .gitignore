@@ -41,3 +41,9 @@ staging/
 .serena/
 
 .playwright-mcp/
+
+# Frontend build & temporary dumps
+frontend/dist/
+frontend/.astro/
+maqueta_dump/
+maqueta_clean/

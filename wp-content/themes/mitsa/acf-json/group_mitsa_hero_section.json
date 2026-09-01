@@ -1,0 +1,186 @@
+{
+    "key": "group_mitsa_hero_section",
+    "title": "Sección Hero & Triaje Interactivo",
+    "fields": [
+        {
+            "key": "field_mitsa_hero_title_prefix",
+            "label": "Prefijo del Título Principal (H1)",
+            "name": "hero_title_prefix",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Toda su ingeniería resuelta, del proyecto a la operación:",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_mitsa_hero_rotating_words",
+            "label": "Palabras Rotativas Animadas",
+            "name": "hero_rotating_words",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Ingrese una palabra o frase corta por línea (ej: sanitaria, de tratamiento, etc.).",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "sanitaria\nde tratamiento\nde protección\nde agua dulce",
+            "rows": 4,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_mitsa_hero_description",
+            "label": "Descripción \/ Bajada de Hero",
+            "name": "hero_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ingeniería de aplicación, suministro, retrofit, puesta en marcha y soporte. Cinco fabricantes representados de forma directa, cuarenta años de proyectos en Chile y Latinoamérica.",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_mitsa_triage_title",
+            "label": "Título de Caja de Triaje",
+            "name": "triage_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "¿Qué necesita resolver?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_mitsa_triage_options",
+            "label": "Botones Rápidos de Triaje",
+            "name": "triage_options",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Añadir Opción de Triaje",
+            "sub_fields": [
+                {
+                    "key": "field_mitsa_triage_opt_label",
+                    "label": "Etiqueta",
+                    "name": "label",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_triage_opt_url",
+                    "label": "URL Destino",
+                    "name": "url",
+                    "type": "text"
+                },
+                {
+                    "key": "field_mitsa_triage_opt_highlight",
+                    "label": "Destacado",
+                    "name": "highlight",
+                    "type": "true_false"
+                }
+            ]
+        },
+        {
+            "key": "field_mitsa_triage_placeholder",
+            "label": "Placeholder de Búsqueda",
+            "name": "triage_placeholder",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Describa su proyecto o nave...",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_mitsa_triage_action_url",
+            "label": "URL Acción de Formulario",
+            "name": "triage_action_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "\/contacto\/",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788285824,
+    "local_file": "\/Users\/juanjorquera\/Sites\/mitsachile\/wp\/wp-content\/themes\/mitsa\/acf-json\/group_mitsa_hero_section.json"
+}

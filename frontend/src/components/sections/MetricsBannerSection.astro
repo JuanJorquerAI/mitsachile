@@ -1,0 +1,84 @@
+---
+import type { MetricItemData } from '../../lib/api/types';
+
+interface Props {
+  metrics?: MetricItemData[];
+}
+
+const {
+  metrics = [
+    { value: "40+", label: "años integrando soluciones marítimas y ambientales en Chile", highlight: false },
+    { value: "5", label: "fabricantes representados de forma directa y oficial", highlight: false },
+    { value: "100%", label: "cobertura nacional con ingenieros especialistas en terreno", highlight: true }
+  ]
+} = Astro.props;
+---
+
+<section class="metrics-section" aria-label="Métricas de trayectoria y cobertura">
+  <div class="metrics-grid">
+    {metrics.map((m) => (
+      <div class="metric-card">
+        <div class={`metric-value ${m.highlight ? 'value-highlight' : 'value-default'}`}>
+          {m.value}
+        </div>
+        <div class="metric-label">
+          {m.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .metrics-section {
+    background: #0D1B2A;
+    padding: 0 40px 104px;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .metric-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .metric-value {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(54px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.86;
+    letter-spacing: -0.05em;
+  }
+
+  .value-default {
+    color: #F8F6F0;
+  }
+
+  .value-highlight {
+    color: #8E9AA8;
+  }
+
+  .metric-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(248, 246, 240, 0.6);
+    margin-top: 18px;
+    border-top: 1px solid rgba(248, 246, 240, 0.14);
+    padding-top: 18px;
+  }
+
+  @media (max-width: 1024px) {
+    .metrics-section {
+      padding: 0 20px 64px;
+    }
+    .metrics-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import ProjectsVisualGrid from '../components/sections/ProjectsVisualGrid.astro';
+import PainPointsSection from '../components/sections/PainPointsSection.astro';
+import MetricsBannerSection from '../components/sections/MetricsBannerSection.astro';
+import BrandsShowcaseSection from '../components/sections/BrandsShowcaseSection.astro';
+import SolutionsGridSection from '../components/sections/SolutionsGridSection.astro';
+import WhyMitsaSection from '../components/sections/WhyMitsaSection.astro';
+import CtaBannerSection from '../components/sections/CtaBannerSection.astro';
+import TechnicalArticlesSection from '../components/sections/TechnicalArticlesSection.astro';
+import FaqSection from '../components/sections/FaqSection.astro';
+import { getHomeSections } from '../lib/api/client';
+import { buildPageSeo } from '../lib/seo/schema';
+import { getArticles } from '../lib/articles';
+
+// Ingesta de datos desde la API REST de WordPress (con fallback estático garantizado)
+const pageData = await getHomeSections();
+const currentUrl = Astro.url.href;
+const seo = buildPageSeo(pageData, currentUrl);
+
+const heroData = pageData.sections?.hero;
+const visualCards = pageData.sections?.visual_cards;
+const painPointsData = pageData.sections?.pain_points;
+const metricsData = pageData.sections?.metrics;
+const brandsData = pageData.sections?.brands;
+const solutionsData = pageData.sections?.solutions;
+const whyMitsaData = pageData.sections?.why_mitsa;
+const ctaBannerData = pageData.sections?.cta_banner;
+const faqsData = pageData.sections?.faqs;
+const articles = getArticles();
+---
+
+<Layout
+  title={seo.title}
+  description={seo.description}
+  canonicalUrl={seo.canonicalUrl}
+  image={seo.image}
+  type={seo.type}
+  jsonLd={seo.jsonLd}
+>
+  <!-- 1. Hero Section Modular (100% Administrable vía WordPress REST API) -->
+  <HeroSection data={heroData!} />
+
+  <!-- 2. Grid Visual de 4 Proyectos con Optimización LCP & Accesibilidad -->
+  <ProjectsVisualGrid cards={visualCards} />
+
+  <!-- 3. Pain Points / Objeciones del Sector Naval -->
+  <PainPointsSection data={painPointsData} />
+
+  <!-- 4. Banner de Métricas de Autoridad -->
+  <MetricsBannerSection metrics={metricsData} />
+
+  <!-- 5. Manufacturers / Representadas Oficiales -->
+  <BrandsShowcaseSection data={brandsData} />
+
+  <!-- 6. Soluciones Tecnológicas Especializadas -->
+  <SolutionsGridSection data={solutionsData} />
+
+  <!-- 7. ¿Por qué MITSA? (Propuesta de Valor & Diferenciadores) -->
+  <WhyMitsaSection data={whyMitsaData} />
+
+  <!-- 8. Gran Call to Action (Evaluación Técnica) -->
+  <CtaBannerSection data={ctaBannerData} />
+
+  <!-- 9. Technical Articles Cluster (Blog SEO) -->
+  <TechnicalArticlesSection articles={articles} />
+
+  <!-- 10. Preguntas Frecuentes (Enriquecida con Schema.org FAQPage) -->
+  <FaqSection data={faqsData} />
+</Layout>

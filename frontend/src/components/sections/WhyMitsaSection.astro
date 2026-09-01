@@ -1,0 +1,203 @@
+---
+import type { WhyMitsaSectionData } from '../../lib/api/types';
+
+interface Props {
+  data?: WhyMitsaSectionData;
+}
+
+const {
+  data = {
+    heading: "¿Por qué MITSA?",
+    subheading: "Seis razones técnicas que sostienen un proyecto completo, de la especificación al soporte en operación.",
+    cards: [
+      { title: "Años de experiencia", desc: "Cuatro décadas resolviendo proyectos marítimos e industriales en Chile.", metric: "40+", is_dark: true },
+      { title: "Ingeniería especializada", desc: "Ingeniería de aplicación propia: la solución se dimensiona, no se cotiza de catálogo." },
+      { title: "Representantes oficiales", desc: "Representación directa de cinco fabricantes internacionales, con respaldo y garantía de fábrica." },
+      { image: "/images/inspección-de-compon-94016740.jpg", caption: "Equipo en terreno" },
+      { title: "Cobertura nacional y regional", desc: "Presencia donde está la operación: puertos, astilleros, faenas y centros de cultivo." },
+      { title: "Puesta en marcha y soporte", desc: "Comisionamiento, capacitación a la tripulación y asistencia después de la entrega." }
+    ]
+  }
+} = Astro.props;
+---
+
+<section class="why-mitsa-section" aria-labelledby="why-mitsa-heading">
+  <div class="why-header">
+    <h2 id="why-mitsa-heading" class="why-title">
+      {data.heading}
+    </h2>
+    <p class="why-subheading">
+      {data.subheading}
+    </p>
+  </div>
+
+  <div class="reasons-grid">
+    {data.cards.map((card) => {
+      if (card.image) {
+        return (
+          <div class="reason-card reason-card-image">
+            <img
+              src={card.image}
+              alt={card.caption || "Equipo técnico de MITSA en terreno"}
+              width="400"
+              height="280"
+              loading="lazy"
+              decoding="async"
+              class="field-img"
+            />
+            {card.caption && (
+              <span class="image-caption">{card.caption}</span>
+            )}
+          </div>
+        );
+      }
+
+      const isDark = card.is_dark;
+      return (
+        <div class={`reason-card ${isDark ? 'card-dark' : 'card-light'}`}>
+          {card.metric && (
+            <div class="card-metric">{card.metric}</div>
+          )}
+          <h3 class={`card-title ${isDark ? 'title-dark' : 'title-light'}`}>
+            {card.title}
+          </h3>
+          <p class={`card-desc ${isDark ? 'desc-dark' : 'desc-light'}`}>
+            {card.desc}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .why-mitsa-section {
+    background: #EFEEE9;
+    padding: 96px 40px;
+  }
+
+  .why-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.045em;
+    color: #0D1B2A;
+    margin: 0 0 14px;
+    text-wrap: pretty;
+  }
+
+  .why-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #415A77;
+    margin: 0 0 40px;
+    max-width: 64ch;
+  }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+
+  .reason-card {
+    grid-column: span 2;
+    border-radius: 20px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-dark {
+    background: #0D1B2A;
+  }
+
+  .card-light {
+    background: #FFFFFF;
+    border: 1px solid #E0E1DD;
+  }
+
+  .card-metric {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: #F8F6F0;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .title-dark {
+    color: #F8F6F0;
+  }
+
+  .title-light {
+    color: #0D1B2A;
+  }
+
+  .card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .desc-dark {
+    color: rgba(248, 246, 240, 0.7);
+  }
+
+  .desc-light {
+    color: #415A77;
+  }
+
+  .reason-card-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 190px;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .field-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-caption {
+    position: relative;
+    width: 100%;
+    padding: 16px 18px;
+    background: linear-gradient(to top, rgba(13, 27, 42, 0.92), transparent);
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #F8F6F0;
+  }
+
+  @media (max-width: 1024px) {
+    .why-mitsa-section {
+      padding: 64px 20px;
+    }
+    .reasons-grid {
+      grid-template-columns: 1fr;
+    }
+    .reason-card {
+      grid-column: span 1;
+    }
+  }
+</style>

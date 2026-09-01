@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    num: "01",
+    sector: "Astillero",
+    title: "Astillero — Construcción nueva",
+    desc: "Sistema sanitario al vacío completo para una unidad en construcción, dimensionado antes del corte de primera plancha de acero.",
+    tags: ["Astillero", "Sanitarios al vacío", "EVAC"],
+    img: "/images/proyectos-img-3-636210b7.jpg"
+  },
+  {
+    num: "02",
+    sector: "Buques de apoyo",
+    title: "Buque de apoyo (PSV) — Retrofit",
+    desc: "Reemplazo integral de la planta de tratamiento de aguas servidas con la nave en operación, sin alterar la red troncal existente.",
+    tags: ["Buques de apoyo", "Aguas residuales", "EVAC · BLÜCHER"],
+    img: "/images/proyectos-img-4-8d5d1037.jpg"
+  },
+  {
+    num: "03",
+    sector: "Offshore",
+    title: "Plataforma offshore — Protección catódica",
+    desc: "Protección catódica por corriente impresa (ICCP) y control de bioincrustación (ICAF) en estructura fija con monitoreo automático continuo.",
+    tags: ["Offshore", "ICCP · ICAF", "Cathelco"],
+    img: "/images/proyectos-img-5-8886341c.jpg"
+  },
+  {
+    num: "04",
+    sector: "Acuicultura",
+    title: "Centro de cultivo — Pontón habitable",
+    desc: "Tratamiento de efluentes y saneamiento integral en pontón habitable con logística y soporte de repuestos en la Región de Los Lagos.",
+    tags: ["Acuicultura", "Tratamiento de aguas", "ERMA FIRST"],
+    img: "/images/proyectos-img-6-6ece81b5.jpg"
+  }
+];
+---
+
+<Layout
+  title="Proyectos & Casos de Éxito — MITSA"
+  description="Casos representativos de ingeniería naval y ambiental instalados y operando en Chile: Armada, astilleros, navieras y acuicultura."
+>
+  <!-- Hero Section -->
+  <section style="position:relative;background:#0D1B2A;overflow:hidden;padding:84px 40px 0">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(#415A77 1px,transparent 1px),linear-gradient(90deg,#415A77 1px,transparent 1px);background-size:88px 88px;opacity:.16"></div>
+    <div style="position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end" class="proyectos-hero">
+      <div style="padding-bottom:84px">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+          <span style="width:44px;height:1px;background:#415A77"></span>
+          <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Proyectos</span>
+        </div>
+        <h1 style="font:700 clamp(36px,5vw,66px)/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0;margin:0 0 20px;text-wrap:pretty">
+          Lo que ya está instalado y operando.
+        </h1>
+        <p style="font:400 16px/1.65 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 0 28px;max-width:54ch">
+          Cada proyecto publica el sistema, la industria y el fabricante detrás. Casos reales y representativos respaldados por 40 años de trayectoria.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#catalogo-proyectos" style="background:#F8F6F0;color:#0D1B2A;padding:13px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
+            Ver proyectos
+          </a>
+          <a href="/contacto/?tipo=evaluacion" style="border:1px solid rgba(224,225,221,.3);color:#F8F6F0;padding:12px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
+            Solicitar referencias
+          </a>
+        </div>
+      </div>
+      <div style="position:relative;height:430px;overflow:hidden">
+        <img alt="Proyectos MITSA" src="/images/proyectos-img-2-149f33fe.jpg" style="width:100%;height:100%;object-fit:cover;display:block" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Metric Badges -->
+  <section style="background:#0D1B2A;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(224,225,221,.16);border-top:1px solid rgba(224,225,221,.16)">
+    <div style="background:#0D1B2A;padding:32px 28px">
+      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">40+</div>
+      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">años integrando sistemas en Chile</div>
+    </div>
+    <div style="background:#0D1B2A;padding:32px 28px">
+      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">10</div>
+      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">líneas de solución en operación</div>
+    </div>
+    <div style="background:#0D1B2A;padding:32px 28px">
+      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">100%</div>
+      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">cumplimiento en protocolos y pruebas de mar</div>
+    </div>
+  </section>
+
+  <!-- Filter & Project Cards -->
+  <section style="background:#F8F6F0;padding:80px 40px 88px" id="catalogo-proyectos">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px">
+      <div>
+        <h2 style="font:700 clamp(28px,3.4vw,44px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#0D1B2A;margin:0 0 10px;max-width:20ch">
+          Filtre por industria o solución
+        </h2>
+        <p style="font:400 14.5px/1.6 'Inter',sans-serif;color:#415A77;margin:0;max-width:40ch">
+          Soluciones marítimas e industriales probadas en terreno.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter Pills -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid #E0E1DD;margin-bottom:30px">
+      <span style="background:#0D1B2A;color:#F8F6F0;padding:8px 16px;border-radius:999px;font:500 13px 'Inter',sans-serif">Todos</span>
+      <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 13px 'Inter',sans-serif;color:#1B263B">Astillero</span>
+      <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 13px 'Inter',sans-serif;color:#1B263B">Buques de apoyo</span>
+      <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 13px 'Inter',sans-serif;color:#1B263B">Offshore</span>
+      <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 13px 'Inter',sans-serif;color:#1B263B">Acuicultura</span>
+      <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 13px 'Inter',sans-serif;color:#1B263B">Armada y defensa</span>
+    </div>
+
+    <!-- Cards Grid -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px" class="two-cards-grid">
+      {projects.map((proj) => (
+        <div style="background:#fff;border:1px solid #E0E1DD;border-radius:20px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.02)">
+          <div style="position:relative;height:220px;overflow:hidden">
+            <img alt={proj.title} src={proj.img} style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
+          </div>
+          <div style="padding:26px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">
+              <span style="font:500 12px 'Geist Mono',monospace;letter-spacing:.16em;color:#415A77">{proj.num}</span>
+              <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.1em;color:#8E9AA8">PROYECTO EJECUTADO</span>
+            </div>
+            <h3 style="font:600 21px/1.2 'Geist',sans-serif;color:#0D1B2A;margin:0 0 10px">
+              {proj.title}
+            </h3>
+            <p style="font:400 14px/1.65 'Inter',sans-serif;color:#415A77;margin:0 0 18px">
+              {proj.desc}
+            </p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              {proj.tags.map((t) => (
+                <span style="background:#F8F6F0;border:1px solid #E0E1DD;padding:6px 13px;border-radius:999px;font:500 12px 'Inter',sans-serif;color:#1B263B">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Case Study Breakdown Section -->
+  <section style="background:#F8F6F0;padding:96px 40px 88px;border-top:1px solid #E0E1DD">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+      <span style="width:44px;height:1px;background:#415A77"></span>
+      <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#415A77">Ficha de caso en detalle</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:start" class="case-detail-grid">
+      <div>
+        <h2 style="font:700 clamp(28px,3.6vw,46px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#0D1B2A;margin:0 0 16px">
+          Retrofit de tratamiento con la nave en operación
+        </h2>
+        <p style="font:400 15.5px/1.7 'Inter',sans-serif;color:#415A77;margin:0 0 24px">
+          La planta original estaba fuera de norma ambiental y el armador no podía detener su faena. Se dimensionó un reemplazo modular que aprovecha la red de tuberías existente y se instaló por fases entre operaciones de puerto.
+        </p>
+        <div style="position:relative;height:300px;overflow:hidden;border-radius:18px">
+          <img alt="Retrofit en operación" src="/images/proyectos-img-7-8d5d1037.jpg" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E0E1DD;border:1px solid #E0E1DD;border-radius:18px;overflow:hidden;margin-top:22px">
+          <div style="background:#fff;padding:22px">
+            <div style="font:500 11px 'Geist Mono',monospace;text-transform:uppercase;color:#8E9AA8;margin-bottom:8px">Etapas</div>
+            <div style="font:500 13.5px/1.5 'Inter',sans-serif;color:#0D1B2A">Levantamiento · Suministro · Montaje · Puesta en marcha</div>
+          </div>
+          <div style="background:#fff;padding:22px">
+            <div style="font:500 11px 'Geist Mono',monospace;text-transform:uppercase;color:#8E9AA8;margin-bottom:8px">Modalidad</div>
+            <div style="font:500 13.5px/1.5 'Inter',sans-serif;color:#0D1B2A">Intervención en puerto sin varada</div>
+          </div>
+          <div style="background:#fff;padding:22px">
+            <div style="font:500 11px 'Geist Mono',monospace;text-transform:uppercase;color:#8E9AA8;margin-bottom:8px">Estado</div>
+            <div style="font:500 13.5px/1.5 'Inter',sans-serif;color:#0D1B2A">100% Operativo</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#fff;border:1px solid #E0E1DD;border-radius:20px;padding:26px">
+          <div style="font:600 12px 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8E9AA8;margin-bottom:16px">Ficha técnica del proyecto</div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #F8F6F0"><span style="color:#415A77;font-size:13.5px">Industria</span><span style="font-weight:600;color:#0D1B2A;font-size:13.5px">Buques de apoyo marítimo</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #F8F6F0"><span style="color:#415A77;font-size:13.5px">Solución</span><span style="font-weight:600;color:#0D1B2A;font-size:13.5px">Tratamiento aguas residuales</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #F8F6F0"><span style="color:#415A77;font-size:13.5px">Fabricante</span><span style="font-weight:600;color:#0D1B2A;font-size:13.5px">EVAC · BLÜCHER</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid #F8F6F0"><span style="color:#415A77;font-size:13.5px">Normativa</span><span style="font-weight:600;color:#0D1B2A;font-size:13.5px">MARPOL Anexo IV</span></div>
+        </div>
+
+        <div style="background:#0D1B2A;border-radius:20px;padding:26px;color:#F8F6F0">
+          <div style="font:600 16px 'Geist',sans-serif;margin-bottom:8px">¿Un caso parecido a bordo?</div>
+          <p style="font:400 13.5px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 0 18px">
+            Evaluamos la factibilidad técnica y dimensional de su buque o instalación sin costo.
+          </p>
+          <a href="/contacto/?tipo=evaluacion" style="background:#F8F6F0;color:#0D1B2A;padding:11px 22px;border-radius:999px;font:600 13.5px 'Geist',sans-serif;display:inline-block">
+            Solicitar evaluación
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section style="position:relative;background:#0D1B2A;padding:120px 40px;text-align:center;overflow:hidden">
+    <img alt="" src="/images/proyectos-img-8-8886341c.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25" loading="lazy" />
+    <div style="position:absolute;inset:0;background:linear-gradient(rgba(13,27,42,.75),rgba(13,27,42,.88))"></div>
+    <div style="position:relative;max-width:680px;margin:0 auto">
+      <h2 style="font:700 clamp(30px,4.5vw,56px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#F8F6F0;margin:0 auto 20px">
+        Hay un proyecto parecido al suyo
+      </h2>
+      <p style="font:400 15px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 auto 30px">
+        Pida las referencias del sistema que está evaluando y conozca cómo opera en la práctica.
+      </p>
+      <a href="/contacto/?tipo=evaluacion" style="background:#F8F6F0;color:#0D1B2A;padding:15px 32px;border-radius:999px;font:600 14.5px 'Geist',sans-serif;display:inline-block">
+        Solicitar referencias técnicas
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 900px) {
+    .proyectos-hero, .two-cards-grid, .case-detail-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

@@ -1,0 +1,207 @@
+---
+import type { SolutionsSectionData } from '../../lib/api/types';
+
+interface Props {
+  data?: SolutionsSectionData;
+}
+
+const {
+  data = {
+    heading: "Soluciones tecnológicas especializadas",
+    subheading: "Sistemas marinos y terrestres integrados con ingeniería de aplicación, comisionamiento y respaldo técnico en terreno.",
+    items: [
+      { title: "Sanitarios al vacío", brand: "EVAC", img: "/images/sistemas-sanitarios--c457bd2a.jpg", desc: "Sistemas sanitarios marinos y terrestres de alta eficiencia con ahorro de agua." },
+      { title: "Aguas residuales", brand: "EVAC · EPE", img: "/images/tratamiento-de-aguas-8ead4ece.jpg", desc: "Plantas de tratamiento biológico y físico-químico según normativa MARPOL Anexo IV." },
+      { title: "Agua de lastre (BWTS)", brand: "ERMA FIRST", img: "/images/ingeniería-de-detall-616b7dfd.jpg", desc: "Sistemas de tratamiento de agua de lastre bajo estándar D-2 de la OMI." },
+      { title: "Corrosión (ICCP)", brand: "Cathelco", img: "/images/datos-de-operación-y-92c78919.jpg", desc: "Protección catódica por corriente impresa para cascos de buques e instalaciones." },
+      { title: "Bioincrustaciones (ICAF)", brand: "Cathelco", img: "/images/acuicultura-64fec532.jpg", desc: "Sistemas anti-incrustaciones para tomas de mar y circuitos de refrigeración." },
+      { title: "Generación de agua dulce", brand: "Representadas oficiales", img: "/images/recursos-img-5-02ed53ff.jpg", desc: "Plantas desalinizadoras por ósmosis inversa y evaporadores marinos." },
+      { title: "Sistemas de agua caliente", brand: "Ingeniería MITSA", img: "/images/recursos-img-6-2ffa0056.jpg", desc: "Calderas, intercambiadores y acumuladores para habitabilidad a bordo." },
+      { title: "Drenajes inoxidables", brand: "BLÜCHER", img: "/images/recursos-img-7-8ead4ece.jpg", desc: "Canaletas, sifones y tuberías de acero inoxidable AISI 316L para higiene naval." }
+    ]
+  }
+} = Astro.props;
+---
+
+<section class="solutions-section" aria-labelledby="solutions-heading">
+  <div class="solutions-header">
+    <h2 id="solutions-heading" class="solutions-title">
+      {data.heading}
+    </h2>
+    <p class="solutions-subheading">
+      {data.subheading}
+    </p>
+  </div>
+
+  <div class="solutions-grid">
+    {data.items.map((item) => (
+      <article class="solution-card">
+        <div class="card-media">
+          <img
+            src={item.img}
+            alt={`Solución de ${item.title} - ${item.brand}`}
+            width="400"
+            height="240"
+            loading="lazy"
+            decoding="async"
+            class="solution-img"
+          />
+        </div>
+        <div class="card-content">
+          <div>
+            <div class="solution-brand">{item.brand}</div>
+            <h3 class="solution-item-title">{item.title}</h3>
+            <p class="solution-desc">{item.desc}</p>
+          </div>
+          <div class="card-footer">
+            <a href="/contacto/" class="consult-link">
+              Consultar ingeniería <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .solutions-section {
+    padding: 96px 40px;
+    background: #F8F6F0;
+  }
+
+  .solutions-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    color: #0D1B2A;
+    margin: 0 0 12px;
+    text-wrap: pretty;
+  }
+
+  .solutions-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #415A77;
+    margin: 0 0 36px;
+    max-width: 60ch;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .solution-card {
+    background: #FFFFFF;
+    border: 1px solid #E0E1DD;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .solution-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(13, 27, 42, 0.06);
+  }
+
+  .card-media {
+    position: relative;
+    height: 180px;
+    background: #0D1B2A;
+    overflow: hidden;
+  }
+
+  .solution-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .solution-card:hover .solution-img {
+    transform: scale(1.05);
+  }
+
+  .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .solution-brand {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #8E9AA8;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .solution-item-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0D1B2A;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .solution-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #415A77;
+    margin: 0;
+  }
+
+  .card-footer {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #F0EFEA;
+  }
+
+  .consult-link {
+    font-family: 'Geist', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #0D1B2A;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+
+  .consult-link:hover, .consult-link:focus-visible {
+    color: #415A77;
+    outline: none;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .solutions-section {
+      padding: 64px 20px;
+    }
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
