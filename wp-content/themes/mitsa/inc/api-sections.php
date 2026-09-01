@@ -48,6 +48,8 @@ function mitsa_rest_get_sections_by_slug( WP_REST_Request $request ) {
 
 	if ( 'home' === $slug || 'inicio' === $slug ) {
 		$data = mitsa_get_home_sections_data();
+	} elseif ( 'nosotros' === $slug ) {
+		$data = mitsa_get_nosotros_sections_data();
 	} else {
 		$page = get_page_by_path( $slug );
 		if ( ! $page ) {
@@ -396,6 +398,155 @@ function mitsa_get_home_sections_data() {
 			'why_mitsa'     => $why_mitsa,
 			'cta_banner'    => $cta_banner,
 			'faqs'          => $faqs,
+		),
+	);
+}
+
+/**
+ * Genera la estructura de datos normalizada para la página Nosotros.
+ *
+ * @return array
+ */
+function mitsa_get_nosotros_sections_data() {
+	$page = get_page_by_path( 'nosotros' );
+	$page_id = $page ? (int) $page->ID : 6;
+
+	// 1. Hero & Tagline
+	$h_title   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_title', $page_id ) : '';
+	$h_tagline = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_tagline', $page_id ) : '';
+	$h_desc    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_desc', $page_id ) : '';
+	$h_image   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_image', $page_id ) : '';
+
+	$hero = array(
+		'title'       => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Cuatro décadas integrando ingeniería, tecnología y servicio especializado',
+		'tagline'     => ! empty( $h_tagline ) ? sanitize_text_field( $h_tagline ) : '«Todos tenemos una especialidad, la nuestra es servir»',
+		'description' => ! empty( $h_desc ) ? sanitize_textarea_field( $h_desc ) : 'Pioneros en introducir tecnología avanzada en el segmento sanitario y ambiental para uso marino, industrial, pesquero, acuícola y minero en Chile y Latinoamérica desde 1982.',
+		'image'       => ! empty( $h_image ) ? esc_url_raw( $h_image ) : '/images/oficina-mitsa-54b17efd.jpg',
+	);
+
+	// 2. Historia y Trayectoria
+	$s_title = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_title', $page_id ) : '';
+	$s_p1    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_p1', $page_id ) : '';
+	$s_p2    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_p2', $page_id ) : '';
+
+	$m1_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_year', $page_id ) : '1982';
+	$m1_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_title', $page_id ) : 'Fundación en Reñaca, Viña del Mar';
+	$m1_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_desc', $page_id ) : 'Inicio de operaciones representando tecnología pionera sanitaria marina.';
+
+	$m2_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_year', $page_id ) : '1995';
+	$m2_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_title', $page_id ) : 'Expansión a Flotas y Astilleros';
+	$m2_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_desc', $page_id ) : 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.';
+
+	$m3_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_year', $page_id ) : '2010';
+	$m3_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_title', $page_id ) : 'Alianzas Globales de Fabricación';
+	$m3_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_desc', $page_id ) : 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.';
+
+	$m4_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_year', $page_id ) : '2026';
+	$m4_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_title', $page_id ) : 'Ingeniería y Presencia Regional';
+	$m4_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_desc', $page_id ) : 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.';
+
+	$story = array(
+		'title'      => ! empty( $s_title ) ? sanitize_text_field( $s_title ) : 'Pioneros en tecnología marina y ambiental desde 1982',
+		'paragraphs' => array(
+			! empty( $s_p1 ) ? sanitize_textarea_field( $s_p1 ) : 'Fundada en 1982 en Reñaca, Viña del Mar, MITSA nació con la convicción de conectar a las industrias marítimas y productivas de Chile con los inventores y fabricantes de tecnología de mayor estándar mundial.',
+			! empty( $s_p2 ) ? sanitize_textarea_field( $s_p2 ) : 'A lo largo de más de cuatro décadas, hemos evolucionado de la provisión de equipos sanitarios al vacío hacia la ingeniería de aplicación integral, comisionamiento y respaldo operativo en terreno en todo el país.',
+		),
+		'milestones' => array(
+			array( 'year' => $m1_y ?: '1982', 'title' => $m1_t ?: 'Fundación en Reñaca, Viña del Mar', 'description' => $m1_d ?: 'Inicio de operaciones representando tecnología pionera sanitaria marina.' ),
+			array( 'year' => $m2_y ?: '1995', 'title' => $m2_t ?: 'Expansión a Flotas y Astilleros', 'description' => $m2_d ?: 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.' ),
+			array( 'year' => $m3_y ?: '2010', 'title' => $m3_t ?: 'Alianzas Globales de Fabricación', 'description' => $m3_d ?: 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.' ),
+			array( 'year' => $m4_y ?: '2026', 'title' => $m4_t ?: 'Ingeniería y Presencia Regional', 'description' => $m4_d ?: 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.' ),
+		),
+	);
+
+	// 3. Misión & Visión (fuente oficial: brochure corporativo)
+	$mv_mt = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_mission_title', $page_id ) : 'Nuestra Misión';
+	$mv_mx = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_mission_text', $page_id ) : 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.';
+	$mv_vt = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_vision_title', $page_id ) : 'Nuestra Visión';
+	$mv_vx = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_vision_text', $page_id ) : 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.';
+
+	$mission_vision = array(
+		'mission' => array(
+			'title' => ! empty( $mv_mt ) ? sanitize_text_field( $mv_mt ) : 'Nuestra Misión',
+			'text'  => ! empty( $mv_mx ) ? sanitize_textarea_field( $mv_mx ) : 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.',
+		),
+		'vision'  => array(
+			'title' => ! empty( $mv_vt ) ? sanitize_text_field( $mv_vt ) : 'Nuestra Visión',
+			'text'  => ! empty( $mv_vx ) ? sanitize_textarea_field( $mv_vx ) : 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.',
+		),
+	);
+
+	// 4. Pilares de Valor
+	$p_head = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_pillars_heading', $page_id ) : 'Los pilares que fundamentan nuestra propuesta';
+	$p1_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p1_title', $page_id ) : 'Representación Oficial Directa';
+	$p1_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p1_desc', $page_id ) : 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.';
+	$p2_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p2_title', $page_id ) : 'Ingeniería de Aplicación Propia';
+	$p2_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p2_desc', $page_id ) : 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.';
+	$p3_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p3_title', $page_id ) : 'Servicio Técnico en Terreno';
+	$p3_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p3_desc', $page_id ) : 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.';
+	$p4_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p4_title', $page_id ) : 'Cuidado del Medio Ambiente Acuático';
+	$p4_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p4_desc', $page_id ) : 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.';
+
+	$pillars = array(
+		'heading' => ! empty( $p_head ) ? sanitize_text_field( $p_head ) : 'Los pilares que fundamentan nuestra propuesta',
+		'items'   => array(
+			array( 'title' => $p1_t ?: 'Representación Oficial Directa', 'description' => $p1_d ?: 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.' ),
+			array( 'title' => $p2_t ?: 'Ingeniería de Aplicación Propia', 'description' => $p2_d ?: 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.' ),
+			array( 'title' => $p3_t ?: 'Servicio Técnico en Terreno', 'description' => $p3_d ?: 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.' ),
+			array( 'title' => $p4_t ?: 'Cuidado del Medio Ambiente Acuático', 'description' => $p4_d ?: 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.' ),
+		),
+	);
+
+	// 5. Cobertura Regional
+	$cov_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_title', $page_id ) : 'Presencia estratégica en Chile y la región';
+	$cov_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_desc', $page_id ) : 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.';
+	$cov_c = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hq_city', $page_id ) : 'Reñaca, Viña del Mar, Región de Valparaíso, Chile';
+	$cov_s = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_scope', $page_id ) : 'Nacional (Arica a Punta Arenas) y Latinoamérica';
+
+	$coverage = array(
+		'title'        => ! empty( $cov_t ) ? sanitize_text_field( $cov_t ) : 'Presencia estratégica en Chile y la región',
+		'description'  => ! empty( $cov_d ) ? sanitize_textarea_field( $cov_d ) : 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.',
+		'headquarters' => ! empty( $cov_c ) ? sanitize_text_field( $cov_c ) : 'Reñaca, Viña del Mar, Región de Valparaíso, Chile',
+		'scope'        => ! empty( $cov_s ) ? sanitize_text_field( $cov_s ) : 'Nacional (Arica a Punta Arenas) y Latinoamérica',
+	);
+
+	// 6. Call to Action
+	$cta_h = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_heading', $page_id ) : 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto';
+	$cta_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_desc', $page_id ) : 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.';
+	$cta_l = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_btn_label', $page_id ) : 'Contactar al equipo de ingeniería';
+	$cta_u = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_btn_url', $page_id ) : '/contacto/';
+
+	$cta = array(
+		'heading'     => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto',
+		'description' => ! empty( $cta_d ) ? sanitize_textarea_field( $cta_d ) : 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.',
+		'button'      => array(
+			'label' => ! empty( $cta_l ) ? sanitize_text_field( $cta_l ) : 'Contactar al equipo de ingeniería',
+			'url'   => ! empty( $cta_u ) ? esc_url_raw( $cta_u ) : '/contacto/',
+		),
+	);
+
+	// 7. SEO
+	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+
+	return array(
+		'slug'     => 'nosotros',
+		'title'    => ! empty( $seo_title ) ? $seo_title : 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
+		'seo'      => array(
+			'meta_title'       => ! empty( $seo_title ) ? $seo_title : 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
+			'meta_description' => ! empty( $seo_desc ) ? $seo_desc : 'Pioneros en tecnología marina y ambiental en Chile desde 1982. Representantes oficiales de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.',
+			'canonical_url'    => 'https://mitsachile.com/nosotros/',
+			'og_image'         => ! empty( $seo_img ) ? $seo_img : 'https://mitsachile.com/images/oficina-mitsa-54b17efd.jpg',
+			'og_type'          => 'website',
+		),
+		'sections' => array(
+			'hero'           => $hero,
+			'story'          => $story,
+			'mission_vision' => $mission_vision,
+			'pillars'        => $pillars,
+			'coverage'       => $coverage,
+			'cta'            => $cta,
 		),
 	);
 }

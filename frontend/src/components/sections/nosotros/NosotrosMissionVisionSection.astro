@@ -1,0 +1,195 @@
+---
+import type { NosotrosMissionVisionData } from '../../../lib/api/types';
+
+interface Props {
+  data: NosotrosMissionVisionData;
+}
+
+const { data } = Astro.props;
+const {
+  mission = {
+    title: "Nuestra Misión",
+    text: "Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio."
+  },
+  vision = {
+    title: "Nuestra Visión",
+    text: "Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial."
+  }
+} = data || {};
+---
+
+<section class="mission-vision-section" aria-labelledby="mv-heading">
+  <div class="mv-container">
+    <div class="section-header">
+      <h2 id="mv-heading" class="section-title">Propósito y Compromiso Estratégico</h2>
+      <p class="section-subtitle">
+        Directrices corporativas que orientan cada proyecto, especificación e intervención en terreno.
+      </p>
+    </div>
+
+    <div class="mv-grid">
+      <!-- Tarjeta Misión -->
+      <article class="mv-card -mission">
+        <div class="card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-badge">Misión</span>
+          <h3 class="card-title">{mission.title}</h3>
+          <p class="card-text">{mission.text}</p>
+        </div>
+      </article>
+
+      <!-- Tarjeta Visión -->
+      <article class="mv-card -vision">
+        <div class="card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </div>
+        <div class="card-content">
+          <span class="card-badge">Visión</span>
+          <h3 class="card-title">{vision.title}</h3>
+          <p class="card-text">{vision.text}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mission-vision-section {
+    background: #F8FAFC;
+    padding: 80px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .mv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3vw, 2.375rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .mv-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 4px 20px rgba(13, 27, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mv-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+  }
+
+  .mv-card.-mission::before {
+    background: #E63946;
+  }
+
+  .mv-card.-vision::before {
+    background: #1B263B;
+  }
+
+  .mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(13, 27, 42, 0.08);
+    border-color: #CBD5E1;
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+
+  .mv-card.-mission .card-icon {
+    background: #E63946;
+  }
+
+  .mv-card.-vision .card-icon {
+    background: #0D1B2A;
+  }
+
+  .card-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748B;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .card-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #334155;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .mv-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .mv-card {
+      padding: 32px 24px;
+    }
+    .mission-vision-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

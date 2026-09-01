@@ -57,6 +57,45 @@ function mitsa_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'mitsa_enqueue_assets' );
 
 /**
+ * Enqueue de estilos personalizados para el panel de administración y ACF.
+ */
+function mitsa_admin_enqueue_assets() {
+	$admin_css = MITSA_THEME_DIR . '/assets/css/admin-acf.css';
+	if ( file_exists( $admin_css ) ) {
+		wp_enqueue_style(
+			'mitsa-admin-acf',
+			MITSA_THEME_URI . '/assets/css/admin-acf.css',
+			array(),
+			MITSA_THEME_VERSION . '.' . filemtime( $admin_css )
+		);
+	}
+
+	$admin_js = MITSA_THEME_DIR . '/assets/js/admin-tabs.js';
+	if ( file_exists( $admin_js ) ) {
+		wp_enqueue_script(
+			'mitsa-admin-tabs',
+			MITSA_THEME_URI . '/assets/js/admin-tabs.js',
+			array( 'jquery' ),
+			MITSA_THEME_VERSION . '.' . filemtime( $admin_js ),
+			true
+		);
+	}
+}
+add_action( 'admin_enqueue_scripts', 'mitsa_admin_enqueue_assets' );
+add_action( 'acf/input/admin_enqueue_scripts', 'mitsa_admin_enqueue_assets' );
+
+/**
+ * Desactiva el editor de bloques (Gutenberg) en páginas para habilitar
+ * la interfaz clásica y nativa completa de 2 columnas de ACF.
+ */
+add_filter( 'use_block_editor_for_post_type', function( $use_block_editor, $post_type ) {
+	if ( 'page' === $post_type ) {
+		return false;
+	}
+	return $use_block_editor;
+}, 10, 2 );
+
+/**
  * Registra las áreas de widgets del footer.
  */
 function mitsa_widgets_init() {

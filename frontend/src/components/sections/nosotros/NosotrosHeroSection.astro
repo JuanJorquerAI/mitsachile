@@ -1,0 +1,140 @@
+---
+import type { NosotrosHeroData } from '../../../lib/api/types';
+
+interface Props {
+  data: NosotrosHeroData;
+}
+
+const { data } = Astro.props;
+const {
+  title = "Cuatro décadas integrando ingeniería, tecnología y servicio especializado",
+  tagline = "«Todos tenemos una especialidad, la nuestra es servir»",
+  description = "Pioneros en introducir tecnología avanzada en el segmento sanitario y ambiental para uso marino, industrial, pesquero, acuícola y minero en Chile y Latinoamérica desde 1982.",
+  image = "/images/oficina-mitsa-54b17efd.jpg"
+} = data || {};
+---
+
+<section class="nosotros-hero" aria-labelledby="nosotros-heading">
+  <div class="hero-container">
+    <div class="hero-header">
+      <span class="badge-tag">Trayectoria & Compromiso · Desde 1982</span>
+      <h1 id="nosotros-heading" class="hero-title">{title}</h1>
+      <p class="hero-tagline">{tagline}</p>
+      <p class="hero-desc">{description}</p>
+    </div>
+
+    <div class="hero-media">
+      <img
+        src={image}
+        alt="Sede corporativa y operaciones de MITSA"
+        width="1000"
+        height="560"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="hero-img"
+      />
+      <div class="media-caption">
+        <span>Sede Central · Reñaca, Viña del Mar, Chile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nosotros-hero {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    padding: 72px 24px 64px;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .hero-header {
+    max-width: 860px;
+  }
+
+  .badge-tag {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.12);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(230, 57, 70, 0.25);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+    color: #FFFFFF;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 600;
+    color: #94A3B8;
+    font-style: italic;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    border-left: 3px solid #E63946;
+    padding-left: 16px;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #CBD5E1;
+    margin: 0;
+  }
+
+  .hero-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .media-caption {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(8px);
+    color: #F8F6F0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .nosotros-hero {
+      padding: 48px 16px 40px;
+    }
+  }
+</style>

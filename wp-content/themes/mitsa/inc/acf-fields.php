@@ -2,9 +2,8 @@
 /**
  * Definición local de campos ACF (Advanced Custom Fields) para el tema MITSA.
  *
- * Registra grupos de campos PHP nativos 100% compatibles con ACF Free y ACF Pro
- * (usando tipos estándar: text, textarea, image, select, true_false, group/tab)
- * para garantizar renderizado visual perfecto en el panel de administración.
+ * Registra un panel unificado con pestañas (ACF Tabs) 100% compatible con ACF Free y Pro,
+ * con la interfaz visual característica de ACF, sin acordeones dispersos.
  *
  * @package mitsa
  */
@@ -21,12 +20,22 @@ function mitsa_register_acf_field_groups() {
 		return;
 	}
 
-	// 1. Grupo de Campos: Sección Hero & Triaje
+	// Grupo Maestro Unificado: Administración de la Página de Inicio (Home) con Pestañas ACF
 	acf_add_local_field_group(
 		array(
-			'key'                   => 'group_mitsa_hero_section',
-			'title'                 => __( '1. Sección Hero & Triaje Interactivo', 'mitsa' ),
+			'key'                   => 'group_mitsa_home_master',
+			'title'                 => __( 'Administración de Página de Inicio (MITSA)', 'mitsa' ),
 			'fields'                => array(
+
+				// ==========================================
+				// PESTAÑA 1: HERO & TRIAJE
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_hero',
+					'label'     => __( '🚀 Hero & Triaje', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_hero_title_prefix',
 					'label'         => __( 'Prefijo del Título Principal (H1)', 'mitsa' ),
@@ -40,7 +49,7 @@ function mitsa_register_acf_field_groups() {
 					'label'         => __( 'Palabras Rotativas Animadas', 'mitsa' ),
 					'name'          => 'hero_rotating_words',
 					'type'          => 'textarea',
-					'instructions'  => __( 'Ingrese una palabra o frase corta por línea.', 'mitsa' ),
+					'instructions'  => __( 'Ingrese una palabra o frase por línea (se alternan automáticamente).', 'mitsa' ),
 					'default_value' => "sanitaria\nde tratamiento\nde protección\nde agua dulce",
 					'rows'          => 4,
 					'required'      => 1,
@@ -64,7 +73,7 @@ function mitsa_register_acf_field_groups() {
 				// Triaje Opción 1
 				array(
 					'key'           => 'field_mitsa_triage_opt1_label',
-					'label'         => __( 'Triaje - Opción 1 (Etiqueta)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 1 (Etiqueta)', 'mitsa' ),
 					'name'          => 'triage_opt1_label',
 					'type'          => 'text',
 					'default_value' => 'Evaluación técnica',
@@ -72,7 +81,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_triage_opt1_url',
-					'label'         => __( 'Triaje - Opción 1 (URL)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 1 (URL)', 'mitsa' ),
 					'name'          => 'triage_opt1_url',
 					'type'          => 'text',
 					'default_value' => '/contacto/?tipo=evaluacion',
@@ -81,7 +90,7 @@ function mitsa_register_acf_field_groups() {
 				// Triaje Opción 2
 				array(
 					'key'           => 'field_mitsa_triage_opt2_label',
-					'label'         => __( 'Triaje - Opción 2 (Etiqueta)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 2 (Etiqueta)', 'mitsa' ),
 					'name'          => 'triage_opt2_label',
 					'type'          => 'text',
 					'default_value' => 'Repuestos',
@@ -89,7 +98,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_triage_opt2_url',
-					'label'         => __( 'Triaje - Opción 2 (URL)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 2 (URL)', 'mitsa' ),
 					'name'          => 'triage_opt2_url',
 					'type'          => 'text',
 					'default_value' => '/contacto/?tipo=repuestos',
@@ -98,7 +107,7 @@ function mitsa_register_acf_field_groups() {
 				// Triaje Opción 3
 				array(
 					'key'           => 'field_mitsa_triage_opt3_label',
-					'label'         => __( 'Triaje - Opción 3 (Etiqueta)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 3 (Etiqueta)', 'mitsa' ),
 					'name'          => 'triage_opt3_label',
 					'type'          => 'text',
 					'default_value' => 'Servicio técnico',
@@ -106,7 +115,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_triage_opt3_url',
-					'label'         => __( 'Triaje - Opción 3 (URL)', 'mitsa' ),
+					'label'         => __( 'Triaje: Botón 3 (URL)', 'mitsa' ),
 					'name'          => 'triage_opt3_url',
 					'type'          => 'text',
 					'default_value' => '/contacto/?tipo=servicio',
@@ -114,10 +123,11 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_triage_placeholder',
-					'label'         => __( 'Placeholder de Búsqueda', 'mitsa' ),
+					'label'         => __( 'Placeholder del Buscador', 'mitsa' ),
 					'name'          => 'triage_placeholder',
 					'type'          => 'text',
 					'default_value' => 'Describa su proyecto o nave...',
+					'wrapper'       => array( 'width' => '50' ),
 				),
 				array(
 					'key'           => 'field_mitsa_triage_action_url',
@@ -125,31 +135,22 @@ function mitsa_register_acf_field_groups() {
 					'name'          => 'triage_action_url',
 					'type'          => 'text',
 					'default_value' => '/contacto/',
+					'wrapper'       => array( 'width' => '50' ),
 				),
-			),
-			'location'              => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order'            => 10,
-		)
-	);
 
-	// 2. Grupo de Campos: Tarjetas Visuales de Proyectos
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_visual_cards',
-			'title'    => __( '2. Grid Visual de Proyectos Destacados (4 Tarjetas)', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 2: GRID VISUAL DE PROYECTOS
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_projects',
+					'label'     => __( '🚢 Proyectos (4 Tarjetas)', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				// Tarjeta 1
 				array(
 					'key'           => 'field_mitsa_vcard1_title',
-					'label'         => __( 'Tarjeta 1: Título de Proyecto', 'mitsa' ),
+					'label'         => __( 'Proyecto 1: Título', 'mitsa' ),
 					'name'          => 'vcard1_title',
 					'type'          => 'text',
 					'default_value' => 'Fragata FF-18 · ICCP',
@@ -157,7 +158,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard1_alt',
-					'label'         => __( 'Tarjeta 1: Texto Alternativo (Alt Text Accesible)', 'mitsa' ),
+					'label'         => __( 'Proyecto 1: Alt Text Accesible', 'mitsa' ),
 					'name'          => 'vcard1_alt',
 					'type'          => 'text',
 					'default_value' => 'Protección catódica por corriente impresa ICCP en Fragata FF-18',
@@ -165,7 +166,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard1_image',
-					'label'         => __( 'Tarjeta 1: Imagen', 'mitsa' ),
+					'label'         => __( 'Proyecto 1: Foto', 'mitsa' ),
 					'name'          => 'vcard1_image',
 					'type'          => 'image',
 					'return_format' => 'url',
@@ -173,10 +174,10 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard1_loading',
-					'label'         => __( 'Tarjeta 1: Prioridad de Carga', 'mitsa' ),
+					'label'         => __( 'Proyecto 1: Carga LCP', 'mitsa' ),
 					'name'          => 'vcard1_loading',
 					'type'          => 'select',
-					'choices'       => array( 'eager' => 'Eager (LCP prioritario)', 'lazy' => 'Lazy (Carga diferida)' ),
+					'choices'       => array( 'eager' => 'Eager (Prioritaria / LCP)', 'lazy' => 'Lazy (Carga diferida)' ),
 					'default_value' => 'eager',
 					'wrapper'       => array( 'width' => '50' ),
 				),
@@ -184,7 +185,7 @@ function mitsa_register_acf_field_groups() {
 				// Tarjeta 2
 				array(
 					'key'           => 'field_mitsa_vcard2_title',
-					'label'         => __( 'Tarjeta 2: Título de Proyecto', 'mitsa' ),
+					'label'         => __( 'Proyecto 2: Título', 'mitsa' ),
 					'name'          => 'vcard2_title',
 					'type'          => 'text',
 					'default_value' => 'OPV Cabo Odger · Sanitarios',
@@ -192,7 +193,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard2_alt',
-					'label'         => __( 'Tarjeta 2: Texto Alternativo (Alt Text)', 'mitsa' ),
+					'label'         => __( 'Proyecto 2: Alt Text Accesible', 'mitsa' ),
 					'name'          => 'vcard2_alt',
 					'type'          => 'text',
 					'default_value' => 'Sistemas sanitarios al vacío EVAC en buque patrullero OPV Cabo Odger',
@@ -200,7 +201,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard2_image',
-					'label'         => __( 'Tarjeta 2: Imagen', 'mitsa' ),
+					'label'         => __( 'Proyecto 2: Foto', 'mitsa' ),
 					'name'          => 'vcard2_image',
 					'type'          => 'image',
 					'return_format' => 'url',
@@ -208,10 +209,10 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard2_loading',
-					'label'         => __( 'Tarjeta 2: Prioridad de Carga', 'mitsa' ),
+					'label'         => __( 'Proyecto 2: Carga LCP', 'mitsa' ),
 					'name'          => 'vcard2_loading',
 					'type'          => 'select',
-					'choices'       => array( 'eager' => 'Eager (LCP prioritario)', 'lazy' => 'Lazy (Carga diferida)' ),
+					'choices'       => array( 'eager' => 'Eager (Prioritaria / LCP)', 'lazy' => 'Lazy (Carga diferida)' ),
 					'default_value' => 'eager',
 					'wrapper'       => array( 'width' => '50' ),
 				),
@@ -219,7 +220,7 @@ function mitsa_register_acf_field_groups() {
 				// Tarjeta 3
 				array(
 					'key'           => 'field_mitsa_vcard3_title',
-					'label'         => __( 'Tarjeta 3: Título de Proyecto', 'mitsa' ),
+					'label'         => __( 'Proyecto 3: Título', 'mitsa' ),
 					'name'          => 'vcard3_title',
 					'type'          => 'text',
 					'default_value' => 'Magellan Discovery · Agua caliente',
@@ -227,7 +228,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard3_alt',
-					'label'         => __( 'Tarjeta 3: Texto Alternativo (Alt Text)', 'mitsa' ),
+					'label'         => __( 'Proyecto 3: Alt Text Accesible', 'mitsa' ),
 					'name'          => 'vcard3_alt',
 					'type'          => 'text',
 					'default_value' => 'Sistemas de generación y distribución de agua caliente a bordo',
@@ -235,7 +236,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard3_image',
-					'label'         => __( 'Tarjeta 3: Imagen', 'mitsa' ),
+					'label'         => __( 'Proyecto 3: Foto', 'mitsa' ),
 					'name'          => 'vcard3_image',
 					'type'          => 'image',
 					'return_format' => 'url',
@@ -243,10 +244,10 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard3_loading',
-					'label'         => __( 'Tarjeta 3: Prioridad de Carga', 'mitsa' ),
+					'label'         => __( 'Proyecto 3: Carga LCP', 'mitsa' ),
 					'name'          => 'vcard3_loading',
 					'type'          => 'select',
-					'choices'       => array( 'eager' => 'Eager (LCP prioritario)', 'lazy' => 'Lazy (Carga diferida)' ),
+					'choices'       => array( 'eager' => 'Eager (Prioritaria / LCP)', 'lazy' => 'Lazy (Carga diferida)' ),
 					'default_value' => 'lazy',
 					'wrapper'       => array( 'width' => '50' ),
 				),
@@ -254,7 +255,7 @@ function mitsa_register_acf_field_groups() {
 				// Tarjeta 4
 				array(
 					'key'           => 'field_mitsa_vcard4_title',
-					'label'         => __( 'Tarjeta 4: Título de Proyecto', 'mitsa' ),
+					'label'         => __( 'Proyecto 4: Título', 'mitsa' ),
 					'name'          => 'vcard4_title',
 					'type'          => 'text',
 					'default_value' => 'Wellboat · BWTS',
@@ -262,7 +263,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard4_alt',
-					'label'         => __( 'Tarjeta 4: Texto Alternativo (Alt Text)', 'mitsa' ),
+					'label'         => __( 'Proyecto 4: Alt Text Accesible', 'mitsa' ),
 					'name'          => 'vcard4_alt',
 					'type'          => 'text',
 					'default_value' => 'Tratamiento de agua de lastre BWTS ERMA FIRST en wellboat',
@@ -270,7 +271,7 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard4_image',
-					'label'         => __( 'Tarjeta 4: Imagen', 'mitsa' ),
+					'label'         => __( 'Proyecto 4: Foto', 'mitsa' ),
 					'name'          => 'vcard4_image',
 					'type'          => 'image',
 					'return_format' => 'url',
@@ -278,33 +279,23 @@ function mitsa_register_acf_field_groups() {
 				),
 				array(
 					'key'           => 'field_mitsa_vcard4_loading',
-					'label'         => __( 'Tarjeta 4: Prioridad de Carga', 'mitsa' ),
+					'label'         => __( 'Proyecto 4: Carga LCP', 'mitsa' ),
 					'name'          => 'vcard4_loading',
 					'type'          => 'select',
-					'choices'       => array( 'eager' => 'Eager (LCP prioritario)', 'lazy' => 'Lazy (Carga diferida)' ),
+					'choices'       => array( 'eager' => 'Eager (Prioritaria / LCP)', 'lazy' => 'Lazy (Carga diferida)' ),
 					'default_value' => 'lazy',
 					'wrapper'       => array( 'width' => '50' ),
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 20,
-		)
-	);
 
-	// 3. Grupo de Campos: Pain Points & Objeciones del Sector
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_pain_points',
-			'title'    => __( '3. Objeciones y Resoluciones del Sector Naval', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 3: OBJECIONES & RESOLUCIONES
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_pain_points',
+					'label'     => __( '💬 Objeciones & Resoluciones', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_pp_heading',
 					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
@@ -351,26 +342,16 @@ function mitsa_register_acf_field_groups() {
 					'default_value' => "Especificaciones que calzan exactamente con la normativa aplicable\nIngeniería de aplicación y dimensionamiento previo a la compra\nTrazabilidad de repuestos originales por número de parte oficial\nPuesta en marcha y comisionamiento ejecutado en terreno en Chile\nAlcance contractual y técnico claro entre astillero, armador y MITSA",
 					'rows'          => 5,
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 30,
-		)
-	);
 
-	// 4. Grupo de Campos: Banner de Métricas
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_metrics',
-			'title'    => __( '4. Banner de Métricas de Autoridad', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 4: MÉTRICAS DE AUTORIDAD
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_metrics',
+					'label'     => __( '📊 Métricas de Autoridad', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				// Métrica 1
 				array(
 					'key'           => 'field_mitsa_metric1_val',
@@ -422,26 +403,16 @@ function mitsa_register_acf_field_groups() {
 					'default_value' => 'cobertura nacional con ingenieros especialistas en terreno',
 					'wrapper'       => array( 'width' => '70' ),
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 40,
-		)
-	);
 
-	// 5. Grupo de Campos: Showcase de Marcas Representadas
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_brands_showcase',
-			'title'    => __( '5. Showcase de Fabricantes y Representadas Oficiales', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 5: MARCAS REPRESENTADAS
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_brands',
+					'label'     => __( '🏷️ Marcas Representadas', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_brands_heading',
 					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
@@ -574,26 +545,16 @@ function mitsa_register_acf_field_groups() {
 					'default_value' => 'Sistemas de evacuación y tuberías de acero inoxidable AISI 316L.',
 					'wrapper'       => array( 'width' => '40' ),
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 50,
-		)
-	);
 
-	// 6. Grupo de Campos: Soluciones Tecnológicas Especializadas
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_solutions',
-			'title'    => __( '6. Soluciones Tecnológicas Especializadas (8 Soluciones)', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 6: SOLUCIONES TECNOLÓGICAS (8)
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_solutions',
+					'label'     => __( '⚙️ Soluciones (8)', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_solutions_heading',
 					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
@@ -609,233 +570,96 @@ function mitsa_register_acf_field_groups() {
 					'default_value' => 'Sistemas marinos y terrestres integrados con ingeniería de aplicación, comisionamiento y respaldo técnico en terreno.',
 					'rows'          => 2,
 				),
-				// Solución 1
+				// Sol 1
 				array(
-					'key'           => 'field_mitsa_sol1_title',
-					'label'         => __( 'Solución 1: Título', 'mitsa' ),
-					'name'          => 'sol1_title',
-					'type'          => 'text',
-					'default_value' => 'Sanitarios al vacío',
-					'wrapper'       => array( 'width' => '30' ),
+					'key' => 'field_mitsa_sol1_title', 'label' => __( 'Solución 1: Título', 'mitsa' ), 'name' => 'sol1_title', 'type' => 'text', 'default_value' => 'Sanitarios al vacío', 'wrapper' => array( 'width' => '30' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol1_brand',
-					'label'         => __( 'Solución 1: Marca', 'mitsa' ),
-					'name'          => 'sol1_brand',
-					'type'          => 'text',
-					'default_value' => 'EVAC',
-					'wrapper'       => array( 'width' => '20' ),
+					'key' => 'field_mitsa_sol1_brand', 'label' => __( 'Solución 1: Marca', 'mitsa' ), 'name' => 'sol1_brand', 'type' => 'text', 'default_value' => 'EVAC', 'wrapper' => array( 'width' => '20' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol1_desc',
-					'label'         => __( 'Solución 1: Descripción', 'mitsa' ),
-					'name'          => 'sol1_desc',
-					'type'          => 'text',
-					'default_value' => 'Sistemas sanitarios marinos y terrestres de alta eficiencia con ahorro de agua.',
-					'wrapper'       => array( 'width' => '50' ),
+					'key' => 'field_mitsa_sol1_desc', 'label' => __( 'Solución 1: Descripción', 'mitsa' ), 'name' => 'sol1_desc', 'type' => 'text', 'default_value' => 'Sistemas sanitarios marinos y terrestres de alta eficiencia con ahorro de agua.', 'wrapper' => array( 'width' => '50' ),
 				),
-
-				// Solución 2
+				// Sol 2
 				array(
-					'key'           => 'field_mitsa_sol2_title',
-					'label'         => __( 'Solución 2: Título', 'mitsa' ),
-					'name'          => 'sol2_title',
-					'type'          => 'text',
-					'default_value' => 'Aguas residuales',
-					'wrapper'       => array( 'width' => '30' ),
+					'key' => 'field_mitsa_sol2_title', 'label' => __( 'Solución 2: Título', 'mitsa' ), 'name' => 'sol2_title', 'type' => 'text', 'default_value' => 'Aguas residuales', 'wrapper' => array( 'width' => '30' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol2_brand',
-					'label'         => __( 'Solución 2: Marca', 'mitsa' ),
-					'name'          => 'sol2_brand',
-					'type'          => 'text',
-					'default_value' => 'EVAC · EPE',
-					'wrapper'       => array( 'width' => '20' ),
+					'key' => 'field_mitsa_sol2_brand', 'label' => __( 'Solución 2: Marca', 'mitsa' ), 'name' => 'sol2_brand', 'type' => 'text', 'default_value' => 'EVAC · EPE', 'wrapper' => array( 'width' => '20' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol2_desc',
-					'label'         => __( 'Solución 2: Descripción', 'mitsa' ),
-					'name'          => 'sol2_desc',
-					'type'          => 'text',
-					'default_value' => 'Plantas de tratamiento biológico y físico-químico según normativa MARPOL Anexo IV.',
-					'wrapper'       => array( 'width' => '50' ),
+					'key' => 'field_mitsa_sol2_desc', 'label' => __( 'Solución 2: Descripción', 'mitsa' ), 'name' => 'sol2_desc', 'type' => 'text', 'default_value' => 'Plantas de tratamiento biológico y físico-químico según normativa MARPOL Anexo IV.', 'wrapper' => array( 'width' => '50' ),
 				),
-
-				// Solución 3
+				// Sol 3
 				array(
-					'key'           => 'field_mitsa_sol3_title',
-					'label'         => __( 'Solución 3: Título', 'mitsa' ),
-					'name'          => 'sol3_title',
-					'type'          => 'text',
-					'default_value' => 'Agua de lastre (BWTS)',
-					'wrapper'       => array( 'width' => '30' ),
+					'key' => 'field_mitsa_sol3_title', 'label' => __( 'Solución 3: Título', 'mitsa' ), 'name' => 'sol3_title', 'type' => 'text', 'default_value' => 'Agua de lastre (BWTS)', 'wrapper' => array( 'width' => '30' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol3_brand',
-					'label'         => __( 'Solución 3: Marca', 'mitsa' ),
-					'name'          => 'sol3_brand',
-					'type'          => 'text',
-					'default_value' => 'ERMA FIRST',
-					'wrapper'       => array( 'width' => '20' ),
+					'key' => 'field_mitsa_sol3_brand', 'label' => __( 'Solución 3: Marca', 'mitsa' ), 'name' => 'sol3_brand', 'type' => 'text', 'default_value' => 'ERMA FIRST', 'wrapper' => array( 'width' => '20' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol3_desc',
-					'label'         => __( 'Solución 3: Descripción', 'mitsa' ),
-					'name'          => 'sol3_desc',
-					'type'          => 'text',
-					'default_value' => 'Sistemas de tratamiento de agua de lastre bajo estándar D-2 de la OMI.',
-					'wrapper'       => array( 'width' => '50' ),
+					'key' => 'field_mitsa_sol3_desc', 'label' => __( 'Solución 3: Descripción', 'mitsa' ), 'name' => 'sol3_desc', 'type' => 'text', 'default_value' => 'Sistemas de tratamiento de agua de lastre bajo estándar D-2 de la OMI.', 'wrapper' => array( 'width' => '50' ),
 				),
-
-				// Solución 4
+				// Sol 4
 				array(
-					'key'           => 'field_mitsa_sol4_title',
-					'label'         => __( 'Solución 4: Título', 'mitsa' ),
-					'name'          => 'sol4_title',
-					'type'          => 'text',
-					'default_value' => 'Corrosión (ICCP)',
-					'wrapper'       => array( 'width' => '30' ),
+					'key' => 'field_mitsa_sol4_title', 'label' => __( 'Solución 4: Título', 'mitsa' ), 'name' => 'sol4_title', 'type' => 'text', 'default_value' => 'Corrosión (ICCP)', 'wrapper' => array( 'width' => '30' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol4_brand',
-					'label'         => __( 'Solución 4: Marca', 'mitsa' ),
-					'name'          => 'sol4_brand',
-					'type'          => 'text',
-					'default_value' => 'Cathelco',
-					'wrapper'       => array( 'width' => '20' ),
+					'key' => 'field_mitsa_sol4_brand', 'label' => __( 'Solución 4: Marca', 'mitsa' ), 'name' => 'sol4_brand', 'type' => 'text', 'default_value' => 'Cathelco', 'wrapper' => array( 'width' => '20' ),
 				),
 				array(
-					'key'           => 'field_mitsa_sol4_desc',
-					'label'         => __( 'Solución 4: Descripción', 'mitsa' ),
-					'name'          => 'sol4_desc',
-					'type'          => 'text',
-					'default_value' => 'Protección catódica por corriente impresa para cascos de buques e instalaciones.',
-					'wrapper'       => array( 'width' => '50' ),
+					'key' => 'field_mitsa_sol4_desc', 'label' => __( 'Solución 4: Descripción', 'mitsa' ), 'name' => 'sol4_desc', 'type' => 'text', 'default_value' => 'Protección catódica por corriente impresa para cascos de buques e instalaciones.', 'wrapper' => array( 'width' => '50' ),
+				),
+				// Sol 5
+				array(
+					'key' => 'field_mitsa_sol5_title', 'label' => __( 'Solución 5: Título', 'mitsa' ), 'name' => 'sol5_title', 'type' => 'text', 'default_value' => 'Bioincrustaciones (ICAF)', 'wrapper' => array( 'width' => '30' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol5_brand', 'label' => __( 'Solución 5: Marca', 'mitsa' ), 'name' => 'sol5_brand', 'type' => 'text', 'default_value' => 'Cathelco', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol5_desc', 'label' => __( 'Solución 5: Descripción', 'mitsa' ), 'name' => 'sol5_desc', 'type' => 'text', 'default_value' => 'Sistemas anti-incrustaciones para tomas de mar y circuitos de refrigeración.', 'wrapper' => array( 'width' => '50' ),
+				),
+				// Sol 6
+				array(
+					'key' => 'field_mitsa_sol6_title', 'label' => __( 'Solución 6: Título', 'mitsa' ), 'name' => 'sol6_title', 'type' => 'text', 'default_value' => 'Generación de agua dulce', 'wrapper' => array( 'width' => '30' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol6_brand', 'label' => __( 'Solución 6: Marca', 'mitsa' ), 'name' => 'sol6_brand', 'type' => 'text', 'default_value' => 'Representadas oficiales', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol6_desc', 'label' => __( 'Solución 6: Descripción', 'mitsa' ), 'name' => 'sol6_desc', 'type' => 'text', 'default_value' => 'Plantas desalinizadoras por ósmosis inversa y evaporadores marinos.', 'wrapper' => array( 'width' => '50' ),
+				),
+				// Sol 7
+				array(
+					'key' => 'field_mitsa_sol7_title', 'label' => __( 'Solución 7: Título', 'mitsa' ), 'name' => 'sol7_title', 'type' => 'text', 'default_value' => 'Sistemas de agua caliente', 'wrapper' => array( 'width' => '30' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol7_brand', 'label' => __( 'Solución 7: Marca', 'mitsa' ), 'name' => 'sol7_brand', 'type' => 'text', 'default_value' => 'Ingeniería MITSA', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol7_desc', 'label' => __( 'Solución 7: Descripción', 'mitsa' ), 'name' => 'sol7_desc', 'type' => 'text', 'default_value' => 'Calderas, intercambiadores y acumuladores para habitabilidad a bordo.', 'wrapper' => array( 'width' => '50' ),
+				),
+				// Sol 8
+				array(
+					'key' => 'field_mitsa_sol8_title', 'label' => __( 'Solución 8: Título', 'mitsa' ), 'name' => 'sol8_title', 'type' => 'text', 'default_value' => 'Drenajes inoxidables', 'wrapper' => array( 'width' => '30' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol8_brand', 'label' => __( 'Solución 8: Marca', 'mitsa' ), 'name' => 'sol8_brand', 'type' => 'text', 'default_value' => 'BLÜCHER', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_mitsa_sol8_desc', 'label' => __( 'Solución 8: Descripción', 'mitsa' ), 'name' => 'sol8_desc', 'type' => 'text', 'default_value' => 'Canaletas, sifones y tuberías de acero inoxidable AISI 316L para higiene naval.', 'wrapper' => array( 'width' => '50' ),
 				),
 
-				// Solución 5
+				// ==========================================
+				// PESTAÑA 7: ¿POR QUÉ MITSA?
+				// ==========================================
 				array(
-					'key'           => 'field_mitsa_sol5_title',
-					'label'         => __( 'Solución 5: Título', 'mitsa' ),
-					'name'          => 'sol5_title',
-					'type'          => 'text',
-					'default_value' => 'Bioincrustaciones (ICAF)',
-					'wrapper'       => array( 'width' => '30' ),
+					'key'       => 'tab_mitsa_why',
+					'label'     => __( '⭐ ¿Por qué MITSA?', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
 				),
-				array(
-					'key'           => 'field_mitsa_sol5_brand',
-					'label'         => __( 'Solución 5: Marca', 'mitsa' ),
-					'name'          => 'sol5_brand',
-					'type'          => 'text',
-					'default_value' => 'Cathelco',
-					'wrapper'       => array( 'width' => '20' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol5_desc',
-					'label'         => __( 'Solución 5: Descripción', 'mitsa' ),
-					'name'          => 'sol5_desc',
-					'type'          => 'text',
-					'default_value' => 'Sistemas anti-incrustaciones para tomas de mar y circuitos de refrigeración.',
-					'wrapper'       => array( 'width' => '50' ),
-				),
-
-				// Solución 6
-				array(
-					'key'           => 'field_mitsa_sol6_title',
-					'label'         => __( 'Solución 6: Título', 'mitsa' ),
-					'name'          => 'sol6_title',
-					'type'          => 'text',
-					'default_value' => 'Generación de agua dulce',
-					'wrapper'       => array( 'width' => '30' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol6_brand',
-					'label'         => __( 'Solución 6: Marca', 'mitsa' ),
-					'name'          => 'sol6_brand',
-					'type'          => 'text',
-					'default_value' => 'Representadas oficiales',
-					'wrapper'       => array( 'width' => '20' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol6_desc',
-					'label'         => __( 'Solución 6: Descripción', 'mitsa' ),
-					'name'          => 'sol6_desc',
-					'type'          => 'text',
-					'default_value' => 'Plantas desalinizadoras por ósmosis inversa y evaporadores marinos.',
-					'wrapper'       => array( 'width' => '50' ),
-				),
-
-				// Solución 7
-				array(
-					'key'           => 'field_mitsa_sol7_title',
-					'label'         => __( 'Solución 7: Título', 'mitsa' ),
-					'name'          => 'sol7_title',
-					'type'          => 'text',
-					'default_value' => 'Sistemas de agua caliente',
-					'wrapper'       => array( 'width' => '30' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol7_brand',
-					'label'         => __( 'Solución 7: Marca', 'mitsa' ),
-					'name'          => 'sol7_brand',
-					'type'          => 'text',
-					'default_value' => 'Ingeniería MITSA',
-					'wrapper'       => array( 'width' => '20' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol7_desc',
-					'label'         => __( 'Solución 7: Descripción', 'mitsa' ),
-					'name'          => 'sol7_desc',
-					'type'          => 'text',
-					'default_value' => 'Calderas, intercambiadores y acumuladores para habitabilidad a bordo.',
-					'wrapper'       => array( 'width' => '50' ),
-				),
-
-				// Solución 8
-				array(
-					'key'           => 'field_mitsa_sol8_title',
-					'label'         => __( 'Solución 8: Título', 'mitsa' ),
-					'name'          => 'sol8_title',
-					'type'          => 'text',
-					'default_value' => 'Drenajes inoxidables',
-					'wrapper'       => array( 'width' => '30' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol8_brand',
-					'label'         => __( 'Solución 8: Marca', 'mitsa' ),
-					'name'          => 'sol8_brand',
-					'type'          => 'text',
-					'default_value' => 'BLÜCHER',
-					'wrapper'       => array( 'width' => '20' ),
-				),
-				array(
-					'key'           => 'field_mitsa_sol8_desc',
-					'label'         => __( 'Solución 8: Descripción', 'mitsa' ),
-					'name'          => 'sol8_desc',
-					'type'          => 'text',
-					'default_value' => 'Canaletas, sifones y tuberías de acero inoxidable AISI 316L para higiene naval.',
-					'wrapper'       => array( 'width' => '50' ),
-				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 60,
-		)
-	);
-
-	// 7. Grupo de Campos: ¿Por qué MITSA?
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_why_mitsa',
-			'title'    => __( '7. ¿Por qué MITSA? (Diferenciadores y Propuesta de Valor)', 'mitsa' ),
-			'fields'   => array(
 				array(
 					'key'           => 'field_mitsa_why_heading',
 					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
@@ -853,67 +677,32 @@ function mitsa_register_acf_field_groups() {
 				),
 				// Razón 1
 				array(
-					'key'           => 'field_mitsa_why1_title',
-					'label'         => __( 'Razón 1: Título', 'mitsa' ),
-					'name'          => 'why1_title',
-					'type'          => 'text',
-					'default_value' => 'Años de experiencia',
-					'wrapper'       => array( 'width' => '30' ),
+					'key' => 'field_mitsa_why1_title', 'label' => __( 'Razón 1: Título', 'mitsa' ), 'name' => 'why1_title', 'type' => 'text', 'default_value' => 'Años de experiencia', 'wrapper' => array( 'width' => '30' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why1_metric',
-					'label'         => __( 'Razón 1: Cifra Destacada', 'mitsa' ),
-					'name'          => 'why1_metric',
-					'type'          => 'text',
-					'default_value' => '40+',
-					'wrapper'       => array( 'width' => '20' ),
+					'key' => 'field_mitsa_why1_metric', 'label' => __( 'Razón 1: Cifra Destacada', 'mitsa' ), 'name' => 'why1_metric', 'type' => 'text', 'default_value' => '40+', 'wrapper' => array( 'width' => '20' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why1_desc',
-					'label'         => __( 'Razón 1: Descripción', 'mitsa' ),
-					'name'          => 'why1_desc',
-					'type'          => 'text',
-					'default_value' => 'Cuatro décadas resolviendo proyectos marítimos e industriales en Chile.',
-					'wrapper'       => array( 'width' => '50' ),
+					'key' => 'field_mitsa_why1_desc', 'label' => __( 'Razón 1: Descripción', 'mitsa' ), 'name' => 'why1_desc', 'type' => 'text', 'default_value' => 'Cuatro décadas resolviendo proyectos marítimos e industriales en Chile.', 'wrapper' => array( 'width' => '50' ),
 				),
 				// Razón 2
 				array(
-					'key'           => 'field_mitsa_why2_title',
-					'label'         => __( 'Razón 2: Título', 'mitsa' ),
-					'name'          => 'why2_title',
-					'type'          => 'text',
-					'default_value' => 'Ingeniería especializada',
-					'wrapper'       => array( 'width' => '40' ),
+					'key' => 'field_mitsa_why2_title', 'label' => __( 'Razón 2: Título', 'mitsa' ), 'name' => 'why2_title', 'type' => 'text', 'default_value' => 'Ingeniería especializada', 'wrapper' => array( 'width' => '40' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why2_desc',
-					'label'         => __( 'Razón 2: Descripción', 'mitsa' ),
-					'name'          => 'why2_desc',
-					'type'          => 'text',
-					'default_value' => 'Ingeniería de aplicación propia: la solución se dimensiona, no se cotiza de catálogo.',
-					'wrapper'       => array( 'width' => '60' ),
+					'key' => 'field_mitsa_why2_desc', 'label' => __( 'Razón 2: Descripción', 'mitsa' ), 'name' => 'why2_desc', 'type' => 'text', 'default_value' => 'Ingeniería de aplicación propia: la solución se dimensiona, no se cotiza de catálogo.', 'wrapper' => array( 'width' => '60' ),
 				),
 				// Razón 3
 				array(
-					'key'           => 'field_mitsa_why3_title',
-					'label'         => __( 'Razón 3: Título', 'mitsa' ),
-					'name'          => 'why3_title',
-					'type'          => 'text',
-					'default_value' => 'Representantes oficiales',
-					'wrapper'       => array( 'width' => '40' ),
+					'key' => 'field_mitsa_why3_title', 'label' => __( 'Razón 3: Título', 'mitsa' ), 'name' => 'why3_title', 'type' => 'text', 'default_value' => 'Representantes oficiales', 'wrapper' => array( 'width' => '40' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why3_desc',
-					'label'         => __( 'Razón 3: Descripción', 'mitsa' ),
-					'name'          => 'why3_desc',
-					'type'          => 'text',
-					'default_value' => 'Representación directa de cinco fabricantes internacionales, con respaldo y garantía de fábrica.',
-					'wrapper'       => array( 'width' => '60' ),
+					'key' => 'field_mitsa_why3_desc', 'label' => __( 'Razón 3: Descripción', 'mitsa' ), 'name' => 'why3_desc', 'type' => 'text', 'default_value' => 'Representación directa de cinco fabricantes internacionales, con respaldo y garantía de fábrica.', 'wrapper' => array( 'width' => '60' ),
 				),
 				// Razón 4 (Foto en terreno)
 				array(
 					'key'           => 'field_mitsa_why4_image',
-					'label'         => __( 'Razón 4: Imagen de Equipo en Terreno', 'mitsa' ),
+					'label'         => __( 'Razón 4: Foto de Equipo en Terreno', 'mitsa' ),
 					'name'          => 'why4_image',
 					'type'          => 'image',
 					'return_format' => 'url',
@@ -929,58 +718,28 @@ function mitsa_register_acf_field_groups() {
 				),
 				// Razón 5
 				array(
-					'key'           => 'field_mitsa_why5_title',
-					'label'         => __( 'Razón 5: Título', 'mitsa' ),
-					'name'          => 'why5_title',
-					'type'          => 'text',
-					'default_value' => 'Cobertura nacional y regional',
-					'wrapper'       => array( 'width' => '40' ),
+					'key' => 'field_mitsa_why5_title', 'label' => __( 'Razón 5: Título', 'mitsa' ), 'name' => 'why5_title', 'type' => 'text', 'default_value' => 'Cobertura nacional y regional', 'wrapper' => array( 'width' => '40' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why5_desc',
-					'label'         => __( 'Razón 5: Descripción', 'mitsa' ),
-					'name'          => 'why5_desc',
-					'type'          => 'text',
-					'default_value' => 'Presencia donde está la operación: puertos, astilleros, faenas y centros de cultivo.',
-					'wrapper'       => array( 'width' => '60' ),
+					'key' => 'field_mitsa_why5_desc', 'label' => __( 'Razón 5: Descripción', 'mitsa' ), 'name' => 'why5_desc', 'type' => 'text', 'default_value' => 'Presencia donde está la operación: puertos, astilleros, faenas y centros de cultivo.', 'wrapper' => array( 'width' => '60' ),
 				),
 				// Razón 6
 				array(
-					'key'           => 'field_mitsa_why6_title',
-					'label'         => __( 'Razón 6: Título', 'mitsa' ),
-					'name'          => 'why6_title',
-					'type'          => 'text',
-					'default_value' => 'Puesta en marcha y soporte',
-					'wrapper'       => array( 'width' => '40' ),
+					'key' => 'field_mitsa_why6_title', 'label' => __( 'Razón 6: Título', 'mitsa' ), 'name' => 'why6_title', 'type' => 'text', 'default_value' => 'Puesta en marcha y soporte', 'wrapper' => array( 'width' => '40' ),
 				),
 				array(
-					'key'           => 'field_mitsa_why6_desc',
-					'label'         => __( 'Razón 6: Descripción', 'mitsa' ),
-					'name'          => 'why6_desc',
-					'type'          => 'text',
-					'default_value' => 'Comisionamiento, capacitación a la tripulación y asistencia después de la entrega.',
-					'wrapper'       => array( 'width' => '60' ),
+					'key' => 'field_mitsa_why6_desc', 'label' => __( 'Razón 6: Descripción', 'mitsa' ), 'name' => 'why6_desc', 'type' => 'text', 'default_value' => 'Comisionamiento, capacitación a la tripulación y asistencia después de la entrega.', 'wrapper' => array( 'width' => '60' ),
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 70,
-		)
-	);
 
-	// 8. Grupo de Campos: Gran Call to Action
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_cta_banner',
-			'title'    => __( '8. Gran Call to Action (Evaluación Técnica)', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 8: GRAN CALL TO ACTION
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_cta',
+					'label'     => __( '📢 Call to Action', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_cta_heading',
 					'label'         => __( 'Título de CTA (H2)', 'mitsa' ),
@@ -1028,26 +787,16 @@ function mitsa_register_acf_field_groups() {
 					'default_value' => '/contacto/?tipo=servicio',
 					'wrapper'       => array( 'width' => '50' ),
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 80,
-		)
-	);
 
-	// 9. Grupo de Campos: Preguntas Frecuentes (FAQs)
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_faqs',
-			'title'    => __( '9. Preguntas Frecuentes de Ingeniería', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 9: PREGUNTAS FRECUENTES (FAQS)
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_faqs',
+					'label'     => __( '❓ Preguntas Frecuentes', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_faqs_heading',
 					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
@@ -1057,88 +806,42 @@ function mitsa_register_acf_field_groups() {
 				),
 				// FAQ 1
 				array(
-					'key'           => 'field_mitsa_faq1_q',
-					'label'         => __( 'Pregunta 1', 'mitsa' ),
-					'name'          => 'faq1_q',
-					'type'          => 'text',
-					'default_value' => '¿Cómo se determina si un buque requiere sistema ICCP o ánodos de sacrificio?',
+					'key' => 'field_mitsa_faq1_q', 'label' => __( 'Pregunta 1', 'mitsa' ), 'name' => 'faq1_q', 'type' => 'text', 'default_value' => '¿Cómo se determina si un buque requiere sistema ICCP o ánodos de sacrificio?',
 				),
 				array(
-					'key'           => 'field_mitsa_faq1_a',
-					'label'         => __( 'Respuesta 1', 'mitsa' ),
-					'name'          => 'faq1_a',
-					'type'          => 'textarea',
-					'default_value' => 'Depende del perfil operativo, área mojada del casco, tiempo entre diques y costo de ciclo de vida. ICCP ofrece control regulable en tiempo real sin reposición física en cada carena.',
-					'rows'          => 2,
+					'key' => 'field_mitsa_faq1_a', 'label' => __( 'Respuesta 1', 'mitsa' ), 'name' => 'faq1_a', 'type' => 'textarea', 'default_value' => 'Depende del perfil operativo, área mojada del casco, tiempo entre diques y costo de ciclo de vida. ICCP ofrece control regulable en tiempo real sin reposición física en cada carena.', 'rows' => 2,
 				),
 				// FAQ 2
 				array(
-					'key'           => 'field_mitsa_faq2_q',
-					'label'         => __( 'Pregunta 2', 'mitsa' ),
-					'name'          => 'faq2_q',
-					'type'          => 'text',
-					'default_value' => '¿Qué certificaciones tienen las plantas de tratamiento de aguas servidas que suministran?',
+					'key' => 'field_mitsa_faq2_q', 'label' => __( 'Pregunta 2', 'mitsa' ), 'name' => 'faq2_q', 'type' => 'text', 'default_value' => '¿Qué certificaciones tienen las plantas de tratamiento de aguas servidas que suministran?',
 				),
 				array(
-					'key'           => 'field_mitsa_faq2_a',
-					'label'         => __( 'Respuesta 2', 'mitsa' ),
-					'name'          => 'faq2_a',
-					'type'          => 'textarea',
-					'default_value' => 'Equipos certificados bajo la Resolución MEPC.227(64) de la OMI (MARPOL Anexo IV) y aprobados por las principales casas clasificadoras (DNV, Lloyd\'s Register, ABS, BV).',
-					'rows'          => 2,
+					'key' => 'field_mitsa_faq2_a', 'label' => __( 'Respuesta 2', 'mitsa' ), 'name' => 'faq2_a', 'type' => 'textarea', 'default_value' => 'Equipos certificados bajo la Resolución MEPC.227(64) de la OMI (MARPOL Anexo IV) y aprobados por las principales casas clasificadoras (DNV, Lloyd\'s Register, ABS, BV).', 'rows' => 2,
 				),
 				// FAQ 3
 				array(
-					'key'           => 'field_mitsa_faq3_q',
-					'label'         => __( 'Pregunta 3', 'mitsa' ),
-					'name'          => 'faq3_q',
-					'type'          => 'text',
-					'default_value' => '¿MITSA realiza la puesta en marcha en cualquier puerto de Chile?',
+					'key' => 'field_mitsa_faq3_q', 'label' => __( 'Pregunta 3', 'mitsa' ), 'name' => 'faq3_q', 'type' => 'text', 'default_value' => '¿MITSA realiza la puesta en marcha en cualquier puerto de Chile?',
 				),
 				array(
-					'key'           => 'field_mitsa_faq3_a',
-					'label'         => __( 'Respuesta 3', 'mitsa' ),
-					'name'          => 'faq3_a',
-					'type'          => 'textarea',
-					'default_value' => 'Sí, nuestros ingenieros de servicio técnico operan en todo Chile (Arica a Punta Arenas) y en puertos de la región para comisionamiento, pruebas de mar y capacitación.',
-					'rows'          => 2,
+					'key' => 'field_mitsa_faq3_a', 'label' => __( 'Respuesta 3', 'mitsa' ), 'name' => 'faq3_a', 'type' => 'textarea', 'default_value' => 'Sí, nuestros ingenieros de servicio técnico operan en todo Chile (Arica a Punta Arenas) y en puertos de la región para comisionamiento, pruebas de mar y capacitación.', 'rows' => 2,
 				),
 				// FAQ 4
 				array(
-					'key'           => 'field_mitsa_faq4_q',
-					'label'         => __( 'Pregunta 4', 'mitsa' ),
-					'name'          => 'faq4_q',
-					'type'          => 'text',
-					'default_value' => '¿Cómo solicito repuestos originales de marcas representadas?',
+					'key' => 'field_mitsa_faq4_q', 'label' => __( 'Pregunta 4', 'mitsa' ), 'name' => 'faq4_q', 'type' => 'text', 'default_value' => '¿Cómo solicito repuestos originales de marcas representadas?',
 				),
 				array(
-					'key'           => 'field_mitsa_faq4_a',
-					'label'         => __( 'Respuesta 4', 'mitsa' ),
-					'name'          => 'faq4_a',
-					'type'          => 'textarea',
-					'default_value' => 'A través de nuestro portal de repuestos o contacto directo, indicando fabricante, modelo, número de serie y número de parte (P/N) de la placa del equipo.',
-					'rows'          => 2,
+					'key' => 'field_mitsa_faq4_a', 'label' => __( 'Respuesta 4', 'mitsa' ), 'name' => 'faq4_a', 'type' => 'textarea', 'default_value' => 'A través de nuestro portal de repuestos o contacto directo, indicando fabricante, modelo, número de serie y número de parte (P/N) de la placa del equipo.', 'rows' => 2,
 				),
-			),
-			'location' => array(
-				array(
-					array(
-						'param'    => 'page_type',
-						'operator' => '==',
-						'value'    => 'front_page',
-					),
-				),
-			),
-			'menu_order' => 85,
-		)
-	);
 
-	// 10. Grupo de Campos: Metadatos SEO y Open Graph
-	acf_add_local_field_group(
-		array(
-			'key'      => 'group_mitsa_seo_meta',
-			'title'    => __( '10. Configuración SEO y Open Graph', 'mitsa' ),
-			'fields'   => array(
+				// ==========================================
+				// PESTAÑA 10: CONFIGURACIÓN SEO
+				// ==========================================
+				array(
+					'key'       => 'tab_mitsa_seo',
+					'label'     => __( '🔍 SEO & Open Graph', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
 				array(
 					'key'           => 'field_mitsa_seo_title',
 					'label'         => __( 'Meta Título (SEO)', 'mitsa' ),
@@ -1164,16 +867,351 @@ function mitsa_register_acf_field_groups() {
 					'return_format' => 'url',
 				),
 			),
-			'location' => array(
+			'location'              => array(
 				array(
 					array(
-						'param'    => 'post_type',
+						'param'    => 'page_type',
 						'operator' => '==',
-						'value'    => 'page',
+						'value'    => 'front_page',
 					),
 				),
 			),
-			'menu_order' => 90,
+			'menu_order'            => 10,
+			'position'              => 'normal',
+			'style'                 => 'default',
+			'label_placement'       => 'left',
+			'instruction_placement' => 'label',
+			'hide_on_screen'        => array(
+				'the_content',
+				'featured_image',
+			),
+		)
+	);
+
+	// =========================================================================
+	// GRUPO MAESTRO: ADMINISTRACIÓN DE PÁGINA "NOSOTROS"
+	// =========================================================================
+	acf_add_local_field_group(
+		array(
+			'key'                   => 'group_mitsa_nosotros_master',
+			'title'                 => __( 'Administración de Página "Nosotros" (MITSA)', 'mitsa' ),
+			'fields'                => array(
+
+				// PESTAÑA 1: HERO & TAGLINE
+				array(
+					'key'       => 'tab_nosotros_hero',
+					'label'     => __( '🚀 Hero & Tagline', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_hero_title',
+					'label'         => __( 'Título Principal (H1)', 'mitsa' ),
+					'name'          => 'nosotros_hero_title',
+					'type'          => 'text',
+					'default_value' => 'Cuatro décadas integrando ingeniería, tecnología y servicio especializado',
+					'required'      => 1,
+				),
+				array(
+					'key'           => 'field_nosotros_hero_tagline',
+					'label'         => __( 'Lema / Tagline Corporativo', 'mitsa' ),
+					'name'          => 'nosotros_hero_tagline',
+					'type'          => 'text',
+					'default_value' => '«Todos tenemos una especialidad, la nuestra es servir»',
+					'required'      => 1,
+				),
+				array(
+					'key'           => 'field_nosotros_hero_desc',
+					'label'         => __( 'Descripción de Introducción', 'mitsa' ),
+					'name'          => 'nosotros_hero_desc',
+					'type'          => 'textarea',
+					'default_value' => 'Pioneros en introducir tecnología avanzada en el segmento sanitario y ambiental para uso marino, industrial, pesquero, acuícola y minero en Chile y Latinoamérica desde 1982.',
+					'rows'          => 3,
+					'required'      => 1,
+				),
+				array(
+					'key'           => 'field_nosotros_hero_image',
+					'label'         => __( 'Fotografía Corporativa Destacada', 'mitsa' ),
+					'name'          => 'nosotros_hero_image',
+					'type'          => 'image',
+					'return_format' => 'url',
+				),
+
+				// PESTAÑA 2: QUIÉNES SOMOS & TRAYECTORIA
+				array(
+					'key'       => 'tab_nosotros_story',
+					'label'     => __( '🏢 Trayectoria (Hitos)', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_story_title',
+					'label'         => __( 'Título de Sección (H2)', 'mitsa' ),
+					'name'          => 'nosotros_story_title',
+					'type'          => 'text',
+					'default_value' => 'Pioneros en tecnología marina y ambiental desde 1982',
+				),
+				array(
+					'key'           => 'field_nosotros_story_p1',
+					'label'         => __( 'Párrafo de Historia 1', 'mitsa' ),
+					'name'          => 'nosotros_story_p1',
+					'type'          => 'textarea',
+					'default_value' => 'Fundada en 1982 en Reñaca, Viña del Mar, MITSA nació con la convicción de conectar a las industrias marítimas y productivas de Chile con los inventores y fabricantes de tecnología de mayor estándar mundial.',
+					'rows'          => 3,
+				),
+				array(
+					'key'           => 'field_nosotros_story_p2',
+					'label'         => __( 'Párrafo de Historia 2', 'mitsa' ),
+					'name'          => 'nosotros_story_p2',
+					'type'          => 'textarea',
+					'default_value' => 'A lo largo de más de cuatro décadas, hemos evolucionado de la provisión de equipos sanitarios al vacío hacia la ingeniería de aplicación integral, comisionamiento y respaldo operativo en terreno en todo el país.',
+					'rows'          => 3,
+				),
+				// Hitos
+				array(
+					'key' => 'field_nosotros_m1_year', 'label' => __( 'Hito 1: Año', 'mitsa' ), 'name' => 'nosotros_m1_year', 'type' => 'text', 'default_value' => '1982', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_nosotros_m1_title', 'label' => __( 'Hito 1: Título', 'mitsa' ), 'name' => 'nosotros_m1_title', 'type' => 'text', 'default_value' => 'Fundación en Reñaca, Viña del Mar', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m1_desc', 'label' => __( 'Hito 1: Detalle', 'mitsa' ), 'name' => 'nosotros_m1_desc', 'type' => 'text', 'default_value' => 'Inicio de operaciones representando tecnología pionera sanitaria marina.', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m2_year', 'label' => __( 'Hito 2: Año', 'mitsa' ), 'name' => 'nosotros_m2_year', 'type' => 'text', 'default_value' => '1995', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_nosotros_m2_title', 'label' => __( 'Hito 2: Título', 'mitsa' ), 'name' => 'nosotros_m2_title', 'type' => 'text', 'default_value' => 'Expansión a Flotas y Astilleros', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m2_desc', 'label' => __( 'Hito 2: Detalle', 'mitsa' ), 'name' => 'nosotros_m2_desc', 'type' => 'text', 'default_value' => 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m3_year', 'label' => __( 'Hito 3: Año', 'mitsa' ), 'name' => 'nosotros_m3_year', 'type' => 'text', 'default_value' => '2010', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_nosotros_m3_title', 'label' => __( 'Hito 3: Título', 'mitsa' ), 'name' => 'nosotros_m3_title', 'type' => 'text', 'default_value' => 'Alianzas Globales de Fabricación', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m3_desc', 'label' => __( 'Hito 3: Detalle', 'mitsa' ), 'name' => 'nosotros_m3_desc', 'type' => 'text', 'default_value' => 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m4_year', 'label' => __( 'Hito 4: Año', 'mitsa' ), 'name' => 'nosotros_m4_year', 'type' => 'text', 'default_value' => '2026', 'wrapper' => array( 'width' => '20' ),
+				),
+				array(
+					'key' => 'field_nosotros_m4_title', 'label' => __( 'Hito 4: Título', 'mitsa' ), 'name' => 'nosotros_m4_title', 'type' => 'text', 'default_value' => 'Ingeniería y Presencia Regional', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_m4_desc', 'label' => __( 'Hito 4: Detalle', 'mitsa' ), 'name' => 'nosotros_m4_desc', 'type' => 'text', 'default_value' => 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.', 'wrapper' => array( 'width' => '40' ),
+				),
+
+				// PESTAÑA 3: MISIÓN & VISIÓN
+				array(
+					'key'       => 'tab_nosotros_mv',
+					'label'     => __( '🎯 Misión & Visión', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_mission_title',
+					'label'         => __( 'Título de Misión', 'mitsa' ),
+					'name'          => 'nosotros_mission_title',
+					'type'          => 'text',
+					'default_value' => 'Nuestra Misión',
+				),
+				array(
+					'key'           => 'field_nosotros_mission_text',
+					'label'         => __( 'Texto de Misión (Brochure Oficial)', 'mitsa' ),
+					'name'          => 'nosotros_mission_text',
+					'type'          => 'textarea',
+					'default_value' => 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.',
+					'rows'          => 3,
+				),
+				array(
+					'key'           => 'field_nosotros_vision_title',
+					'label'         => __( 'Título de Visión', 'mitsa' ),
+					'name'          => 'nosotros_vision_title',
+					'type'          => 'text',
+					'default_value' => 'Nuestra Visión',
+				),
+				array(
+					'key'           => 'field_nosotros_vision_text',
+					'label'         => __( 'Texto de Visión (Brochure Oficial)', 'mitsa' ),
+					'name'          => 'nosotros_vision_text',
+					'type'          => 'textarea',
+					'default_value' => 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.',
+					'rows'          => 3,
+				),
+
+				// PESTAÑA 4: PILARES Y COMPROMISO
+				array(
+					'key'       => 'tab_nosotros_pillars',
+					'label'     => __( '🛡️ Pilares de Valor', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_pillars_heading',
+					'label'         => __( 'Título de la Sección (H2)', 'mitsa' ),
+					'name'          => 'nosotros_pillars_heading',
+					'type'          => 'text',
+					'default_value' => 'Los pilares que fundamentan nuestra propuesta',
+				),
+				// Pilar 1
+				array(
+					'key' => 'field_nosotros_p1_title', 'label' => __( 'Pilar 1: Título', 'mitsa' ), 'name' => 'nosotros_p1_title', 'type' => 'text', 'default_value' => 'Representación Oficial Directa', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_p1_desc', 'label' => __( 'Pilar 1: Descripción', 'mitsa' ), 'name' => 'nosotros_p1_desc', 'type' => 'text', 'default_value' => 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.', 'wrapper' => array( 'width' => '60' ),
+				),
+				// Pilar 2
+				array(
+					'key' => 'field_nosotros_p2_title', 'label' => __( 'Pilar 2: Título', 'mitsa' ), 'name' => 'nosotros_p2_title', 'type' => 'text', 'default_value' => 'Ingeniería de Aplicación Propia', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_p2_desc', 'label' => __( 'Pilar 2: Descripción', 'mitsa' ), 'name' => 'nosotros_p2_desc', 'type' => 'text', 'default_value' => 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.', 'wrapper' => array( 'width' => '60' ),
+				),
+				// Pilar 3
+				array(
+					'key' => 'field_nosotros_p3_title', 'label' => __( 'Pilar 3: Título', 'mitsa' ), 'name' => 'nosotros_p3_title', 'type' => 'text', 'default_value' => 'Servicio Técnico en Terreno', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_p3_desc', 'label' => __( 'Pilar 3: Descripción', 'mitsa' ), 'name' => 'nosotros_p3_desc', 'type' => 'text', 'default_value' => 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.', 'wrapper' => array( 'width' => '60' ),
+				),
+				// Pilar 4
+				array(
+					'key' => 'field_nosotros_p4_title', 'label' => __( 'Pilar 4: Título', 'mitsa' ), 'name' => 'nosotros_p4_title', 'type' => 'text', 'default_value' => 'Cuidado del Medio Ambiente Acuático', 'wrapper' => array( 'width' => '40' ),
+				),
+				array(
+					'key' => 'field_nosotros_p4_desc', 'label' => __( 'Pilar 4: Descripción', 'mitsa' ), 'name' => 'nosotros_p4_desc', 'type' => 'text', 'default_value' => 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.', 'wrapper' => array( 'width' => '60' ),
+				),
+
+				// PESTAÑA 5: COBERTURA Y PRESENCIA
+				array(
+					'key'       => 'tab_nosotros_coverage',
+					'label'     => __( '🌍 Cobertura Regional', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_coverage_title',
+					'label'         => __( 'Título de Cobertura (H2)', 'mitsa' ),
+					'name'          => 'nosotros_coverage_title',
+					'type'          => 'text',
+					'default_value' => 'Presencia estratégica en Chile y la región',
+				),
+				array(
+					'key'           => 'field_nosotros_coverage_desc',
+					'label'         => __( 'Descripción del Alcance', 'mitsa' ),
+					'name'          => 'nosotros_coverage_desc',
+					'type'          => 'textarea',
+					'default_value' => 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.',
+					'rows'          => 3,
+				),
+				array(
+					'key'           => 'field_nosotros_hq_city',
+					'label'         => __( 'Sede Central', 'mitsa' ),
+					'name'          => 'nosotros_hq_city',
+					'type'          => 'text',
+					'default_value' => 'Reñaca, Viña del Mar, Región de Valparaíso, Chile',
+					'wrapper'       => array( 'width' => '50' ),
+				),
+				array(
+					'key'           => 'field_nosotros_coverage_scope',
+					'label'         => __( 'Alcance Operativo', 'mitsa' ),
+					'name'          => 'nosotros_coverage_scope',
+					'type'          => 'text',
+					'default_value' => 'Nacional (Arica a Punta Arenas) y Latinoamérica',
+					'wrapper'       => array( 'width' => '50' ),
+				),
+
+				// PESTAÑA 6: LLAMADO A LA ACCIÓN (CTA)
+				array(
+					'key'       => 'tab_nosotros_cta',
+					'label'     => __( '📢 Call to Action', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_cta_heading',
+					'label'         => __( 'Título del Banner CTA', 'mitsa' ),
+					'name'          => 'nosotros_cta_heading',
+					'type'          => 'text',
+					'default_value' => 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto',
+				),
+				array(
+					'key'           => 'field_nosotros_cta_desc',
+					'label'         => __( 'Descripción del CTA', 'mitsa' ),
+					'name'          => 'nosotros_cta_desc',
+					'type'          => 'textarea',
+					'default_value' => 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.',
+					'rows'          => 2,
+				),
+				array(
+					'key'           => 'field_nosotros_cta_btn_label',
+					'label'         => __( 'Texto del Botón', 'mitsa' ),
+					'name'          => 'nosotros_cta_btn_label',
+					'type'          => 'text',
+					'default_value' => 'Contactar al equipo de ingeniería',
+					'wrapper'       => array( 'width' => '50' ),
+				),
+				array(
+					'key'           => 'field_nosotros_cta_btn_url',
+					'label'         => __( 'URL del Botón', 'mitsa' ),
+					'name'          => 'nosotros_cta_btn_url',
+					'type'          => 'text',
+					'default_value' => '/contacto/',
+					'wrapper'       => array( 'width' => '50' ),
+				),
+
+				// PESTAÑA 7: SEO & OPEN GRAPH
+				array(
+					'key'       => 'tab_nosotros_seo',
+					'label'     => __( '🔍 SEO & Open Graph', 'mitsa' ),
+					'type'      => 'tab',
+					'placement' => 'top',
+				),
+				array(
+					'key'           => 'field_nosotros_seo_title',
+					'label'         => __( 'Meta Título (SEO)', 'mitsa' ),
+					'name'          => 'seo_meta_title',
+					'type'          => 'text',
+					'default_value' => 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
+				),
+				array(
+					'key'           => 'field_nosotros_seo_desc',
+					'label'         => __( 'Meta Descripción', 'mitsa' ),
+					'name'          => 'seo_meta_description',
+					'type'          => 'textarea',
+					'default_value' => 'Pioneros en tecnología marina y ambiental en Chile desde 1982. Representantes oficiales de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.',
+					'rows'          => 3,
+				),
+				array(
+					'key'           => 'field_nosotros_seo_image',
+					'label'         => __( 'Imagen Open Graph (Social Share)', 'mitsa' ),
+					'name'          => 'seo_og_image',
+					'type'          => 'image',
+					'return_format' => 'url',
+				),
+			),
+			'location'              => array(
+				array(
+					array(
+						'param'    => 'page',
+						'operator' => '==',
+						'value'    => '6', // ID de la página Nosotros
+					),
+				),
+			),
+			'menu_order'            => 10,
+			'position'              => 'normal',
+			'style'                 => 'default',
+			'label_placement'       => 'left',
+			'instruction_placement' => 'label',
+			'hide_on_screen'        => array(
+				'the_content',
+				'featured_image',
+			),
 		)
 	);
 }

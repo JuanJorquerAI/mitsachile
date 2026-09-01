@@ -1,5 +1,5 @@
-import type { PageSectionsResponse } from './types.ts';
-import { HOME_FALLBACK_DATA } from './fallbacks.ts';
+import type { PageSectionsResponse, NosotrosSectionsResponse } from './types.ts';
+import { HOME_FALLBACK_DATA, NOSOTROS_FALLBACK_DATA } from './fallbacks.ts';
 
 /**
  * URL base de WordPress REST API
@@ -96,4 +96,12 @@ export async function getPageSections(slug: string): Promise<PageSectionsRespons
  */
 export async function getHomeSections(): Promise<PageSectionsResponse> {
   return await getPageSections('home');
+}
+
+/**
+ * Helper para obtener los datos de la página Nosotros con tipado estricto
+ */
+export async function getNosotrosSections(): Promise<NosotrosSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/nosotros`;
+  return await fetchWithResilience<NosotrosSectionsResponse>(endpoint, NOSOTROS_FALLBACK_DATA as NosotrosSectionsResponse);
 }

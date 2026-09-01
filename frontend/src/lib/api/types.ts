@@ -127,6 +127,76 @@ export interface SeoMetadata {
   og_type: 'website' | 'article';
 }
 
+// Interfaces para la sección "Nosotros"
+export interface NosotrosHeroData {
+  title: string;
+  tagline: string;
+  description: string;
+  image: string;
+}
+
+export interface NosotrosMilestoneData {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface NosotrosStoryData {
+  title: string;
+  paragraphs: string[];
+  milestones: NosotrosMilestoneData[];
+}
+
+export interface NosotrosMissionVisionData {
+  mission: {
+    title: string;
+    text: string;
+  };
+  vision: {
+    title: string;
+    text: string;
+  };
+}
+
+export interface NosotrosPillarData {
+  title: string;
+  description: string;
+}
+
+export interface NosotrosPillarsData {
+  heading: string;
+  items: NosotrosPillarData[];
+}
+
+export interface NosotrosCoverageData {
+  title: string;
+  description: string;
+  headquarters: string;
+  scope: string;
+}
+
+export interface NosotrosCtaData {
+  heading: string;
+  description: string;
+  button: CtaButtonData;
+}
+
+export interface NosotrosSectionsData {
+  hero: NosotrosHeroData;
+  story: NosotrosStoryData;
+  mission_vision: NosotrosMissionVisionData;
+  pillars: NosotrosPillarsData;
+  coverage: NosotrosCoverageData;
+  cta: NosotrosCtaData;
+}
+
+export interface NosotrosSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: NosotrosSectionsData;
+}
+
 export interface PageSectionsResponse {
   slug: string;
   title: string;

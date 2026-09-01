@@ -1,0 +1,106 @@
+---
+import type { NosotrosCtaData } from '../../../lib/api/types';
+
+interface Props {
+  data: NosotrosCtaData;
+}
+
+const { data } = Astro.props;
+const {
+  heading = "Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto",
+  description = "Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.",
+  button = {
+    label: "Contactar al equipo de ingeniería",
+    url: "/contacto/"
+  }
+} = data || {};
+---
+
+<section class="about-cta-section" aria-labelledby="about-cta-heading">
+  <div class="cta-container">
+    <div class="cta-content">
+      <h2 id="about-cta-heading" class="cta-heading">{heading}</h2>
+      <p class="cta-desc">{description}</p>
+      <div class="cta-actions">
+        <a href={button.url} class="btn-primary">
+          {button.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-cta-section {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.25;
+  }
+
+  .cta-desc {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0 0 36px;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #E63946;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.35);
+  }
+
+  .btn-primary:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(230, 57, 70, 0.45);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .about-cta-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

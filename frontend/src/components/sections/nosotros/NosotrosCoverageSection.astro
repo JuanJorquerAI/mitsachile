@@ -1,0 +1,206 @@
+---
+import type { NosotrosCoverageData } from '../../../lib/api/types';
+
+interface Props {
+  data: NosotrosCoverageData;
+}
+
+const { data } = Astro.props;
+const {
+  title = "Presencia estratégica en Chile y la región",
+  description = "Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.",
+  headquarters = "Reñaca, Viña del Mar, Región de Valparaíso, Chile",
+  scope = "Nacional (Arica a Punta Arenas) y Latinoamérica"
+} = data || {};
+---
+
+<section class="coverage-section" aria-labelledby="coverage-heading">
+  <div class="coverage-container">
+    <div class="coverage-card">
+      <div class="card-left">
+        <span class="badge-sub">Alcance Territorial</span>
+        <h2 id="coverage-heading" class="coverage-title">{title}</h2>
+        <p class="coverage-desc">{description}</p>
+        
+        <div class="key-facts">
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">📍</span>
+            <div>
+              <span class="fact-label">Sede Central</span>
+              <p class="fact-val">{headquarters}</p>
+            </div>
+          </div>
+          <div class="fact-item">
+            <span class="fact-icon" aria-hidden="true">🚢</span>
+            <div>
+              <span class="fact-label">Alcance Operativo</span>
+              <p class="fact-val">{scope}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-right">
+        <div class="coverage-box">
+          <h3 class="box-title">Presencia en Terreno</h3>
+          <ul class="coverage-list">
+            <li><strong>Puertos Principales:</strong> Valparaíso, San Antonio, Talcahuano, Puerto Montt, Punta Arenas.</li>
+            <li><strong>Astilleros Navales:</strong> ASMAR (Talcahuano, Valparaíso, Magallanes), ASENAV (Valdivia), Detroit, y maestranzas navales.</li>
+            <li><strong>Centros Acuícolas y Pesqueros:</strong> Regiones de Los Lagos, Aysén y Magallanes.</li>
+            <li><strong>Conexión Internacional:</strong> Asistencia técnica y provisión para armadores y proyectos en Latinoamérica.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coverage-section {
+    background: #F8FAFC;
+    padding: 80px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .coverage-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .coverage-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    box-shadow: 0 4px 20px rgba(13, 27, 42, 0.04);
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1B263B;
+    background: #F1F5F9;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .coverage-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .coverage-desc {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 32px;
+  }
+
+  .key-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .fact-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .fact-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748B;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .fact-val {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0D1B2A;
+    margin: 0;
+  }
+
+  .coverage-box {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    border-radius: 12px;
+    padding: 32px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .box-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .coverage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .coverage-list li {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #CBD5E1;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .coverage-list li::before {
+    content: "•";
+    color: #E63946;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+
+  .coverage-list strong {
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 900px) {
+    .coverage-card {
+      grid-template-columns: 1fr;
+      padding: 32px 24px;
+      gap: 32px;
+    }
+    .coverage-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

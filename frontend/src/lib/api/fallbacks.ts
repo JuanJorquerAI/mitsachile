@@ -157,3 +157,72 @@ export const HOME_FALLBACK_DATA: PageSectionsResponse = {
     },
   },
 };
+
+/**
+ * Dataset estático de fallback para la página "Nosotros".
+ */
+export const NOSOTROS_FALLBACK_DATA = {
+  slug: 'nosotros',
+  title: 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
+  seo: {
+    meta_title: 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
+    meta_description: 'Pioneros en tecnología marina y ambiental en Chile desde 1982. Representantes oficiales de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.',
+    canonical_url: 'https://mitsachile.com/nosotros/',
+    og_image: 'https://mitsachile.com/images/oficina-mitsa-54b17efd.jpg',
+    og_type: 'website' as const,
+  },
+  sections: {
+    hero: {
+      title: 'Cuatro décadas integrando ingeniería, tecnología y servicio especializado',
+      tagline: '«Todos tenemos una especialidad, la nuestra es servir»',
+      description: 'Pioneros en introducir tecnología avanzada en el segmento sanitario y ambiental para uso marino, industrial, pesquero, acuícola y minero en Chile y Latinoamérica desde 1982.',
+      image: '/images/oficina-mitsa-54b17efd.jpg',
+    },
+    story: {
+      title: 'Pioneros en tecnología marina y ambiental desde 1982',
+      paragraphs: [
+        'Fundada en 1982 en Reñaca, Viña del Mar, MITSA nació con la convicción de conectar a las industrias marítimas y productivas de Chile con los inventores y fabricantes de tecnología de mayor estándar mundial.',
+        'A lo largo de más de cuatro décadas, hemos evolucionado de la provisión de equipos sanitarios al vacío hacia la ingeniería de aplicación integral, comisionamiento y respaldo operativo en terreno en todo el país.',
+      ],
+      milestones: [
+        { year: '1982', title: 'Fundación en Reñaca, Viña del Mar', description: 'Inicio de operaciones representando tecnología pionera sanitaria marina.' },
+        { year: '1995', title: 'Expansión a Flotas y Astilleros', description: 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.' },
+        { year: '2010', title: 'Alianzas Globales de Fabricación', description: 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.' },
+        { year: '2026', title: 'Ingeniería y Presencia Regional', description: 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.' },
+      ],
+    },
+    mission_vision: {
+      mission: {
+        title: 'Nuestra Misión',
+        text: 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.',
+      },
+      vision: {
+        title: 'Nuestra Visión',
+        text: 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.',
+      },
+    },
+    pillars: {
+      heading: 'Los pilares que fundamentan nuestra propuesta',
+      items: [
+        { title: 'Representación Oficial Directa', description: 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.' },
+        { title: 'Ingeniería de Aplicación Propia', description: 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.' },
+        { title: 'Servicio Técnico en Terreno', description: 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.' },
+        { title: 'Cuidado del Medio Ambiente Acuático', description: 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.' },
+      ],
+    },
+    coverage: {
+      title: 'Presencia estratégica en Chile y la región',
+      description: 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.',
+      headquarters: 'Reñaca, Viña del Mar, Región de Valparaíso, Chile',
+      scope: 'Nacional (Arica a Punta Arenas) y Latinoamérica',
+    },
+    cta: {
+      heading: 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto',
+      description: 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.',
+      button: {
+        label: 'Contactar al equipo de ingeniería',
+        url: '/contacto/',
+      },
+    },
+  },
+};

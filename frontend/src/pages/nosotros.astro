@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getNosotrosSections } from '../lib/api/client';
+import { generateSchemaGraph } from '../lib/seo/schema';
+import NosotrosHeroSection from '../components/sections/nosotros/NosotrosHeroSection.astro';
+import NosotrosMissionVisionSection from '../components/sections/nosotros/NosotrosMissionVisionSection.astro';
+import NosotrosTimelineSection from '../components/sections/nosotros/NosotrosTimelineSection.astro';
+import NosotrosPillarsSection from '../components/sections/nosotros/NosotrosPillarsSection.astro';
+import NosotrosCoverageSection from '../components/sections/nosotros/NosotrosCoverageSection.astro';
+import NosotrosCtaSection from '../components/sections/nosotros/NosotrosCtaSection.astro';
+
+// Consumir datos dinámicos desde WordPress REST API (con fallback tolerante a caídas)
+const pageData = await getNosotrosSections();
+const { seo, sections } = pageData;
+
+// Generar esquema Schema.org JSON-LD para la página institucional
+const schemaGraph = generateSchemaGraph({
+  url: seo.canonical_url || 'https://mitsachile.com/nosotros/',
+  title: seo.meta_title,
+  description: seo.meta_description,
+  image: seo.og_image,
+  breadcrumbs: [
+    { name: 'Inicio', url: 'https://mitsachile.com/' },
+    { name: 'Nosotros', url: 'https://mitsachile.com/nosotros/' }
+  ]
+});
+---
+
+<Layout
+  title={seo.meta_title}
+  description={seo.meta_description}
+  canonical={seo.canonical_url}
+  ogImage={seo.og_image}
+  schemaJson={schemaGraph}
+  activeNav="nosotros"
+>
+  <main id="main-content" class="nosotros-page">
+    {/* 1. Hero & Tagline */}
+    <NosotrosHeroSection data={sections.hero} />
+
+    {/* 2. Misión y Visión Oficiales (Brochure) */}
+    <NosotrosMissionVisionSection data={sections.mission_vision} />
+
+    {/* 3. Línea de Tiempo y Trayectoria desde 1982 */}
+    <NosotrosTimelineSection data={sections.story} />
+
+    {/* 4. Pilares de Valor Corporativo */}
+    <NosotrosPillarsSection data={sections.pillars} />
+
+    {/* 5. Cobertura Territorial y Presencia en Terreno */}
+    <NosotrosCoverageSection data={sections.coverage} />
+
+    {/* 6. Llamado a la Acción para Ingeniería */}
+    <NosotrosCtaSection data={sections.cta} />
+  </main>
+</Layout>
+
+<style>
+  .nosotros-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+</style>
