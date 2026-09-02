@@ -1,5 +1,5 @@
-import type { PageSectionsResponse, NosotrosSectionsResponse } from './types.ts';
-import { HOME_FALLBACK_DATA, NOSOTROS_FALLBACK_DATA } from './fallbacks.ts';
+import type { PageSectionsResponse, NosotrosSectionsResponse, ServiciosSectionsResponse, IndustriasSectionsResponse, ProyectosSectionsResponse, RecursosSectionsResponse, ContactoSectionsResponse, RepresentadasSectionsResponse, SiteOptionsData } from './types.ts';
+import { HOME_FALLBACK_DATA, NOSOTROS_FALLBACK_DATA, SERVICIOS_FALLBACK_DATA, INDUSTRIAS_FALLBACK_DATA, PROYECTOS_FALLBACK_DATA, RECURSOS_FALLBACK_DATA, CONTACTO_FALLBACK_DATA, REPRESENTADAS_FALLBACK_DATA, SITE_OPTIONS_FALLBACK_DATA } from './fallbacks.ts';
 
 /**
  * URL base de WordPress REST API
@@ -104,4 +104,60 @@ export async function getHomeSections(): Promise<PageSectionsResponse> {
 export async function getNosotrosSections(): Promise<NosotrosSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/nosotros`;
   return await fetchWithResilience<NosotrosSectionsResponse>(endpoint, NOSOTROS_FALLBACK_DATA as NosotrosSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Servicios con tipado estricto
+ */
+export async function getServiciosSections(): Promise<ServiciosSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/servicios`;
+  return await fetchWithResilience<ServiciosSectionsResponse>(endpoint, SERVICIOS_FALLBACK_DATA as ServiciosSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Industrias / Sectores con tipado estricto
+ */
+export async function getIndustriasSections(): Promise<IndustriasSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/industrias`;
+  return await fetchWithResilience<IndustriasSectionsResponse>(endpoint, INDUSTRIAS_FALLBACK_DATA as IndustriasSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Proyectos con tipado estricto
+ */
+export async function getProyectosSections(): Promise<ProyectosSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/proyectos`;
+  return await fetchWithResilience<ProyectosSectionsResponse>(endpoint, PROYECTOS_FALLBACK_DATA as ProyectosSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Recursos con tipado estricto
+ */
+export async function getRecursosSections(): Promise<RecursosSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/recursos`;
+  return await fetchWithResilience<RecursosSectionsResponse>(endpoint, RECURSOS_FALLBACK_DATA as RecursosSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Contacto con tipado estricto
+ */
+export async function getContactoSections(): Promise<ContactoSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/contacto`;
+  return await fetchWithResilience<ContactoSectionsResponse>(endpoint, CONTACTO_FALLBACK_DATA as ContactoSectionsResponse);
+}
+
+/**
+ * Helper para obtener los datos de la página Representadas con tipado estricto
+ */
+export async function getRepresentadasSections(): Promise<RepresentadasSectionsResponse> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/representadas`;
+  return await fetchWithResilience<RepresentadasSectionsResponse>(endpoint, REPRESENTADAS_FALLBACK_DATA as RepresentadasSectionsResponse);
+}
+
+/**
+ * Helper para obtener las opciones globales del sitio (Marca, Header, Footer, Contacto, Redes)
+ */
+export async function getSiteOptions(): Promise<SiteOptionsData> {
+  const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/options`;
+  return await fetchWithResilience<SiteOptionsData>(endpoint, SITE_OPTIONS_FALLBACK_DATA as SiteOptionsData);
 }

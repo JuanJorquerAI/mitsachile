@@ -1,0 +1,111 @@
+---
+import type { ProyectosCtaData } from '../../../lib/api/types';
+
+interface Props {
+  data: ProyectosCtaData;
+}
+
+const { data } = Astro.props;
+const {
+  heading = "¿Tiene un proyecto naval o industrial en evaluación?",
+  description = "Podemos compartir casos técnicos de referencia similares y coordinar una reunión con nuestros ingenieros de aplicación.",
+  button = {
+    label: "Solicitar referencias de ingeniería",
+    url: "/contacto/?tipo=evaluacion"
+  }
+} = data || {};
+---
+
+<section class="proyectos-cta" aria-labelledby="proyectos-cta-heading">
+  <div class="cta-container">
+    <div class="cta-box">
+      <h2 id="proyectos-cta-heading" class="cta-title">{heading}</h2>
+      <p class="cta-desc">{description}</p>
+      
+      <div class="cta-actions">
+        <a href={button.url} class="btn-primary">
+          {button.label}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proyectos-cta {
+    background: #F8FAFC;
+    padding: 80px 24px;
+  }
+
+  .cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .cta-box {
+    background: #0D1B2A;
+    border-radius: 16px;
+    padding: 56px 48px;
+    text-align: center;
+    box-shadow: 0 12px 36px rgba(13, 27, 42, 0.12);
+  }
+
+  .cta-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.25;
+  }
+
+  .cta-desc {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0 auto 36px;
+    max-width: 60ch;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E63946;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .proyectos-cta {
+      padding: 48px 16px;
+    }
+    .cta-box {
+      padding: 36px 24px;
+    }
+  }
+</style>

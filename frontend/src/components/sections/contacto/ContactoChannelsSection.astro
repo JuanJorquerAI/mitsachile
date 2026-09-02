@@ -1,0 +1,301 @@
+---
+import type { ContactoChannelsData, ContactoCoverageData } from '../../../lib/api/types';
+
+interface Props {
+  channels: ContactoChannelsData;
+  coverage: ContactoCoverageData;
+}
+
+const { channels, coverage } = Astro.props;
+const {
+  address = "Av. Vicuña Mackenna 882, Reñaca, Viña del Mar, Chile",
+  branch = "Av. Edmundo Eluchans 1737, Of. 61, Reñaca, Viña del Mar",
+  phone_main = "+56 32 2835055",
+  phone_mobile = "+56 9 9876 5432",
+  email_general = "contacto@mitsachile.com",
+  email_sales = "fjdelaiglesia@mitsachile.com",
+  hours = "Lunes a Viernes: 08:30 a 18:00 hrs"
+} = channels || {};
+
+const {
+  title: covTitle = "Presencia y Cobertura Regional",
+  description: covDesc = "Atención comercial y soporte de ingeniería para proyectos marítimos e industriales en 8 países de Latinoamérica.",
+  countries = ["Chile", "Perú", "Ecuador", "Colombia", "Panamá", "Paraguay", "Bolivia", "Venezuela"]
+} = coverage || {};
+---
+
+<section class="contacto-channels-section" aria-labelledby="channels-heading">
+  <div class="channels-container">
+    <div class="channels-grid">
+      <!-- Columna 1: Canales y Casa Matriz -->
+      <div class="channel-card">
+        <span class="badge-sub">Casa Matriz & Atención Directa</span>
+        <h2 id="channels-heading" class="card-title">Oficinas y Canales</h2>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📍</span>
+            <div>
+              <div class="info-label">Dirección Principal</div>
+              <div class="info-value">{address}</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">🏢</span>
+            <div>
+              <div class="info-label">Oficina Comercial</div>
+              <div class="info-value">{branch}</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📞</span>
+            <div>
+              <div class="info-label">Teléfonos</div>
+              <div class="info-value">
+                <a href={`tel:${phone_main.replace(/\s+/g, '')}`}>{phone_main}</a>
+                <span class="divider">·</span>
+                <a href={`tel:${phone_mobile.replace(/\s+/g, '')}`}>{phone_mobile}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">✉️</span>
+            <div>
+              <div class="info-label">Correos Electrónicos</div>
+              <div class="info-value">
+                <a href={`mailto:${email_general}`}>{email_general}</a>
+                <span class="divider">·</span>
+                <a href={`mailto:${email_sales}`}>{email_sales}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">⏱️</span>
+            <div>
+              <div class="info-label">Horario de Operación</div>
+              <div class="info-value">{hours}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Cobertura Regional en 8 Países -->
+      <div class="coverage-card">
+        <span class="badge-sub-alt">Latinoamérica</span>
+        <h2 class="card-title-alt">{covTitle}</h2>
+        <p class="coverage-desc">{covDesc}</p>
+
+        <div class="countries-grid" aria-label="Países con presencia y cobertura">
+          {countries.map((country) => (
+            <div class="country-chip">
+              <span class="chip-dot" aria-hidden="true"></span>
+              <span class="chip-name">{country}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="coverage-footer">
+          <div class="footer-stat">
+            <span class="stat-num">8</span>
+            <span class="stat-text">países con proyectos y suministro activo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacto-channels-section {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    padding: 88px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .channels-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .channels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .channel-card,
+  .coverage-card {
+    background: #1B263B;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E63946;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+
+  .badge-sub-alt {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E0E1DD;
+    margin-bottom: 12px;
+    display: inline-block;
+  }
+
+  .card-title,
+  .card-title-alt {
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    line-height: 1.25;
+  }
+
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .info-icon {
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94A3B8;
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-size: 0.9375rem;
+    color: #F8F6F0;
+    line-height: 1.5;
+  }
+
+  .info-value a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .info-value a:hover {
+    color: #E63946;
+  }
+
+  .divider {
+    color: #64748B;
+    margin: 0 6px;
+  }
+
+  .coverage-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0 0 32px;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .country-chip {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .chip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #E63946;
+  }
+
+  .chip-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .coverage-footer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+  }
+
+  .footer-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #E63946;
+    line-height: 1;
+  }
+
+  .stat-text {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .channels-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .channel-card,
+    .coverage-card {
+      padding: 28px 20px;
+    }
+    .contacto-channels-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

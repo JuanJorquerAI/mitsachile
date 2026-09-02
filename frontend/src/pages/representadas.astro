@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getRepresentadasSections } from '../lib/api/client';
+import { generateSchemaGraph } from '../lib/seo/schema';
+import RepresentadasHeroSection from '../components/sections/representadas/RepresentadasHeroSection.astro';
+import RepresentadasMainGridSection from '../components/sections/representadas/RepresentadasMainGridSection.astro';
+import RepresentadasDirectorySection from '../components/sections/representadas/RepresentadasDirectorySection.astro';
+import RepresentadasCtaSection from '../components/sections/representadas/RepresentadasCtaSection.astro';
+
+// Consumir datos normalizados desde WordPress REST API (con fallback tolerante a fallos)
+const pageData = await getRepresentadasSections();
+const { seo, sections } = pageData;
+
+// Generar esquema estructurado Schema.org JSON-LD (@graph)
+const schemaGraph = generateSchemaGraph({
+  url: seo.canonical_url || 'https://mitsachile.com/representadas/',
+  title: seo.meta_title,
+  description: seo.meta_description,
+  image: seo.og_image,
+  breadcrumbs: [
+    { name: 'Inicio', url: 'https://mitsachile.com/' },
+    { name: 'Representadas', url: 'https://mitsachile.com/representadas/' }
+  ]
+});
+---
+
+<Layout
+  title={seo.meta_title}
+  description={seo.meta_description}
+  canonical={seo.canonical_url}
+  ogImage={seo.og_image}
+  schemaJson={schemaGraph}
+  activeNav="representadas"
+>
+  <main id="main-content" class="representadas-page">
+    {/* 1. Hero con métricas de respaldo y botones de acción */}
+    <RepresentadasHeroSection hero={sections.hero} metrics={sections.metrics} />
+
+    {/* 2. Grid de Marcas Principales con fichas técnicas completas */}
+    <RepresentadasMainGridSection brands={sections.main_brands} />
+
+    {/* 3. Directorio de Fabricantes y Marcas Complementarias */}
+    <RepresentadasDirectorySection directory={sections.directory} />
+
+    {/* 4. Banner de Contacto y Solicitud de Repuestos */}
+    <RepresentadasCtaSection cta={sections.cta} />
+  </main>
+</Layout>
+
+<style>
+  .representadas-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+</style>

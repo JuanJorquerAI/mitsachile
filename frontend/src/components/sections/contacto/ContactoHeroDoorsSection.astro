@@ -1,0 +1,350 @@
+---
+import type { ContactoHeroData, ContactoDoorData } from '../../../lib/api/types';
+
+interface Props {
+  hero: ContactoHeroData;
+  doors: ContactoDoorData[];
+}
+
+const { hero, doors = [] } = Astro.props;
+const {
+  title = "Cuéntenos qué necesita resolver",
+  description = "Cada requerimiento pide datos distintos. Elegir la puerta correcta conecta su consulta directo con el especialista correspondiente."
+} = hero || {};
+---
+
+<section class="contacto-hero-section" aria-labelledby="contacto-hero-heading">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-container">
+    <div class="hero-intro">
+      <div class="hero-badge-wrap">
+        <span class="badge-line" aria-hidden="true"></span>
+        <span class="badge-label">Canal Directo de Ingeniería</span>
+        <span class="badge-line" aria-hidden="true"></span>
+      </div>
+      <h1 id="contacto-hero-heading" class="hero-title">{title}</h1>
+      <p class="hero-desc">{description}</p>
+    </div>
+
+    <!-- 4 Doors Grid -->
+    <div class="doors-grid" role="tablist" aria-label="Seleccionar tipo de consulta o requerimiento">
+      {doors.map((door, idx) => (
+        <button
+          type="button"
+          class={`door-card ${idx === 0 ? 'active' : ''}`}
+          data-door={door.key}
+          id={`tab-${door.key}`}
+          role="tab"
+          aria-selected={idx === 0 ? "true" : "false"}
+          aria-controls="contact-form"
+        >
+          <div class="door-num">{door.num}</div>
+          <div class="door-title">{door.title}</div>
+          <p class="door-desc">{door.description}</p>
+          <div class="door-status">
+            {idx === 0 ? 'Seleccionado ●' : 'Elegir esta puerta ○'}
+          </div>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const doorCards = document.querySelectorAll('.door-card');
+    const doorIndicator = document.getElementById('door-indicator');
+    const hiddenDoorInput = document.getElementById('hidden-door-type') as HTMLInputElement;
+    const dynamicFields = document.getElementById('dynamic-fields');
+
+    // Mapeo de campos dinámicos según la puerta
+    const doorTemplates: Record<string, { indicator: string; html: string }> = {
+      evaluacion: {
+        indicator: 'Puerta 01 · Evaluación técnica de proyecto',
+        html: `
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="solucion">Solución o sistema de interés</label>
+              <select id="solucion" name="solucion" class="form-select">
+                <option value="sanitarios">Sanitarios al vacío (EVAC)</option>
+                <option value="aguas-residuales">Tratamiento aguas residuales (EVAC · EPE)</option>
+                <option value="bwts">Agua de lastre BWTS (ERMA FIRST)</option>
+                <option value="iccp-icaf">Protección catódica ICCP / ICAF (Cathelco)</option>
+                <option value="drenajes">Drenajes inoxidables (BLÜCHER)</option>
+                <option value="agua-dulce">Desalinizadoras / Generación de agua dulce</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="tipo_instalacion">Tipo de nave o instalación</label>
+              <input type="text" id="tipo_instalacion" name="tipo_instalacion" placeholder="Ej: OPV, Wellboat, Astillero, Minera..." class="form-input" />
+            </div>
+          </div>
+        `
+      },
+      repuestos: {
+        indicator: 'Puerta 02 · Cotización de repuestos originales',
+        html: `
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="marca_repuesto">Marca del equipo</label>
+              <select id="marca_repuesto" name="marca" class="form-select">
+                <option value="evac">EVAC</option>
+                <option value="cathelco">Cathelco</option>
+                <option value="erma-first">ERMA FIRST</option>
+                <option value="epe">EPE</option>
+                <option value="blucher">BLÜCHER</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="pn_repuesto">Número de Parte (P/N) o Serial</label>
+              <input type="text" id="pn_repuesto" name="part_number" placeholder="Ej: P/N 5775500 / S/N 123456" class="form-input" />
+            </div>
+          </div>
+        `
+      },
+      servicio: {
+        indicator: 'Puerta 03 · Servicio técnico & Comisionamiento',
+        html: `
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="tipo_servicio">Tipo de asistencia requerida</label>
+              <select id="tipo_servicio" name="tipo_servicio" class="form-select">
+                <option value="diagnostico">Diagnóstico y detección de fallas</option>
+                <option value="comisionamiento">Comisionamiento / Puesta en marcha</option>
+                <option value="mantenimiento">Mantenimiento preventivo / Overhaul</option>
+                <option value="capacitacion">Capacitación a tripulación / técnicos</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="puerto_locacion">Puerto o locación de atención</label>
+              <input type="text" id="puerto_locacion" name="puerto" placeholder="Ej: Valparaíso, Talcahuano, Puerto Montt..." class="form-input" />
+            </div>
+          </div>
+        `
+      },
+      general: {
+        indicator: 'Puerta 04 · Contacto general & Comercial',
+        html: `
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="motivo_consulta">Motivo de contacto</label>
+              <select id="motivo_consulta" name="motivo" class="form-select">
+                <option value="comercial">Consulta comercial / Representación</option>
+                <option value="proveedores">Proveedores / Alianzas</option>
+                <option value="institucional">Institucional / Administrativo</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="pais_consulta">País / Región</label>
+              <input type="text" id="pais_consulta" name="pais" placeholder="Ej: Chile, Perú, Ecuador..." class="form-input" />
+            </div>
+          </div>
+        `
+      }
+    };
+
+    function selectDoor(doorKey: string) {
+      doorCards.forEach((btn) => {
+        const isTarget = btn.getAttribute('data-door') === doorKey;
+        btn.classList.toggle('active', isTarget);
+        btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+        const statusEl = btn.querySelector('.door-status');
+        if (statusEl) {
+          statusEl.textContent = isTarget ? 'Seleccionado ●' : 'Elegir esta puerta ○';
+        }
+      });
+
+      if (hiddenDoorInput) {
+        hiddenDoorInput.value = doorKey;
+      }
+
+      if (doorTemplates[doorKey]) {
+        if (doorIndicator) {
+          doorIndicator.textContent = doorTemplates[doorKey].indicator;
+        }
+        if (dynamicFields) {
+          dynamicFields.innerHTML = doorTemplates[doorKey].html;
+        }
+      }
+    }
+
+    doorCards.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const door = btn.getAttribute('data-door') || 'evaluacion';
+        selectDoor(door);
+      });
+    });
+
+    // Leer parámetro URL ?tipo=
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo');
+    if (tipo && doorTemplates[tipo]) {
+      selectDoor(tipo);
+    }
+  });
+</script>
+
+<style>
+  .contacto-hero-section {
+    position: relative;
+    background: #0D1B2A;
+    padding: 80px 24px 88px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#415A77 1px, transparent 1px),
+                      linear-gradient(90deg, #415A77 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+
+  .hero-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+  }
+
+  .hero-badge-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .badge-line {
+    width: 36px;
+    height: 2px;
+    background: #E63946;
+  }
+
+  .badge-label {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E0E1DD;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0 auto;
+  }
+
+  .doors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .door-card {
+    background: rgba(13, 27, 42, 0.7);
+    border: 1px solid rgba(224, 225, 221, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    box-sizing: border-box;
+  }
+
+  .door-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .door-card.active {
+    background: #F8F6F0;
+    border-color: #F8F6F0;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .door-num {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #94A3B8;
+  }
+
+  .door-card.active .door-num {
+    color: #E63946;
+  }
+
+  .door-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .door-card.active .door-title {
+    color: #0D1B2A;
+  }
+
+  .door-desc {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: #94A3B8;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+
+  .door-card.active .door-desc {
+    color: #475569;
+  }
+
+  .door-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94A3B8;
+  }
+
+  .door-card.active .door-status {
+    color: #0D1B2A;
+  }
+
+  @media (max-width: 960px) {
+    .doors-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .doors-grid {
+      grid-template-columns: 1fr;
+    }
+    .contacto-hero-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+import type { RecursosGatewayData } from '../../../lib/api/types';
+
+interface Props {
+  gateways: RecursosGatewayData[];
+}
+
+const { gateways = [] } = Astro.props;
+---
+
+<section class="recursos-gateways-section" aria-label="Portales de acceso técnico">
+  <div class="gateways-container">
+    <div class="gateways-grid">
+      {gateways.map((gw, idx) => (
+        <div class={`gateway-card ${idx === 1 ? 'gateway-dark' : 'gateway-light'}`}>
+          <div class="gw-badge">{gw.badge}</div>
+          <h2 class="gw-title">{gw.title}</h2>
+          <p class="gw-desc">{gw.description}</p>
+          <a href={gw.link_url} class="gw-link">
+            {gw.link_label}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .recursos-gateways-section {
+    background: #F8FAFC;
+    padding: 64px 24px 0;
+  }
+
+  .gateways-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gateways-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .gateway-card {
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gateway-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(13, 27, 42, 0.08);
+  }
+
+  .gateway-light {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #0D1B2A;
+  }
+
+  .gateway-dark {
+    background: #0D1B2A;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #F8F6F0;
+  }
+
+  .gw-badge {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .gateway-light .gw-badge {
+    color: #415A77;
+  }
+
+  .gateway-dark .gw-badge {
+    color: #E63946;
+  }
+
+  .gw-title {
+    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    line-height: 1.25;
+  }
+
+  .gateway-light .gw-title {
+    color: #0D1B2A;
+  }
+
+  .gateway-dark .gw-title {
+    color: #FFFFFF;
+  }
+
+  .gw-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin: 0 0 28px;
+    flex-grow: 1;
+  }
+
+  .gateway-light .gw-desc {
+    color: #64748B;
+  }
+
+  .gateway-dark .gw-desc {
+    color: #CBD5E1;
+  }
+
+  .gw-link {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.15s ease;
+  }
+
+  .gateway-light .gw-link {
+    color: #0D1B2A;
+  }
+
+  .gateway-light .gw-link:hover {
+    color: #E63946;
+  }
+
+  .gateway-dark .gw-link {
+    color: #F8F6F0;
+  }
+
+  .gateway-dark .gw-link:hover {
+    color: #E63946;
+  }
+
+  @media (max-width: 768px) {
+    .gateways-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .gateway-card {
+      padding: 28px 20px;
+    }
+    .recursos-gateways-section {
+      padding: 40px 16px 0;
+    }
+  }
+</style>

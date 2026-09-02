@@ -1,0 +1,180 @@
+---
+import type { ProyectosMethodologyData } from '../../../lib/api/types';
+
+interface Props {
+  data: ProyectosMethodologyData;
+}
+
+const { data } = Astro.props;
+const {
+  heading = "¿Cómo ejecutamos cada proyecto?",
+  description = "Desde la ingeniería de preventa hasta las pruebas de mar y el soporte postventa a largo plazo.",
+  steps = [
+    {
+      step: "01",
+      title: "1. Levantamiento & Viabilidad",
+      description: "Evaluación de planos, requerimientos de caudal, consumo energético y espacios disponibles en la nave o instalación."
+    },
+    {
+      step: "02",
+      title: "2. Ingeniería & Suministro",
+      description: "Selección directa con los fabricantes representados y coordinación de plazos de entrega en puerto o faena."
+    },
+    {
+      step: "03",
+      title: "3. Supervisión & Puesta en Marcha",
+      description: "Acompañamiento en dique seco o terreno por ingenieros certificados para pruebas FAT/HAT y comisionamiento."
+    },
+    {
+      step: "04",
+      title: "4. Garantía & Soporte Continuo",
+      description: "Entrega de protocolos a inspectores de clase, capacitación a tripulación y provisión continua de repuestos originales."
+    }
+  ]
+} = data || {};
+---
+
+<section class="proyectos-methodology-section" aria-labelledby="method-heading">
+  <div class="method-container">
+    <div class="section-intro">
+      <span class="badge-sub">Metodología Operativa</span>
+      <h2 id="method-heading" class="section-title">{heading}</h2>
+      <p class="section-subtitle">{description}</p>
+    </div>
+
+    <div class="steps-grid">
+      {steps.map((st) => (
+        <div class="step-card">
+          <div class="step-header">
+            <span class="step-number">{st.step}</span>
+            <span class="step-line" aria-hidden="true"></span>
+          </div>
+          <h3 class="step-title">{st.title}</h3>
+          <p class="step-desc">{st.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .proyectos-methodology-section {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    padding: 88px 24px;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .method-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    max-width: 760px;
+    margin-bottom: 56px;
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.12);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+    border: 1px solid rgba(230, 57, 70, 0.25);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .step-card {
+    background: #1B263B;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 57, 70, 0.4);
+    background: #233148;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .step-number {
+    font-family: monospace;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #E63946;
+  }
+
+  .step-line {
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .step-title {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .step-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .proyectos-methodology-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

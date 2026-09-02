@@ -1,0 +1,291 @@
+---
+import type { ContactoFormData } from '../../../lib/api/types';
+
+interface Props {
+  formData: ContactoFormData;
+}
+
+const { formData } = Astro.props;
+const {
+  action_url = "https://formspree.io/f/placeholder",
+  title = "Formulario de contacto y asesoría técnica",
+  description = "Complete los datos requeridos y nuestro equipo técnico le responderá en menos de 24 horas hábiles."
+} = formData || {};
+---
+
+<section class="contacto-form-section" id="formulario-contacto" aria-labelledby="form-heading">
+  <div class="form-container">
+    <div class="form-card">
+      <div class="form-header">
+        <div class="door-indicator" id="door-indicator">
+          Puerta 01 · Evaluación técnica de proyecto
+        </div>
+        <h2 id="form-heading" class="form-title">{title}</h2>
+        <p class="form-desc">{description}</p>
+      </div>
+
+      <form id="contact-form" action={action_url} method="POST" class="main-form">
+        <input type="hidden" name="door_type" id="hidden-door-type" value="evaluacion" />
+
+        <!-- 1. Datos del Contacto -->
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">1. Datos de contacto y empresa</legend>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre completo <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" required class="form-input" placeholder="Ej: Roberto Muñoz" />
+            </div>
+            <div class="form-group">
+              <label for="empresa" class="form-label">Empresa, Armador o Astillero <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="empresa" name="empresa" required class="form-input" placeholder="Ej: Naviera Austral / Astillero ASMAR" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo electrónico corporativo <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="correo" name="correo" required class="form-input" placeholder="nombre@empresa.com" />
+            </div>
+            <div class="form-group">
+              <label for="telefono" class="form-label">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+56 9 1234 5678" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 2. Especificación Técnica Dinámica -->
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">2. Especificación técnica del requerimiento</legend>
+          <div id="dynamic-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="solucion" class="form-label">Solución o sistema de interés</label>
+                <select id="solucion" name="solucion" class="form-select">
+                  <option value="sanitarios">Sanitarios al vacío (EVAC)</option>
+                  <option value="aguas-residuales">Tratamiento aguas residuales (EVAC · EPE)</option>
+                  <option value="bwts">Agua de lastre BWTS (ERMA FIRST)</option>
+                  <option value="iccp-icaf">Protección catódica ICCP / ICAF (Cathelco)</option>
+                  <option value="drenajes">Drenajes inoxidables (BLÜCHER)</option>
+                  <option value="agua-dulce">Desalinizadoras / Generación de agua dulce</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tipo_instalacion" class="form-label">Tipo de nave o instalación</label>
+                <input type="text" id="tipo_instalacion" name="tipo_instalacion" placeholder="Ej: OPV, Wellboat, Astillero, Minera..." class="form-input" />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 3. Mensaje / Detalle -->
+        <fieldset class="form-fieldset">
+          <legend class="form-legend">3. Mensaje o antecedentes adicionales</legend>
+          <div class="form-group">
+            <label for="mensaje" class="form-label">Detalles del proyecto o consulta</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="form-textarea" placeholder="Indique requerimientos de caudal, plazos estimados, planos disponibles o condiciones de operación..."></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <div class="form-submit-wrap">
+          <button type="submit" class="btn-submit">
+            Enviar requerimiento técnico
+            <span aria-hidden="true">→</span>
+          </button>
+          <span class="privacy-note">🔒 Sus datos son tratados con estricta confidencialidad técnica e industrial.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacto-form-section {
+    background: #FFFFFF;
+    padding: 80px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .form-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .form-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 16px 40px rgba(13, 27, 42, 0.04);
+  }
+
+  .form-header {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .door-indicator {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .form-title {
+    font-size: clamp(1.625rem, 3vw, 2.125rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+
+  .form-desc {
+    font-size: 1rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-legend {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E2E8F0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  :global(.form-row) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  :global(.form-label) {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .required {
+    color: #E63946;
+    font-weight: 700;
+  }
+
+  :global(.form-input),
+  :global(.form-select),
+  .form-textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #CBD5E1;
+    border-radius: 10px;
+    background: #FFFFFF;
+    padding: 10px 16px;
+    font-size: 0.9375rem;
+    color: #0D1B2A;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  :global(.form-input:focus),
+  :global(.form-select:focus),
+  .form-textarea:focus {
+    outline: none;
+    border-color: #0D1B2A;
+    box-shadow: 0 0 0 3px rgba(13, 27, 42, 0.12);
+  }
+
+  .form-textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .form-submit-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E63946;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 48px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 4px 16px rgba(230, 57, 70, 0.25);
+  }
+
+  .btn-submit:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+  }
+
+  .btn-submit:focus-visible {
+    outline: 3px solid #0D1B2A;
+    outline-offset: 3px;
+  }
+
+  .privacy-note {
+    font-size: 0.8125rem;
+    color: #64748B;
+  }
+
+  @media (max-width: 680px) {
+    .form-card {
+      padding: 28px 20px;
+    }
+    :global(.form-row) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+    }
+    .contacto-form-section {
+      padding: 48px 16px;
+    }
+  }
+</style>

@@ -1,12 +1,31 @@
 ---
+import type { SiteBrandOptions, SiteHeaderOptions } from '../lib/api/types';
+
 interface Props {
   currentPath?: string;
+  brand?: SiteBrandOptions;
+  header?: SiteHeaderOptions;
 }
 
-const { currentPath = Astro.url.pathname } = Astro.props;
+const {
+  currentPath = Astro.url.pathname,
+  brand = {
+    name: 'MITSA',
+    logo_main: '/images/mitsa-27703545.svg',
+    tagline: 'Integramos tecnología. Resolvemos desafíos.',
+  } as SiteBrandOptions,
+  header = {
+    btn_repuestos_label: 'Repuestos',
+    btn_repuestos_url: '/contacto/?tipo=repuestos',
+    btn_cta_label: 'Conversemos',
+    btn_cta_url: '/contacto/',
+  } as SiteHeaderOptions,
+} = Astro.props;
 
 const navItems = [
-  { label: 'Soluciones', href: '/' },
+  { label: 'Inicio', href: '/' },
+  { label: 'Nosotros', href: '/nosotros/' },
+  { label: 'Representadas', href: '/representadas/' },
   { label: 'Industrias', href: '/industrias/' },
   { label: 'Servicios', href: '/servicios/' },
   { label: 'Proyectos', href: '/proyectos/' },
@@ -21,9 +40,18 @@ function isActive(href: string) {
 ---
 
 <header style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 28px;background:#F8F6F0;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);border-bottom:1px solid rgba(224,225,221,0.6)">
-  <!-- Logo -->
-  <a href="/" style="display:block;text-decoration:none;flex-shrink:0" aria-label="MITSA Home">
-    <img src="/images/mitsa-27703545.svg" alt="MITSA" style="height:38px;width:auto;display:block" width="120" height="38" />
+  <!-- Logo Principal -->
+  <a href="/" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0" aria-label={`${brand.name} - Inicio`}>
+    <img
+      src={brand.logo_main || '/images/mitsa-27703545.svg'}
+      alt={brand.name || 'MITSA'}
+      style="height:38px;width:auto;display:block;aspect-ratio:120/38"
+      width="120"
+      height="38"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
   </a>
 
   <!-- Centered Navigation Pill -->
@@ -44,11 +72,11 @@ function isActive(href: string) {
 
   <!-- Right Actions -->
   <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
-    <a href="/contacto/?tipo=repuestos" style="font:500 13.5px 'Inter',sans-serif;color:#1B263B;text-decoration:none" class="nav-repuestos">
-      Repuestos
+    <a href={header.btn_repuestos_url || '/contacto/?tipo=repuestos'} style="font:500 13.5px 'Inter',sans-serif;color:#1B263B;text-decoration:none" class="nav-repuestos">
+      {header.btn_repuestos_label || 'Repuestos'}
     </a>
-    <a href="/contacto/" style="background:#0D1B2A;color:#F8F6F0;padding:11px 22px;border-radius:999px;font:600 13.5px 'Geist',sans-serif;text-decoration:none;transition:transform 0.15s, background 0.2s" class="btn-conversemos">
-      Conversemos
+    <a href={header.btn_cta_url || '/contacto/'} style="background:#0D1B2A;color:#F8F6F0;padding:11px 22px;border-radius:999px;font:600 13.5px 'Geist',sans-serif;text-decoration:none;transition:transform 0.15s, background 0.2s" class="btn-conversemos">
+      {header.btn_cta_label || 'Conversemos'}
     </a>
   </div>
 </header>
@@ -58,24 +86,29 @@ function isActive(href: string) {
     background: #F8F6F0;
     color: #0D1B2A;
   }
+
+  .nav-repuestos:hover {
+    color: #E63946;
+  }
+
   .btn-conversemos:hover {
     background: #1B263B;
     transform: translateY(-1px);
   }
-  .nav-repuestos:hover {
-    color: #0D1B2A;
-    text-decoration: underline;
+
+  .btn-conversemos:focus-visible,
+  .nav-link:focus-visible,
+  .nav-repuestos:focus-visible {
+    outline: 2px solid #0D1B2A;
+    outline-offset: 2px;
   }
-  @media (max-width: 860px) {
+
+  @media (max-width: 992px) {
     header {
       padding: 14px 18px !important;
-      flex-wrap: wrap;
     }
     nav {
-      order: 3;
-      width: 100%;
-      justify-content: center;
-      overflow-x: auto;
+      display: none !important;
     }
   }
 </style>

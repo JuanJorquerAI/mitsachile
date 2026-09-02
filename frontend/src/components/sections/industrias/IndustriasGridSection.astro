@@ -1,0 +1,241 @@
+---
+import type { IndustriasSectorItemData } from '../../../lib/api/types';
+
+interface Props {
+  industries: IndustriasSectorItemData[];
+}
+
+const { industries = [] } = Astro.props;
+---
+
+<section class="industrias-grid-section" aria-labelledby="sectors-heading">
+  <div class="grid-container">
+    <div class="section-intro">
+      <span class="badge-sub">Capacidades por Sector</span>
+      <h2 id="sectors-heading" class="section-title">Especialización técnica según entorno operativo</h2>
+      <p class="section-subtitle">
+        Diseños y tecnologías dimensionadas para resistir las condiciones específicas de cada industria.
+      </p>
+    </div>
+
+    <div class="sectors-grid">
+      {industries.map((ind, index) => (
+        <article class="sector-card" id={ind.id}>
+          <div class="sector-media">
+            <img
+              src={ind.image}
+              alt={ind.title}
+              width="600"
+              height="380"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchpriority={index === 0 ? "high" : "auto"}
+              decoding="async"
+              class="sector-img"
+            />
+            <span class="sector-badge-num">{ind.num}</span>
+          </div>
+
+          <div class="sector-body">
+            <h3 class="sector-title">{ind.title}</h3>
+            <p class="sector-desc">{ind.desc}</p>
+
+            {ind.tags && ind.tags.length > 0 && (
+              <div class="sector-tags" aria-label="Tecnologías y aplicaciones">
+                {ind.tags.map((tag) => (
+                  <span class="tag-chip">{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <div class="sector-footer">
+              <a href={`/contacto/?tipo=evaluacion&sector=${ind.id}`} class="sector-link">
+                Consultar soluciones para este sector
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .industrias-grid-section {
+    background: #FFFFFF;
+    padding: 88px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    max-width: 760px;
+    margin-bottom: 56px;
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1B263B;
+    background: #F1F5F9;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  .sector-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    scroll-margin-top: 100px;
+  }
+
+  .sector-card:hover {
+    transform: translateY(-4px);
+    border-color: #CBD5E1;
+    box-shadow: 0 16px 36px rgba(13, 27, 42, 0.08);
+    background: #FFFFFF;
+  }
+
+  .sector-media {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    background: #0D1B2A;
+  }
+
+  .sector-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .sector-card:hover .sector-img {
+    transform: scale(1.04);
+  }
+
+  .sector-badge-num {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    font-family: monospace;
+    font-size: 0.875rem;
+    font-weight: 800;
+    background: rgba(13, 27, 42, 0.85);
+    color: #FFFFFF;
+    backdrop-filter: blur(6px);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .sector-body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .sector-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+
+  .sector-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 24px;
+    flex-grow: 1;
+  }
+
+  .sector-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tag-chip {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1B263B;
+    background: #E2E8F0;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .sector-footer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 16px;
+  }
+
+  .sector-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #E63946;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .sector-link:hover {
+    color: #D62839;
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 768px) {
+    .sectors-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .sector-body {
+      padding: 24px 20px;
+    }
+    .industrias-grid-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

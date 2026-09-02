@@ -1,0 +1,275 @@
+---
+import type { ProyectosHeroData, MetricItemData } from '../../../lib/api/types';
+
+interface Props {
+  hero: ProyectosHeroData;
+  metrics: MetricItemData[];
+}
+
+const { hero, metrics = [] } = Astro.props;
+const {
+  title = "Lo que ya está instalado y operando.",
+  description = "Cada proyecto publica el sistema, la industria y el fabricante detrás. Casos reales y representativos respaldados por 40 años de trayectoria.",
+  image = "/images/proyectos-img-2-149f33fe.jpg",
+  primary_button = {
+    label: "Ver proyectos",
+    url: "#catalogo-proyectos"
+  },
+  secondary_button = {
+    label: "Solicitar referencias",
+    url: "/contacto/?tipo=evaluacion"
+  }
+} = hero || {};
+---
+
+<section class="proyectos-hero" aria-labelledby="proyectos-hero-heading">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-badge-wrap">
+        <span class="badge-line" aria-hidden="true"></span>
+        <span class="badge-label">Casos de Éxito & Referencias</span>
+      </div>
+      <h1 id="proyectos-hero-heading" class="hero-title">{title}</h1>
+      <p class="hero-desc">{description}</p>
+      
+      <div class="hero-actions">
+        <a href={primary_button.url} class="btn-primary">
+          {primary_button.label}
+          <span aria-hidden="true">↓</span>
+        </a>
+        <a href={secondary_button.url} class="btn-secondary">
+          {secondary_button.label}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img
+        src={image || "/images/proyectos-img-2-149f33fe.jpg"}
+        alt="Casos e instalaciones en terreno de MITSA"
+        width="600"
+        height="400"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="hero-img"
+      />
+    </div>
+  </div>
+
+  <!-- Metric Badges -->
+  {metrics && metrics.length > 0 && (
+    <div class="metrics-bar" aria-label="Métricas destacadas de proyectos">
+      <div class="metrics-grid">
+        {metrics.map((m) => (
+          <div class="metric-item">
+            <div class="metric-val">{m.value}</div>
+            <div class="metric-lbl">{m.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</section>
+
+<style>
+  .proyectos-hero {
+    position: relative;
+    background: #0D1B2A;
+    color: #F8F6F0;
+    overflow: hidden;
+    padding: 80px 24px 0;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(65, 90, 119, 0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(65, 90, 119, 0.15) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 72px;
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .badge-line {
+    width: 36px;
+    height: 2px;
+    background: #E63946;
+  }
+
+  .badge-label {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E0E1DD;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 4.5vw, 3.625rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin: 0 0 20px;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #CBD5E1;
+    margin: 0 0 32px;
+    max-width: 52ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E63946;
+    color: #FFFFFF;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(224, 225, 221, 0.4);
+    color: #F8F6F0;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFFFFF;
+  }
+
+  .btn-secondary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .hero-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 380px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .metrics-bar {
+    border-top: 1px solid rgba(248, 246, 240, 0.1);
+    background: rgba(13, 27, 42, 0.8);
+    backdrop-filter: blur(8px);
+  }
+
+  .metrics-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .metric-item {
+    padding: 32px 24px;
+    border-right: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .metric-item:last-child {
+    border-right: none;
+  }
+
+  .metric-val {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .metric-lbl {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .proyectos-hero {
+      padding: 56px 16px 0;
+    }
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-bottom: 48px;
+    }
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+    .metric-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+      padding: 24px 16px;
+    }
+  }
+</style>

@@ -1,223 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getServiciosSections } from '../lib/api/client';
+import { generateSchemaGraph } from '../lib/seo/schema';
+import ServiciosHeroSection from '../components/sections/servicios/ServiciosHeroSection.astro';
+import ServiciosMetricsSection from '../components/sections/servicios/ServiciosMetricsSection.astro';
+import ServiciosGridSection from '../components/sections/servicios/ServiciosGridSection.astro';
+import ServiciosProcessSection from '../components/sections/servicios/ServiciosProcessSection.astro';
+import ServiciosCtaSection from '../components/sections/servicios/ServiciosCtaSection.astro';
 
-const services = [
-  {
-    num: "01",
-    executor: "Ejecuta MITSA",
-    title: "Ingeniería y dimensionamiento",
-    desc: "Levantamiento a bordo, cálculo de capacidad y definición del sistema antes de cotizar. El alcance queda formalizado por escrito para evitar sobrecostos en obra.",
-    tags: ["Levantamiento a bordo", "Memoria de cálculo", "Planos de integración CAD"],
-    img: "/images/ingeniería-y-dimensi-fcbfca32.jpg"
-  },
-  {
-    num: "02",
-    executor: "Ejecuta MITSA",
-    title: "Suministro e importación oficial",
-    desc: "Equipos de las cinco representadas con garantía directa de fábrica, gestión aduanera e integración con la carta Gantt del astillero o armador.",
-    tags: ["Importación directa", "Garantía de fábrica", "Coordinación de plazos"],
-    img: "/images/suministro-832ba3a1.jpg"
-  },
-  {
-    num: "03",
-    executor: "MITSA · Astillero",
-    title: "Montaje y supervisión",
-    desc: "Supervisión técnica de montaje mecánico, eléctrico e hidráulico durante la instalación, tanto en dique como con la nave en operación.",
-    tags: ["Supervisión en obra", "Protocolos de montaje", "Registro fotográfico"],
-    img: null
-  },
-  {
-    num: "04",
-    executor: "MITSA + Fabricante",
-    title: "Puesta en marcha y comisionamiento",
-    desc: "Pruebas de mar, ajuste de parámetros, calibración de sensores, capacitación a la tripulación y emisión del acta de entrega oficial.",
-    tags: ["Pruebas de mar", "Capacitación tripulación", "Acta de entrega"],
-    img: "/images/puesta-en-marcha-b7442d66.jpg"
-  },
-  {
-    num: "05",
-    executor: "Ejecuta MITSA",
-    title: "Repuestos originales y retrofit",
-    desc: "Identificación exacta por número de parte (P/N), reemplazo de componentes obsoletos y actualización de sistemas sanitarios o de tratamiento sin rehacer la red completa.",
-    tags: ["N° de parte oficial", "Stock crítico", "Actualización normativa"],
-    img: "/images/repuestos-y-retrofit-4936b635.jpg"
-  },
-  {
-    num: "06",
-    executor: "Ejecuta MITSA",
-    title: "Soporte y continuidad operacional",
-    desc: "Diagnóstico remoto de alarmas, visitas técnicas de emergencia en puerto y programas de mantenimiento preventivo durante toda la vida útil del buque.",
-    tags: ["Diagnóstico remoto", "Visita en terreno", "Plan de mantenimiento"],
-    img: null
-  }
-];
+// Consumir datos dinámicos desde WordPress REST API (con fallback tolerante a fallos)
+const pageData = await getServiciosSections();
+const { seo, sections } = pageData;
+
+// Generar esquema estructurado Schema.org JSON-LD (@graph) para la página de servicios
+const schemaGraph = generateSchemaGraph({
+  url: seo.canonical_url || 'https://mitsachile.com/servicios/',
+  title: seo.meta_title,
+  description: seo.meta_description,
+  image: seo.og_image,
+  breadcrumbs: [
+    { name: 'Inicio', url: 'https://mitsachile.com/' },
+    { name: 'Servicios', url: 'https://mitsachile.com/servicios/' }
+  ]
+});
 ---
 
 <Layout
-  title="Servicios — MITSA"
-  description="Servicios de ingeniería marítima: dimensionamiento, suministro, montaje, puesta en marcha, repuestos originales y soporte postventa en Chile."
+  title={seo.meta_title}
+  description={seo.meta_description}
+  canonical={seo.canonical_url}
+  ogImage={seo.og_image}
+  schemaJson={schemaGraph}
+  activeNav="servicios"
 >
-  <!-- Hero Section -->
-  <section style="position:relative;background:#0D1B2A;overflow:hidden;padding:84px 40px 0">
-    <div style="position:absolute;inset:0;background-image:linear-gradient(#415A77 1px,transparent 1px),linear-gradient(90deg,#415A77 1px,transparent 1px);background-size:88px 88px;opacity:.16"></div>
-    <div style="position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end" class="servicios-hero">
-      <div style="padding-bottom:84px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-          <span style="width:44px;height:1px;background:#415A77"></span>
-          <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Servicios</span>
-        </div>
-        <h1 style="font:700 clamp(36px,5vw,66px)/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0;margin:0 0 20px;text-wrap:pretty">
-          El equipo llega. Alguien tiene que responder por él.
-        </h1>
-        <p style="font:400 16px/1.65 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 0 28px;max-width:54ch">
-          Seis servicios que cubren el ciclo completo: desde el levantamiento a bordo hasta el repuesto que se necesita cinco años después de la entrega.
-        </p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="/contacto/?tipo=servicio" style="background:#F8F6F0;color:#0D1B2A;padding:13px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
-            Solicitar servicio técnico
-          </a>
-          <a href="/contacto/?tipo=repuestos" style="border:1px solid rgba(224,225,221,.3);color:#F8F6F0;padding:12px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
-            Pedir repuestos
-          </a>
-        </div>
-      </div>
-      <div style="position:relative;height:430px;overflow:hidden">
-        <img alt="Montaje y supervisión en obra" src="/images/montaje-y-supervisió-55f086a2.jpg" style="width:100%;height:100%;object-fit:cover;display:block" loading="eager" />
-      </div>
-    </div>
-  </section>
+  <main id="main-content" class="servicios-page">
+    {/* 1. Hero & Acciones Rápidas */}
+    <ServiciosHeroSection data={sections.hero} />
 
-  <!-- Metric Badges -->
-  <section style="background:#0D1B2A;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(224,225,221,.16);border-top:1px solid rgba(224,225,221,.16)">
-    <div style="background:#0D1B2A;padding:32px 28px">
-      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">6</div>
-      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">servicios sobre el mismo sistema</div>
-    </div>
-    <div style="background:#0D1B2A;padding:32px 28px">
-      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">5</div>
-      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">fabricantes representados directamente</div>
-    </div>
-    <div style="background:#0D1B2A;padding:32px 28px">
-      <div style="font:700 40px/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0">100%</div>
-      <div style="font:400 13px 'Inter',sans-serif;color:rgba(248,246,240,.6);margin-top:8px">soporte técnico y repuestos oficiales</div>
-    </div>
-  </section>
+    {/* 2. Métricas de Capacidad de Servicio */}
+    <ServiciosMetricsSection metrics={sections.metrics} />
 
-  <!-- Detailed Stages List -->
-  <section style="background:#F8F6F0;padding:88px 40px">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
-      <div>
-        <h2 style="font:700 clamp(28px,3.4vw,44px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#0D1B2A;margin:0 0 10px;max-width:20ch">
-          Qué hace MITSA en cada etapa
-        </h2>
-        <p style="font:400 14.5px/1.6 'Inter',sans-serif;color:#415A77;margin:0;max-width:54ch">
-          Publicamos el alcance real de cada servicio, incluido lo que se ejecuta junto al fabricante y el astillero.
-        </p>
-      </div>
-    </div>
+    {/* 3. Catálogo Modular de 6 Servicios */}
+    <ServiciosGridSection services={sections.catalog} />
 
-    <div style="display:flex;flex-direction:column">
-      {services.map((srv) => (
-        <div style="display:grid;grid-template-columns:.4fr 1.6fr 1fr;gap:36px;align-items:start;padding:40px 0;border-top:1px solid #E0E1DD" class="stage-row">
-          <div>
-            <div style="font:500 13px 'Geist Mono',monospace;letter-spacing:.16em;color:#415A77">{srv.num}</div>
-            <div style="font:500 12px 'Inter',sans-serif;color:#8E9AA8;margin-top:10px">
-              Alcance<br/>
-              <span style="color:#0D1B2A;font-weight:600">{srv.executor}</span>
-            </div>
-          </div>
-          <div>
-            <h3 style="font:600 clamp(20px,2.2vw,28px)/1.15 'Geist',sans-serif;letter-spacing:-.03em;color:#0D1B2A;margin:0 0 12px">
-              {srv.title}
-            </h3>
-            <p style="font:400 14.5px/1.7 'Inter',sans-serif;color:#415A77;margin:0 0 18px;max-width:56ch">
-              {srv.desc}
-            </p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              {srv.tags.map((t) => (
-                <span style="background:#fff;border:1px solid #E0E1DD;padding:7px 14px;border-radius:999px;font:500 12.5px 'Inter',sans-serif;color:#1B263B">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-          {srv.img ? (
-            <div style="position:relative;height:200px;border-radius:18px;overflow:hidden">
-              <img alt={srv.title} src={srv.img} style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
-            </div>
-          ) : (
-            <div style="height:100%;background:rgba(224,225,221,0.4);border:1px dashed #E0E1DD;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;font:500 12.5px 'Inter',sans-serif;color:#8E9AA8">
-              Ejecución y supervisión en terreno
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </section>
+    {/* 4. Metodología de 4 Etapas de Asesoramiento (Brochure) */}
+    <ServiciosProcessSection data={sections.process} />
 
-  <!-- How to request: 3 Steps -->
-  <section style="position:relative;background:#1B263B;padding:120px 40px;overflow:hidden">
-    <div style="max-width:960px;margin:0 auto">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-        <span style="width:44px;height:1px;background:#415A77"></span>
-        <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Procedimiento rápido</span>
-      </div>
-      <h2 style="font:700 clamp(26px,3vw,40px)/1.05 'Geist',sans-serif;letter-spacing:-.04em;color:#F8F6F0;margin:0 0 30px">
-        Tres datos y el caso queda abierto
-      </h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="three-steps-grid">
-        <div style="border:1px solid rgba(224,225,221,.16);border-radius:18px;padding:26px;background:rgba(13,27,42,0.4)">
-          <div style="font:500 12px 'Geist Mono',monospace;color:#8E9AA8;margin-bottom:12px">01</div>
-          <div style="font:600 16px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Identifique el equipo</div>
-          <p style="font:400 13.5px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.65);margin:0">
-            Fabricante, modelo y número de serie — o simplemente una fotografía de la placa del equipo.
-          </p>
-        </div>
-        <div style="border:1px solid rgba(224,225,221,.16);border-radius:18px;padding:26px;background:rgba(13,27,42,0.4)">
-          <div style="font:500 12px 'Geist Mono',monospace;color:#8E9AA8;margin-bottom:12px">02</div>
-          <div style="font:600 16px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Describa el síntoma</div>
-          <p style="font:400 13.5px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.65);margin:0">
-            Qué falla se presenta, códigos de alarma en panel y si la nave continúa en navegación.
-          </p>
-        </div>
-        <div style="border:1px solid rgba(224,225,221,.16);border-radius:18px;padding:26px;background:rgba(13,27,42,0.4)">
-          <div style="font:500 12px 'Geist Mono',monospace;color:#8E9AA8;margin-bottom:12px">03</div>
-          <div style="font:600 16px 'Geist',sans-serif;color:#F8F6F0;margin-bottom:8px">Indique ubicación y plazo</div>
-          <p style="font:400 13.5px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.65);margin:0">
-            Puerto de recalada, astillero o centro de cultivo y la ventana disponible para coordinar la visita.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Box -->
-  <section style="position:relative;background:#0D1B2A;padding:120px 40px;text-align:center;overflow:hidden">
-    <img alt="" src="/images/servicios-img-7-85955fa0.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25" loading="lazy" />
-    <div style="position:absolute;inset:0;background:linear-gradient(rgba(13,27,42,.75),rgba(13,27,42,.88))"></div>
-    <div style="position:relative;max-width:680px;margin:0 auto">
-      <h2 style="font:700 clamp(30px,4.5vw,56px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#F8F6F0;margin:0 auto 20px">
-        Servicio técnico, repuestos o una evaluación
-      </h2>
-      <p style="font:400 15px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 auto 30px">
-        Elija el canal que corresponde y su requerimiento llegará directo a nuestros ingenieros de servicio.
-      </p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a href="/contacto/?tipo=servicio" style="background:#F8F6F0;color:#0D1B2A;padding:15px 32px;border-radius:999px;font:600 14.5px 'Geist',sans-serif;display:inline-block">
-          Abrir requerimiento técnico
-        </a>
-        <a href="/contacto/?tipo=repuestos" style="border:1px solid rgba(224,225,221,0.3);color:#F8F6F0;padding:15px 32px;border-radius:999px;font:600 14.5px 'Geist',sans-serif;display:inline-block">
-          Cotizar repuestos
-        </a>
-      </div>
-    </div>
-  </section>
+    {/* 5. Llamado a la Acción para Proyectos y Repuestos */}
+    <ServiciosCtaSection data={sections.cta} />
+  </main>
 </Layout>
 
 <style>
-  @media (max-width: 900px) {
-    .servicios-hero, .stage-row, .three-steps-grid {
-      grid-template-columns: 1fr !important;
-    }
+  .servicios-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
   }
 </style>

@@ -1,0 +1,75 @@
+---
+import type { ServiciosMetricItemData } from '../../../lib/api/types';
+
+interface Props {
+  metrics: ServiciosMetricItemData[];
+}
+
+const { metrics = [] } = Astro.props;
+const defaultMetrics = [
+  { value: "6", label: "servicios sobre el mismo sistema" },
+  { value: "5", label: "fabricantes representados directamente" },
+  { value: "100%", label: "cobertura de puertos y astilleros en Chile" }
+];
+const items = metrics.length > 0 ? metrics : defaultMetrics;
+---
+
+<section class="servicios-metrics" aria-label="Métricas de capacidad de servicio">
+  <div class="metrics-grid">
+    {items.map((m) => (
+      <div class="metric-card">
+        <div class="metric-value">{m.value}</div>
+        <div class="metric-label">{m.label}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .servicios-metrics {
+    background: #0D1B2A;
+    border-top: 1px solid rgba(224, 225, 221, 0.16);
+    border-bottom: 1px solid rgba(224, 225, 221, 0.16);
+  }
+
+  .metrics-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(224, 225, 221, 0.16);
+  }
+
+  .metric-card {
+    background: #0D1B2A;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .metric-value {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .metric-label {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: #94A3B8;
+  }
+
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+    .metric-card {
+      padding: 24px 20px;
+    }
+  }
+</style>

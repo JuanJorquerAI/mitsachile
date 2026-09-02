@@ -1,28 +1,73 @@
 ---
+import type { SiteBrandOptions, SiteFooterOptions, SiteContactOptions, SiteSocialOptions } from '../lib/api/types';
+
+interface Props {
+  brand?: SiteBrandOptions;
+  footer?: SiteFooterOptions;
+  contact?: SiteContactOptions;
+  social?: SiteSocialOptions;
+}
+
 const currentYear = new Date().getFullYear();
+
+const {
+  brand = {
+    name: 'MITSA',
+    since: 'Desde 1982',
+    logo_white: '/images/mitsa-0e284396.svg',
+  } as SiteBrandOptions,
+  footer = {
+    statement_prefix: 'Integramos',
+    statement_prefix_sub: 'tecnología.',
+    statement_suffix: 'Resolvemos',
+    statement_suffix_sub: 'desafíos.',
+    description: 'Ingeniería de aplicación, suministro, retrofit y soporte postventa para sistemas marítimos e industriales.',
+    location: 'Reñaca, Viña del Mar · Chile',
+    copyright: `© ${currentYear} MITSA SpA. Todos los derechos reservados.`,
+    agency_name: 'AplicacionesWeb',
+    agency_url: 'https://aplicacionesweb.cl',
+  } as SiteFooterOptions,
+  contact = {
+    email_general: 'contacto@mitsachile.com',
+    phone_main: '+56 32 2835055',
+  } as SiteContactOptions,
+  social = {
+    linkedin: 'https://www.linkedin.com/company/mitsa-chile',
+    catalog_pdf: '/recursos/catalogo-general-mitsa.pdf',
+    smm_expo: '/smm2026/',
+  } as SiteSocialOptions,
+} = Astro.props;
 ---
 
 <footer style="background:#0D1B2A;color:#F8F6F0;padding:80px 40px 40px;border-top:1px solid rgba(248,246,240,0.1)">
   <!-- Big Brand Statement -->
   <div style="text-align:center;padding-bottom:64px;border-bottom:1px solid rgba(248,246,240,0.14)">
     <div style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#8E9AA8;margin-bottom:20px">
-      MITSA · DESDE 1982
+      {brand.name || 'MITSA'} · {brand.since ? brand.since.toUpperCase() : 'DESDE 1982'}
     </div>
     <p style="margin:0 auto;max-width:24ch;font-size:clamp(32px,4.5vw,64px);line-height:1.06;letter-spacing:-.04em;color:#F8F6F0">
-      <span style="font-family:'Geist',sans-serif;font-weight:700">Integramos</span> <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#8E9AA8">tecnología.</span><br/>
-      <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#8E9AA8">Resolvemos</span> <span style="font-family:'Geist',sans-serif;font-weight:700">desafíos.</span>
+      <span style="font-family:'Geist',sans-serif;font-weight:700">{footer.statement_prefix || 'Integramos'}</span> <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#8E9AA8">{footer.statement_prefix_sub || 'tecnología.'}</span><br/>
+      <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#8E9AA8">{footer.statement_suffix || 'Resolvemos'}</span> <span style="font-family:'Geist',sans-serif;font-weight:700">{footer.statement_suffix_sub || 'desafíos.'}</span>
     </p>
   </div>
 
   <!-- Links Grid -->
   <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding:60px 0 40px;font-size:13.5px">
     <div>
-      <img src="/images/mitsa-0e284396.svg" alt="MITSA" style="height:32px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1)" width="100" height="32" />
+      <img
+        src={brand.logo_white || '/images/mitsa-0e284396.svg'}
+        alt={brand.name || 'MITSA'}
+        style="height:32px;width:auto;margin-bottom:16px;display:block"
+        width="100"
+        height="32"
+        loading="lazy"
+        decoding="async"
+      />
       <p style="color:#8E9AA8;line-height:1.6;margin:0 0 16px;max-width:32ch">
-        Ingeniería de aplicación, suministro, retrofit y soporte postventa para sistemas marítimos e industriales.
+        {footer.description || 'Ingeniería de aplicación, suministro, retrofit y soporte postventa para sistemas marítimos e industriales.'}
       </p>
       <div style="font:500 12px 'Geist Mono',monospace;color:#8E9AA8">
-        Reñaca, Viña del Mar · Chile
+        {footer.location || 'Reñaca, Viña del Mar · Chile'}
       </div>
     </div>
 
@@ -43,18 +88,20 @@ const currentYear = new Date().getFullYear();
       <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;color:#8E9AA8">
         <li><a href="/industrias/#naval" class="footer-link">Naval y Defensa</a></li>
         <li><a href="/industrias/#astilleros" class="footer-link">Astilleros y Diques</a></li>
-        <li><a href="/industrias/#pesca" class="footer-link">Pesca y Acuicultura</a></li>
-        <li><a href="/industrias/#offshore" class="footer-link">Carga y Offshore</a></li>
-        <li><a href="/industrias/#mineria" class="footer-link">Minería e Industria</a></li>
+        <li><a href="/industrias/#acuicultura" class="footer-link">Acuicultura y Pesca</a></li>
+        <li><a href="/industrias/#offshore" class="footer-link">Offshore y Energía</a></li>
+        <li><a href="/industrias/#carga" class="footer-link">Transporte y Carga</a></li>
+        <li><a href="/industrias/#tierra" class="footer-link">Instalaciones en Tierra</a></li>
       </ul>
     </div>
 
     <div>
       <div style="font:600 13px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#F8F6F0;margin-bottom:18px">Recursos & Contacto</div>
       <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;color:#8E9AA8">
+        <li><a href="/representadas/" class="footer-link">Marcas Representadas</a></li>
         <li><a href="/recursos/" class="footer-link">Biblioteca Técnica</a></li>
         <li><a href="/proyectos/" class="footer-link">Proyectos & Casos</a></li>
-        <li><a href="/smm2026/" class="footer-link">SMM Hamburgo 2026</a></li>
+        <li><a href={social.smm_expo || '/smm2026/'} class="footer-link">SMM Hamburgo 2026</a></li>
         <li><a href="/contacto/?tipo=repuestos" class="footer-link">Solicitud de Repuestos</a></li>
         <li><a href="/contacto/" class="footer-link">Contacto Directo</a></li>
       </ul>
@@ -64,10 +111,10 @@ const currentYear = new Date().getFullYear();
   <!-- Bottom Copyright & Agency Credits -->
   <div style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(248,246,240,0.08);font-size:12.5px;color:#8E9AA8;flex-wrap:wrap;gap:12px">
     <div>
-      © {currentYear} MITSA SpA. Todos los derechos reservados.
+      {footer.copyright || `© ${currentYear} MITSA SpA. Todos los derechos reservados.`}
     </div>
     <div>
-      Desarrollo y Posicionamiento SEO por <a href="https://aplicacionesweb.cl" target="_blank" rel="noopener noreferrer" style="color:#F8F6F0;text-decoration:underline">AplicacionesWeb</a>
+      Desarrollo y Posicionamiento SEO por <a href={footer.agency_url || 'https://aplicacionesweb.cl'} target="_blank" rel="noopener noreferrer" style="color:#F8F6F0;text-decoration:underline">{footer.agency_name || 'AplicacionesWeb'}</a>
     </div>
   </div>
 </footer>
@@ -75,6 +122,8 @@ const currentYear = new Date().getFullYear();
 <style>
   .footer-link {
     transition: color 0.2s;
+    color: #8E9AA8;
+    text-decoration: none;
   }
   .footer-link:hover {
     color: #F8F6F0;

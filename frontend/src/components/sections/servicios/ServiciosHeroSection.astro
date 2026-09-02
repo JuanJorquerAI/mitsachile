@@ -1,0 +1,225 @@
+---
+import type { ServiciosHeroData } from '../../../lib/api/types';
+
+interface Props {
+  data: ServiciosHeroData;
+}
+
+const { data } = Astro.props;
+const {
+  title = "El equipo llega. Alguien tiene que responder por él.",
+  description = "Seis servicios que cubren el ciclo completo: desde el levantamiento a bordo hasta el repuesto que se necesita cinco años después de la entrega.",
+  primary_button = {
+    label: "Solicitar servicio técnico",
+    url: "/contacto/?tipo=servicio"
+  },
+  secondary_button = {
+    label: "Pedir repuestos",
+    url: "/contacto/?tipo=repuestos"
+  },
+  image = "/images/montaje-y-supervisió-55f086a2.jpg"
+} = data || {};
+---
+
+<section class="servicios-hero" aria-labelledby="servicios-heading">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-badge-wrap">
+        <span class="badge-line" aria-hidden="true"></span>
+        <span class="badge-label">Servicios Especializados</span>
+      </div>
+      <h1 id="servicios-heading" class="hero-title">{title}</h1>
+      <p class="hero-desc">{description}</p>
+      
+      <div class="hero-actions">
+        <a href={primary_button.url} class="btn-primary">
+          {primary_button.label}
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href={secondary_button.url} class="btn-secondary">
+          {secondary_button.label}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img
+        src={image}
+        alt="Ingeniería y supervisión de montaje en terreno"
+        width="800"
+        height="500"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="hero-img"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .servicios-hero {
+    position: relative;
+    background: #0D1B2A;
+    color: #F8F6F0;
+    overflow: hidden;
+    padding: 80px 24px 0;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(65, 90, 119, 0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(65, 90, 119, 0.15) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 48px;
+    align-items: end;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-text {
+    padding-bottom: 72px;
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .badge-line {
+    width: 36px;
+    height: 2px;
+    background: #E63946;
+  }
+
+  .badge-label {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E0E1DD;
+  }
+
+  .hero-title {
+    font-size: clamp(2.125rem, 4.2vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin: 0 0 20px;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #CBD5E1;
+    margin: 0 0 32px;
+    max-width: 54ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E63946;
+    color: #FFFFFF;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(224, 225, 221, 0.4);
+    color: #F8F6F0;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFFFFF;
+  }
+
+  .btn-secondary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .hero-media {
+    position: relative;
+    height: 440px;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .servicios-hero {
+      padding: 56px 16px 0;
+    }
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .hero-text {
+      padding-bottom: 0;
+    }
+    .hero-media {
+      height: 320px;
+    }
+  }
+</style>

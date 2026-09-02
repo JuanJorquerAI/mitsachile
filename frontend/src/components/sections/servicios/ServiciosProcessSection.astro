@@ -1,0 +1,197 @@
+---
+import type { ServiciosProcessData } from '../../../lib/api/types';
+
+interface Props {
+  data: ServiciosProcessData;
+}
+
+const { data } = Astro.props;
+const {
+  heading = "Proceso de asesoramiento y cotización técnica",
+  subheading = "Metodología estructurada de 4 etapas que asegura la compatibilidad exacta entre el requerimiento operativo y el diseño del fabricante.",
+  steps = [
+    { step: "01", title: "1. Requerimiento", description: "El cliente solicita cotizar un sistema, equipo o elemento específico para su embarcación o instalación." },
+    { step: "02", title: "2. Evaluación", description: "MITSA evalúa junto con sus representadas las alternativas de diseño de cada fabricante según precio, innovación, normativa y calidad." },
+    { step: "03", title: "3. Presentación", description: "Presentamos al cliente las mejores opciones técnicas y comerciales que satisfacen plenamente su necesidad." },
+    { step: "04", title: "4. Suministro & Soporte", description: "Una vez elegida la opción, se procede al suministro, coordinación de entrega e inicio del plan de acompañamiento operativo." }
+  ]
+} = data || {};
+---
+
+<section class="process-section" aria-labelledby="process-heading">
+  <div class="process-container">
+    <div class="section-intro">
+      <span class="badge-sub">Metodología de Trabajo</span>
+      <h2 id="process-heading" class="section-title">{heading}</h2>
+      <p class="section-subtitle">{subheading}</p>
+    </div>
+
+    <div class="process-track">
+      <div class="process-line" aria-hidden="true"></div>
+      <div class="steps-grid">
+        {steps.map((s, index) => (
+          <article class="step-card">
+            <div class="step-header">
+              <span class="step-badge">{s.step}</span>
+              <span class="step-dot" aria-hidden="true"></span>
+            </div>
+            <div class="step-body">
+              <h3 class="step-title">{s.title}</h3>
+              <p class="step-desc">{s.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    background: #0D1B2A;
+    color: #F8F6F0;
+    padding: 88px 24px;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    max-width: 760px;
+    margin-bottom: 64px;
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.12);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+    border: 1px solid rgba(230, 57, 70, 0.25);
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .process-track {
+    position: relative;
+    padding-top: 16px;
+  }
+
+  .process-line {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+  }
+
+  .steps-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .step-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .step-badge {
+    font-family: monospace;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #E63946;
+  }
+
+  .step-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0D1B2A;
+    border: 3px solid #E63946;
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.2);
+  }
+
+  .step-body {
+    background: #1B263B;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 24px 20px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .step-body:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 57, 70, 0.4);
+    background: #233148;
+  }
+
+  .step-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+
+  .step-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .process-line {
+      display: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+    .process-section {
+      padding: 56px 16px;
+    }
+  }
+</style>

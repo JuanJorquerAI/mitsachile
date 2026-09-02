@@ -1,0 +1,295 @@
+---
+import type { RepresentadasMainBrandData } from '../../../lib/api/types';
+
+interface Props {
+  brands: RepresentadasMainBrandData[];
+}
+
+const { brands = [] } = Astro.props;
+---
+
+<section class="representadas-main-section" id="marcas-principales" aria-labelledby="main-brands-heading">
+  <div class="main-container">
+    <div class="section-intro">
+      <span class="intro-badge">Líneas Principales de Equipamiento</span>
+      <h2 id="main-brands-heading" class="section-title">Fabricantes Globales con Presencia en MITSA</h2>
+      <p class="section-desc">
+        Equipamiento marino, sanitario, de propulsión y protección ambiental con especificación técnica, respaldo de repuestos y comisionamiento certificado.
+      </p>
+    </div>
+
+    <!-- Grid de Marcas Principales -->
+    <div class="brands-grid">
+      {brands.map((brand) => (
+        <article class="brand-card">
+          <div class="brand-image-wrap">
+            <img
+              src={brand.image}
+              alt={`Equipos y tecnología de ${brand.name} representados por MITSA`}
+              width="480"
+              height="280"
+              loading="lazy"
+              decoding="async"
+              class="brand-img"
+            />
+            <div class="brand-tags-bar">
+              <span class="country-tag">📍 {brand.country}</span>
+              <span class="category-tag">{brand.category}</span>
+            </div>
+          </div>
+
+          <div class="brand-body">
+            <div class="brand-header">
+              <h3 class="brand-name">{brand.name}</h3>
+              {brand.holding && <span class="holding-badge">{brand.holding}</span>}
+            </div>
+
+            <p class="brand-desc">{brand.description}</p>
+
+            <!-- Soluciones Clave -->
+            <div class="solutions-wrap">
+              <span class="solutions-title">Tecnologías y Soluciones:</span>
+              <div class="solutions-tags">
+                {brand.solutions.map((sol) => (
+                  <span class="solution-tag">{sol}</span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Footer de Tarjeta -->
+            <div class="brand-footer">
+              <a href={brand.consult_url} class="btn-brand-consult">
+                Consultar soporte o repuestos
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .representadas-main-section {
+    background: #FFFFFF;
+    padding: 96px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 64px;
+  }
+
+  .intro-badge {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E63946;
+    background: rgba(230, 57, 70, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
+    margin: 0 0 16px;
+  }
+
+  .section-desc {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #64748B;
+    margin: 0;
+  }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .brand-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(13, 27, 42, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(13, 27, 42, 0.08);
+    border-color: #CBD5E1;
+  }
+
+  .brand-image-wrap {
+    position: relative;
+    height: 240px;
+    background: #0D1B2A;
+    overflow: hidden;
+  }
+
+  .brand-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.88;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .brand-card:hover .brand-img {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
+  .brand-tags-bar {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .country-tag {
+    background: rgba(13, 27, 42, 0.85);
+    backdrop-filter: blur(4px);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .category-tag {
+    background: rgba(230, 57, 70, 0.9);
+    backdrop-filter: blur(4px);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .brand-body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .brand-name {
+    font-size: 1.625rem;
+    font-weight: 800;
+    color: #0D1B2A;
+    margin: 0;
+  }
+
+  .holding-badge {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748B;
+    background: #E2E8F0;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .brand-desc {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 24px;
+  }
+
+  .solutions-wrap {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .solutions-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748B;
+  }
+
+  .solutions-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .solution-tag {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #1E293B;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .brand-footer {
+    margin-top: auto;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 20px;
+  }
+
+  .btn-brand-consult {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #E63946;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .btn-brand-consult:hover {
+    color: #B91C1C;
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 860px) {
+    .brands-grid {
+      grid-template-columns: 1fr;
+    }
+    .brand-body {
+      padding: 24px 20px;
+    }
+  }
+</style>

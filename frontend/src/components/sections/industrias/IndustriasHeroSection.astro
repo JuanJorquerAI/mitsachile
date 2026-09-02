@@ -1,0 +1,268 @@
+---
+import type { IndustriasHeroData, IndustriasSectorItemData } from '../../../lib/api/types';
+
+interface Props {
+  hero: IndustriasHeroData;
+  sectors: IndustriasSectorItemData[];
+}
+
+const { hero, sectors = [] } = Astro.props;
+const {
+  title = "Cada industria exige una respuesta técnica distinta",
+  description = "La solución no la define el catálogo: la definen la normativa que aplica, la ventana de intervención disponible y qué pasa si el sistema se detiene.",
+  primary_button = {
+    label: "Solicitar evaluación técnica",
+    url: "/contacto/?tipo=evaluacion"
+  },
+  secondary_button = {
+    label: "Ver sectores",
+    url: "#sectores"
+  }
+} = hero || {};
+---
+
+<section class="industrias-hero" aria-labelledby="industrias-heading">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="hero-badge-wrap">
+        <span class="badge-line" aria-hidden="true"></span>
+        <span class="badge-label">Sectores & Aplicaciones</span>
+      </div>
+      <h1 id="industrias-heading" class="hero-title">{title}</h1>
+      <p class="hero-desc">{description}</p>
+      
+      <div class="hero-actions">
+        <a href={primary_button.url} class="btn-primary">
+          {primary_button.label}
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href={secondary_button.url} class="btn-secondary">
+          {secondary_button.label}
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Sector Jump Menu -->
+    <div class="sectors-nav-card" id="sectores">
+      <div class="nav-card-header">
+        <span class="nav-card-title">Índice de Sectores</span>
+        <span class="nav-card-count">{sectors.length} industrias</span>
+      </div>
+      <div class="sectors-nav-list">
+        {sectors.map((s) => (
+          <a href={`#${s.id}`} class="sector-nav-item">
+            <span class="sector-nav-name">{s.title}</span>
+            <span class="sector-nav-num">{s.num}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .industrias-hero {
+    position: relative;
+    background: #0D1B2A;
+    color: #F8F6F0;
+    overflow: hidden;
+    padding: 80px 24px 72px;
+    border-bottom: 1px solid rgba(248, 246, 240, 0.08);
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(65, 90, 119, 0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(65, 90, 119, 0.15) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.25fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .badge-line {
+    width: 36px;
+    height: 2px;
+    background: #E63946;
+  }
+
+  .badge-label {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #E0E1DD;
+  }
+
+  .hero-title {
+    font-size: clamp(2.125rem, 4.2vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin: 0 0 20px;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: #CBD5E1;
+    margin: 0 0 32px;
+    max-width: 54ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E63946;
+    color: #FFFFFF;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: #D62839;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(224, 225, 221, 0.4);
+    color: #F8F6F0;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFFFFF;
+  }
+
+  .btn-secondary:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  .sectors-nav-card {
+    background: #1B263B;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-card-header {
+    background: rgba(13, 27, 42, 0.6);
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-card-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+  }
+
+  .nav-card-count {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    color: #94A3B8;
+  }
+
+  .sectors-nav-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sector-nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 24px;
+    color: #F8F6F0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease, padding-left 0.15s ease;
+  }
+
+  .sector-nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .sector-nav-item:hover {
+    background: rgba(230, 57, 70, 0.15);
+    padding-left: 28px;
+    color: #FFFFFF;
+  }
+
+  .sector-nav-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .sector-nav-num {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    color: #94A3B8;
+  }
+
+  @media (max-width: 900px) {
+    .industrias-hero {
+      padding: 56px 16px;
+    }
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

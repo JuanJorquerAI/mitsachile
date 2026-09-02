@@ -124,4 +124,5 @@ require MITSA_THEME_DIR . '/inc/cpt-representada.php';
 require MITSA_THEME_DIR . '/inc/seo.php';
 require MITSA_THEME_DIR . '/inc/analytics.php';
 require MITSA_THEME_DIR . '/inc/acf-fields.php';
+require MITSA_THEME_DIR . '/inc/site-options.php';
 require MITSA_THEME_DIR . '/inc/api-sections.php';

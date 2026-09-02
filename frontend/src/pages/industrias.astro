@@ -1,294 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getIndustriasSections } from '../lib/api/client';
+import { generateSchemaGraph } from '../lib/seo/schema';
+import IndustriasHeroSection from '../components/sections/industrias/IndustriasHeroSection.astro';
+import IndustriasGridSection from '../components/sections/industrias/IndustriasGridSection.astro';
+import IndustriasCriteriaSection from '../components/sections/industrias/IndustriasCriteriaSection.astro';
+import IndustriasCtaSection from '../components/sections/industrias/IndustriasCtaSection.astro';
 
-const industries = [
-  {
-    id: "naval",
-    num: "01",
-    title: "Naval y defensa",
-    img: "/images/naval-y-defensa-5b2a62fc.jpg",
-    desc: "Fragatas, OPVs y patrulleras: construcción nueva, modernización y disponibilidad operacional bajo estrictos requisitos de clase militar.",
-    tags: ["Sanitarios al vacío", "ICCP", "Aguas residuales", "Agua dulce"]
-  },
-  {
-    id: "acuicultura",
-    num: "02",
-    title: "Acuicultura y pesca",
-    img: "/images/acuicultura-64fec532.jpg",
-    desc: "Wellboats, pontones y centros de cultivo con tripulación permanente y ventanas de mantenimiento sumamente acotadas.",
-    tags: ["Sanitarios", "Agua dulce", "Repuestos", "ICAF"]
-  },
-  {
-    id: "offshore",
-    num: "03",
-    title: "Offshore y energía",
-    img: "/images/offshore-y-energía-37f4cf0d.jpg",
-    desc: "Plataformas y unidades de apoyo marítimo (PSV/AHTS) donde el espacio, el peso y la descarga de efluentes están fuertemente normados.",
-    tags: ["BWTS", "ICAF", "Drenajes", "Aguas residuales"]
-  },
-  {
-    id: "astilleros",
-    num: "04",
-    title: "Astilleros y reparación",
-    img: "/images/astilleros-y-reparac-9d3b1bf1.jpg",
-    desc: "Integración de sistemas durante construcción nueva o retrofit en dique seco, coordinado con la carta Gantt del astillero.",
-    tags: ["Retrofit", "Montaje", "Puesta en marcha", "Supervisión"]
-  },
-  {
-    id: "carga",
-    num: "05",
-    title: "Transporte marítimo y carga",
-    img: "/images/transporte-marítimo--e848a060.jpg",
-    desc: "Flotas mercantes y portacontenedores que deben cumplir convenios MARPOL y agua de lastre D-2 sin alterar su itinerario.",
-    tags: ["BWTS", "Aguas residuales", "Servicio a bordo", "ICCP"]
-  },
-  {
-    id: "tierra",
-    num: "06",
-    title: "Instalaciones en tierra y minería",
-    img: "/images/instalaciones-en-tie-f9537988.jpg",
-    desc: "Plantas industriales, faenas mineras y edificios donde no existe cota de pendiente para redes de evacuación por gravedad.",
-    tags: ["Sanitarios al vacío", "Drenajes inox", "Agua caliente", "Efluentes"]
-  }
-];
+// Consumir datos dinámicos desde WordPress REST API (con fallback estático tolerante a caídas)
+const pageData = await getIndustriasSections();
+const { seo, sections } = pageData;
+
+// Generar esquema estructurado Schema.org JSON-LD (@graph)
+const schemaGraph = generateSchemaGraph({
+  url: seo.canonical_url || 'https://mitsachile.com/industrias/',
+  title: seo.meta_title,
+  description: seo.meta_description,
+  image: seo.og_image,
+  breadcrumbs: [
+    { name: 'Inicio', url: 'https://mitsachile.com/' },
+    { name: 'Industrias', url: 'https://mitsachile.com/industrias/' }
+  ]
+});
 ---
 
 <Layout
-  title="Industrias — MITSA"
-  description="Soluciones técnicas de ingeniería naval, sanitaria y ambiental por sector: Naval & Defensa, Astilleros, Acuicultura, Offshore, Carga y Tierra."
+  title={seo.meta_title}
+  description={seo.meta_description}
+  canonical={seo.canonical_url}
+  ogImage={seo.og_image}
+  schemaJson={schemaGraph}
+  activeNav="industrias"
 >
-  <!-- Hero Section -->
-  <section style="position:relative;background:#0D1B2A;padding:84px 40px 92px;overflow:hidden">
-    <div style="position:absolute;inset:0;background-image:linear-gradient(#415A77 1px,transparent 1px),linear-gradient(90deg,#415A77 1px,transparent 1px);background-size:88px 88px;opacity:.16"></div>
-    <div style="position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:end" class="industrias-hero">
-      <div>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-          <span style="width:44px;height:1px;background:#415A77"></span>
-          <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Industrias</span>
-        </div>
-        <h1 style="font:700 clamp(36px,5vw,66px)/1 'Geist',sans-serif;letter-spacing:-.045em;color:#F8F6F0;margin:0 0 20px;text-wrap:pretty">
-          Cada industria exige una respuesta técnica distinta
-        </h1>
-        <p style="font:400 16px/1.65 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 0 28px;max-width:54ch">
-          La solución no la define el catálogo: la definen la normativa que aplica, la ventana de intervención disponible y qué pasa si el sistema se detiene.
-        </p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a href="/contacto/?tipo=evaluacion" style="background:#F8F6F0;color:#0D1B2A;padding:13px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
-            Solicitar evaluación técnica
-          </a>
-          <a href="#sectores" style="border:1px solid rgba(224,225,221,.3);color:#F8F6F0;padding:12px 26px;border-radius:999px;font:600 14px 'Geist',sans-serif;text-decoration:none">
-            Ver sectores
-          </a>
-        </div>
-      </div>
+  <main id="main-content" class="industrias-page">
+    {/* 1. Hero & Menú Rápido de Salto */}
+    <IndustriasHeroSection hero={sections.hero} sectors={sections.industries} />
 
-      <div style="display:flex;flex-direction:column;gap:1px;background:rgba(224,225,221,.16);border:1px solid rgba(224,225,221,.16);border-radius:18px;overflow:hidden">
-        {industries.map((ind) => (
-          <a href={`#${ind.id}`} style="background:#0D1B2A;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;text-decoration:none;transition:background 0.2s" class="ind-list-item">
-            <span style="font:500 14.5px 'Inter',sans-serif;color:#F8F6F0">{ind.title}</span>
-            <span style="font:500 11px 'Geist Mono',monospace;color:#8E9AA8">{ind.num}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+    {/* 2. Grid Especializado de 6 Sectores / Industrias */}
+    <IndustriasGridSection industries={sections.industries} />
 
-  <!-- Decision Criteria -->
-  <section style="background:#F8F6F0;padding:88px 40px">
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-      <span style="width:44px;height:1px;background:#415A77"></span>
-      <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#415A77">Criterios de ingeniería</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#E0E1DD;border:1px solid #E0E1DD;border-radius:20px;overflow:hidden" class="criteria-grid">
-      <div style="background:#fff;padding:32px 28px">
-        <div style="font:600 17px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:8px">Normativa aplicable</div>
-        <p style="font:400 13.5px/1.65 'Inter',sans-serif;color:#415A77;margin:0">
-          MARPOL Anexo IV, convenio OMI de agua de lastre D-2, circulares DIRECTEMAR y requisitos específicos de casas clasificadoras (DNV, LR, ABS, BV).
-        </p>
-      </div>
-      <div style="background:#fff;padding:32px 28px">
-        <div style="font:600 17px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:8px">Ventana de intervención</div>
-        <p style="font:400 13.5px/1.65 'Inter',sans-serif;color:#415A77;margin:0">
-          Construcción nueva, varada programada en astillero o retrofit con la nave en plena operación: cada escenario cambia la ingeniería de montaje.
-        </p>
-      </div>
-      <div style="background:#fff;padding:32px 28px">
-        <div style="font:600 17px 'Geist',sans-serif;color:#0D1B2A;margin-bottom:8px">Criticidad operacional</div>
-        <p style="font:400 13.5px/1.65 'Inter',sans-serif;color:#415A77;margin:0">
-          Qué ocurre en la faena o navegación si el sistema se detiene. Esto define la redundancia de bombas, stock crítico a bordo y SLA de respuesta.
-        </p>
-      </div>
-    </div>
-  </section>
+    {/* 3. Criterios de Selección e Ingeniería Técnica */}
+    <IndustriasCriteriaSection data={sections.criteria} />
 
-  <!-- 6 Industries Grid -->
-  <section style="background:#EFEEE9;padding:88px 40px" id="sectores">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px">
-      <div>
-        <h2 style="font:700 clamp(28px,3.4vw,44px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#0D1B2A;margin:0 0 10px;max-width:20ch">
-          Seis industrias, un mismo estándar de ejecución
-        </h2>
-        <p style="font:400 14.5px/1.6 'Inter',sans-serif;color:#415A77;margin:0;max-width:54ch">
-          Experiencia comprobada en buques de alta exigencia, faenas mineras y plataformas industriales.
-        </p>
-      </div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px" class="industries-cards-grid">
-      {industries.map((ind) => (
-        <div id={ind.id} style="background:#fff;border:1px solid #E0E1DD;border-radius:20px;overflow:hidden;display:flex;flex-direction:column">
-          <div style="position:relative;height:200px;overflow:hidden">
-            <img alt={ind.title} src={ind.img} style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
-          </div>
-          <div style="padding:26px;display:flex;flex-direction:column;gap:14px;flex:1">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div style="font:600 19px 'Geist',sans-serif;color:#0D1B2A">{ind.title}</div>
-              <span style="font:500 11px 'Geist Mono',monospace;color:#8E9AA8">{ind.num}</span>
-            </div>
-            <p style="font:400 13.5px/1.65 'Inter',sans-serif;color:#415A77;margin:0">
-              {ind.desc}
-            </p>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px">
-              {ind.tags.map((t) => (
-                <span style="border:1px solid #E0E1DD;padding:5px 12px;border-radius:999px;font:500 12px 'Inter',sans-serif;color:#415A77">
-                  {t}
-                </span>
-              ))}
-            </div>
-            <div style="padding-top:10px;border-top:1px solid #F8F6F0">
-              <a href={`/contacto/?tipo=evaluacion&industria=${encodeURIComponent(ind.title)}`} style="font:600 13.5px 'Geist',sans-serif;color:#0D1B2A;text-decoration:none">
-                Consultar soluciones para este sector →
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Application Matrix Table -->
-  <section style="position:relative;background:#0D1B2A;padding:120px 40px;overflow:hidden">
-    <div style="max-width:1000px;margin:0 auto">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
-        <span style="width:44px;height:1px;background:#415A77"></span>
-        <span style="font:500 11.5px 'Geist Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#E0E1DD">Matriz de aplicación</span>
-      </div>
-      <h2 style="font:700 clamp(26px,3vw,40px)/1.05 'Geist',sans-serif;letter-spacing:-.04em;color:#F8F6F0;margin:0 0 10px">
-        Qué solución aplica en qué industria
-      </h2>
-      <p style="font:400 14.5px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.6);margin:0 0 28px;max-width:62ch">
-        ● Solución habitual · ○ Según requerimientos del proyecto · — No aplica.
-      </p>
-
-      <div style="border:1px solid rgba(224,225,221,.16);border-radius:16px;overflow:hidden;background:#0D1B2A">
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);background:rgba(65,90,119,.28);font:600 11.5px 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#E0E1DD">
-          <div style="padding:14px 18px">Solución</div>
-          <div style="padding:14px 8px;text-align:center">Naval</div>
-          <div style="padding:14px 8px;text-align:center">Acuícola</div>
-          <div style="padding:14px 8px;text-align:center">Offshore</div>
-          <div style="padding:14px 8px;text-align:center">Astilleros</div>
-          <div style="padding:14px 8px;text-align:center">Carga</div>
-          <div style="padding:14px 8px;text-align:center">Tierra</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Sistemas sanitarios al vacío</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Tratamiento de aguas residuales</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Agua de lastre (BWTS)</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Protección catódica (ICCP)</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Bioincrustaciones (ICAF)</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Drenajes inoxidables</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center;color:#C7CDD4">○</div>
-          <div style="padding:13px 8px;text-align:center;color:#8E9AA8">—</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-        </div>
-
-        <div style="display:grid;grid-template-columns:1.8fr repeat(6,1fr);border-top:1px solid rgba(224,225,221,.12);font:500 13.5px 'Inter',sans-serif;color:#F8F6F0">
-          <div style="padding:13px 18px">Repuestos y retrofit</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-          <div style="padding:13px 8px;text-align:center">●</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Box -->
-  <section style="position:relative;background:#0D1B2A;padding:120px 40px;text-align:center;overflow:hidden">
-    <img alt="" src="/images/industrias-img-8-85955fa0.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25" loading="lazy" />
-    <div style="position:absolute;inset:0;background:linear-gradient(rgba(13,27,42,.75),rgba(13,27,42,.88))"></div>
-    <div style="position:relative;max-width:680px;margin:0 auto">
-      <h2 style="font:700 clamp(30px,4.5vw,56px)/1.04 'Geist',sans-serif;letter-spacing:-.04em;color:#F8F6F0;margin:0 auto 20px">
-        ¿En qué industria está su proyecto?
-      </h2>
-      <p style="font:400 15px/1.6 'Inter',sans-serif;color:rgba(248,246,240,.7);margin:0 auto 30px">
-        Indíquenos el tipo de nave o instalación y la normativa que debe cumplir. La evaluación técnica inicial de dimensionamiento no tiene costo.
-      </p>
-      <a href="/contacto/?tipo=evaluacion" style="background:#F8F6F0;color:#0D1B2A;padding:15px 32px;border-radius:999px;font:600 14.5px 'Geist',sans-serif;display:inline-block">
-        Solicitar evaluación técnica
-      </a>
-    </div>
-  </section>
+    {/* 4. Llamado a la Acción para Contactar a Ingeniería */}
+    <IndustriasCtaSection data={sections.cta} />
+  </main>
 </Layout>
 
 <style>
-  .ind-list-item:hover {
-    background: #1B263B !important;
-  }
-  @media (max-width: 900px) {
-    .industrias-hero, .criteria-grid, .industries-cards-grid {
-      grid-template-columns: 1fr !important;
-    }
+  .industrias-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
   }
 </style>

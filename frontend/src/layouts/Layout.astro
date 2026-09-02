@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getSiteOptions } from '../lib/api/client';
 
 interface Props {
   title?: string;
@@ -21,6 +22,10 @@ const {
   jsonLd,
   currentPath = Astro.url.pathname
 } = Astro.props;
+
+// Obtener opciones globales dinámicas (Marca, Header, Footer, Contacto, Redes)
+const siteOptions = await getSiteOptions();
+const { brand, header, footer, contact, social } = siteOptions;
 
 const defaultJsonLd = {
   "@context": "https://schema.org",
@@ -128,11 +133,11 @@ const defaultJsonLd = {
 </head>
 <body>
   <div class="site-container">
-    <Header currentPath={currentPath} />
+    <Header currentPath={currentPath} brand={brand} header={header} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer brand={brand} footer={footer} contact={contact} social={social} />
   </div>
 </body>
 </html>

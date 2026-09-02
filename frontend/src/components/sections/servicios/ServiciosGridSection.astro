@@ -1,0 +1,218 @@
+---
+import type { ServiciosCatalogItemData } from '../../../lib/api/types';
+
+interface Props {
+  services: ServiciosCatalogItemData[];
+}
+
+const { services = [] } = Astro.props;
+---
+
+<section class="servicios-catalog" aria-labelledby="catalog-heading">
+  <div class="catalog-container">
+    <div class="section-intro">
+      <span class="badge-sub">Ciclo de Vida Integral</span>
+      <h2 id="catalog-heading" class="section-title">Soluciones operativas de punta a punta</h2>
+      <p class="section-subtitle">
+        Desde la memoria de cálculo inicial hasta la asistencia en dique o navegación, aseguramos continuidad y cumplimiento normativo.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      {services.map((srv, index) => (
+        <article class="service-card">
+          <div class="card-meta">
+            <span class="service-num">{srv.num}</span>
+            <span class="executor-badge">{srv.executor}</span>
+          </div>
+
+          <h3 class="service-title">{srv.title}</h3>
+          <p class="service-desc">{srv.desc}</p>
+
+          {srv.tags && srv.tags.length > 0 && (
+            <div class="service-tags" aria-label="Entregables principales">
+              {srv.tags.map((tag) => (
+                <span class="tag-item">{tag}</span>
+              ))}
+            </div>
+          )}
+
+          {srv.image && (
+            <div class="service-media">
+              <img
+                src={srv.image}
+                alt={srv.title}
+                width="600"
+                height="360"
+                loading="lazy"
+                decoding="async"
+                class="service-img"
+              />
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .servicios-catalog {
+    background: #FFFFFF;
+    padding: 88px 24px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-intro {
+    max-width: 760px;
+    margin-bottom: 56px;
+  }
+
+  .badge-sub {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1B263B;
+    background: #F1F5F9;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #0D1B2A;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: #64748B;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: #CBD5E1;
+    box-shadow: 0 12px 32px rgba(13, 27, 42, 0.06);
+    background: #FFFFFF;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .service-num {
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #E63946;
+  }
+
+  .executor-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0D1B2A;
+    background: rgba(13, 27, 42, 0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .service-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 24px;
+    flex-grow: 1;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .tag-item {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1B263B;
+    background: #E2E8F0;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .service-media {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+    border: 1px solid #E2E8F0;
+  }
+
+  .service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .service-img {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .service-card {
+      padding: 24px 20px;
+    }
+    .servicios-catalog {
+      padding: 56px 16px;
+    }
+  }
+</style>

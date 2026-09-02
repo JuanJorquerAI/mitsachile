@@ -197,6 +197,329 @@ export interface NosotrosSectionsResponse {
   sections: NosotrosSectionsData;
 }
 
+// Interfaces para la sección "Servicios"
+export interface ServiciosHeroData {
+  title: string;
+  description: string;
+  primary_button: CtaButtonData;
+  secondary_button: CtaButtonData;
+  image: string;
+}
+
+export interface ServiciosMetricItemData {
+  value: string;
+  label: string;
+}
+
+export interface ServiciosCatalogItemData {
+  num: string;
+  executor: string;
+  title: string;
+  desc: string;
+  tags: string[];
+  image: string;
+}
+
+export interface ServiciosProcessStepData {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface ServiciosProcessData {
+  heading: string;
+  subheading: string;
+  steps: ServiciosProcessStepData[];
+}
+
+export interface ServiciosCtaData {
+  heading: string;
+  description: string;
+  primary_button: CtaButtonData;
+  secondary_button: CtaButtonData;
+}
+
+export interface ServiciosSectionsData {
+  hero: ServiciosHeroData;
+  metrics: ServiciosMetricItemData[];
+  catalog: ServiciosCatalogItemData[];
+  process: ServiciosProcessData;
+  cta: ServiciosCtaData;
+}
+
+export interface ServiciosSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: ServiciosSectionsData;
+}
+
+// Interfaces para la sección "Industrias / Sectores"
+export interface IndustriasHeroData {
+  title: string;
+  description: string;
+  primary_button: CtaButtonData;
+  secondary_button: CtaButtonData;
+}
+
+export interface IndustriasSectorItemData {
+  id: string;
+  num: string;
+  title: string;
+  desc: string;
+  tags: string[];
+  image: string;
+}
+
+export interface IndustriasCriteriaItemData {
+  title: string;
+  description: string;
+}
+
+export interface IndustriasCriteriaData {
+  heading: string;
+  subheading: string;
+  items: IndustriasCriteriaItemData[];
+}
+
+export interface IndustriasCtaData {
+  heading: string;
+  description: string;
+  button: CtaButtonData;
+}
+
+export interface IndustriasSectionsData {
+  hero: IndustriasHeroData;
+  industries: IndustriasSectorItemData[];
+  criteria: IndustriasCriteriaData;
+  cta: IndustriasCtaData;
+}
+
+export interface IndustriasSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: IndustriasSectionsData;
+}
+
+// Interfaces para la sección "Proyectos & Casos de Éxito"
+export interface ProyectosHeroData {
+  title: string;
+  description: string;
+  image: string;
+  primary_button: CtaButtonData;
+  secondary_button: CtaButtonData;
+}
+
+export interface ProyectosCaseItemData {
+  num: string;
+  sector: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  url: string;
+}
+
+export interface ProyectosMethodologyStepData {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface ProyectosMethodologyData {
+  heading: string;
+  description: string;
+  steps: ProyectosMethodologyStepData[];
+}
+
+export interface ProyectosCtaData {
+  heading: string;
+  description: string;
+  button: CtaButtonData;
+}
+
+export interface ProyectosSectionsData {
+  hero: ProyectosHeroData;
+  metrics: MetricItemData[];
+  projects: ProyectosCaseItemData[];
+  methodology: ProyectosMethodologyData;
+  cta: ProyectosCtaData;
+}
+
+export interface ProyectosSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: ProyectosSectionsData;
+}
+
+// Interfaces para la sección "Recursos & Biblioteca Técnica"
+export interface RecursosHeroData {
+  title: string;
+  description: string;
+  image: string;
+  primary_button: CtaButtonData;
+  secondary_button: CtaButtonData;
+}
+
+export interface RecursosGatewayData {
+  badge: string;
+  title: string;
+  description: string;
+  link_label: string;
+  link_url: string;
+}
+
+export interface RecursosArticleItemData {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  status?: string;
+  summary?: string;
+}
+
+export interface RecursosDownloadItemData {
+  title: string;
+  format: string;
+  level: string;
+  url: string;
+}
+
+export interface RecursosCtaData {
+  heading: string;
+  description: string;
+  button: CtaButtonData;
+}
+
+export interface RecursosSectionsData {
+  hero: RecursosHeroData;
+  gateways: RecursosGatewayData[];
+  articles: RecursosArticleItemData[];
+  downloads: RecursosDownloadItemData[];
+  cta: RecursosCtaData;
+}
+
+export interface RecursosSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: RecursosSectionsData;
+}
+
+// Interfaces para la sección "Contacto & Asesoría Técnica"
+export interface ContactoHeroData {
+  title: string;
+  description: string;
+}
+
+export interface ContactoDoorData {
+  key: string;
+  num: string;
+  title: string;
+  description: string;
+}
+
+export interface ContactoChannelsData {
+  address: string;
+  branch: string;
+  phone_main: string;
+  phone_mobile: string;
+  email_general: string;
+  email_sales: string;
+  hours: string;
+}
+
+export interface ContactoCoverageData {
+  title: string;
+  description: string;
+  countries: string[];
+}
+
+export interface ContactoFormData {
+  action_url: string;
+  title: string;
+  description: string;
+}
+
+export interface ContactoSectionsData {
+  hero: ContactoHeroData;
+  doors: ContactoDoorData[];
+  channels: ContactoChannelsData;
+  coverage: ContactoCoverageData;
+  form: ContactoFormData;
+}
+
+export interface ContactoSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: ContactoSectionsData;
+}
+
+// Interfaces para la sección "Marcas Representadas"
+export interface RepresentadasHeroData {
+  title: string;
+  description: string;
+  image: string;
+  primary_button: {
+    label: string;
+    url: string;
+  };
+  secondary_button: {
+    label: string;
+    url: string;
+  };
+}
+
+export interface RepresentadasMetricData {
+  num: string;
+  label: string;
+}
+
+export interface RepresentadasMainBrandData {
+  name: string;
+  country: string;
+  holding: string;
+  category: string;
+  description: string;
+  solutions: string[];
+  image: string;
+  consult_url: string;
+}
+
+export interface RepresentadasDirectoryData {
+  name: string;
+  country: string;
+  category: string;
+  description: string;
+}
+
+export interface RepresentadasCtaData {
+  heading: string;
+  description: string;
+  button: {
+    label: string;
+    url: string;
+  };
+}
+
+export interface RepresentadasSectionsData {
+  hero: RepresentadasHeroData;
+  metrics: RepresentadasMetricData[];
+  main_brands: RepresentadasMainBrandData[];
+  directory: RepresentadasDirectoryData[];
+  cta: RepresentadasCtaData;
+}
+
+export interface RepresentadasSectionsResponse {
+  slug: string;
+  title: string;
+  seo: SeoMetadata;
+  sections: RepresentadasSectionsData;
+}
+
 export interface PageSectionsResponse {
   slug: string;
   title: string;
@@ -213,4 +536,57 @@ export interface PageSectionsResponse {
     faqs?: FaqsSectionData;
     [key: string]: any;
   };
+}
+
+// Interfaces para Opciones Globales del Sitio (Header, Footer, Marca, Contacto, Redes)
+export interface SiteBrandOptions {
+  name: string;
+  tagline: string;
+  since: string;
+  logo_main: string;
+  logo_white: string;
+  favicon: string;
+}
+
+export interface SiteHeaderOptions {
+  announcement?: string;
+  btn_repuestos_label: string;
+  btn_repuestos_url: string;
+  btn_cta_label: string;
+  btn_cta_url: string;
+}
+
+export interface SiteFooterOptions {
+  statement_prefix: string;
+  statement_prefix_sub: string;
+  statement_suffix: string;
+  statement_suffix_sub: string;
+  description: string;
+  location: string;
+  copyright: string;
+  agency_name: string;
+  agency_url: string;
+}
+
+export interface SiteContactOptions {
+  email_general: string;
+  email_sales: string;
+  phone_main: string;
+  phone_mobile: string;
+  address: string;
+  whatsapp: string;
+}
+
+export interface SiteSocialOptions {
+  linkedin: string;
+  catalog_pdf: string;
+  smm_expo: string;
+}
+
+export interface SiteOptionsData {
+  brand: SiteBrandOptions;
+  header: SiteHeaderOptions;
+  footer: SiteFooterOptions;
+  contact: SiteContactOptions;
+  social: SiteSocialOptions;
 }
