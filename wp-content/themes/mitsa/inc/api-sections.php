@@ -13,6 +13,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Devuelve el valor de un campo ACF para $page_id, o null si ACF no está
+ * activo o no hay página válida. No decide ningún criterio de "vacío": el
+ * llamador elige con `??` (solo null cae al valor por defecto, igual que el
+ * valor crudo de get_field se use aunque sea '' o false) o con `?:` (Elvis;
+ * cualquier valor falsy — '', false, null — cae al valor por defecto) según
+ * el comportamiento que necesite ese campo.
+ */
+function mitsa_get_acf_field( $field_name, $page_id ) {
+	if ( ! function_exists( 'get_field' ) || ! $page_id ) {
+		return null;
+	}
+	return get_field( $field_name, $page_id );
+}
+
+/**
  * Registra las rutas de la API REST de MITSA.
  */
 function mitsa_register_rest_routes() {
@@ -113,10 +128,10 @@ function mitsa_get_home_sections_data() {
 	$page_id = $page_on_front_id ? (int) $page_on_front_id : 0;
 
 	// 1. Hero & Triaje
-	$hero_prefix = function_exists( 'get_field' ) && $page_id ? get_field( 'hero_title_prefix', $page_id ) : '';
-	$hero_words  = function_exists( 'get_field' ) && $page_id ? get_field( 'hero_rotating_words', $page_id ) : '';
-	$hero_desc   = function_exists( 'get_field' ) && $page_id ? get_field( 'hero_description', $page_id ) : '';
-	$triage_tit  = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_title', $page_id ) : '';
+	$hero_prefix = mitsa_get_acf_field( 'hero_title_prefix', $page_id ) ?? '';
+	$hero_words  = mitsa_get_acf_field( 'hero_rotating_words', $page_id ) ?? '';
+	$hero_desc   = mitsa_get_acf_field( 'hero_description', $page_id ) ?? '';
+	$triage_tit  = mitsa_get_acf_field( 'triage_title', $page_id ) ?? '';
 
 	$hero_title_prefix   = ! empty( $hero_prefix ) ? sanitize_text_field( $hero_prefix ) : 'Toda su ingeniería resuelta, del proyecto a la operación:';
 	$hero_rotating_words = ! empty( $hero_words )
@@ -125,12 +140,12 @@ function mitsa_get_home_sections_data() {
 	$hero_description    = ! empty( $hero_desc ) ? sanitize_textarea_field( $hero_desc ) : 'Ingeniería de aplicación, suministro, retrofit, puesta en marcha y soporte. Cinco fabricantes representados de forma directa, cuarenta años de proyectos en Chile y Latinoamérica.';
 	$triage_title        = ! empty( $triage_tit ) ? sanitize_text_field( $triage_tit ) : '¿Qué necesita resolver?';
 
-	$t1_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt1_label', $page_id ) : 'Evaluación técnica';
-	$t1_url = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt1_url', $page_id ) : '/contacto/?tipo=evaluacion';
-	$t2_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt2_label', $page_id ) : 'Repuestos';
-	$t2_url = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt2_url', $page_id ) : '/contacto/?tipo=repuestos';
-	$t3_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt3_label', $page_id ) : 'Servicio técnico';
-	$t3_url = function_exists( 'get_field' ) && $page_id ? get_field( 'triage_opt3_url', $page_id ) : '/contacto/?tipo=servicio';
+	$t1_lbl = mitsa_get_acf_field( 'triage_opt1_label', $page_id ) ?? 'Evaluación técnica';
+	$t1_url = mitsa_get_acf_field( 'triage_opt1_url', $page_id ) ?? '/contacto/?tipo=evaluacion';
+	$t2_lbl = mitsa_get_acf_field( 'triage_opt2_label', $page_id ) ?? 'Repuestos';
+	$t2_url = mitsa_get_acf_field( 'triage_opt2_url', $page_id ) ?? '/contacto/?tipo=repuestos';
+	$t3_lbl = mitsa_get_acf_field( 'triage_opt3_label', $page_id ) ?? 'Servicio técnico';
+	$t3_url = mitsa_get_acf_field( 'triage_opt3_url', $page_id ) ?? '/contacto/?tipo=servicio';
 
 	$triage_options = array(
 		array( 'label' => $t1_lbl ?: 'Evaluación técnica', 'url' => $t1_url ?: '/contacto/?tipo=evaluacion', 'highlight' => true ),
@@ -141,46 +156,46 @@ function mitsa_get_home_sections_data() {
 	// 2. Tarjetas Visuales de Proyectos (4 Tarjetas)
 	$visual_cards = array(
 		array(
-			'title'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard1_title', $page_id ) ) ? get_field( 'vcard1_title', $page_id ) : 'Fragata FF-18 · ICCP',
-			'image'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard1_image', $page_id ) ) ? get_field( 'vcard1_image', $page_id ) : '/images/plataforma-offshore-8886341c.jpg',
-			'alt'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard1_alt', $page_id ) ) ? get_field( 'vcard1_alt', $page_id ) : 'Protección catódica por corriente impresa ICCP en Fragata FF-18',
+			'title'   => mitsa_get_acf_field( 'vcard1_title', $page_id ) ?: 'Fragata FF-18 · ICCP',
+			'image'   => mitsa_get_acf_field( 'vcard1_image', $page_id ) ?: '/images/plataforma-offshore-8886341c.jpg',
+			'alt'     => mitsa_get_acf_field( 'vcard1_alt', $page_id ) ?: 'Protección catódica por corriente impresa ICCP en Fragata FF-18',
 			'width'   => 800,
 			'height'  => 600,
-			'loading' => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard1_loading', $page_id ) ) ? get_field( 'vcard1_loading', $page_id ) : 'eager',
+			'loading' => mitsa_get_acf_field( 'vcard1_loading', $page_id ) ?: 'eager',
 		),
 		array(
-			'title'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard2_title', $page_id ) ) ? get_field( 'vcard2_title', $page_id ) : 'OPV Cabo Odger · Sanitarios',
-			'image'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard2_image', $page_id ) ) ? get_field( 'vcard2_image', $page_id ) : '/images/buque-de-apoyo-8d5d1037.jpg',
-			'alt'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard2_alt', $page_id ) ) ? get_field( 'vcard2_alt', $page_id ) : 'Sistemas sanitarios al vacío EVAC en buque patrullero OPV Cabo Odger',
+			'title'   => mitsa_get_acf_field( 'vcard2_title', $page_id ) ?: 'OPV Cabo Odger · Sanitarios',
+			'image'   => mitsa_get_acf_field( 'vcard2_image', $page_id ) ?: '/images/buque-de-apoyo-8d5d1037.jpg',
+			'alt'     => mitsa_get_acf_field( 'vcard2_alt', $page_id ) ?: 'Sistemas sanitarios al vacío EVAC en buque patrullero OPV Cabo Odger',
 			'width'   => 800,
 			'height'  => 600,
-			'loading' => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard2_loading', $page_id ) ) ? get_field( 'vcard2_loading', $page_id ) : 'eager',
+			'loading' => mitsa_get_acf_field( 'vcard2_loading', $page_id ) ?: 'eager',
 		),
 		array(
-			'title'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard3_title', $page_id ) ) ? get_field( 'vcard3_title', $page_id ) : 'Magellan Discovery · Agua caliente',
-			'image'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard3_image', $page_id ) ) ? get_field( 'vcard3_image', $page_id ) : '/images/wellboat-en-centro-d-6ece81b5.jpg',
-			'alt'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard3_alt', $page_id ) ) ? get_field( 'vcard3_alt', $page_id ) : 'Sistemas de generación y distribución de agua caliente a bordo',
+			'title'   => mitsa_get_acf_field( 'vcard3_title', $page_id ) ?: 'Magellan Discovery · Agua caliente',
+			'image'   => mitsa_get_acf_field( 'vcard3_image', $page_id ) ?: '/images/wellboat-en-centro-d-6ece81b5.jpg',
+			'alt'     => mitsa_get_acf_field( 'vcard3_alt', $page_id ) ?: 'Sistemas de generación y distribución de agua caliente a bordo',
 			'width'   => 800,
 			'height'  => 600,
-			'loading' => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard3_loading', $page_id ) ) ? get_field( 'vcard3_loading', $page_id ) : 'lazy',
+			'loading' => mitsa_get_acf_field( 'vcard3_loading', $page_id ) ?: 'lazy',
 		),
 		array(
-			'title'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard4_title', $page_id ) ) ? get_field( 'vcard4_title', $page_id ) : 'Wellboat · BWTS',
-			'image'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard4_image', $page_id ) ) ? get_field( 'vcard4_image', $page_id ) : '/images/astillero-636210b7.jpg',
-			'alt'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard4_alt', $page_id ) ) ? get_field( 'vcard4_alt', $page_id ) : 'Tratamiento de agua de lastre BWTS ERMA FIRST en wellboat',
+			'title'   => mitsa_get_acf_field( 'vcard4_title', $page_id ) ?: 'Wellboat · BWTS',
+			'image'   => mitsa_get_acf_field( 'vcard4_image', $page_id ) ?: '/images/astillero-636210b7.jpg',
+			'alt'     => mitsa_get_acf_field( 'vcard4_alt', $page_id ) ?: 'Tratamiento de agua de lastre BWTS ERMA FIRST en wellboat',
 			'width'   => 800,
 			'height'  => 600,
-			'loading' => ( function_exists( 'get_field' ) && $page_id && get_field( 'vcard4_loading', $page_id ) ) ? get_field( 'vcard4_loading', $page_id ) : 'lazy',
+			'loading' => mitsa_get_acf_field( 'vcard4_loading', $page_id ) ?: 'lazy',
 		),
 	);
 
 	// 3. Pain Points / Objeciones
-	$acf_pp_heading  = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_heading', $page_id ) : '';
-	$acf_pp_quote    = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_quote', $page_id ) : '';
-	$acf_pp_initials = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_author_initials', $page_id ) : '';
-	$acf_pp_role     = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_author_role', $page_id ) : '';
-	$acf_pp_note     = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_author_note', $page_id ) : '';
-	$acf_pp_res      = function_exists( 'get_field' ) && $page_id ? get_field( 'pain_points_resolutions', $page_id ) : '';
+	$acf_pp_heading  = mitsa_get_acf_field( 'pain_points_heading', $page_id ) ?? '';
+	$acf_pp_quote    = mitsa_get_acf_field( 'pain_points_quote', $page_id ) ?? '';
+	$acf_pp_initials = mitsa_get_acf_field( 'pain_points_author_initials', $page_id ) ?? '';
+	$acf_pp_role     = mitsa_get_acf_field( 'pain_points_author_role', $page_id ) ?? '';
+	$acf_pp_note     = mitsa_get_acf_field( 'pain_points_author_note', $page_id ) ?? '';
+	$acf_pp_res      = mitsa_get_acf_field( 'pain_points_resolutions', $page_id ) ?? '';
 
 	$pain_points = array(
 		'heading'         => ! empty( $acf_pp_heading ) ? sanitize_text_field( $acf_pp_heading ) : 'Resolvemos lo que frena un proyecto naval',
@@ -200,12 +215,12 @@ function mitsa_get_home_sections_data() {
 	);
 
 	// 4. Banner de Métricas
-	$m1_v = function_exists( 'get_field' ) && $page_id ? get_field( 'metric1_val', $page_id ) : '40+';
-	$m1_l = function_exists( 'get_field' ) && $page_id ? get_field( 'metric1_lbl', $page_id ) : 'años integrando soluciones marítimas y ambientales en Chile';
-	$m2_v = function_exists( 'get_field' ) && $page_id ? get_field( 'metric2_val', $page_id ) : '5';
-	$m2_l = function_exists( 'get_field' ) && $page_id ? get_field( 'metric2_lbl', $page_id ) : 'fabricantes representados de forma directa y oficial';
-	$m3_v = function_exists( 'get_field' ) && $page_id ? get_field( 'metric3_val', $page_id ) : '100%';
-	$m3_l = function_exists( 'get_field' ) && $page_id ? get_field( 'metric3_lbl', $page_id ) : 'cobertura nacional con ingenieros especialistas en terreno';
+	$m1_v = mitsa_get_acf_field( 'metric1_val', $page_id ) ?? '40+';
+	$m1_l = mitsa_get_acf_field( 'metric1_lbl', $page_id ) ?? 'años integrando soluciones marítimas y ambientales en Chile';
+	$m2_v = mitsa_get_acf_field( 'metric2_val', $page_id ) ?? '5';
+	$m2_l = mitsa_get_acf_field( 'metric2_lbl', $page_id ) ?? 'fabricantes representados de forma directa y oficial';
+	$m3_v = mitsa_get_acf_field( 'metric3_val', $page_id ) ?? '100%';
+	$m3_l = mitsa_get_acf_field( 'metric3_lbl', $page_id ) ?? 'cobertura nacional con ingenieros especialistas en terreno';
 
 	$metrics = array(
 		array( 'value' => $m1_v ?: '40+', 'label' => $m1_l ?: 'años integrando soluciones marítimas y ambientales en Chile', 'highlight' => false ),
@@ -214,146 +229,146 @@ function mitsa_get_home_sections_data() {
 	);
 
 	// 5. Showcase de Marcas
-	$brands_heading = function_exists( 'get_field' ) && $page_id ? get_field( 'brands_heading', $page_id ) : '';
+	$brands_heading = mitsa_get_acf_field( 'brands_heading', $page_id ) ?? '';
 	$brands = array(
 		'heading' => ! empty( $brands_heading ) ? sanitize_text_field( $brands_heading ) : 'Quién está detrás de cada solución',
 		'items'   => array(
 			array(
-				'name'        => ( function_exists( 'get_field' ) && $page_id && get_field( 'b1_name', $page_id ) ) ? get_field( 'b1_name', $page_id ) : 'EVAC',
-				'tagline'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'b1_tagline', $page_id ) ) ? get_field( 'b1_tagline', $page_id ) : 'Sanitarios al vacío',
-				'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'b1_desc', $page_id ) ) ? get_field( 'b1_desc', $page_id ) : 'Tratamiento de aguas residuales y gestión de residuos a bordo.',
+				'name'        => mitsa_get_acf_field( 'b1_name', $page_id ) ?: 'EVAC',
+				'tagline'     => mitsa_get_acf_field( 'b1_tagline', $page_id ) ?: 'Sanitarios al vacío',
+				'description' => mitsa_get_acf_field( 'b1_desc', $page_id ) ?: 'Tratamiento de aguas residuales y gestión de residuos a bordo.',
 				'url'         => '/representadas/',
 			),
 			array(
-				'name'        => ( function_exists( 'get_field' ) && $page_id && get_field( 'b2_name', $page_id ) ) ? get_field( 'b2_name', $page_id ) : 'Cathelco',
-				'tagline'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'b2_tagline', $page_id ) ) ? get_field( 'b2_tagline', $page_id ) : 'ICCP & ICAF',
-				'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'b2_desc', $page_id ) ) ? get_field( 'b2_desc', $page_id ) : 'Protección catódica por corriente impresa y prevención de bioincrustaciones.',
+				'name'        => mitsa_get_acf_field( 'b2_name', $page_id ) ?: 'Cathelco',
+				'tagline'     => mitsa_get_acf_field( 'b2_tagline', $page_id ) ?: 'ICCP & ICAF',
+				'description' => mitsa_get_acf_field( 'b2_desc', $page_id ) ?: 'Protección catódica por corriente impresa y prevención de bioincrustaciones.',
 				'url'         => '/representadas/',
 			),
 			array(
-				'name'        => ( function_exists( 'get_field' ) && $page_id && get_field( 'b3_name', $page_id ) ) ? get_field( 'b3_name', $page_id ) : 'ERMA FIRST',
-				'tagline'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'b3_tagline', $page_id ) ) ? get_field( 'b3_tagline', $page_id ) : 'Agua de lastre (BWTS)',
-				'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'b3_desc', $page_id ) ) ? get_field( 'b3_desc', $page_id ) : 'Sistemas certificados D-2 con tecnología de electrólisis y filtración.',
+				'name'        => mitsa_get_acf_field( 'b3_name', $page_id ) ?: 'ERMA FIRST',
+				'tagline'     => mitsa_get_acf_field( 'b3_tagline', $page_id ) ?: 'Agua de lastre (BWTS)',
+				'description' => mitsa_get_acf_field( 'b3_desc', $page_id ) ?: 'Sistemas certificados D-2 con tecnología de electrólisis y filtración.',
 				'url'         => '/representadas/',
 			),
 			array(
-				'name'        => ( function_exists( 'get_field' ) && $page_id && get_field( 'b4_name', $page_id ) ) ? get_field( 'b4_name', $page_id ) : 'EPE',
-				'tagline'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'b4_tagline', $page_id ) ) ? get_field( 'b4_tagline', $page_id ) : 'Tratamiento de efluentes',
-				'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'b4_desc', $page_id ) ) ? get_field( 'b4_desc', $page_id ) : 'Plantas de tratamiento y separadores marinos de sentinas.',
+				'name'        => mitsa_get_acf_field( 'b4_name', $page_id ) ?: 'EPE',
+				'tagline'     => mitsa_get_acf_field( 'b4_tagline', $page_id ) ?: 'Tratamiento de efluentes',
+				'description' => mitsa_get_acf_field( 'b4_desc', $page_id ) ?: 'Plantas de tratamiento y separadores marinos de sentinas.',
 				'url'         => '/representadas/',
 			),
 			array(
-				'name'        => ( function_exists( 'get_field' ) && $page_id && get_field( 'b5_name', $page_id ) ) ? get_field( 'b5_name', $page_id ) : 'BLÜCHER',
-				'tagline'     => ( function_exists( 'get_field' ) && $page_id && get_field( 'b5_tagline', $page_id ) ) ? get_field( 'b5_tagline', $page_id ) : 'Drenajes inoxidables',
-				'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'b5_desc', $page_id ) ) ? get_field( 'b5_desc', $page_id ) : 'Sistemas de evacuación y tuberías de acero inoxidable AISI 316L.',
+				'name'        => mitsa_get_acf_field( 'b5_name', $page_id ) ?: 'BLÜCHER',
+				'tagline'     => mitsa_get_acf_field( 'b5_tagline', $page_id ) ?: 'Drenajes inoxidables',
+				'description' => mitsa_get_acf_field( 'b5_desc', $page_id ) ?: 'Sistemas de evacuación y tuberías de acero inoxidable AISI 316L.',
 				'url'         => '/representadas/',
 			),
 		),
 	);
 
 	// 6. Soluciones Tecnológicas
-	$sol_heading = function_exists( 'get_field' ) && $page_id ? get_field( 'solutions_heading', $page_id ) : '';
-	$sol_sub     = function_exists( 'get_field' ) && $page_id ? get_field( 'solutions_subheading', $page_id ) : '';
+	$sol_heading = mitsa_get_acf_field( 'solutions_heading', $page_id ) ?? '';
+	$sol_sub     = mitsa_get_acf_field( 'solutions_subheading', $page_id ) ?? '';
 
 	$solutions = array(
 		'heading'    => ! empty( $sol_heading ) ? sanitize_text_field( $sol_heading ) : 'Soluciones tecnológicas especializadas',
 		'subheading' => ! empty( $sol_sub ) ? sanitize_textarea_field( $sol_sub ) : 'Sistemas marinos y terrestres integrados con ingeniería de aplicación, comisionamiento y respaldo técnico en terreno.',
 		'items'      => array(
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol1_title', $page_id ) ) ? get_field( 'sol1_title', $page_id ) : 'Sanitarios al vacío',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol1_brand', $page_id ) ) ? get_field( 'sol1_brand', $page_id ) : 'EVAC',
+				'title' => mitsa_get_acf_field( 'sol1_title', $page_id ) ?: 'Sanitarios al vacío',
+				'brand' => mitsa_get_acf_field( 'sol1_brand', $page_id ) ?: 'EVAC',
 				'img'   => '/images/sistemas-sanitarios--c457bd2a.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol1_desc', $page_id ) ) ? get_field( 'sol1_desc', $page_id ) : 'Sistemas sanitarios marinos y terrestres de alta eficiencia con ahorro de agua.',
+				'desc'  => mitsa_get_acf_field( 'sol1_desc', $page_id ) ?: 'Sistemas sanitarios marinos y terrestres de alta eficiencia con ahorro de agua.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol2_title', $page_id ) ) ? get_field( 'sol2_title', $page_id ) : 'Aguas residuales',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol2_brand', $page_id ) ) ? get_field( 'sol2_brand', $page_id ) : 'EVAC · EPE',
+				'title' => mitsa_get_acf_field( 'sol2_title', $page_id ) ?: 'Aguas residuales',
+				'brand' => mitsa_get_acf_field( 'sol2_brand', $page_id ) ?: 'EVAC · EPE',
 				'img'   => '/images/tratamiento-de-aguas-8ead4ece.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol2_desc', $page_id ) ) ? get_field( 'sol2_desc', $page_id ) : 'Plantas de tratamiento biológico y físico-químico según normativa MARPOL Anexo IV.',
+				'desc'  => mitsa_get_acf_field( 'sol2_desc', $page_id ) ?: 'Plantas de tratamiento biológico y físico-químico según normativa MARPOL Anexo IV.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol3_title', $page_id ) ) ? get_field( 'sol3_title', $page_id ) : 'Agua de lastre (BWTS)',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol3_brand', $page_id ) ) ? get_field( 'sol3_brand', $page_id ) : 'ERMA FIRST',
+				'title' => mitsa_get_acf_field( 'sol3_title', $page_id ) ?: 'Agua de lastre (BWTS)',
+				'brand' => mitsa_get_acf_field( 'sol3_brand', $page_id ) ?: 'ERMA FIRST',
 				'img'   => '/images/ingeniería-de-detall-616b7dfd.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol3_desc', $page_id ) ) ? get_field( 'sol3_desc', $page_id ) : 'Sistemas de tratamiento de agua de lastre bajo estándar D-2 de la OMI.',
+				'desc'  => mitsa_get_acf_field( 'sol3_desc', $page_id ) ?: 'Sistemas de tratamiento de agua de lastre bajo estándar D-2 de la OMI.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol4_title', $page_id ) ) ? get_field( 'sol4_title', $page_id ) : 'Corrosión (ICCP)',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol4_brand', $page_id ) ) ? get_field( 'sol4_brand', $page_id ) : 'Cathelco',
+				'title' => mitsa_get_acf_field( 'sol4_title', $page_id ) ?: 'Corrosión (ICCP)',
+				'brand' => mitsa_get_acf_field( 'sol4_brand', $page_id ) ?: 'Cathelco',
 				'img'   => '/images/datos-de-operación-y-92c78919.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol4_desc', $page_id ) ) ? get_field( 'sol4_desc', $page_id ) : 'Protección catódica por corriente impresa para cascos de buques e instalaciones.',
+				'desc'  => mitsa_get_acf_field( 'sol4_desc', $page_id ) ?: 'Protección catódica por corriente impresa para cascos de buques e instalaciones.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol5_title', $page_id ) ) ? get_field( 'sol5_title', $page_id ) : 'Bioincrustaciones (ICAF)',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol5_brand', $page_id ) ) ? get_field( 'sol5_brand', $page_id ) : 'Cathelco',
+				'title' => mitsa_get_acf_field( 'sol5_title', $page_id ) ?: 'Bioincrustaciones (ICAF)',
+				'brand' => mitsa_get_acf_field( 'sol5_brand', $page_id ) ?: 'Cathelco',
 				'img'   => '/images/acuicultura-64fec532.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol5_desc', $page_id ) ) ? get_field( 'sol5_desc', $page_id ) : 'Sistemas anti-incrustaciones para tomas de mar y circuitos de refrigeración.',
+				'desc'  => mitsa_get_acf_field( 'sol5_desc', $page_id ) ?: 'Sistemas anti-incrustaciones para tomas de mar y circuitos de refrigeración.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol6_title', $page_id ) ) ? get_field( 'sol6_title', $page_id ) : 'Generación de agua dulce',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol6_brand', $page_id ) ) ? get_field( 'sol6_brand', $page_id ) : 'Representadas oficiales',
+				'title' => mitsa_get_acf_field( 'sol6_title', $page_id ) ?: 'Generación de agua dulce',
+				'brand' => mitsa_get_acf_field( 'sol6_brand', $page_id ) ?: 'Representadas oficiales',
 				'img'   => '/images/recursos-img-5-02ed53ff.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol6_desc', $page_id ) ) ? get_field( 'sol6_desc', $page_id ) : 'Plantas desalinizadoras por ósmosis inversa y evaporadores marinos.',
+				'desc'  => mitsa_get_acf_field( 'sol6_desc', $page_id ) ?: 'Plantas desalinizadoras por ósmosis inversa y evaporadores marinos.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol7_title', $page_id ) ) ? get_field( 'sol7_title', $page_id ) : 'Sistemas de agua caliente',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol7_brand', $page_id ) ) ? get_field( 'sol7_brand', $page_id ) : 'Ingeniería MITSA',
+				'title' => mitsa_get_acf_field( 'sol7_title', $page_id ) ?: 'Sistemas de agua caliente',
+				'brand' => mitsa_get_acf_field( 'sol7_brand', $page_id ) ?: 'Ingeniería MITSA',
 				'img'   => '/images/recursos-img-6-2ffa0056.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol7_desc', $page_id ) ) ? get_field( 'sol7_desc', $page_id ) : 'Calderas, intercambiadores y acumuladores para habitabilidad a bordo.',
+				'desc'  => mitsa_get_acf_field( 'sol7_desc', $page_id ) ?: 'Calderas, intercambiadores y acumuladores para habitabilidad a bordo.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol8_title', $page_id ) ) ? get_field( 'sol8_title', $page_id ) : 'Drenajes inoxidables',
-				'brand' => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol8_brand', $page_id ) ) ? get_field( 'sol8_brand', $page_id ) : 'BLÜCHER',
+				'title' => mitsa_get_acf_field( 'sol8_title', $page_id ) ?: 'Drenajes inoxidables',
+				'brand' => mitsa_get_acf_field( 'sol8_brand', $page_id ) ?: 'BLÜCHER',
 				'img'   => '/images/recursos-img-7-8ead4ece.jpg',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'sol8_desc', $page_id ) ) ? get_field( 'sol8_desc', $page_id ) : 'Canaletas, sifones y tuberías de acero inoxidable AISI 316L para higiene naval.',
+				'desc'  => mitsa_get_acf_field( 'sol8_desc', $page_id ) ?: 'Canaletas, sifones y tuberías de acero inoxidable AISI 316L para higiene naval.',
 			),
 		),
 	);
 
 	// 7. ¿Por qué MITSA?
-	$why_heading = function_exists( 'get_field' ) && $page_id ? get_field( 'why_heading', $page_id ) : '';
-	$why_sub     = function_exists( 'get_field' ) && $page_id ? get_field( 'why_subheading', $page_id ) : '';
+	$why_heading = mitsa_get_acf_field( 'why_heading', $page_id ) ?? '';
+	$why_sub     = mitsa_get_acf_field( 'why_subheading', $page_id ) ?? '';
 
 	$why_mitsa = array(
 		'heading'    => ! empty( $why_heading ) ? sanitize_text_field( $why_heading ) : '¿Por qué MITSA?',
 		'subheading' => ! empty( $why_sub ) ? sanitize_textarea_field( $why_sub ) : 'Seis razones técnicas que sostienen un proyecto completo, de la especificación al soporte en operación.',
 		'cards'      => array(
 			array(
-				'title'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'why1_title', $page_id ) ) ? get_field( 'why1_title', $page_id ) : 'Años de experiencia',
-				'desc'    => ( function_exists( 'get_field' ) && $page_id && get_field( 'why1_desc', $page_id ) ) ? get_field( 'why1_desc', $page_id ) : 'Cuatro décadas resolviendo proyectos marítimos e industriales en Chile.',
-				'metric'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'why1_metric', $page_id ) ) ? get_field( 'why1_metric', $page_id ) : '40+',
+				'title'   => mitsa_get_acf_field( 'why1_title', $page_id ) ?: 'Años de experiencia',
+				'desc'    => mitsa_get_acf_field( 'why1_desc', $page_id ) ?: 'Cuatro décadas resolviendo proyectos marítimos e industriales en Chile.',
+				'metric'  => mitsa_get_acf_field( 'why1_metric', $page_id ) ?: '40+',
 				'is_dark' => true,
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'why2_title', $page_id ) ) ? get_field( 'why2_title', $page_id ) : 'Ingeniería especializada',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'why2_desc', $page_id ) ) ? get_field( 'why2_desc', $page_id ) : 'Ingeniería de aplicación propia: la solución se dimensiona, no se cotiza de catálogo.',
+				'title' => mitsa_get_acf_field( 'why2_title', $page_id ) ?: 'Ingeniería especializada',
+				'desc'  => mitsa_get_acf_field( 'why2_desc', $page_id ) ?: 'Ingeniería de aplicación propia: la solución se dimensiona, no se cotiza de catálogo.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'why3_title', $page_id ) ) ? get_field( 'why3_title', $page_id ) : 'Representantes oficiales',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'why3_desc', $page_id ) ) ? get_field( 'why3_desc', $page_id ) : 'Representación directa de cinco fabricantes internacionales, con respaldo y garantía de fábrica.',
+				'title' => mitsa_get_acf_field( 'why3_title', $page_id ) ?: 'Representantes oficiales',
+				'desc'  => mitsa_get_acf_field( 'why3_desc', $page_id ) ?: 'Representación directa de cinco fabricantes internacionales, con respaldo y garantía de fábrica.',
 			),
 			array(
-				'image'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'why4_image', $page_id ) ) ? get_field( 'why4_image', $page_id ) : '/images/inspección-de-compon-94016740.jpg',
-				'caption' => ( function_exists( 'get_field' ) && $page_id && get_field( 'why4_caption', $page_id ) ) ? get_field( 'why4_caption', $page_id ) : 'Equipo en terreno',
+				'image'   => mitsa_get_acf_field( 'why4_image', $page_id ) ?: '/images/inspección-de-compon-94016740.jpg',
+				'caption' => mitsa_get_acf_field( 'why4_caption', $page_id ) ?: 'Equipo en terreno',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'why5_title', $page_id ) ) ? get_field( 'why5_title', $page_id ) : 'Cobertura nacional y regional',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'why5_desc', $page_id ) ) ? get_field( 'why5_desc', $page_id ) : 'Presencia donde está la operación: puertos, astilleros, faenas y centros de cultivo.',
+				'title' => mitsa_get_acf_field( 'why5_title', $page_id ) ?: 'Cobertura nacional y regional',
+				'desc'  => mitsa_get_acf_field( 'why5_desc', $page_id ) ?: 'Presencia donde está la operación: puertos, astilleros, faenas y centros de cultivo.',
 			),
 			array(
-				'title' => ( function_exists( 'get_field' ) && $page_id && get_field( 'why6_title', $page_id ) ) ? get_field( 'why6_title', $page_id ) : 'Puesta en marcha y soporte',
-				'desc'  => ( function_exists( 'get_field' ) && $page_id && get_field( 'why6_desc', $page_id ) ) ? get_field( 'why6_desc', $page_id ) : 'Comisionamiento, capacitación a la tripulación y asistencia después de la entrega.',
+				'title' => mitsa_get_acf_field( 'why6_title', $page_id ) ?: 'Puesta en marcha y soporte',
+				'desc'  => mitsa_get_acf_field( 'why6_desc', $page_id ) ?: 'Comisionamiento, capacitación a la tripulación y asistencia después de la entrega.',
 			),
 		),
 	);
 
 	// 8. Gran Call to Action
-	$cta_head  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_heading', $page_id ) : '';
-	$cta_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_desc', $page_id ) : '';
-	$cta_b1_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_btn1_label', $page_id ) : '';
-	$cta_b1_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_btn1_url', $page_id ) : '';
-	$cta_b2_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_btn2_label', $page_id ) : '';
-	$cta_b2_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'cta_btn2_url', $page_id ) : '';
+	$cta_head  = mitsa_get_acf_field( 'cta_heading', $page_id ) ?? '';
+	$cta_desc  = mitsa_get_acf_field( 'cta_desc', $page_id ) ?? '';
+	$cta_b1_l  = mitsa_get_acf_field( 'cta_btn1_label', $page_id ) ?? '';
+	$cta_b1_u  = mitsa_get_acf_field( 'cta_btn1_url', $page_id ) ?? '';
+	$cta_b2_l  = mitsa_get_acf_field( 'cta_btn2_label', $page_id ) ?? '';
+	$cta_b2_u  = mitsa_get_acf_field( 'cta_btn2_url', $page_id ) ?? '';
 
 	$cta_banner = array(
 		'heading'          => ! empty( $cta_head ) ? sanitize_text_field( $cta_head ) : 'Evaluación técnica sin costo para dimensionar su proyecto',
@@ -370,26 +385,26 @@ function mitsa_get_home_sections_data() {
 	);
 
 	// 9. FAQs
-	$faqs_heading = function_exists( 'get_field' ) && $page_id ? get_field( 'faqs_heading', $page_id ) : '';
+	$faqs_heading = mitsa_get_acf_field( 'faqs_heading', $page_id ) ?? '';
 
 	$faqs = array(
 		'heading' => ! empty( $faqs_heading ) ? sanitize_text_field( $faqs_heading ) : 'Preguntas frecuentes de ingeniería',
 		'items'   => array(
 			array(
-				'question' => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq1_q', $page_id ) ) ? get_field( 'faq1_q', $page_id ) : '¿Cómo se determina si un buque requiere sistema ICCP o ánodos de sacrificio?',
-				'answer'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq1_a', $page_id ) ) ? get_field( 'faq1_a', $page_id ) : 'Depende del perfil operativo, área mojada del casco, tiempo entre diques y costo de ciclo de vida. ICCP ofrece control regulable en tiempo real sin reposición física en cada carena.',
+				'question' => mitsa_get_acf_field( 'faq1_q', $page_id ) ?: '¿Cómo se determina si un buque requiere sistema ICCP o ánodos de sacrificio?',
+				'answer'   => mitsa_get_acf_field( 'faq1_a', $page_id ) ?: 'Depende del perfil operativo, área mojada del casco, tiempo entre diques y costo de ciclo de vida. ICCP ofrece control regulable en tiempo real sin reposición física en cada carena.',
 			),
 			array(
-				'question' => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq2_q', $page_id ) ) ? get_field( 'faq2_q', $page_id ) : '¿Qué certificaciones tienen las plantas de tratamiento de aguas servidas que suministran?',
-				'answer'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq2_a', $page_id ) ) ? get_field( 'faq2_a', $page_id ) : 'Equipos certificados bajo la Resolución MEPC.227(64) de la OMI (MARPOL Anexo IV) y aprobados por las principales casas clasificadoras (DNV, Lloyd\'s Register, ABS, BV).',
+				'question' => mitsa_get_acf_field( 'faq2_q', $page_id ) ?: '¿Qué certificaciones tienen las plantas de tratamiento de aguas servidas que suministran?',
+				'answer'   => mitsa_get_acf_field( 'faq2_a', $page_id ) ?: 'Equipos certificados bajo la Resolución MEPC.227(64) de la OMI (MARPOL Anexo IV) y aprobados por las principales casas clasificadoras (DNV, Lloyd\'s Register, ABS, BV).',
 			),
 			array(
-				'question' => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq3_q', $page_id ) ) ? get_field( 'faq3_q', $page_id ) : '¿MITSA realiza la puesta en marcha en cualquier puerto de Chile?',
-				'answer'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq3_a', $page_id ) ) ? get_field( 'faq3_a', $page_id ) : 'Sí, nuestros ingenieros de servicio técnico operan en todo Chile (Arica a Punta Arenas) y en puertos de la región para comisionamiento, pruebas de mar y capacitación.',
+				'question' => mitsa_get_acf_field( 'faq3_q', $page_id ) ?: '¿MITSA realiza la puesta en marcha en cualquier puerto de Chile?',
+				'answer'   => mitsa_get_acf_field( 'faq3_a', $page_id ) ?: 'Sí, nuestros ingenieros de servicio técnico operan en todo Chile (Arica a Punta Arenas) y en puertos de la región para comisionamiento, pruebas de mar y capacitación.',
 			),
 			array(
-				'question' => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq4_q', $page_id ) ) ? get_field( 'faq4_q', $page_id ) : '¿Cómo solicito repuestos originales de marcas representadas?',
-				'answer'   => ( function_exists( 'get_field' ) && $page_id && get_field( 'faq4_a', $page_id ) ) ? get_field( 'faq4_a', $page_id ) : 'A través de nuestro portal de repuestos o contacto directo, indicando fabricante, modelo, número de serie y número de parte (P/N) de la placa del equipo.',
+				'question' => mitsa_get_acf_field( 'faq4_q', $page_id ) ?: '¿Cómo solicito repuestos originales de marcas representadas?',
+				'answer'   => mitsa_get_acf_field( 'faq4_a', $page_id ) ?: 'A través de nuestro portal de repuestos o contacto directo, indicando fabricante, modelo, número de serie y número de parte (P/N) de la placa del equipo.',
 			),
 		),
 	);
@@ -444,10 +459,10 @@ function mitsa_get_nosotros_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero & Tagline
-	$h_title   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_title', $page_id ) : '';
-	$h_tagline = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_tagline', $page_id ) : '';
-	$h_desc    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_desc', $page_id ) : '';
-	$h_image   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_image', $page_id ) : '';
+	$h_title   = mitsa_get_acf_field( 'nosotros_hero_title', $page_id ) ?? '';
+	$h_tagline = mitsa_get_acf_field( 'nosotros_hero_tagline', $page_id ) ?? '';
+	$h_desc    = mitsa_get_acf_field( 'nosotros_hero_desc', $page_id ) ?? '';
+	$h_image   = mitsa_get_acf_field( 'nosotros_hero_image', $page_id ) ?? '';
 
 	$hero = array(
 		'title'       => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Cuatro décadas integrando ingeniería, tecnología y servicio especializado',
@@ -457,25 +472,25 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 2. Historia y Trayectoria
-	$s_title = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_title', $page_id ) : '';
-	$s_p1    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_p1', $page_id ) : '';
-	$s_p2    = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_story_p2', $page_id ) : '';
+	$s_title = mitsa_get_acf_field( 'nosotros_story_title', $page_id ) ?? '';
+	$s_p1    = mitsa_get_acf_field( 'nosotros_story_p1', $page_id ) ?? '';
+	$s_p2    = mitsa_get_acf_field( 'nosotros_story_p2', $page_id ) ?? '';
 
-	$m1_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_year', $page_id ) : '1982';
-	$m1_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_title', $page_id ) : 'Fundación en Reñaca, Viña del Mar';
-	$m1_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m1_desc', $page_id ) : 'Inicio de operaciones representando tecnología pionera sanitaria marina.';
+	$m1_y = mitsa_get_acf_field( 'nosotros_m1_year', $page_id ) ?? '1982';
+	$m1_t = mitsa_get_acf_field( 'nosotros_m1_title', $page_id ) ?? 'Fundación en Reñaca, Viña del Mar';
+	$m1_d = mitsa_get_acf_field( 'nosotros_m1_desc', $page_id ) ?? 'Inicio de operaciones representando tecnología pionera sanitaria marina.';
 
-	$m2_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_year', $page_id ) : '1995';
-	$m2_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_title', $page_id ) : 'Expansión a Flotas y Astilleros';
-	$m2_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m2_desc', $page_id ) : 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.';
+	$m2_y = mitsa_get_acf_field( 'nosotros_m2_year', $page_id ) ?? '1995';
+	$m2_t = mitsa_get_acf_field( 'nosotros_m2_title', $page_id ) ?? 'Expansión a Flotas y Astilleros';
+	$m2_d = mitsa_get_acf_field( 'nosotros_m2_desc', $page_id ) ?? 'Consolidación en buques de la Armada de Chile, marina mercante y salmonicultura.';
 
-	$m3_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_year', $page_id ) : '2010';
-	$m3_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_title', $page_id ) : 'Alianzas Globales de Fabricación';
-	$m3_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m3_desc', $page_id ) : 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.';
+	$m3_y = mitsa_get_acf_field( 'nosotros_m3_year', $page_id ) ?? '2010';
+	$m3_t = mitsa_get_acf_field( 'nosotros_m3_title', $page_id ) ?? 'Alianzas Globales de Fabricación';
+	$m3_d = mitsa_get_acf_field( 'nosotros_m3_desc', $page_id ) ?? 'Representación directa y exclusiva de EVAC, Cathelco, ERMA FIRST, EPE y BLÜCHER.';
 
-	$m4_y = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_year', $page_id ) : '2026';
-	$m4_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_title', $page_id ) : 'Ingeniería y Presencia Regional';
-	$m4_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_m4_desc', $page_id ) : 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.';
+	$m4_y = mitsa_get_acf_field( 'nosotros_m4_year', $page_id ) ?? '2026';
+	$m4_t = mitsa_get_acf_field( 'nosotros_m4_title', $page_id ) ?? 'Ingeniería y Presencia Regional';
+	$m4_d = mitsa_get_acf_field( 'nosotros_m4_desc', $page_id ) ?? 'Proyectos de retrofit, BWTS D-2, protección ICCP y servicios en Chile y Latinoamérica.';
 
 	$story = array(
 		'title'      => ! empty( $s_title ) ? sanitize_text_field( $s_title ) : 'Pioneros en tecnología marina y ambiental desde 1982',
@@ -492,10 +507,10 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 3. Misión & Visión (fuente oficial: brochure corporativo)
-	$mv_mt = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_mission_title', $page_id ) : 'Nuestra Misión';
-	$mv_mx = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_mission_text', $page_id ) : 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.';
-	$mv_vt = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_vision_title', $page_id ) : 'Nuestra Visión';
-	$mv_vx = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_vision_text', $page_id ) : 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.';
+	$mv_mt = mitsa_get_acf_field( 'nosotros_mission_title', $page_id ) ?? 'Nuestra Misión';
+	$mv_mx = mitsa_get_acf_field( 'nosotros_mission_text', $page_id ) ?? 'Liderar el mercado chileno y latinoamericano en la provisión de tecnologías y equipos para el cuidado del medio ambiente acuático, manteniendo altos estándares de calidad y servicio.';
+	$mv_vt = mitsa_get_acf_field( 'nosotros_vision_title', $page_id ) ?? 'Nuestra Visión';
+	$mv_vx = mitsa_get_acf_field( 'nosotros_vision_text', $page_id ) ?? 'Ofrecer soluciones integrales y especializadas para el cuidado del medio ambiente acuático, utilizando tecnologías avanzadas y representando a las compañías líderes a nivel mundial.';
 
 	$mission_vision = array(
 		'mission' => array(
@@ -509,15 +524,15 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 4. Pilares de Valor
-	$p_head = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_pillars_heading', $page_id ) : 'Los pilares que fundamentan nuestra propuesta';
-	$p1_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p1_title', $page_id ) : 'Representación Oficial Directa';
-	$p1_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p1_desc', $page_id ) : 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.';
-	$p2_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p2_title', $page_id ) : 'Ingeniería de Aplicación Propia';
-	$p2_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p2_desc', $page_id ) : 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.';
-	$p3_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p3_title', $page_id ) : 'Servicio Técnico en Terreno';
-	$p3_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p3_desc', $page_id ) : 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.';
-	$p4_t   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p4_title', $page_id ) : 'Cuidado del Medio Ambiente Acuático';
-	$p4_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_p4_desc', $page_id ) : 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.';
+	$p_head = mitsa_get_acf_field( 'nosotros_pillars_heading', $page_id ) ?? 'Los pilares que fundamentan nuestra propuesta';
+	$p1_t   = mitsa_get_acf_field( 'nosotros_p1_title', $page_id ) ?? 'Representación Oficial Directa';
+	$p1_d   = mitsa_get_acf_field( 'nosotros_p1_desc', $page_id ) ?? 'Vínculo directo sin intermediarios con fabricantes líderes mundiales e inventores de la tecnología.';
+	$p2_t   = mitsa_get_acf_field( 'nosotros_p2_title', $page_id ) ?? 'Ingeniería de Aplicación Propia';
+	$p2_d   = mitsa_get_acf_field( 'nosotros_p2_desc', $page_id ) ?? 'Dimensionamiento a medida, selección de materiales y cumplimiento estricto de normativas internacionales.';
+	$p3_t   = mitsa_get_acf_field( 'nosotros_p3_title', $page_id ) ?? 'Servicio Técnico en Terreno';
+	$p3_d   = mitsa_get_acf_field( 'nosotros_p3_desc', $page_id ) ?? 'Ingenieros especialistas para puesta en marcha, pruebas de mar, mantenciones y capacitación.';
+	$p4_t   = mitsa_get_acf_field( 'nosotros_p4_title', $page_id ) ?? 'Cuidado del Medio Ambiente Acuático';
+	$p4_d   = mitsa_get_acf_field( 'nosotros_p4_desc', $page_id ) ?? 'Tecnologías certificadas bajo normas OMI MARPOL Anexo IV y D-2 para cero impacto ambiental.';
 
 	$pillars = array(
 		'heading' => ! empty( $p_head ) ? sanitize_text_field( $p_head ) : 'Los pilares que fundamentan nuestra propuesta',
@@ -530,10 +545,10 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 5. Cobertura Regional
-	$cov_t = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_title', $page_id ) : 'Presencia estratégica en Chile y la región';
-	$cov_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_desc', $page_id ) : 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.';
-	$cov_c = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hq_city', $page_id ) : 'Reñaca, Viña del Mar, Región de Valparaíso, Chile';
-	$cov_s = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_coverage_scope', $page_id ) : 'Nacional (Arica a Punta Arenas) y Latinoamérica';
+	$cov_t = mitsa_get_acf_field( 'nosotros_coverage_title', $page_id ) ?? 'Presencia estratégica en Chile y la región';
+	$cov_d = mitsa_get_acf_field( 'nosotros_coverage_desc', $page_id ) ?? 'Desde nuestra sede central en Reñaca, Viña del Mar, atendemos faenas, astilleros, puertos y centros acuícolas a lo largo de toda la costa de Chile y brindamos soporte para proyectos en Sudamérica.';
+	$cov_c = mitsa_get_acf_field( 'nosotros_hq_city', $page_id ) ?? 'Reñaca, Viña del Mar, Región de Valparaíso, Chile';
+	$cov_s = mitsa_get_acf_field( 'nosotros_coverage_scope', $page_id ) ?? 'Nacional (Arica a Punta Arenas) y Latinoamérica';
 
 	$coverage = array(
 		'title'        => ! empty( $cov_t ) ? sanitize_text_field( $cov_t ) : 'Presencia estratégica en Chile y la región',
@@ -543,10 +558,10 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 6. Call to Action
-	$cta_h = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_heading', $page_id ) : 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto';
-	$cta_d = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_desc', $page_id ) : 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.';
-	$cta_l = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_btn_label', $page_id ) : 'Contactar al equipo de ingeniería';
-	$cta_u = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_cta_btn_url', $page_id ) : '/contacto/';
+	$cta_h = mitsa_get_acf_field( 'nosotros_cta_heading', $page_id ) ?? 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto';
+	$cta_d = mitsa_get_acf_field( 'nosotros_cta_desc', $page_id ) ?? 'Contáctenos para evaluar requerimientos técnicos, dimensionamiento de equipos o asistencia en terreno.';
+	$cta_l = mitsa_get_acf_field( 'nosotros_cta_btn_label', $page_id ) ?? 'Contactar al equipo de ingeniería';
+	$cta_u = mitsa_get_acf_field( 'nosotros_cta_btn_url', $page_id ) ?? '/contacto/';
 
 	$cta = array(
 		'heading'     => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : 'Conozca cómo nuestros ingenieros pueden respaldar su próximo proyecto',
@@ -593,13 +608,13 @@ function mitsa_get_servicios_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_desc', $page_id ) : '';
-	$h_b1_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_btn1_label', $page_id ) : '';
-	$h_b1_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_btn1_url', $page_id ) : '';
-	$h_b2_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_btn2_label', $page_id ) : '';
-	$h_b2_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_btn2_url', $page_id ) : '';
-	$h_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_image', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'servicios_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'servicios_hero_desc', $page_id ) ?? '';
+	$h_b1_l  = mitsa_get_acf_field( 'servicios_hero_btn1_label', $page_id ) ?? '';
+	$h_b1_u  = mitsa_get_acf_field( 'servicios_hero_btn1_url', $page_id ) ?? '';
+	$h_b2_l  = mitsa_get_acf_field( 'servicios_hero_btn2_label', $page_id ) ?? '';
+	$h_b2_u  = mitsa_get_acf_field( 'servicios_hero_btn2_url', $page_id ) ?? '';
+	$h_img   = mitsa_get_acf_field( 'servicios_hero_image', $page_id ) ?? '';
 
 	$hero = array(
 		'title'            => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'El equipo llega. Alguien tiene que responder por él.',
@@ -616,12 +631,12 @@ function mitsa_get_servicios_sections_data() {
 	);
 
 	// 2. Métricas
-	$m1_v = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m1_val', $page_id ) : '6';
-	$m1_l = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m1_lbl', $page_id ) : 'servicios sobre el mismo sistema';
-	$m2_v = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m2_val', $page_id ) : '5';
-	$m2_l = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m2_lbl', $page_id ) : 'fabricantes representados directamente';
-	$m3_v = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m3_val', $page_id ) : '100%';
-	$m3_l = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_m3_lbl', $page_id ) : 'cobertura de puertos y astilleros en Chile';
+	$m1_v = mitsa_get_acf_field( 'servicios_m1_val', $page_id ) ?? '6';
+	$m1_l = mitsa_get_acf_field( 'servicios_m1_lbl', $page_id ) ?? 'servicios sobre el mismo sistema';
+	$m2_v = mitsa_get_acf_field( 'servicios_m2_val', $page_id ) ?? '5';
+	$m2_l = mitsa_get_acf_field( 'servicios_m2_lbl', $page_id ) ?? 'fabricantes representados directamente';
+	$m3_v = mitsa_get_acf_field( 'servicios_m3_val', $page_id ) ?? '100%';
+	$m3_l = mitsa_get_acf_field( 'servicios_m3_lbl', $page_id ) ?? 'cobertura de puertos y astilleros en Chile';
 
 	$metrics = array(
 		array( 'value' => $m1_v ?: '6', 'label' => $m1_l ?: 'servicios sobre el mismo sistema' ),
@@ -642,12 +657,12 @@ function mitsa_get_servicios_sections_data() {
 
 	for ( $i = 1; $i <= 6; $i++ ) {
 		$def = $default_services[ $i ];
-		$num  = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_num", $page_id ) : $def['num'];
-		$exec = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_executor", $page_id ) : $def['exec'];
-		$tit  = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_title", $page_id ) : $def['title'];
-		$dsc  = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_desc", $page_id ) : $def['desc'];
-		$tgs  = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_tags", $page_id ) : $def['tags'];
-		$img  = function_exists( 'get_field' ) && $page_id ? get_field( "srv{$i}_image", $page_id ) : $def['img'];
+		$num  = mitsa_get_acf_field( "srv{$i}_num", $page_id ) ?? $def['num'];
+		$exec = mitsa_get_acf_field( "srv{$i}_executor", $page_id ) ?? $def['exec'];
+		$tit  = mitsa_get_acf_field( "srv{$i}_title", $page_id ) ?? $def['title'];
+		$dsc  = mitsa_get_acf_field( "srv{$i}_desc", $page_id ) ?? $def['desc'];
+		$tgs  = mitsa_get_acf_field( "srv{$i}_tags", $page_id ) ?? $def['tags'];
+		$img  = mitsa_get_acf_field( "srv{$i}_image", $page_id ) ?? $def['img'];
 
 		$tags_array = array_filter( array_map( 'trim', explode( ',', $tgs ?: $def['tags'] ) ) );
 
@@ -662,29 +677,29 @@ function mitsa_get_servicios_sections_data() {
 	}
 
 	// 4. Proceso de Asesoramiento (4 etapas confirmadas por el brochure)
-	$pr_head = function_exists( 'get_field' ) && $page_id ? get_field( 'process_heading', $page_id ) : 'Proceso de asesoramiento y cotización técnica';
-	$pr_sub  = function_exists( 'get_field' ) && $page_id ? get_field( 'process_subheading', $page_id ) : 'Metodología estructurada de 4 etapas que asegura la compatibilidad exacta entre el requerimiento operativo y el diseño del fabricante.';
+	$pr_head = mitsa_get_acf_field( 'process_heading', $page_id ) ?? 'Proceso de asesoramiento y cotización técnica';
+	$pr_sub  = mitsa_get_acf_field( 'process_subheading', $page_id ) ?? 'Metodología estructurada de 4 etapas que asegura la compatibilidad exacta entre el requerimiento operativo y el diseño del fabricante.';
 
 	$steps = array(
 		array(
 			'step'        => '01',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step1_title', $page_id ) ) ? get_field( 'process_step1_title', $page_id ) : '1. Requerimiento',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step1_desc', $page_id ) ) ? get_field( 'process_step1_desc', $page_id ) : 'El cliente solicita cotizar un sistema, equipo o elemento específico para su embarcación o instalación.',
+			'title'       => mitsa_get_acf_field( 'process_step1_title', $page_id ) ?: '1. Requerimiento',
+			'description' => mitsa_get_acf_field( 'process_step1_desc', $page_id ) ?: 'El cliente solicita cotizar un sistema, equipo o elemento específico para su embarcación o instalación.',
 		),
 		array(
 			'step'        => '02',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step2_title', $page_id ) ) ? get_field( 'process_step2_title', $page_id ) : '2. Evaluación',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step2_desc', $page_id ) ) ? get_field( 'process_step2_desc', $page_id ) : 'MITSA evalúa junto con sus representadas las alternativas de diseño de cada fabricante según precio, innovación, normativa y calidad.',
+			'title'       => mitsa_get_acf_field( 'process_step2_title', $page_id ) ?: '2. Evaluación',
+			'description' => mitsa_get_acf_field( 'process_step2_desc', $page_id ) ?: 'MITSA evalúa junto con sus representadas las alternativas de diseño de cada fabricante según precio, innovación, normativa y calidad.',
 		),
 		array(
 			'step'        => '03',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step3_title', $page_id ) ) ? get_field( 'process_step3_title', $page_id ) : '3. Presentación',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step3_desc', $page_id ) ) ? get_field( 'process_step3_desc', $page_id ) : 'Presentamos al cliente las mejores opciones técnicas y comerciales que satisfacen plenamente su necesidad.',
+			'title'       => mitsa_get_acf_field( 'process_step3_title', $page_id ) ?: '3. Presentación',
+			'description' => mitsa_get_acf_field( 'process_step3_desc', $page_id ) ?: 'Presentamos al cliente las mejores opciones técnicas y comerciales que satisfacen plenamente su necesidad.',
 		),
 		array(
 			'step'        => '04',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step4_title', $page_id ) ) ? get_field( 'process_step4_title', $page_id ) : '4. Suministro & Soporte',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'process_step4_desc', $page_id ) ) ? get_field( 'process_step4_desc', $page_id ) : 'Una vez elegida la opción, se procede al suministro, coordinación de entrega e inicio del plan de acompañamiento operativo.',
+			'title'       => mitsa_get_acf_field( 'process_step4_title', $page_id ) ?: '4. Suministro & Soporte',
+			'description' => mitsa_get_acf_field( 'process_step4_desc', $page_id ) ?: 'Una vez elegida la opción, se procede al suministro, coordinación de entrega e inicio del plan de acompañamiento operativo.',
 		),
 	);
 
@@ -695,12 +710,12 @@ function mitsa_get_servicios_sections_data() {
 	);
 
 	// 5. Call to Action
-	$cta_h   = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_heading', $page_id ) : '¿Tiene un proyecto naval o industrial en curso?';
-	$cta_d   = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_desc', $page_id ) : 'Revise requerimientos de caudal, espacio y plazos de entrega directamente con nuestros ingenieros de aplicación.';
-	$cta_b1l = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_btn1_label', $page_id ) : 'Solicitar evaluación técnica';
-	$cta_b1u = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_btn1_url', $page_id ) : '/contacto/?tipo=evaluacion';
-	$cta_b2l = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_btn2_label', $page_id ) : 'Consultar repuestos';
-	$cta_b2u = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_cta_btn2_url', $page_id ) : '/contacto/?tipo=repuestos';
+	$cta_h   = mitsa_get_acf_field( 'servicios_cta_heading', $page_id ) ?? '¿Tiene un proyecto naval o industrial en curso?';
+	$cta_d   = mitsa_get_acf_field( 'servicios_cta_desc', $page_id ) ?? 'Revise requerimientos de caudal, espacio y plazos de entrega directamente con nuestros ingenieros de aplicación.';
+	$cta_b1l = mitsa_get_acf_field( 'servicios_cta_btn1_label', $page_id ) ?? 'Solicitar evaluación técnica';
+	$cta_b1u = mitsa_get_acf_field( 'servicios_cta_btn1_url', $page_id ) ?? '/contacto/?tipo=evaluacion';
+	$cta_b2l = mitsa_get_acf_field( 'servicios_cta_btn2_label', $page_id ) ?? 'Consultar repuestos';
+	$cta_b2u = mitsa_get_acf_field( 'servicios_cta_btn2_url', $page_id ) ?? '/contacto/?tipo=repuestos';
 
 	$cta = array(
 		'heading'          => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : '¿Tiene un proyecto naval o industrial en curso?',
@@ -753,12 +768,12 @@ function mitsa_get_industrias_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_desc', $page_id ) : '';
-	$h_b1_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_btn1_label', $page_id ) : '';
-	$h_b1_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_btn1_url', $page_id ) : '';
-	$h_b2_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_btn2_label', $page_id ) : '';
-	$h_b2_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_btn2_url', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'industrias_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'industrias_hero_desc', $page_id ) ?? '';
+	$h_b1_l  = mitsa_get_acf_field( 'industrias_hero_btn1_label', $page_id ) ?? '';
+	$h_b1_u  = mitsa_get_acf_field( 'industrias_hero_btn1_url', $page_id ) ?? '';
+	$h_b2_l  = mitsa_get_acf_field( 'industrias_hero_btn2_label', $page_id ) ?? '';
+	$h_b2_u  = mitsa_get_acf_field( 'industrias_hero_btn2_url', $page_id ) ?? '';
 
 	$hero = array(
 		'title'            => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Cada industria exige una respuesta técnica distinta',
@@ -786,12 +801,12 @@ function mitsa_get_industrias_sections_data() {
 
 	for ( $i = 1; $i <= 6; $i++ ) {
 		$def  = $default_ind[ $i ];
-		$id   = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_id", $page_id ) : $def['id'];
-		$num  = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_num", $page_id ) : $def['num'];
-		$tit  = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_title", $page_id ) : $def['title'];
-		$dsc  = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_desc", $page_id ) : $def['desc'];
-		$tgs  = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_tags", $page_id ) : $def['tags'];
-		$img  = function_exists( 'get_field' ) && $page_id ? get_field( "ind{$i}_image", $page_id ) : $def['img'];
+		$id   = mitsa_get_acf_field( "ind{$i}_id", $page_id ) ?? $def['id'];
+		$num  = mitsa_get_acf_field( "ind{$i}_num", $page_id ) ?? $def['num'];
+		$tit  = mitsa_get_acf_field( "ind{$i}_title", $page_id ) ?? $def['title'];
+		$dsc  = mitsa_get_acf_field( "ind{$i}_desc", $page_id ) ?? $def['desc'];
+		$tgs  = mitsa_get_acf_field( "ind{$i}_tags", $page_id ) ?? $def['tags'];
+		$img  = mitsa_get_acf_field( "ind{$i}_image", $page_id ) ?? $def['img'];
 
 		$tags_array = array_filter( array_map( 'trim', explode( ',', $tgs ?: $def['tags'] ) ) );
 
@@ -806,25 +821,25 @@ function mitsa_get_industrias_sections_data() {
 	}
 
 	// 3. Criterios Técnicos
-	$cr_head = function_exists( 'get_field' ) && $page_id ? get_field( 'criteria_heading', $page_id ) : 'Criterios de ingeniería por industria';
-	$cr_sub  = function_exists( 'get_field' ) && $page_id ? get_field( 'criteria_subheading', $page_id ) : 'Variables críticas de diseño que evalúan nuestros ingenieros de aplicación para cada tipo de instalación.';
+	$cr_head = mitsa_get_acf_field( 'criteria_heading', $page_id ) ?? 'Criterios de ingeniería por industria';
+	$cr_sub  = mitsa_get_acf_field( 'criteria_subheading', $page_id ) ?? 'Variables críticas de diseño que evalúan nuestros ingenieros de aplicación para cada tipo de instalación.';
 
 	$criteria_items = array(
 		array(
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit1_title', $page_id ) ) ? get_field( 'crit1_title', $page_id ) : 'Normativa y Certificaciones de Clase',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit1_desc', $page_id ) ) ? get_field( 'crit1_desc', $page_id ) : 'Cumplimiento estricto con IMO MARPOL (Anexo IV y D-2), SOLAS, USCG y casas clasificadoras (DNV, Lloyd\'s Register, ABS).',
+			'title'       => mitsa_get_acf_field( 'crit1_title', $page_id ) ?: 'Normativa y Certificaciones de Clase',
+			'description' => mitsa_get_acf_field( 'crit1_desc', $page_id ) ?: 'Cumplimiento estricto con IMO MARPOL (Anexo IV y D-2), SOLAS, USCG y casas clasificadoras (DNV, Lloyd\'s Register, ABS).',
 		),
 		array(
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit2_title', $page_id ) ) ? get_field( 'crit2_title', $page_id ) : 'Ventanas de Intervención en Faena',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit2_desc', $page_id ) ) ? get_field( 'crit2_desc', $page_id ) : 'Coordinación con recaladas acotadas, diques secos y paradas de planta programadas para evitar sobrecostos por detención.',
+			'title'       => mitsa_get_acf_field( 'crit2_title', $page_id ) ?: 'Ventanas de Intervención en Faena',
+			'description' => mitsa_get_acf_field( 'crit2_desc', $page_id ) ?: 'Coordinación con recaladas acotadas, diques secos y paradas de planta programadas para evitar sobrecostos por detención.',
 		),
 		array(
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit3_title', $page_id ) ) ? get_field( 'crit3_title', $page_id ) : 'Redundancia y Continuidad Operativa',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit3_desc', $page_id ) ) ? get_field( 'crit3_desc', $page_id ) : 'Diseño con bombas duplicadas, módulos en standby y repuestos críticos garantizados por el fabricante.',
+			'title'       => mitsa_get_acf_field( 'crit3_title', $page_id ) ?: 'Redundancia y Continuidad Operativa',
+			'description' => mitsa_get_acf_field( 'crit3_desc', $page_id ) ?: 'Diseño con bombas duplicadas, módulos en standby y repuestos críticos garantizados por el fabricante.',
 		),
 		array(
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit4_title', $page_id ) ) ? get_field( 'crit4_title', $page_id ) : 'Eficiencia Hídrica y Energética',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'crit4_desc', $page_id ) ) ? get_field( 'crit4_desc', $page_id ) : 'Reducción de consumo de agua hasta un 90% mediante sistemas al vacío e intercambiadores térmicos de alta eficiencia.',
+			'title'       => mitsa_get_acf_field( 'crit4_title', $page_id ) ?: 'Eficiencia Hídrica y Energética',
+			'description' => mitsa_get_acf_field( 'crit4_desc', $page_id ) ?: 'Reducción de consumo de agua hasta un 90% mediante sistemas al vacío e intercambiadores térmicos de alta eficiencia.',
 		),
 	);
 
@@ -835,10 +850,10 @@ function mitsa_get_industrias_sections_data() {
 	);
 
 	// 4. CTA
-	$cta_h = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_cta_heading', $page_id ) : '¿Necesita dimensionar una solución para su sector?';
-	$cta_d = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_cta_desc', $page_id ) : 'Nuestros ingenieros evalúan requerimientos específicos de espacio, caudal y normativas aplicables a su industria.';
-	$cta_l = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_cta_btn_label', $page_id ) : 'Contactar a ingeniería de aplicación';
-	$cta_u = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_cta_btn_url', $page_id ) : '/contacto/?tipo=evaluacion';
+	$cta_h = mitsa_get_acf_field( 'industrias_cta_heading', $page_id ) ?? '¿Necesita dimensionar una solución para su sector?';
+	$cta_d = mitsa_get_acf_field( 'industrias_cta_desc', $page_id ) ?? 'Nuestros ingenieros evalúan requerimientos específicos de espacio, caudal y normativas aplicables a su industria.';
+	$cta_l = mitsa_get_acf_field( 'industrias_cta_btn_label', $page_id ) ?? 'Contactar a ingeniería de aplicación';
+	$cta_u = mitsa_get_acf_field( 'industrias_cta_btn_url', $page_id ) ?? '/contacto/?tipo=evaluacion';
 
 	$cta = array(
 		'heading'     => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : '¿Necesita dimensionar una solución para su sector?',
@@ -883,13 +898,13 @@ function mitsa_get_proyectos_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_hero_desc', $page_id ) : '';
-	$h_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_hero_img', $page_id ) : '';
-	$h_b1_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_btn1_label', $page_id ) : '';
-	$h_b1_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_btn1_url', $page_id ) : '';
-	$h_b2_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_btn2_label', $page_id ) : '';
-	$h_b2_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_btn2_url', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'proyectos_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'proyectos_hero_desc', $page_id ) ?? '';
+	$h_img   = mitsa_get_acf_field( 'proyectos_hero_img', $page_id ) ?? '';
+	$h_b1_l  = mitsa_get_acf_field( 'proyectos_btn1_label', $page_id ) ?? '';
+	$h_b1_u  = mitsa_get_acf_field( 'proyectos_btn1_url', $page_id ) ?? '';
+	$h_b2_l  = mitsa_get_acf_field( 'proyectos_btn2_label', $page_id ) ?? '';
+	$h_b2_u  = mitsa_get_acf_field( 'proyectos_btn2_url', $page_id ) ?? '';
 
 	$hero = array(
 		'title'            => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Lo que ya está instalado y operando.',
@@ -906,12 +921,12 @@ function mitsa_get_proyectos_sections_data() {
 	);
 
 	// 2. Métricas (3)
-	$m1_num = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m1_num', $page_id ) : '40+';
-	$m1_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m1_label', $page_id ) : 'años integrando sistemas en Chile';
-	$m2_num = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m2_num', $page_id ) : '10';
-	$m2_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m2_label', $page_id ) : 'líneas de solución en operación';
-	$m3_num = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m3_num', $page_id ) : '100%';
-	$m3_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_m3_label', $page_id ) : 'cumplimiento en protocolos y pruebas de mar';
+	$m1_num = mitsa_get_acf_field( 'proyectos_m1_num', $page_id ) ?? '40+';
+	$m1_lbl = mitsa_get_acf_field( 'proyectos_m1_label', $page_id ) ?? 'años integrando sistemas en Chile';
+	$m2_num = mitsa_get_acf_field( 'proyectos_m2_num', $page_id ) ?? '10';
+	$m2_lbl = mitsa_get_acf_field( 'proyectos_m2_label', $page_id ) ?? 'líneas de solución en operación';
+	$m3_num = mitsa_get_acf_field( 'proyectos_m3_num', $page_id ) ?? '100%';
+	$m3_lbl = mitsa_get_acf_field( 'proyectos_m3_label', $page_id ) ?? 'cumplimiento en protocolos y pruebas de mar';
 
 	$metrics = array(
 		array( 'value' => $m1_num ?: '40+', 'label' => $m1_lbl ?: 'años integrando sistemas en Chile' ),
@@ -932,12 +947,12 @@ function mitsa_get_proyectos_sections_data() {
 	$projects = array();
 	for ( $i = 1; $i <= 6; $i++ ) {
 		$def  = $default_projects[ $i ];
-		$num  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_num", $page_id ) : $def['num'];
-		$sec  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_sector", $page_id ) : $def['sector'];
-		$tit  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_title", $page_id ) : $def['title'];
-		$dsc  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_desc", $page_id ) : $def['desc'];
-		$tgs  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_tags", $page_id ) : $def['tags'];
-		$img  = function_exists( 'get_field' ) && $page_id ? get_field( "pcase{$i}_image", $page_id ) : $def['img'];
+		$num  = mitsa_get_acf_field( "pcase{$i}_num", $page_id ) ?? $def['num'];
+		$sec  = mitsa_get_acf_field( "pcase{$i}_sector", $page_id ) ?? $def['sector'];
+		$tit  = mitsa_get_acf_field( "pcase{$i}_title", $page_id ) ?? $def['title'];
+		$dsc  = mitsa_get_acf_field( "pcase{$i}_desc", $page_id ) ?? $def['desc'];
+		$tgs  = mitsa_get_acf_field( "pcase{$i}_tags", $page_id ) ?? $def['tags'];
+		$img  = mitsa_get_acf_field( "pcase{$i}_image", $page_id ) ?? $def['img'];
 
 		$tags_array = array_filter( array_map( 'trim', explode( ',', $tgs ?: $def['tags'] ) ) );
 
@@ -953,29 +968,29 @@ function mitsa_get_proyectos_sections_data() {
 	}
 
 	// 4. Metodología de Ejecución
-	$m_head = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_method_heading', $page_id ) : '¿Cómo ejecutamos cada proyecto?';
-	$m_desc = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_method_desc', $page_id ) : 'Desde la ingeniería de preventa hasta las pruebas de mar y el soporte postventa a largo plazo.';
+	$m_head = mitsa_get_acf_field( 'proyectos_method_heading', $page_id ) ?? '¿Cómo ejecutamos cada proyecto?';
+	$m_desc = mitsa_get_acf_field( 'proyectos_method_desc', $page_id ) ?? 'Desde la ingeniería de preventa hasta las pruebas de mar y el soporte postventa a largo plazo.';
 
 	$steps = array(
 		array(
 			'step'        => '01',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth1_title', $page_id ) ) ? get_field( 'meth1_title', $page_id ) : '1. Levantamiento & Viabilidad',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth1_desc', $page_id ) ) ? get_field( 'meth1_desc', $page_id ) : 'Evaluación de planos, requerimientos de caudal, consumo energético y espacios disponibles en la nave o instalación.',
+			'title'       => mitsa_get_acf_field( 'meth1_title', $page_id ) ?: '1. Levantamiento & Viabilidad',
+			'description' => mitsa_get_acf_field( 'meth1_desc', $page_id ) ?: 'Evaluación de planos, requerimientos de caudal, consumo energético y espacios disponibles en la nave o instalación.',
 		),
 		array(
 			'step'        => '02',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth2_title', $page_id ) ) ? get_field( 'meth2_title', $page_id ) : '2. Ingeniería & Suministro',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth2_desc', $page_id ) ) ? get_field( 'meth2_desc', $page_id ) : 'Selección directa con los fabricantes representados y coordinación de plazos de entrega en puerto o faena.',
+			'title'       => mitsa_get_acf_field( 'meth2_title', $page_id ) ?: '2. Ingeniería & Suministro',
+			'description' => mitsa_get_acf_field( 'meth2_desc', $page_id ) ?: 'Selección directa con los fabricantes representados y coordinación de plazos de entrega en puerto o faena.',
 		),
 		array(
 			'step'        => '03',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth3_title', $page_id ) ) ? get_field( 'meth3_title', $page_id ) : '3. Supervisión & Puesta en Marcha',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth3_desc', $page_id ) ) ? get_field( 'meth3_desc', $page_id ) : 'Acompañamiento en dique seco o terreno por ingenieros certificados para pruebas FAT/HAT y comisionamiento.',
+			'title'       => mitsa_get_acf_field( 'meth3_title', $page_id ) ?: '3. Supervisión & Puesta en Marcha',
+			'description' => mitsa_get_acf_field( 'meth3_desc', $page_id ) ?: 'Acompañamiento en dique seco o terreno por ingenieros certificados para pruebas FAT/HAT y comisionamiento.',
 		),
 		array(
 			'step'        => '04',
-			'title'       => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth4_title', $page_id ) ) ? get_field( 'meth4_title', $page_id ) : '4. Garantía & Soporte Continuo',
-			'description' => ( function_exists( 'get_field' ) && $page_id && get_field( 'meth4_desc', $page_id ) ) ? get_field( 'meth4_desc', $page_id ) : 'Entrega de protocolos a inspectores de clase, capacitación a tripulación y provisión continua de repuestos originales.',
+			'title'       => mitsa_get_acf_field( 'meth4_title', $page_id ) ?: '4. Garantía & Soporte Continuo',
+			'description' => mitsa_get_acf_field( 'meth4_desc', $page_id ) ?: 'Entrega de protocolos a inspectores de clase, capacitación a tripulación y provisión continua de repuestos originales.',
 		),
 	);
 
@@ -986,10 +1001,10 @@ function mitsa_get_proyectos_sections_data() {
 	);
 
 	// 5. CTA
-	$cta_h = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_cta_heading', $page_id ) : '¿Tiene un proyecto naval o industrial en evaluación?';
-	$cta_d = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_cta_desc', $page_id ) : 'Podemos compartir casos técnicos de referencia similares y coordinar una reunión con nuestros ingenieros de aplicación.';
-	$cta_l = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_cta_btn_label', $page_id ) : 'Solicitar referencias de ingeniería';
-	$cta_u = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_cta_btn_url', $page_id ) : '/contacto/?tipo=evaluacion';
+	$cta_h = mitsa_get_acf_field( 'proyectos_cta_heading', $page_id ) ?? '¿Tiene un proyecto naval o industrial en evaluación?';
+	$cta_d = mitsa_get_acf_field( 'proyectos_cta_desc', $page_id ) ?? 'Podemos compartir casos técnicos de referencia similares y coordinar una reunión con nuestros ingenieros de aplicación.';
+	$cta_l = mitsa_get_acf_field( 'proyectos_cta_btn_label', $page_id ) ?? 'Solicitar referencias de ingeniería';
+	$cta_u = mitsa_get_acf_field( 'proyectos_cta_btn_url', $page_id ) ?? '/contacto/?tipo=evaluacion';
 
 	$cta = array(
 		'heading'     => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : '¿Tiene un proyecto naval o industrial en evaluación?',
@@ -1035,13 +1050,13 @@ function mitsa_get_recursos_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_hero_desc', $page_id ) : '';
-	$h_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_hero_img', $page_id ) : '';
-	$h_b1_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_btn1_label', $page_id ) : '';
-	$h_b1_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_btn1_url', $page_id ) : '';
-	$h_b2_l  = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_btn2_label', $page_id ) : '';
-	$h_b2_u  = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_btn2_url', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'recursos_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'recursos_hero_desc', $page_id ) ?? '';
+	$h_img   = mitsa_get_acf_field( 'recursos_hero_img', $page_id ) ?? '';
+	$h_b1_l  = mitsa_get_acf_field( 'recursos_btn1_label', $page_id ) ?? '';
+	$h_b1_u  = mitsa_get_acf_field( 'recursos_btn1_url', $page_id ) ?? '';
+	$h_b2_l  = mitsa_get_acf_field( 'recursos_btn2_label', $page_id ) ?? '';
+	$h_b2_u  = mitsa_get_acf_field( 'recursos_btn2_url', $page_id ) ?? '';
 
 	$hero = array(
 		'title'            => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'El criterio técnico, publicado.',
@@ -1058,17 +1073,17 @@ function mitsa_get_recursos_sections_data() {
 	);
 
 	// 2. Gateways (2)
-	$gw1_b = function_exists( 'get_field' ) && $page_id ? get_field( 'gw1_badge', $page_id ) : 'Centro Técnico';
-	$gw1_t = function_exists( 'get_field' ) && $page_id ? get_field( 'gw1_title', $page_id ) : 'Cómo se decide un sistema a bordo';
-	$gw1_d = function_exists( 'get_field' ) && $page_id ? get_field( 'gw1_desc', $page_id ) : 'Artículos abiertos sobre dimensionamiento, normativa OMI, DIRECTEMAR y mejores prácticas de mantenimiento preventivo.';
-	$gw1_l = function_exists( 'get_field' ) && $page_id ? get_field( 'gw1_link_label', $page_id ) : 'Ver artículos técnicos →';
-	$gw1_u = function_exists( 'get_field' ) && $page_id ? get_field( 'gw1_link_url', $page_id ) : '#articulos';
+	$gw1_b = mitsa_get_acf_field( 'gw1_badge', $page_id ) ?? 'Centro Técnico';
+	$gw1_t = mitsa_get_acf_field( 'gw1_title', $page_id ) ?? 'Cómo se decide un sistema a bordo';
+	$gw1_d = mitsa_get_acf_field( 'gw1_desc', $page_id ) ?? 'Artículos abiertos sobre dimensionamiento, normativa OMI, DIRECTEMAR y mejores prácticas de mantenimiento preventivo.';
+	$gw1_l = mitsa_get_acf_field( 'gw1_link_label', $page_id ) ?? 'Ver artículos técnicos →';
+	$gw1_u = mitsa_get_acf_field( 'gw1_link_url', $page_id ) ?? '#articulos';
 
-	$gw2_b = function_exists( 'get_field' ) && $page_id ? get_field( 'gw2_badge', $page_id ) : 'Biblioteca Técnica';
-	$gw2_t = function_exists( 'get_field' ) && $page_id ? get_field( 'gw2_title', $page_id ) : 'Fichas, manuales y protocolos';
-	$gw2_d = function_exists( 'get_field' ) && $page_id ? get_field( 'gw2_desc', $page_id ) : 'Documentación de las representadas oficiales (EVAC, Cathelco, ERMA FIRST, EPE, BLÜCHER), organizada por equipo.';
-	$gw2_l = function_exists( 'get_field' ) && $page_id ? get_field( 'gw2_link_label', $page_id ) : 'Entrar a la biblioteca →';
-	$gw2_u = function_exists( 'get_field' ) && $page_id ? get_field( 'gw2_link_url', $page_id ) : '#biblioteca';
+	$gw2_b = mitsa_get_acf_field( 'gw2_badge', $page_id ) ?? 'Biblioteca Técnica';
+	$gw2_t = mitsa_get_acf_field( 'gw2_title', $page_id ) ?? 'Fichas, manuales y protocolos';
+	$gw2_d = mitsa_get_acf_field( 'gw2_desc', $page_id ) ?? 'Documentación de las representadas oficiales (EVAC, Cathelco, ERMA FIRST, EPE, BLÜCHER), organizada por equipo.';
+	$gw2_l = mitsa_get_acf_field( 'gw2_link_label', $page_id ) ?? 'Entrar a la biblioteca →';
+	$gw2_u = mitsa_get_acf_field( 'gw2_link_url', $page_id ) ?? '#biblioteca';
 
 	$gateways = array(
 		array(
@@ -1143,10 +1158,10 @@ function mitsa_get_recursos_sections_data() {
 	$downloads = array();
 	for ( $i = 1; $i <= 5; $i++ ) {
 		$def = $default_docs[ $i ];
-		$tit = function_exists( 'get_field' ) && $page_id ? get_field( "doc{$i}_title", $page_id ) : $def['title'];
-		$fmt = function_exists( 'get_field' ) && $page_id ? get_field( "doc{$i}_format", $page_id ) : $def['format'];
-		$lvl = function_exists( 'get_field' ) && $page_id ? get_field( "doc{$i}_level", $page_id ) : $def['level'];
-		$url = function_exists( 'get_field' ) && $page_id ? get_field( "doc{$i}_url", $page_id ) : $def['url'];
+		$tit = mitsa_get_acf_field( "doc{$i}_title", $page_id ) ?? $def['title'];
+		$fmt = mitsa_get_acf_field( "doc{$i}_format", $page_id ) ?? $def['format'];
+		$lvl = mitsa_get_acf_field( "doc{$i}_level", $page_id ) ?? $def['level'];
+		$url = mitsa_get_acf_field( "doc{$i}_url", $page_id ) ?? $def['url'];
 
 		$downloads[] = array(
 			'title'  => $tit ?: $def['title'],
@@ -1157,10 +1172,10 @@ function mitsa_get_recursos_sections_data() {
 	}
 
 	// 5. CTA
-	$cta_h = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_cta_heading', $page_id ) : '¿Necesita documentación técnica específica o certificación de fábrica?';
-	$cta_d = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_cta_desc', $page_id ) : 'Gestionamos directamente con los fabricantes las fichas de homologación, certificados tipo (Type Approval) y planos de montaje para su proyecto.';
-	$cta_l = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_cta_btn_label', $page_id ) : 'Solicitar documentación técnica';
-	$cta_u = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_cta_btn_url', $page_id ) : '/contacto/?tipo=evaluacion';
+	$cta_h = mitsa_get_acf_field( 'recursos_cta_heading', $page_id ) ?? '¿Necesita documentación técnica específica o certificación de fábrica?';
+	$cta_d = mitsa_get_acf_field( 'recursos_cta_desc', $page_id ) ?? 'Gestionamos directamente con los fabricantes las fichas de homologación, certificados tipo (Type Approval) y planos de montaje para su proyecto.';
+	$cta_l = mitsa_get_acf_field( 'recursos_cta_btn_label', $page_id ) ?? 'Solicitar documentación técnica';
+	$cta_u = mitsa_get_acf_field( 'recursos_cta_btn_url', $page_id ) ?? '/contacto/?tipo=evaluacion';
 
 	$cta = array(
 		'heading'     => ! empty( $cta_h ) ? sanitize_text_field( $cta_h ) : '¿Necesita documentación técnica específica o certificación de fábrica?',
@@ -1206,8 +1221,8 @@ function mitsa_get_contacto_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_hero_desc', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'contacto_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'contacto_hero_desc', $page_id ) ?? '';
 
 	$hero = array(
 		'title'       => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Cuéntenos qué necesita resolver',
@@ -1225,9 +1240,9 @@ function mitsa_get_contacto_sections_data() {
 	$doors = array();
 	for ( $i = 1; $i <= 4; $i++ ) {
 		$def = $default_doors[ $i ];
-		$num = function_exists( 'get_field' ) && $page_id ? get_field( "door{$i}_num", $page_id ) : $def['num'];
-		$tit = function_exists( 'get_field' ) && $page_id ? get_field( "door{$i}_title", $page_id ) : $def['title'];
-		$dsc = function_exists( 'get_field' ) && $page_id ? get_field( "door{$i}_desc", $page_id ) : $def['desc'];
+		$num = mitsa_get_acf_field( "door{$i}_num", $page_id ) ?? $def['num'];
+		$tit = mitsa_get_acf_field( "door{$i}_title", $page_id ) ?? $def['title'];
+		$dsc = mitsa_get_acf_field( "door{$i}_desc", $page_id ) ?? $def['desc'];
 
 		$doors[] = array(
 			'key'         => $def['key'],
@@ -1238,13 +1253,13 @@ function mitsa_get_contacto_sections_data() {
 	}
 
 	// 3. Canales & Ubicación
-	$addr = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_address', $page_id ) : 'Av. Vicuña Mackenna 882, Reñaca, Viña del Mar, Chile';
-	$brch = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_branch', $page_id ) : 'Av. Edmundo Eluchans 1737, Of. 61, Reñaca, Viña del Mar';
-	$ph_m = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_phone_main', $page_id ) : '+56 32 2835055';
-	$ph_c = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_phone_mobile', $page_id ) : '+56 9 9876 5432';
-	$em_g = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_email_general', $page_id ) : 'contacto@mitsachile.com';
-	$em_s = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_email_sales', $page_id ) : 'fjdelaiglesia@mitsachile.com';
-	$hrs  = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_hours', $page_id ) : 'Lunes a Viernes: 08:30 a 18:00 hrs';
+	$addr = mitsa_get_acf_field( 'contacto_address', $page_id ) ?? 'Av. Vicuña Mackenna 882, Reñaca, Viña del Mar, Chile';
+	$brch = mitsa_get_acf_field( 'contacto_branch', $page_id ) ?? 'Av. Edmundo Eluchans 1737, Of. 61, Reñaca, Viña del Mar';
+	$ph_m = mitsa_get_acf_field( 'contacto_phone_main', $page_id ) ?? '+56 32 2835055';
+	$ph_c = mitsa_get_acf_field( 'contacto_phone_mobile', $page_id ) ?? '+56 9 9876 5432';
+	$em_g = mitsa_get_acf_field( 'contacto_email_general', $page_id ) ?? 'contacto@mitsachile.com';
+	$em_s = mitsa_get_acf_field( 'contacto_email_sales', $page_id ) ?? 'fjdelaiglesia@mitsachile.com';
+	$hrs  = mitsa_get_acf_field( 'contacto_hours', $page_id ) ?? 'Lunes a Viernes: 08:30 a 18:00 hrs';
 
 	$channels = array(
 		'address'       => ! empty( $addr ) ? sanitize_text_field( $addr ) : 'Av. Vicuña Mackenna 882, Reñaca, Viña del Mar, Chile',
@@ -1257,9 +1272,9 @@ function mitsa_get_contacto_sections_data() {
 	);
 
 	// 4. Cobertura Regional (8 Países)
-	$cov_t = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_coverage_title', $page_id ) : 'Presencia y Cobertura Regional';
-	$cov_d = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_coverage_desc', $page_id ) : 'Atención comercial y soporte de ingeniería para proyectos marítimos e industriales en 8 países de Latinoamérica.';
-	$cov_c = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_countries', $page_id ) : 'Chile, Perú, Ecuador, Colombia, Panamá, Paraguay, Bolivia, Venezuela';
+	$cov_t = mitsa_get_acf_field( 'contacto_coverage_title', $page_id ) ?? 'Presencia y Cobertura Regional';
+	$cov_d = mitsa_get_acf_field( 'contacto_coverage_desc', $page_id ) ?? 'Atención comercial y soporte de ingeniería para proyectos marítimos e industriales en 8 países de Latinoamérica.';
+	$cov_c = mitsa_get_acf_field( 'contacto_countries', $page_id ) ?? 'Chile, Perú, Ecuador, Colombia, Panamá, Paraguay, Bolivia, Venezuela';
 
 	$countries_array = array_filter( array_map( 'trim', explode( ',', $cov_c ?: 'Chile, Perú, Ecuador, Colombia, Panamá, Paraguay, Bolivia, Venezuela' ) ) );
 
@@ -1270,9 +1285,9 @@ function mitsa_get_contacto_sections_data() {
 	);
 
 	// 5. Formulario
-	$f_act = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_form_action', $page_id ) : 'https://formspree.io/f/placeholder';
-	$f_tit = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_form_title', $page_id ) : 'Formulario de contacto y asesoría técnica';
-	$f_dsc = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_form_desc', $page_id ) : 'Complete los datos requeridos y nuestro equipo técnico le responderá en menos de 24 horas hábiles.';
+	$f_act = mitsa_get_acf_field( 'contacto_form_action', $page_id ) ?? 'https://formspree.io/f/placeholder';
+	$f_tit = mitsa_get_acf_field( 'contacto_form_title', $page_id ) ?? 'Formulario de contacto y asesoría técnica';
+	$f_dsc = mitsa_get_acf_field( 'contacto_form_desc', $page_id ) ?? 'Complete los datos requeridos y nuestro equipo técnico le responderá en menos de 24 horas hábiles.';
 
 	$form = array(
 		'action_url'  => ! empty( $f_act ) ? esc_url_raw( $f_act ) : 'https://formspree.io/f/placeholder',
@@ -1315,13 +1330,13 @@ function mitsa_get_representadas_sections_data() {
 	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
-	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_hero_title', $page_id ) : '';
-	$h_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_hero_desc', $page_id ) : '';
-	$h_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_hero_img', $page_id ) : '';
-	$b1_lbl  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_btn1_label', $page_id ) : '';
-	$b1_url  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_btn1_url', $page_id ) : '';
-	$b2_lbl  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_btn2_label', $page_id ) : '';
-	$b2_url  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_btn2_url', $page_id ) : '';
+	$h_title = mitsa_get_acf_field( 'representadas_hero_title', $page_id ) ?? '';
+	$h_desc  = mitsa_get_acf_field( 'representadas_hero_desc', $page_id ) ?? '';
+	$h_img   = mitsa_get_acf_field( 'representadas_hero_img', $page_id ) ?? '';
+	$b1_lbl  = mitsa_get_acf_field( 'representadas_btn1_label', $page_id ) ?? '';
+	$b1_url  = mitsa_get_acf_field( 'representadas_btn1_url', $page_id ) ?? '';
+	$b2_lbl  = mitsa_get_acf_field( 'representadas_btn2_label', $page_id ) ?? '';
+	$b2_url  = mitsa_get_acf_field( 'representadas_btn2_url', $page_id ) ?? '';
 
 	$hero = array(
 		'title'            => ! empty( $h_title ) ? sanitize_text_field( $h_title ) : 'Marcas líderes mundiales representadas en Chile y la región.',
@@ -1338,12 +1353,12 @@ function mitsa_get_representadas_sections_data() {
 	);
 
 	// 2. Métricas
-	$m1_n = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m1_num', $page_id ) : '14+';
-	$m1_l = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m1_label', $page_id ) : 'marcas internacionales representadas';
-	$m2_n = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m2_num', $page_id ) : '40+';
-	$m2_l = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m2_label', $page_id ) : 'años de alianza con fabricantes líderes';
-	$m3_n = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m3_num', $page_id ) : '100%';
-	$m3_l = function_exists( 'get_field' ) && $page_id ? get_field( 'rep_m3_label', $page_id ) : 'soporte y certificación directa de fábrica';
+	$m1_n = mitsa_get_acf_field( 'rep_m1_num', $page_id ) ?? '14+';
+	$m1_l = mitsa_get_acf_field( 'rep_m1_label', $page_id ) ?? 'marcas internacionales representadas';
+	$m2_n = mitsa_get_acf_field( 'rep_m2_num', $page_id ) ?? '40+';
+	$m2_l = mitsa_get_acf_field( 'rep_m2_label', $page_id ) ?? 'años de alianza con fabricantes líderes';
+	$m3_n = mitsa_get_acf_field( 'rep_m3_num', $page_id ) ?? '100%';
+	$m3_l = mitsa_get_acf_field( 'rep_m3_label', $page_id ) ?? 'soporte y certificación directa de fábrica';
 
 	$metrics = array(
 		array( 'num' => $m1_n ?: '14+', 'label' => $m1_l ?: 'marcas internacionales representadas' ),
@@ -1364,13 +1379,13 @@ function mitsa_get_representadas_sections_data() {
 	$main_brands = array();
 	for ( $i = 1; $i <= 6; $i++ ) {
 		$def = $default_main[ $i ];
-		$nm  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_name", $page_id ) : $def['name'];
-		$co  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_country", $page_id ) : $def['country'];
-		$hd  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_holding", $page_id ) : $def['holding'];
-		$ct  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_category", $page_id ) : $def['category'];
-		$ds  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_desc", $page_id ) : $def['desc'];
-		$sl  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_solutions", $page_id ) : $def['solutions'];
-		$im  = function_exists( 'get_field' ) && $page_id ? get_field( "bmain{$i}_image", $page_id ) : $def['img'];
+		$nm  = mitsa_get_acf_field( "bmain{$i}_name", $page_id ) ?? $def['name'];
+		$co  = mitsa_get_acf_field( "bmain{$i}_country", $page_id ) ?? $def['country'];
+		$hd  = mitsa_get_acf_field( "bmain{$i}_holding", $page_id ) ?? $def['holding'];
+		$ct  = mitsa_get_acf_field( "bmain{$i}_category", $page_id ) ?? $def['category'];
+		$ds  = mitsa_get_acf_field( "bmain{$i}_desc", $page_id ) ?? $def['desc'];
+		$sl  = mitsa_get_acf_field( "bmain{$i}_solutions", $page_id ) ?? $def['solutions'];
+		$im  = mitsa_get_acf_field( "bmain{$i}_image", $page_id ) ?? $def['img'];
 
 		$solutions_array = array_filter( array_map( 'trim', explode( ',', $sl ?: $def['solutions'] ) ) );
 
@@ -1401,10 +1416,10 @@ function mitsa_get_representadas_sections_data() {
 	$directory = array();
 	for ( $i = 1; $i <= 8; $i++ ) {
 		$def = $default_dir[ $i ];
-		$nm  = function_exists( 'get_field' ) && $page_id ? get_field( "dir{$i}_name", $page_id ) : $def['name'];
-		$co  = function_exists( 'get_field' ) && $page_id ? get_field( "dir{$i}_country", $page_id ) : $def['country'];
-		$ct  = function_exists( 'get_field' ) && $page_id ? get_field( "dir{$i}_cat", $page_id ) : $def['cat'];
-		$ds  = function_exists( 'get_field' ) && $page_id ? get_field( "dir{$i}_desc", $page_id ) : $def['desc'];
+		$nm  = mitsa_get_acf_field( "dir{$i}_name", $page_id ) ?? $def['name'];
+		$co  = mitsa_get_acf_field( "dir{$i}_country", $page_id ) ?? $def['country'];
+		$ct  = mitsa_get_acf_field( "dir{$i}_cat", $page_id ) ?? $def['cat'];
+		$ds  = mitsa_get_acf_field( "dir{$i}_desc", $page_id ) ?? $def['desc'];
 
 		$directory[] = array(
 			'name'        => $nm ?: $def['name'],
@@ -1415,10 +1430,10 @@ function mitsa_get_representadas_sections_data() {
 	}
 
 	// 5. CTA
-	$c_hd  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_cta_heading', $page_id ) : '';
-	$c_ds  = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_cta_desc', $page_id ) : '';
-	$c_lbl = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_cta_btn_label', $page_id ) : '';
-	$c_url = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_cta_btn_url', $page_id ) : '';
+	$c_hd  = mitsa_get_acf_field( 'representadas_cta_heading', $page_id ) ?? '';
+	$c_ds  = mitsa_get_acf_field( 'representadas_cta_desc', $page_id ) ?? '';
+	$c_lbl = mitsa_get_acf_field( 'representadas_cta_btn_label', $page_id ) ?? '';
+	$c_url = mitsa_get_acf_field( 'representadas_cta_btn_url', $page_id ) ?? '';
 
 	$cta = array(
 		'heading'     => ! empty( $c_hd ) ? sanitize_text_field( $c_hd ) : '¿Requiere asesoría directa o repuestos de nuestras representadas?',
