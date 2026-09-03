@@ -1,12 +1,21 @@
 # Tema MITSA
 
-Tema WordPress custom clásico para mitsachile.com (MITSA SpA), desarrollado por
+Tema WordPress custom para mitsachile.com (MITSA SpA), desarrollado por
 AplicacionesWeb. PHP + CSS/JS plano — sin page builder (Elementor/Divi) y sin
 dependencias de build tools (webpack, etc.).
 
+**Arquitectura headless:** el tema ya no es solo renderizado clásico. Expone
+una API REST custom (`inc/api-sections.php`, rutas `/wp-json/mitsa/v1/*`) que
+normaliza campos ACF (`inc/acf-fields.php`) y alimenta el frontend
+desacoplado en `frontend/` (Astro SSG, 100% estático). Ese frontend Astro es
+el sitio de producción real; los templates PHP clásicos (`front-page.php`,
+`page-templates/`) quedan como capa de respaldo/preview en wp-admin y deben
+mantenerse sincronizados con lo que expone la API si se siguen usando.
+
 Este README documenta el estado actual del **andamiaje estructural**. El
-diseño visual definitivo aún no existe: lo que hay hoy es HTML/CSS simple,
-semántico y accesible, a propósito sin pretender verse "terminado".
+diseño visual definitivo del wp-admin/preview clásico aún no existe: lo que
+hay hoy es HTML/CSS simple, semántico y accesible, a propósito sin pretender
+verse "terminado". El diseño real vive en `frontend/`.
 
 ## Cómo levantar el tema localmente
 
@@ -56,21 +65,25 @@ instalación de WordPress.
   validación del cliente (ver `content/00-sitemap.md` y `CLAUDE.md`). No
   cargar ese contenido como definitivo.
 - **Plugins requeridos:**
-  - **ACF (Advanced Custom Fields)** — para los campos custom del CPT
-    `representada` (logo, descripción corta, sitio web, categorías
-    asociadas). Ver TODO en `inc/cpt-representada.php`.
-  - **Plugin de formulario** — Contact Form 7 o WPForms para el formulario de
-    `page-templates/template-contacto.php`, que hoy es HTML estático sin
-    lógica de envío.
+  - **ACF (Advanced Custom Fields)** — ya implementado y es el corazón de la
+    arquitectura actual: `inc/acf-fields.php` registra los grupos que
+    alimentan tanto las páginas clásicas como la API REST
+    (`inc/api-sections.php`) que consume el frontend Astro. Definiciones
+    versionadas también en `acf-json/`.
+  - **Plugin de formulario** — el formulario de contacto real vive en el
+    frontend Astro (`frontend/src/components/sections/contacto/
+    ContactoFormSection.astro`) y envía a un endpoint externo (Formspree),
+    no a WordPress. `page-templates/template-contacto.php` (si sigue en uso)
+    es HTML estático sin lógica de envío propia.
   - **Plugin SEO** — Yoast SEO o Rank Math para producción. `inc/seo.php`
     solo trae un fallback mínimo (title tag + meta description) que se
     desactiva automáticamente si detecta Yoast o Rank Math activos.
-- **Analítica.** `inc/analytics.php` deja los hooks de GA4/GTM listos pero
-  comentados, a la espera de que `wp-config.php` defina `MITSA_GA4_ID` y
-  `MITSA_GTM_ID`.
+- **Analítica.** Gestionada en producción por el plugin **Site Kit**
+  (GA4 + GSC operativos, GTM automático) — no hay código de analítica en
+  este tema.
 - **Imágenes/assets.** No hay carpeta `assets/` con imágenes aún; el tema no
   depende de ninguna por ahora (sin logo por defecto, `has_custom_logo` cae
-  a texto).
+  a texto). Las imágenes del sitio real viven en `frontend/public/`.
 
 ## Convenciones del tema
 
@@ -86,8 +99,9 @@ instalación de WordPress.
   transpilación ni bundling. Si se agrega `assets/js/theme.js`, se enqueuea
   automáticamente si el archivo existe (ver `functions.php`).
 - **Organización:**
-  - `inc/` — un archivo por dominio de responsabilidad (CPTs, SEO,
-    analítica). `functions.php` se mantiene corto y solo hace `require`.
+  - `inc/` — un archivo por dominio de responsabilidad (CPTs, SEO, campos
+    ACF, opciones del sitio, API REST). `functions.php` se mantiene corto y
+    solo hace `require`.
   - `page-templates/` — un archivo por página con necesidades de layout
     propias; el resto usa `page.php` genérico.
 - **CPTs y taxonomías:** `producto` (con `categoria-producto` y `marca`) y

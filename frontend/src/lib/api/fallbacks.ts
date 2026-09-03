@@ -1,4 +1,14 @@
-import type { PageSectionsResponse } from './types.ts';
+import type {
+  PageSectionsResponse,
+  NosotrosSectionsResponse,
+  ServiciosSectionsResponse,
+  IndustriasSectionsResponse,
+  ProyectosSectionsResponse,
+  RecursosSectionsResponse,
+  ContactoSectionsResponse,
+  RepresentadasSectionsResponse,
+  SiteOptionsData,
+} from './types.ts';
 
 /**
  * Dataset estático de fallback para MITSA.
@@ -161,7 +171,7 @@ export const HOME_FALLBACK_DATA: PageSectionsResponse = {
 /**
  * Dataset estático de fallback para la página "Nosotros".
  */
-export const NOSOTROS_FALLBACK_DATA = {
+export const NOSOTROS_FALLBACK_DATA: NosotrosSectionsResponse = {
   slug: 'nosotros',
   title: 'Nosotros · Trayectoria y Especialistas en Tecnología Marina | MITSA',
   seo: {
@@ -230,7 +240,7 @@ export const NOSOTROS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Servicios".
  */
-export const SERVICIOS_FALLBACK_DATA = {
+export const SERVICIOS_FALLBACK_DATA: ServiciosSectionsResponse = {
   slug: 'servicios',
   title: 'Servicios de Ingeniería Marina, Suministro y Puesta en Marcha | MITSA',
   seo: {
@@ -337,7 +347,7 @@ export const SERVICIOS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Industrias / Sectores".
  */
-export const INDUSTRIAS_FALLBACK_DATA = {
+export const INDUSTRIAS_FALLBACK_DATA: IndustriasSectionsResponse = {
   slug: 'industrias',
   title: 'Sectores e Industrias · Soluciones Navales, Acuícolas e Industriales | MITSA',
   seo: {
@@ -446,7 +456,7 @@ export const INDUSTRIAS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para las Opciones Globales del Sitio.
  */
-export const SITE_OPTIONS_FALLBACK_DATA = {
+export const SITE_OPTIONS_FALLBACK_DATA: SiteOptionsData = {
   brand: {
     name: 'MITSA SpA',
     tagline: 'Integramos tecnología. Resolvemos desafíos.',
@@ -491,7 +501,7 @@ export const SITE_OPTIONS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Proyectos & Casos de Éxito".
  */
-export const PROYECTOS_FALLBACK_DATA = {
+export const PROYECTOS_FALLBACK_DATA: ProyectosSectionsResponse = {
   slug: 'proyectos',
   title: 'Proyectos & Casos de Éxito · Casos de Ingeniería en Chile y Latinoamérica | MITSA',
   seo: {
@@ -616,7 +626,7 @@ export const PROYECTOS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Recursos & Biblioteca Técnica".
  */
-export const RECURSOS_FALLBACK_DATA = {
+export const RECURSOS_FALLBACK_DATA: RecursosSectionsResponse = {
   slug: 'recursos',
   title: 'Recursos & Biblioteca Técnica · Artículos Regulatorios y Descargas | MITSA',
   seo: {
@@ -744,7 +754,7 @@ export const RECURSOS_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Contacto & Asesoría Técnica".
  */
-export const CONTACTO_FALLBACK_DATA = {
+export const CONTACTO_FALLBACK_DATA: ContactoSectionsResponse = {
   slug: 'contacto',
   title: 'Contacto & Asesoría Técnica · Canales de Ingeniería y Soporte | MITSA',
   seo: {
@@ -810,7 +820,7 @@ export const CONTACTO_FALLBACK_DATA = {
 /**
  * Dataset estático de fallback para la página "Marcas Representadas".
  */
-export const REPRESENTADAS_FALLBACK_DATA = {
+export const REPRESENTADAS_FALLBACK_DATA: RepresentadasSectionsResponse = {
   slug: 'representadas',
   title: 'Marcas Representadas Oficiales · Tecnologías Marinas y Sanitarias | MITSA',
   seo: {
