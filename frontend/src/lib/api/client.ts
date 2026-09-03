@@ -57,10 +57,11 @@ export async function fetchWithResilience<T>(
         console.warn(`[WP-API Warning] HTTP ${response.status} al consultar ${url}. Usando fallback estático.`);
         return fallback;
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       clearTimeout(timer);
       if (attempt === retries) {
-        const reason = err?.name === 'AbortError' ? `Timeout (${timeoutMs}ms)` : (err?.message || 'Error de red');
+        const isAbort = err instanceof Error && err.name === 'AbortError';
+        const reason = isAbort ? `Timeout (${timeoutMs}ms)` : (err instanceof Error ? err.message : 'Error de red');
         console.warn(`[WP-API Offline] Falló conexión a ${url} (${reason}). Activando fallback local.`);
         return fallback;
       }
@@ -103,7 +104,7 @@ export async function getHomeSections(): Promise<PageSectionsResponse> {
  */
 export async function getNosotrosSections(): Promise<NosotrosSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/nosotros`;
-  return await fetchWithResilience<NosotrosSectionsResponse>(endpoint, NOSOTROS_FALLBACK_DATA as NosotrosSectionsResponse);
+  return await fetchWithResilience<NosotrosSectionsResponse>(endpoint, NOSOTROS_FALLBACK_DATA);
 }
 
 /**
@@ -111,7 +112,7 @@ export async function getNosotrosSections(): Promise<NosotrosSectionsResponse> {
  */
 export async function getServiciosSections(): Promise<ServiciosSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/servicios`;
-  return await fetchWithResilience<ServiciosSectionsResponse>(endpoint, SERVICIOS_FALLBACK_DATA as ServiciosSectionsResponse);
+  return await fetchWithResilience<ServiciosSectionsResponse>(endpoint, SERVICIOS_FALLBACK_DATA);
 }
 
 /**
@@ -119,7 +120,7 @@ export async function getServiciosSections(): Promise<ServiciosSectionsResponse>
  */
 export async function getIndustriasSections(): Promise<IndustriasSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/industrias`;
-  return await fetchWithResilience<IndustriasSectionsResponse>(endpoint, INDUSTRIAS_FALLBACK_DATA as IndustriasSectionsResponse);
+  return await fetchWithResilience<IndustriasSectionsResponse>(endpoint, INDUSTRIAS_FALLBACK_DATA);
 }
 
 /**
@@ -127,7 +128,7 @@ export async function getIndustriasSections(): Promise<IndustriasSectionsRespons
  */
 export async function getProyectosSections(): Promise<ProyectosSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/proyectos`;
-  return await fetchWithResilience<ProyectosSectionsResponse>(endpoint, PROYECTOS_FALLBACK_DATA as ProyectosSectionsResponse);
+  return await fetchWithResilience<ProyectosSectionsResponse>(endpoint, PROYECTOS_FALLBACK_DATA);
 }
 
 /**
@@ -135,7 +136,7 @@ export async function getProyectosSections(): Promise<ProyectosSectionsResponse>
  */
 export async function getRecursosSections(): Promise<RecursosSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/recursos`;
-  return await fetchWithResilience<RecursosSectionsResponse>(endpoint, RECURSOS_FALLBACK_DATA as RecursosSectionsResponse);
+  return await fetchWithResilience<RecursosSectionsResponse>(endpoint, RECURSOS_FALLBACK_DATA);
 }
 
 /**
@@ -143,7 +144,7 @@ export async function getRecursosSections(): Promise<RecursosSectionsResponse> {
  */
 export async function getContactoSections(): Promise<ContactoSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/contacto`;
-  return await fetchWithResilience<ContactoSectionsResponse>(endpoint, CONTACTO_FALLBACK_DATA as ContactoSectionsResponse);
+  return await fetchWithResilience<ContactoSectionsResponse>(endpoint, CONTACTO_FALLBACK_DATA);
 }
 
 /**
@@ -151,7 +152,7 @@ export async function getContactoSections(): Promise<ContactoSectionsResponse> {
  */
 export async function getRepresentadasSections(): Promise<RepresentadasSectionsResponse> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/sections/representadas`;
-  return await fetchWithResilience<RepresentadasSectionsResponse>(endpoint, REPRESENTADAS_FALLBACK_DATA as RepresentadasSectionsResponse);
+  return await fetchWithResilience<RepresentadasSectionsResponse>(endpoint, REPRESENTADAS_FALLBACK_DATA);
 }
 
 /**
@@ -159,5 +160,5 @@ export async function getRepresentadasSections(): Promise<RepresentadasSectionsR
  */
 export async function getSiteOptions(): Promise<SiteOptionsData> {
   const endpoint = `${getWpApiBase()}/wp-json/mitsa/v1/options`;
-  return await fetchWithResilience<SiteOptionsData>(endpoint, SITE_OPTIONS_FALLBACK_DATA as SiteOptionsData);
+  return await fetchWithResilience<SiteOptionsData>(endpoint, SITE_OPTIONS_FALLBACK_DATA);
 }

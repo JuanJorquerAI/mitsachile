@@ -26,10 +26,9 @@ const schemaGraph = generateSchemaGraph({
 <Layout
   title={seo.meta_title}
   description={seo.meta_description}
-  canonical={seo.canonical_url}
-  ogImage={seo.og_image}
-  schemaJson={schemaGraph}
-  activeNav="contacto"
+  canonicalUrl={seo.canonical_url}
+  image={seo.og_image}
+  jsonLd={schemaGraph}
 >
   <main id="main-content" class="contacto-page">
     {/* 1. Hero con las 4 Puertas de Acceso Especializadas */}

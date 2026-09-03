@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export interface Article {
   slug: string;
@@ -11,6 +12,15 @@ export interface Article {
   summary: string;
   content: string;
   rawMarkdown: string;
+  readTime: string;
+}
+
+const WORDS_PER_MINUTE = 200;
+
+function estimateReadTime(markdown: string): string {
+  const wordCount = markdown.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
+  return `${minutes} min de lectura`;
 }
 
 const articlesFiles = [
@@ -21,12 +31,19 @@ const articlesFiles = [
   { file: '12-blog-marpol-anexo-iv.md', defaultSlug: 'marpol-anexo-iv-planta-tratamiento-aguas-servidas-chile' }
 ];
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export function getArticles(): Article[] {
-  const contentDir = path.resolve('../content');
-  
+  const contentDir = path.resolve(__dirname, '../../../content');
+
+  if (!fs.existsSync(contentDir)) {
+    throw new Error(`getArticles: content directory not found at ${contentDir}`);
+  }
+
   return articlesFiles.map(({ file, defaultSlug }) => {
     const filePath = path.join(contentDir, file);
     if (!fs.existsSync(filePath)) {
+      console.warn(`getArticles: missing article file ${filePath}, skipping`);
       return null;
     }
     const raw = fs.readFileSync(filePath, 'utf-8');
@@ -56,7 +73,8 @@ export function getArticles(): Article[] {
       status: 'Borrador Técnico',
       summary,
       content: raw,
-      rawMarkdown: raw
+      rawMarkdown: raw,
+      readTime: estimateReadTime(raw)
     };
   }).filter(Boolean) as Article[];
 }

@@ -395,9 +395,9 @@ function mitsa_get_home_sections_data() {
 	);
 
 	// 10. Metadatos SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'home',
@@ -441,7 +441,7 @@ function mitsa_get_home_sections_data() {
  */
 function mitsa_get_nosotros_sections_data() {
 	$page = get_page_by_path( 'nosotros' );
-	$page_id = $page ? (int) $page->ID : 6;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero & Tagline
 	$h_title   = function_exists( 'get_field' ) && $page_id ? get_field( 'nosotros_hero_title', $page_id ) : '';
@@ -558,9 +558,9 @@ function mitsa_get_nosotros_sections_data() {
 	);
 
 	// 7. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'nosotros',
@@ -590,7 +590,7 @@ function mitsa_get_nosotros_sections_data() {
  */
 function mitsa_get_servicios_sections_data() {
 	$page = get_page_by_path( 'servicios' );
-	$page_id = $page ? (int) $page->ID : 10;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'servicios_hero_title', $page_id ) : '';
@@ -716,9 +716,9 @@ function mitsa_get_servicios_sections_data() {
 	);
 
 	// 6. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'servicios',
@@ -750,7 +750,7 @@ function mitsa_get_industrias_sections_data() {
 	if ( ! $page ) {
 		$page = get_page_by_path( 'industrias' );
 	}
-	$page_id = $page ? (int) $page->ID : 9;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'industrias_hero_title', $page_id ) : '';
@@ -850,9 +850,9 @@ function mitsa_get_industrias_sections_data() {
 	);
 
 	// 5. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'industrias',
@@ -880,7 +880,7 @@ function mitsa_get_industrias_sections_data() {
  */
 function mitsa_get_proyectos_sections_data() {
 	$page    = get_page_by_path( 'proyectos' );
-	$page_id = $page ? (int) $page->ID : 401;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'proyectos_hero_title', $page_id ) : '';
@@ -1001,9 +1001,9 @@ function mitsa_get_proyectos_sections_data() {
 	);
 
 	// 6. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'proyectos',
@@ -1032,7 +1032,7 @@ function mitsa_get_proyectos_sections_data() {
  */
 function mitsa_get_recursos_sections_data() {
 	$page    = get_page_by_path( 'recursos' );
-	$page_id = $page ? (int) $page->ID : 402;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'recursos_hero_title', $page_id ) : '';
@@ -1172,9 +1172,9 @@ function mitsa_get_recursos_sections_data() {
 	);
 
 	// 6. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'recursos',
@@ -1203,7 +1203,7 @@ function mitsa_get_recursos_sections_data() {
  */
 function mitsa_get_contacto_sections_data() {
 	$page    = get_page_by_path( 'contacto' );
-	$page_id = $page ? (int) $page->ID : 11;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'contacto_hero_title', $page_id ) : '';
@@ -1281,9 +1281,9 @@ function mitsa_get_contacto_sections_data() {
 	);
 
 	// 6. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'contacto',
@@ -1312,7 +1312,7 @@ function mitsa_get_contacto_sections_data() {
  */
 function mitsa_get_representadas_sections_data() {
 	$page    = get_page_by_path( 'representadas' );
-	$page_id = $page ? (int) $page->ID : 8;
+	$page_id = $page ? (int) $page->ID : 0;
 
 	// 1. Hero
 	$h_title = function_exists( 'get_field' ) && $page_id ? get_field( 'representadas_hero_title', $page_id ) : '';
@@ -1329,11 +1329,11 @@ function mitsa_get_representadas_sections_data() {
 		'image'            => ! empty( $h_img ) ? esc_url_raw( $h_img ) : '/images/hero-1-8a9d042f.jpg',
 		'primary_button'   => array(
 			'label' => ! empty( $b1_lbl ) ? sanitize_text_field( $b1_lbl ) : 'Ver representadas',
-			'url'   => ! empty( $b1_url ) ? sanitize_text_field( $b1_url ) : '#marcas-principales',
+			'url'   => ! empty( $b1_url ) ? esc_url_raw( $b1_url ) : '#marcas-principales',
 		),
 		'secondary_button' => array(
 			'label' => ! empty( $b2_lbl ) ? sanitize_text_field( $b2_lbl ) : 'Solicitar repuestos',
-			'url'   => ! empty( $b2_url ) ? sanitize_text_field( $b2_url ) : '/contacto/?tipo=repuestos',
+			'url'   => ! empty( $b2_url ) ? esc_url_raw( $b2_url ) : '/contacto/?tipo=repuestos',
 		),
 	);
 
@@ -1425,14 +1425,14 @@ function mitsa_get_representadas_sections_data() {
 		'description' => ! empty( $c_ds ) ? sanitize_textarea_field( $c_ds ) : 'Como representantes oficiales, contamos con acceso directo a ingeniería de fábrica, números de parte originales y tiempos prioritarios de entrega.',
 		'button'      => array(
 			'label' => ! empty( $c_lbl ) ? sanitize_text_field( $c_lbl ) : 'Contactar a un especialista de marca',
-			'url'   => ! empty( $c_url ) ? sanitize_text_field( $c_url ) : '/contacto/?tipo=repuestos',
+			'url'   => ! empty( $c_url ) ? esc_url_raw( $c_url ) : '/contacto/?tipo=repuestos',
 		),
 	);
 
 	// 6. SEO
-	$seo_title = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) && $page_id ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) && $page_id ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) && $page_id ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => 'representadas',
@@ -1463,9 +1463,9 @@ function mitsa_get_representadas_sections_data() {
 function mitsa_get_generic_page_sections_data( WP_Post $page ) {
 	$page_id = $page->ID;
 
-	$seo_title = function_exists( 'get_field' ) ? get_field( 'seo_meta_title', $page_id ) : '';
-	$seo_desc  = function_exists( 'get_field' ) ? get_field( 'seo_meta_description', $page_id ) : '';
-	$seo_img   = function_exists( 'get_field' ) ? get_field( 'seo_og_image', $page_id ) : '';
+	$seo_title = function_exists( 'get_field' ) ? sanitize_text_field( (string) get_field( 'seo_meta_title', $page_id ) ) : '';
+	$seo_desc  = function_exists( 'get_field' ) ? sanitize_text_field( (string) get_field( 'seo_meta_description', $page_id ) ) : '';
+	$seo_img   = function_exists( 'get_field' ) ? esc_url_raw( (string) get_field( 'seo_og_image', $page_id ) ) : '';
 
 	return array(
 		'slug'     => $page->post_name,
