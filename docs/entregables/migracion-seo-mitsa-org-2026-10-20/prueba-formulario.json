@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "form_post_status": 302,
+  "success_page_status": 200,
+  "success_message": true,
+  "external_mail_intercepted": true
+}

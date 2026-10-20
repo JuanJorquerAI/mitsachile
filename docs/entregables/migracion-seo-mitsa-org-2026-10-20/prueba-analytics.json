@@ -1,0 +1,33 @@
+{
+  "action": "analytics-realtime",
+  "captured_at_utc": "2026-10-20T22:08:19+00:00",
+  "report": {
+    "kind": "analyticsData#runRealtimeReport",
+    "rowCount": 1,
+    "dimensionHeaders": [
+      {
+        "name": "eventName"
+      }
+    ],
+    "metricHeaders": [
+      {
+        "name": "eventCount",
+        "type": "TYPE_INTEGER"
+      }
+    ],
+    "rows": [
+      {
+        "dimensionValues": [
+          {
+            "value": "seo_migration_check"
+          }
+        ],
+        "metricValues": [
+          {
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  }
+}

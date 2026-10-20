@@ -1,0 +1,108 @@
+# BEGIN MITSA SEO MIGRATION 2026-10-20
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Only public GET/HEAD requests on the old domain participate in this move.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?mitsachile\.com(?::[0-9]+)?$ [NC]
+RewriteCond %{REQUEST_METHOD} ^(?:GET|HEAD)$
+RewriteCond %{REQUEST_URI} !^/(?:wp-admin(?:/|$)|wp-login\.php(?:/|$)|wp-json(?:/|$)|wp-cron\.php$|wp-comments-post\.php$|xmlrpc\.php$|robots\.txt$|[^/]*sitemap[^/]*\.xml$|google[^/]*\.html$|\.well-known(?:/|$)) [NC]
+RewriteCond %{QUERY_STRING} !(^|&)(?:rest_route|preview|preview_id|preview_nonce)= [NC]
+RewriteRule ^ - [E=MITSA_PUBLIC_MOVE:1]
+
+# Demonstration content was retired; no unrelated destination is substituted.
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^(?:hello-world|a-sample-blog-post)/?$ - [G,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^trituradores-organicos/?$ - [R=404,L,NC]
+
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^$ https://mitsa.org/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^author/juanaplicacionesweb\-cl/?$ https://mitsa.org/author/juanaplicacionesweb-cl/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^aviso\-publicitario\-orca\-iv/?$ https://mitsa.org/aviso-publicitario-orca-iv/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^category/noticias\-y\-actualidad/?$ https://mitsa.org/category/noticias-y-actualidad/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^category/uncategorized/?$ https://mitsa.org/category/uncategorized/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^centro\-tecnico/?$ https://mitsa.org/centro-tecnico/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^columna\-revista\-vision\-aquicola\-10\-18/?$ https://mitsa.org/columna-revista-vision-aquicola-10-18/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^columna\-tecnica\-vision\-aquicola/?$ https://mitsa.org/columna-tecnica-vision-aquicola/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^contacto/?$ https://mitsa.org/contacto/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/?$ https://mitsa.org/industrias/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/acuicultura/?$ https://mitsa.org/industrias/acuicultura/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/astilleros\-y\-reparacion/?$ https://mitsa.org/industrias/astilleros-y-reparacion/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/instalaciones\-en\-tierra/?$ https://mitsa.org/industrias/instalaciones-en-tierra/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/naval\-y\-defensa/?$ https://mitsa.org/industrias/naval-y-defensa/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/offshore\-y\-energia/?$ https://mitsa.org/industrias/offshore-y-energia/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^industrias/transporte\-maritimo\-y\-carga/?$ https://mitsa.org/industrias/transporte-maritimo-y-carga/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^marina\-e\-industrial/?$ https://mitsa.org/industrias/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^nosotros/?$ https://mitsa.org/nosotros/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^noticias/?$ https://mitsa.org/centro-tecnico/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^orca\-iv/?$ https://mitsa.org/orca-iv/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^productos/?$ https://mitsa.org/soluciones/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^proyectos/?$ https://mitsa.org/proyectos/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^proyectos/asenav\-proyecto\-193/?$ https://mitsa.org/proyectos/asenav-proyecto-193/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^proyectos/sociber\-dique\-valparaiso/?$ https://mitsa.org/proyectos/sociber-dique-valparaiso/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^recursos/?$ https://mitsa.org/recursos/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^representaciones/?$ https://mitsa.org/representadas/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^representadas/?$ https://mitsa.org/representadas/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^servicios/?$ https://mitsa.org/servicios/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^smm2026/?$ https://mitsa.org/smm2026/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/?$ https://mitsa.org/soluciones/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/agua\-de\-lastre\-bwts/?$ https://mitsa.org/soluciones/agua-de-lastre-bwts/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/bioincrustaciones\-icaf/?$ https://mitsa.org/soluciones/bioincrustaciones-icaf/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/drenajes\-inoxidables/?$ https://mitsa.org/soluciones/drenajes-inoxidables/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/equipamiento\-auxiliar/?$ https://mitsa.org/soluciones/equipamiento-auxiliar/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/proteccion\-catodica\-iccp/?$ https://mitsa.org/soluciones/proteccion-catodica-iccp/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/revestimientos\-y\-superficies/?$ https://mitsa.org/soluciones/revestimientos-y-superficies/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/sistemas\-de\-agua\-caliente/?$ https://mitsa.org/soluciones/sistemas-de-agua-caliente/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/sistemas\-sanitarios\-al\-vacio/?$ https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^soluciones/tratamiento\-de\-aguas\-residuales/?$ https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^terrestre\-y\-construccion/?$ https://mitsa.org/industrias/instalaciones-en-tierra/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^tt\-service/productos/?$ https://mitsa.org/soluciones/ [R=301,L,NC]
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteRule ^vision\-acuicola/?$ https://mitsa.org/vision-acuicola/ [R=301,L,NC]
+
+# Move files only when the matching destination file actually exists.
+# REQUEST_URI keeps the original path during internal WordPress rewrites.
+RewriteCond %{ENV:MITSA_PUBLIC_MOVE} =1
+RewriteCond /home/u549101671/domains/mitsa.org/public_html%{REQUEST_URI} -f
+RewriteRule ^ https://mitsa.org%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+# END MITSA SEO MIGRATION 2026-10-20

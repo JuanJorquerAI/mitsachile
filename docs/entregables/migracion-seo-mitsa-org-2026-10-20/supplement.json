@@ -1,0 +1,1876 @@
+{
+  "variants": [
+    {
+      "url": "http://mitsachile.com/",
+      "status": 200,
+      "final": "https://mitsachile.com/",
+      "hops": [
+        [
+          301,
+          "https://mitsachile.com/"
+        ]
+      ]
+    },
+    {
+      "url": "http://www.mitsachile.com/",
+      "status": 200,
+      "final": "https://mitsachile.com/",
+      "hops": [
+        [
+          301,
+          "https://www.mitsachile.com/"
+        ],
+        [
+          301,
+          "https://mitsachile.com/"
+        ]
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/",
+      "status": 200,
+      "final": "https://mitsachile.com/",
+      "hops": []
+    },
+    {
+      "url": "https://www.mitsachile.com/",
+      "status": 200,
+      "final": "https://mitsachile.com/",
+      "hops": [
+        [
+          301,
+          "https://mitsachile.com/"
+        ]
+      ]
+    },
+    {
+      "url": "http://mitsa.org/",
+      "status": 200,
+      "final": "https://mitsa.org/",
+      "hops": [
+        [
+          301,
+          "https://mitsa.org/"
+        ]
+      ]
+    },
+    {
+      "url": "http://www.mitsa.org/",
+      "status": 200,
+      "final": "https://mitsa.org/",
+      "hops": [
+        [
+          301,
+          "https://www.mitsa.org/"
+        ],
+        [
+          301,
+          "https://mitsa.org/"
+        ]
+      ]
+    },
+    {
+      "url": "https://mitsa.org/",
+      "status": 200,
+      "final": "https://mitsa.org/",
+      "hops": []
+    },
+    {
+      "url": "https://www.mitsa.org/",
+      "status": 200,
+      "final": "https://mitsa.org/",
+      "hops": [
+        [
+          301,
+          "https://mitsa.org/"
+        ]
+      ]
+    }
+  ],
+  "legacy": [
+    {
+      "url": "https://mitsachile.com/",
+      "status": 200,
+      "final": "https://mitsachile.com/",
+      "title": "MITSA Chile | Ingeniería & Soluciones",
+      "h1": [
+        "Integramos tecnología. Resolvemos desafíos."
+      ],
+      "text": "MITSA · Ingeniería & Soluciones Integramos tecnología. Resolvemos desafíos. Desde 1984 acompañamos a clientes de los sectores marítimo, naval e industrial en la selección e incorporación de soluciones tecnológicas. Evaluamos necesidades, trabajamos con fabricantes internacionales y definimos el alcance técnico de cada proyecto: suministro, integración, instalación, puesta en marcha, soporte y repuestos, según corresponda. Evaluar un proyecto Explorar soluciones 1984 año de fundación 40+ años y cientos de proyectos y suministros 8 fabricantes internacionales representados 14 familias de solución en portafolio Qué hacemos De la necesidad técnica a una solución implementable. Evaluamos condiciones de operación, normativa, espacio disponible e interfaces. Luego seleccionamos tecnologías, coordinamos con fabricantes especializados y acompañamos el suministro y los servicios asociados según el alcance requerido. Evaluación técnica Necesidad, normativa, restricciones y condición existente. Ingeniería de aplicación Selección, dimensionamiento e interfaces. Suministro y coordinación Equipos, documentación, logística y fabricante. Soporte y continuidad Puesta en marcha, repuestos, retrofit y asistencia según proyecto. Soluciones destacadas Tecnologías para problemas concretos. Si tu necesidad no aparece aquí, la evaluamos con nuestras representadas. Agua y residuos Sanitarios al vacío Aguas residuales Agua dulce y ósmosis inversa Agua de lastre (BWTS) Aguas oleosas y sentina Gestión de residuos Protección de embarcaciones Protección catódica ICCP MGPS / ICAF Antifouling ultrasónico Drenaje y superficies Drenaje inoxidable Pisos y revestimientos Aire comprimido y fluidos Aire comprimido y partida Lubricación y fluidos Continuidad Repuestos, retrofit y modernización ¿No aparece tu necesidad? → Ver detalle de cada solución → Representadas Quién está detrás de cada solución Ocho fabricantes internacionales respaldan nuestro portafolio. Pasa el cursor sobre una marca para ver sus líneas y aplicaciones. Gestión integral de agua y residuos Aplicaciones Nueva construcción, retrofit, habitabilidad a bordo, servicios sanitarios y proyectos terrestres que requieren evaluar recolección al vacío o tratamiento. Recolección al vacío Aguas residuales Agua dulce Residuos húmedos y food waste Residuos secos Soluciones terrestres Protección de embarcaciones y agua de mar Aplicaciones Cascos, tomas de mar, circuitos de enfriamiento, modernizaciones y mantenimiento de embarcaciones. ICCP MGPS Desaladores por ósmosis inversa USP DragGone ultrasónico Agua, wastewater y descarbonización marítima Aplicaciones Embarcaciones, offshore, retrofit y aplicaciones de agua técnicamente compatibles. BWTS · múltiples tecnologías STP MBBR / MBR Fisicoquímico y electroquímico Separadores de sentina Agua dulce por RO Generación de cloro Gestión de residuos a bordo Aplicaciones Embarcaciones, instalaciones offshore y espacios donde la logística de residuos requiere optimizar almacenamiento y retiro. Reducción de volumen Compactación Trituración Manejo de residuos secos Drenaje en acero inoxidable Aplicaciones Cocinas, zonas sanitarias, cubiertas y áreas técnicas; alimentos y bebidas, infraestructura e instalaciones industriales compatibles. Drenajes y canales marinos Tuberías y fittings Penetraciones Drenaje higiénico e industrial Pisos técnicos y marinos Aplicaciones Recintos a bordo, renovación de superficies y proyectos que requieren combinar resistencia, mantenimiento y diseño. Streamo Interiores de buques Offshore Interiores técnicos Aire comprimido y partida neumática Aplicaciones Embarcaciones, equipos de generación, instalaciones industriales y sistemas auxiliares. Compresores de aire de partida Utility e instrument air Tornillo lubricado y oil-free Paquetes especiales Repuestos Lubricación y transferencia de fluidos Aplicaciones Talleres, mantenimiento de flotas, industria, faenas y servicios técnicos. Distribución de grasa y aceite Bombas de diafragma Carretes Aceite usado Diésel, gasolina y AdBlue Gestión de fluidos Ver el portafolio completo → Expo Naval 2026 · 1–3 diciembre · Espacio Riesco Agenda 20 minutos con MITSA en el stand N-206. Sitio web Empresa Nombre y cargo * Correo * Teléfono / WhatsApp Tipo de nave / instalación Día preferido A coordinar 1 de diciembre 2 de diciembre 3 de diciembre Agendar reunión Stand N-206 Evento Expo Naval + Trans-Port 2026 Fechas 1–3 de diciembre de 2026 Lugar Espacio Riesco Av. El Salto 5000, Huechuraba · Santiago Por qué MITSA Más de cuatro décadas de trayectoria, y una nueva etapa por delante. Más de 40 años de trayectoria y cientos de proyectos y suministros nos permiten conectar las necesidades de nuestros clientes con tecnologías de fabricantes internacionales. Nuestra experiencia abarca construcción naval, modernización, mantenimiento y aplicaciones industriales. 1984 Fundación de MITSA Comenzamos nuestra trayectoria en Chile, vinculando necesidades técnicas con soluciones de fabricantes internacionales. 1991 Experiencia ambiental marítima Según la historia de su fundador, a comienzos de la década de 1990 participó en gestiones relacionadas con la implementación de exigencias MARPOL en Chile. 2006 Expansión de representaciones Hacia 2006 ampliamos nuestras relaciones con fabricantes internacionales y las tecnologías disponibles para nuestros clientes. 2018 Consolidación naval e industrial Hacia 2018 consolidamos una trayectoria de proyectos y suministros para aplicaciones navales e industriales. 2026 Ingeniería y nuevas aplicaciones Fortalecemos nuestra propuesta de ingeniería y soluciones, con foco en integración tecnológica, soporte y diversificación de aplicaciones. Industrias Experiencia marítima que se proyecta a nuevas aplicaciones. 01 Naval y defensa → 02 Astilleros y reparación → 03 Armadores y operadores → 04 Acuicultura → 05 Offshore y energía → 06 Industria e instalaciones terrestres → 07 Minería y agricultura → Proyectos Más de 40 años desarrollando soluciones. Desde 1984, MITSA ha participado en cientos de proyectos y suministros. Esta es una selección reciente de nuevas construcciones, modernizaciones, mantenimiento y continuidad operacional. SOCIBER · Dique Valparaíso Tratamiento de aguas residuales Suministro de equipos TRITON FIT 12 y TRITON FIT 6 para el tratamiento de aguas residuales del proyecto, con coordinación técnica y comercial con el fabricante. EPE / ERMA TECH ASENAV · P193 Agua caliente sanitaria Suministro de soluciones para generación y acumulación de agua caliente sanitaria, intercambio térmico, expansión y recirculación, según el alcance definido para el proyecto. EVAC Fragata Condell · FF06 Sanitarios al vacío Suministro de kits y componentes para el sistema sanitario al vacío, orientado al mantenimiento y continuidad del equipamiento existente. EVAC Ver proyectos recientes → Integramos tecnología. Resolvemos desafíos. Cuéntanos qué necesitas resolver. No es necesario conocer el modelo exacto: con antecedentes básicos, fotografías de placa o información del proyecto podemos orientar el siguiente paso. Cuéntanos tu proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/aviso-publicitario-orca-iv/",
+      "status": 200,
+      "final": "https://mitsachile.com/aviso-publicitario-orca-iv/",
+      "title": "Aviso Publicitario ORCA IV. - MITSA",
+      "h1": [
+        "Aviso Publicitario ORCA IV."
+      ],
+      "text": "Inicio Centro Técnico Aviso Publicitario ORCA IV. Noticias y actualidad · Lectura 1 min Aviso Publicitario ORCA IV. Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Junio 15, 2026 Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Siga leyendo Todos los artículos → Lectura · 1 min Columna Técnica Visión Aquícola 12/18 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Lectura · 1 min Columna Revista Visión Aquícola 10/18 Columna de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre tecnologías avanzadas en el tratamiento de aguas servidas, publicada en la revista Visión Aquícola (edición 10/18). Lectura · 1 min Visión Acuícola Les dejamos nuestra publicación en la revista Visión Acuícola sobre la selección de plantas de tratamiento de aguas servidas. La sanitización del circuito sanitario se efectúa a través de los WC (toilets). La ORCA IV cumple con creces la actual y vigente norma IMO/MARPOL MEPC 227(64). REV.A.- Diciembre 2017. ¿Tiene un caso concreto a bordo? Cuéntenos la necesidad y la normativa que aplica. La evaluación técnica inicial no tiene costo. Solicitar evaluación técnica",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/columna-tecnica-vision-aquicola/",
+        "https://mitsachile.com/columna-revista-vision-aquicola-10-18/",
+        "https://mitsachile.com/vision-acuicola/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/columna-tecnica-vision-aquicola/",
+      "status": 200,
+      "final": "https://mitsachile.com/columna-tecnica-vision-aquicola/",
+      "title": "Columna Técnica Visión Aquícola 12/18 - MITSA",
+      "h1": [
+        "Columna Técnica Visión Aquícola 12/18"
+      ],
+      "text": "Inicio Centro Técnico Columna Técnica Visión Aquícola 12/18 Noticias y actualidad · Lectura 1 min Columna Técnica Visión Aquícola 12/18 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Mayo 20, 2026 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Siga leyendo Todos los artículos → Lectura · 1 min Aviso Publicitario ORCA IV. Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Lectura · 1 min Columna Revista Visión Aquícola 10/18 Columna de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre tecnologías avanzadas en el tratamiento de aguas servidas, publicada en la revista Visión Aquícola (edición 10/18). Lectura · 1 min Visión Acuícola Les dejamos nuestra publicación en la revista Visión Acuícola sobre la selección de plantas de tratamiento de aguas servidas. La sanitización del circuito sanitario se efectúa a través de los WC (toilets). La ORCA IV cumple con creces la actual y vigente norma IMO/MARPOL MEPC 227(64). REV.A.- Diciembre 2017. ¿Tiene un caso concreto a bordo? Cuéntenos la necesidad y la normativa que aplica. La evaluación técnica inicial no tiene costo. Solicitar evaluación técnica",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/aviso-publicitario-orca-iv/",
+        "https://mitsachile.com/columna-revista-vision-aquicola-10-18/",
+        "https://mitsachile.com/vision-acuicola/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/contacto/",
+      "status": 200,
+      "final": "https://mitsachile.com/contacto/",
+      "title": "Contacto y consultas técnicas | MITSA Chile",
+      "h1": [
+        "Cuéntanos qué necesitas resolver."
+      ],
+      "text": "Contacto Cuéntanos qué necesitas resolver. Cuéntenos qué necesita resolver. Seleccione el tipo de consulta y comparta los antecedentes disponibles para que nuestro equipo pueda revisar su necesidad y coordinar el siguiente paso. 01 Evaluación técnica Solución, tipo de instalación, normativa, plazo, adjuntar planos. 02 Repuestos Fabricante, modelo, N° de serie, N° de parte, cantidad, foto de la placa. 03 Servicio técnico Equipo, síntoma, ubicación de la nave, urgencia, si está en operación. 04 Contacto general Sólo campos base y mensaje libre. Sitio web Evaluación técnica Evaluar un proyecto Describa la aplicación, las condiciones de operación y lo que necesita resolver. Puede adjuntar planos o antecedentes técnicos. Sus datos Nombre * Empresa o institución Correo * Teléfono Detalle de la consulta Solución de interés Seleccione… Sanitarios y recolección al vacío Tratamiento de aguas residuales Agua dulce y sistemas de agua Agua caliente sanitaria Tratamiento de agua de lastre Aguas oleosas y sentina Gestión de residuos Protección catódica ICCP Prevención de crecimiento marino MGPS e ICAF Prevención de bioincrustación por ultrasonido Drenaje en acero inoxidable Pisos y revestimientos técnicos Aire de partida e instrumentación Lubricación y manejo de fluidos Repuestos y modernización Otra / Necesito orientación Tipo de buque o instalación Normativa aplicable Plazo estimado Descripción del requerimiento * Planos o especificaciones Arrastre archivos o haga clic para elegirlos PDF, DWG, DXF, imágenes o ZIP · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Fabricante * Seleccione… BLÜCHER Cathelco ERMA TECH ERVOR EVAC GERFLOR MECLUBE USON MARINE Otra / No identificada Modelo N° de serie N° de parte Cantidad Detalle Foto de la placa Arrastre archivos o haga clic para elegirlos Imagen o PDF · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Equipo (fabricante y modelo) * Ubicación de la nave o instalación Urgencia Seleccione… Programable Esta semana Sistema detenido ¿El sistema sigue en operación? Seleccione… Sí Parcialmente No Síntoma * Fotos o registros Arrastre archivos o haga clic para elegirlos Imágenes, PDF o video corto · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Asunto Mensaje * Enviar consulta Qué pasa después Nuestro equipo revisará los antecedentes y se pondrá en contacto con usted para coordinar el siguiente paso. MITSA Dirección Av. Vicuña Mackenna 882, Reñaca, Viña del Mar Teléfono +56 9 8552 6282 WhatsApp Escribir por WhatsApp Correo info@mitsachile.com",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "https://mitsachile.com/contacto/?puerta=repuestos#formulario",
+        "https://mitsachile.com/contacto/?puerta=servicio#formulario",
+        "https://mitsachile.com/contacto/?puerta=general#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/marina-e-industrial/",
+      "status": 200,
+      "final": "https://mitsachile.com/industrias/",
+      "title": "Industrias y aplicaciones | MITSA Chile",
+      "h1": [
+        "Experiencia marítima que se proyecta a nuevas aplicaciones."
+      ],
+      "text": "Industrias Experiencia marítima que se proyecta a nuevas aplicaciones. Aplicamos tecnologías a necesidades de construcción, operación, mantenimiento y modernización en los sectores marítimo, naval e industrial. La solución se define según el uso real, las condiciones de instalación y el alcance del proyecto. Ver soluciones Evaluar un proyecto 01 Naval y defensa Sistemas sanitarios, tratamiento de aguas, protección de casco y circuitos de agua de mar, aire comprimido, drenaje, revestimientos, repuestos y modernizaciones para unidades navales y programas de construcción o refit. Sanitarios al vacío ICCP MGPS / ICAF Aire de partida 02 Astilleros y reparación Apoyo técnico para nuevas construcciones, retrofit, reemplazos y períodos de dique: selección de equipos, coordinación con fabricantes, documentación y suministro. Aguas residuales Drenaje inoxidable Pisos Retrofit 03 Armadores y operadores Soluciones orientadas a disponibilidad, cumplimiento, reducción de mantenimiento y continuidad operacional durante la vida de la nave. BWTS Sentina Residuos Repuestos 04 Acuicultura Tecnologías para wellboats, pontones, embarcaciones e instalaciones terrestres: tratamiento, saneamiento, agua, drenaje y sistemas auxiliares. Aguas residuales Agua dulce Drenaje Sanitarios 05 Offshore y energía Protección contra corrosión y biofouling, agua y residuos, drenaje, aire comprimido y soluciones para activos expuestos a condiciones exigentes. ICCP Antifouling Aire comprimido Pisos 06 Industria e instalaciones terrestres Tratamiento de aguas, vacío, drenaje inoxidable, aire comprimido, lubricación y manejo de fluidos para instalaciones industriales. Vacío terrestre Drenaje higiénico Aire comprimido Fluidos 07 Nueva línea Minería y agricultura Equipos de lubricación, transferencia, bombas, carretes y gestión de fluidos, además de soluciones industriales aplicables del portafolio. Lubricación Bombas de diafragma Carretes AdBlue Imágenes referenciales de los sectores de aplicación. Integramos tecnología. Resolvemos desafíos. ¿Tu sector no aparece? Si la aplicación usa agua, residuos, fluidos, aire comprimido o protección contra corrosión, probablemente tenemos una tecnología para evaluar. Cuéntanos tu proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "https://mitsachile.com/soluciones/#sanitarios-vacio",
+        "https://mitsachile.com/soluciones/#iccp",
+        "https://mitsachile.com/soluciones/#mgps",
+        "https://mitsachile.com/soluciones/#aire-comprimido",
+        "https://mitsachile.com/soluciones/#aguas-residuales",
+        "https://mitsachile.com/soluciones/#drenaje",
+        "https://mitsachile.com/soluciones/#pisos",
+        "https://mitsachile.com/soluciones/#repuestos-retrofit",
+        "https://mitsachile.com/soluciones/#agua-lastre",
+        "https://mitsachile.com/soluciones/#sentina",
+        "https://mitsachile.com/soluciones/#residuos",
+        "https://mitsachile.com/soluciones/#repuestos-retrofit",
+        "https://mitsachile.com/soluciones/#aguas-residuales",
+        "https://mitsachile.com/soluciones/#agua-dulce",
+        "https://mitsachile.com/soluciones/#drenaje",
+        "https://mitsachile.com/soluciones/#sanitarios-vacio",
+        "https://mitsachile.com/soluciones/#iccp",
+        "https://mitsachile.com/soluciones/#mgps",
+        "https://mitsachile.com/soluciones/#aire-comprimido",
+        "https://mitsachile.com/soluciones/#pisos",
+        "https://mitsachile.com/soluciones/#sanitarios-vacio",
+        "https://mitsachile.com/soluciones/#drenaje",
+        "https://mitsachile.com/soluciones/#aire-comprimido",
+        "https://mitsachile.com/soluciones/#lubricacion",
+        "https://mitsachile.com/soluciones/#lubricacion",
+        "https://mitsachile.com/soluciones/#lubricacion",
+        "https://mitsachile.com/soluciones/#lubricacion",
+        "https://mitsachile.com/soluciones/#lubricacion",
+        "https://mitsachile.com/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/mitsa-audit-inexistente-20261020/",
+      "status": 404,
+      "final": "https://mitsachile.com/mitsa-audit-inexistente-20261020/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/nosotros/",
+      "status": 200,
+      "final": "https://mitsachile.com/nosotros/",
+      "title": "Nosotros y trayectoria | MITSA Chile",
+      "h1": [
+        "Ingeniería y soluciones desde 1984."
+      ],
+      "text": "Nosotros Ingeniería y soluciones desde 1984. MITSA es una empresa chilena fundada en 1984. Durante más de cuatro décadas hemos participado en cientos de proyectos y suministros para clientes de los sectores marítimo, naval e industrial. Hoy fortalecemos una propuesta que combina experiencia, selección tecnológica y coordinación técnica para responder a desafíos cada vez más diversos. Trayectoria Construida en el mar. Proyectada a tierra. Nuestra historia se ha construido principalmente en los sectores marítimo y naval, trabajando con astilleros, operadores y proyectos que exigen confiabilidad, documentación y soporte técnico. Hoy esa experiencia se proyecta también hacia nuevas aplicaciones industriales y terrestres. El objetivo sigue siendo el mismo: comprender el desafío, seleccionar una solución técnicamente adecuada y mantener una contraparte local durante el proyecto y la vida del sistema. 01 Comprender el desafío Condición existente, normativa, espacio e interfaces antes de cualquier propuesta. 02 Selección tecnológica Seleccionamos tecnología según las condiciones reales del proyecto. 03 Acompañamiento Acompañamos el ciclo de vida del sistema con soporte y repuestos según el alcance acordado. Por qué MITSA Más de cuatro décadas de trayectoria, y una nueva etapa por delante. 1984 Fundación de MITSA Comenzamos nuestra trayectoria en Chile, vinculando necesidades técnicas con soluciones de fabricantes internacionales. 1991 Experiencia ambiental marítima Según la historia de su fundador, a comienzos de la década de 1990 participó en gestiones relacionadas con la implementación de exigencias MARPOL en Chile. 2006 Expansión de representaciones Hacia 2006 ampliamos nuestras relaciones con fabricantes internacionales y las tecnologías disponibles para nuestros clientes. 2018 Consolidación naval e industrial Hacia 2018 consolidamos una trayectoria de proyectos y suministros para aplicaciones navales e industriales. 2026 Ingeniería y nuevas aplicaciones Fortalecemos nuestra propuesta de ingeniería y soluciones, con foco en integración tecnológica, soporte y diversificación de aplicaciones. Fabricantes Trabajamos con fabricantes que complementan nuestras capacidades. Agua y residuos Protección de embarcaciones Drenaje Superficies Aire comprimido Lubricación Manejo de fluidos EVAC Gestión integral de agua y residuos Cathelco Protección de embarcaciones y agua de mar ERMA TECH Agua, wastewater y descarbonización marítima Uson Marine Gestión de residuos a bordo BLÜCHER Drenaje en acero inoxidable Gerflor Pisos técnicos y marinos Ervor Aire comprimido y partida neumática Meclube Lubricación y transferencia de fluidos Integramos tecnología. Resolvemos desafíos. Más de 40 años después, la conversación empieza igual. Cuéntanos qué necesitas resolver. Evaluar un proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/noticias/",
+      "status": 200,
+      "final": "https://mitsachile.com/centro-tecnico/",
+      "title": "Centro técnico y recursos | MITSA Chile",
+      "h1": [
+        "Criterios técnicos para decidir mejor."
+      ],
+      "text": "Centro Técnico Criterios técnicos para decidir mejor. Criterios y recursos para evaluar tecnologías, preparar consultas y acompañar la operación de sistemas. Compartimos orientaciones generales; la selección y los requisitos de cada solución se revisan para su aplicación específica. Ver artículos Solicitar documentación Destacados Por dónde empezar Agua y residuos 01 Cómo preparar la evaluación de una planta de aguas residuales Caracterizar el agua y la operación, comparar alternativas e interfaces y reunir los antecedentes para una primera consulta. Leer artículo → Protección 02 Funciones de ICCP, MGPS y ánodos de sacrificio La protección contra corrosión y la prevención de crecimiento marino responden a problemas distintos. Leer artículo → Agua y residuos 03 Evaluación de sanitarios al vacío para nuevas instalaciones y retrofit Recolección y tratamiento son etapas diferentes: puntos de uso, red, generación de vacío e interfaces. Leer artículo → Artículo 1 · Agua y residuos Cómo preparar la evaluación de una planta de aguas residuales Elegir una planta empieza por conocer el agua que recibirá y las condiciones en que operará. Una capacidad nominal, por sí sola, no permite confirmar que el equipo sea adecuado para una embarcación o instalación. Caracterizar el agua y la operación Identifique los flujos que se tratarán: aguas negras, grises y otros aportes previstos. Reúna caudal promedio y máximo, número de usuarios, variaciones de ocupación y antecedentes de carga contaminante disponibles. El caudal y la carga orgánica son variables diferentes y ambas deben considerarse en la evaluación. Comparar alternativas e interfaces Existen familias biológicas con membranas o biomasa soportada, así como alternativas electroquímicas o fisicoquímicas. Su selección depende de la aplicación. Revise espacio, accesos de mantenimiento, servicios eléctricos, tuberías, almacenamiento y manejo de residuos del proceso. En retrofit conviene identificar los componentes existentes que se conservarán. Revisar requisitos y alcance La documentación técnica y las aprobaciones deben corresponder al modelo y configuración seleccionados. Las condiciones de descarga y operación se revisan con los responsables del proyecto; la certificación de una familia no reemplaza esta revisión. También debe quedar definido quién suministra, instala, prueba, opera y mantiene cada componente. Antecedentes para una primera consulta Envíe una descripción de la aplicación, caudales, ocupación, planos, fotografías, restricciones de espacio y requisitos conocidos. Si faltan datos, identifique cuáles están disponibles y cuáles deberán levantarse. MITSA puede ayudar a ordenar los antecedentes y consultar alternativas con los fabricantes. Evaluar tratamiento de aguas residuales ↑ Volver a los artículos Artículo 2 · Protección Funciones de ICCP, MGPS y ánodos de sacrificio La protección contra corrosión y la prevención de crecimiento marino responden a problemas distintos. Comprender esa diferencia ayuda a solicitar el sistema o repuesto correcto y a evitar confusiones entre tecnologías que pueden coexistir en una embarcación. ICCP para protección contra corrosión La protección catódica por corriente impresa utiliza alimentación eléctrica, ánodos y celdas de referencia para controlar la protección de superficies metálicas sumergidas. La configuración depende del casco, recubrimiento y condiciones de operación. En una evaluación de repuestos conviene identificar panel, componentes instalados y documentación del sistema. Ánodos de sacrificio Son otra forma de protección catódica. El material del ánodo se consume durante su función protectora, por lo que su selección y reposición requieren revisar material, dimensiones, ubicación y condiciones del elemento protegido. Un ánodo de sacrificio no debe confundirse con un ánodo de un sistema ICCP ni reemplazarse únicamente por parecido visual. MGPS e ICAF para circuitos de agua de mar Estos sistemas se orientan a prevenir el asentamiento de organismos en tomas y circuitos de agua de mar. Las configuraciones de CATHELCO utilizan ánodos seleccionados según caudal y materiales del circuito. No cumplen la misma función que la protección catódica del casco, aunque algunas configuraciones incorporan funciones complementarias para las tuberías. Datos para consultar Indique si la necesidad está en el casco, una toma de mar o un circuito interno. Adjunte marca, modelo, fotografías de la placa y componentes, planos y antecedentes de operación. Para un repuesto, incluya part number o medidas cuando estén disponibles. Para una modernización, describa el sistema instalado y los cambios previstos. MITSA puede apoyar la identificación de componentes y coordinar con el fabricante una evaluación de compatibilidad. La solución y su alcance se confirman para cada aplicación; no deben suponerse equivalencias automáticas entre sistemas. Consultar protección y componentes Solicitar un repuesto ↑ Volver a los artículos Artículo 3 · Agua y residuos Evaluación de sanitarios al vacío para nuevas instalaciones y retrofit Un sistema sanitario al vacío permite recolectar aguas sanitarias con una arquitectura distinta de una red por gravedad. Su evaluación debe considerar el conjunto: puntos de uso, red, generación de vacío, interfaces y destino del agua recolectada. Recolección y tratamiento son etapas diferentes El sanitario y la red al vacío forman parte de la recolección. El tratamiento requiere una solución seleccionada para el agua recibida y las condiciones de descarga. Al preparar un proyecto, identifique qué etapas existen, cuáles se conservarán y cuáles deben incorporarse o modernizarse. Diseñar para la aplicación real Reúna el número y tipo de puntos de uso, ocupación prevista, planos, recorridos disponibles y ubicación de los equipos. Revise las conexiones eléctricas, accesos y espacio para mantenimiento. La flexibilidad del trazado debe comprobarse con el fabricante para la configuración específica, sin asumir que cualquier recorrido es admisible. En retrofit identificar antes de reemplazar Registre marca, modelo, número de serie y componentes del sistema existente. Las fotografías de placas, unidades y conexiones ayudan a identificar repuestos. Un cambio de sanitario o unidad debe evaluarse dentro de su sistema, incluyendo interfaces y documentación disponible. Aplicaciones más allá de las embarcaciones EVAC dispone también de soluciones de recolección al vacío para edificios y otras aplicaciones terrestres. Esto abre posibilidades que conviene evaluar cuando el proyecto requiere revisar trazados o restricciones de instalación. La existencia de una familia terrestre no implica que todos sus modelos sean adecuados o estén disponibles para cualquier proyecto en Chile. Preparar el alcance Defina si necesita suministro, apoyo para integración, instalación, puesta en marcha o repuestos. MITSA puede ordenar los antecedentes, consultar con el fabricante y proponer un alcance acorde con la necesidad. Una consulta completa permite distinguir una reposición puntual de una intervención más amplia. Evaluar una solución al vacío ↑ Volver a los artículos Biblioteca Técnica Biblioteca técnica ¿Necesita una ficha, manual o antecedente de una tecnología? Indique marca, equipo y aplicación para ayudarle a identificar la documentación disponible y sus condiciones de uso. Solicitar documentación técnica ¿Una pregunta técnica que no está aquí? Cuéntenos su consulta técnica y la revisaremos con nuestro equipo y, cuando corresponda, con los fabricantes. Hacer una consulta técnica",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "#articulos",
+        "https://mitsachile.com/contacto/?puerta=general&asunto=documentacion#formulario",
+        "#articulo-aguas-residuales",
+        "#articulo-proteccion",
+        "#articulo-sanitarios-vacio",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=aguas-residuales#formulario",
+        "#articulos",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=iccp#formulario",
+        "https://mitsachile.com/contacto/?puerta=repuestos#formulario",
+        "#articulos",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=sanitarios-vacio#formulario",
+        "#articulos",
+        "https://mitsachile.com/contacto/?puerta=general&asunto=documentacion#formulario",
+        "https://mitsachile.com/contacto/?puerta=general#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/representaciones/",
+      "status": 200,
+      "final": "https://mitsachile.com/soluciones/",
+      "title": "Soluciones tecnológicas | MITSA Chile",
+      "h1": [
+        "Entra por el problema. Te mostramos la tecnología."
+      ],
+      "text": "Soluciones Entra por el problema. Te mostramos la tecnología. Seleccionamos tecnologías para resolver necesidades de agua, saneamiento, residuos, protección, sistemas auxiliares y mantenimiento. Explore nuestras familias de soluciones y cuéntenos las condiciones de su proyecto. Evaluaremos la alternativa técnica y el alcance de participación de MITSA. Cuéntenos su necesidad Agua y saneamiento · 3 Tratamiento y residuos · 4 Protección y superficies · 4 Sistemas auxiliares y continuidad · 3 Soluciones de agua y saneamiento 01 Sanitarios y recolección al vacío EVAC Consultar solución Sistemas para transportar aguas sanitarias mediante vacío en embarcaciones y aplicaciones terrestres compatibles. Evaluamos nuevas instalaciones y retrofit considerando puntos de uso, trazado, capacidad de recolección y conexión con almacenamiento o tratamiento. Tecnologías y marcas EVAC: sanitarios, unidades de vacío, interfaces de recolección y componentes del sistema. Para iniciar la evaluación Número de usuarios y puntos de uso, planos, disponibilidad de servicios y sistema existente. Evaluar esta solución 02 Tratamiento de aguas residuales EVAC · ERMA TECH Consultar solución Soluciones para aguas negras y grises seleccionadas según caudal, carga, operación, espacio y exigencias de descarga. MITSA acompaña la evaluación de alternativas y la definición de interfaces; el alcance de suministro, instalación y puesta en marcha se acuerda para cada proyecto. Tecnologías y marcas EVAC y ERMA TECH: procesos biológicos, membranas y alternativas electroquímicas o fisicoquímicas, según la línea y configuración. Para iniciar la evaluación Origen del agua, caudal diario y máximo, ocupación, restricciones de espacio y requisitos de la aplicación. Evaluar esta solución 03 Agua dulce y sistemas de agua EVAC · CATHELCO · ERMA TECH Consultar solución Generación de agua dulce por ósmosis inversa y alternativas de tratamiento para uso de servicio, proceso o consumo, según la configuración y los requisitos aplicables. Podemos evaluar también sistemas de agua caliente sanitaria, acumulación e intercambio térmico según el alcance del proyecto. Tecnologías y marcas EVAC, CATHELCO y ERMA TECH: líneas de agua dulce y tratamiento a seleccionar según aplicación. Agua caliente sanitaria: soluciones de proyecto coordinadas con el fabricante correspondiente. Para iniciar la evaluación Fuente y calidad del agua, demanda, uso final, energía disponible y condiciones de instalación. Evaluar esta solución Soluciones de tratamiento y residuos 04 Tratamiento de agua de lastre ERMA TECH Consultar solución Evaluamos sistemas de tratamiento de agua de lastre para nueva construcción y retrofit. La selección considera operación del buque, caudal, condiciones del agua, espacios, servicios e integración con el sistema existente. Tecnologías y marcas ERMA TECH: familias de tratamiento de agua de lastre con distintas arquitecturas y procesos. La homologación se revisa para el modelo y configuración requeridos. Para iniciar la evaluación Caudal de las bombas, planos de lastre, rutas de operación, salinidad, temperatura y requisitos de bandera o clase. Evaluar esta solución 05 Aguas oleosas y sentina ERMA TECH Consultar solución Equipos y componentes para separar y tratar aguas de sentina con presencia de hidrocarburos. Evaluamos la composición del flujo, caudal y condiciones de operación para seleccionar una configuración compatible con los requisitos del proyecto. Tecnologías y marcas ERMA TECH: separadores y sistemas de tratamiento de aguas oleosas de sus líneas marinas. Para iniciar la evaluación Caudal, composición del agua, equipo existente, restricciones de espacio y requisitos de descarga. Evaluar esta solución 06 Gestión de residuos EVAC · USON MARINE Consultar solución Soluciones para reducir volumen y organizar el manejo de residuos a bordo y en instalaciones compatibles. La alternativa depende del tipo de residuo, cantidad generada, logística de retiro, espacio y operación. Tecnologías y marcas EVAC y USON MARINE: compactación, trituración y otras familias de tratamiento de residuos secos y orgánicos, según producto y aplicación. Para iniciar la evaluación Tipo y volumen de residuos, frecuencia de generación, espacio disponible y destino final. Evaluar esta solución 07 Protección catódica ICCP CATHELCO Consultar solución Sistemas de protección catódica por corriente impresa para controlar la corrosión de superficies metálicas sumergidas. Evaluamos nuevas instalaciones, modernización y reposición de componentes considerando casco, recubrimiento y condiciones de operación. Tecnologías y marcas CATHELCO: paneles de control, ánodos, celdas de referencia y componentes del sistema ICCP. Para iniciar la evaluación Tipo de embarcación, material y dimensiones del casco, planos, sistema existente y antecedentes técnicos disponibles. Evaluar esta solución Soluciones de protección y superficies 08 Prevención de crecimiento marino MGPS e ICAF CATHELCO Consultar solución Sistemas para prevenir el asentamiento de organismos en circuitos de agua de mar. Su configuración depende del caudal, materiales de tuberías, ubicación de ánodos y características de las tomas. MITSA evalúa equipos, modernizaciones y repuestos compatibles. Tecnologías y marcas CATHELCO: sistemas MGPS/ICAF, paneles, ánodos y componentes para tomas, filtros y circuitos de agua de mar. Para iniciar la evaluación Caudales, materiales, planos del circuito, sistema instalado y acceso para mantenimiento. Evaluar esta solución 09 Prevención de bioincrustación por ultrasonido CATHELCO · ERMA TECH Consultar solución Tecnologías ultrasónicas para aplicaciones de prevención de bioincrustación. Su pertinencia se evalúa según geometría, materiales, superficie o circuito a proteger y condiciones de operación. No reemplazan automáticamente las demás medidas de protección o mantenimiento. Tecnologías y marcas CATHELCO y ERMA TECH/HASYTEC: líneas ultrasónicas con aplicaciones específicas. Disponibilidad y alcance se confirman para cada caso. Para iniciar la evaluación Elemento a proteger, dimensiones, materiales, planos, condiciones de operación y sistema actual. Evaluar esta solución 10 Drenaje en acero inoxidable BLÜCHER Consultar solución Drenajes, canales y tuberías de acero inoxidable para aplicaciones marinas e industriales. Evaluamos soluciones para zonas sanitarias, cocinas, áreas de proceso y espacios donde importan higiene, durabilidad y facilidad de limpieza. Tecnologías y marcas BLÜCHER: drenajes marinos, canales, sistemas de tuberías EuroPipe y familias de drenaje higiénico. Para iniciar la evaluación Uso del área, caudal, planos, terminaciones, requisitos de limpieza y condiciones de montaje. Evaluar esta solución 11 Pisos y revestimientos técnicos GERFLOR Consultar solución Superficies para espacios de circulación, trabajo y habitabilidad, seleccionadas según tránsito, mantenimiento, diseño y requisitos de la aplicación. Para proyectos marinos revisamos la documentación del producto y la configuración de instalación. Tecnologías y marcas GERFLOR: portafolio marino Streamo y alternativas técnicas cuya disponibilidad y alcance comercial se confirman para el proyecto. Para iniciar la evaluación Uso del recinto, superficie, soporte existente, tránsito, terminación deseada y requisitos técnicos. Evaluar esta solución Sistemas auxiliares y continuidad operativa 12 Aire de partida e instrumentación ERVOR Consultar solución Equipos y sistemas de aire comprimido para partida, instrumentación y servicios auxiliares. La selección considera presión, caudal, calidad del aire, régimen de operación, redundancia y condiciones de instalación. Tecnologías y marcas ERVOR: compresores, conjuntos de aire de partida y equipos de tratamiento de aire, según configuración. Para iniciar la evaluación Uso, presión y caudal requeridos, calidad del aire, servicios disponibles y equipo existente. Evaluar esta solución 13 Lubricación y manejo de fluidos MECLUBE Consultar solución Equ",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "#agua-y-saneamiento",
+        "#tratamiento-y-residuos",
+        "#proteccion-y-superficies",
+        "#sistemas-auxiliares",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=sanitarios-vacio#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=aguas-residuales#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=agua-dulce#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=agua-lastre#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=sentina#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=residuos#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=iccp#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=mgps#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=ultrasonido#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=drenaje#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=pisos#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=aire-comprimido#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=lubricacion#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion&sol=repuestos-retrofit#formulario",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/smm2026/",
+      "status": 200,
+      "final": "https://mitsachile.com/smm2026/",
+      "title": "MITSA â Your Marine Technology Partner in Chile Â· SMM 2026",
+      "h1": [
+        "Your marine technology partner in Chile"
+      ],
+      "text": "SMM 2026 Hamburg Sep 1â4 Since 1984 Â· Chile Your marine technology partner in Chile We integrate technology. We solve challenges. From specification to operation: engineering, supply, retrofit, commissioning, technical support and spares. 01 Save contact â 02 Email Francisco â 03 Download MITSA profile â 04 Visit MITSA website â Four decades integrating marine systems in Chile MITSA provides marine and environmental technology solutions for naval, aquaculture, offshore, and land-based industries, offering local engineering, installation, supply, and maintenance services. 40+ years in Chile 10 solution lines 6 global brands Market access Where our systems already operate 01 Chilean Navy Â· Armada de Chile Naval units and defence-related programmes. 02 ASMAR shipyards New building, dry-dock work and repair periods. 03 Private shipyards and integrators Local engineering, supply and installation supervision. 04 Shipowners and operators Support vessels, cargo, fishing and passenger fleets. 05 Aquaculture and industrial plants Well-boats, pontoons and land-based facilities. Technical capabilities From specification to operation, in one chain 01 Technical assessment We review the installed system and the applicable requirement before quoting anything. 02 Sizing and application engineering Capacity, layout and interfaces defined against the real vessel or plant. 03 Supply Equipment sourced directly from the manufacturers we represent. 04 Retrofit Replacement in service, reusing the existing network where it makes sense. 05 Installation supervision On site with the shipyard crew, in dock or afloat. 06 Commissioning Start-up, protocols and handover to the operating crew. 07 Technical support and spares Local stock, part numbers and response after handover. â One team, one chain No hand-off between suppliers, from the first drawing to the spare part. Core marine solutions Vacuum sanitary systems Sewage treatment Ballast water treatment (BWTS) ICCP ICAF / MGPS Oilâwater separation Stainless steel drainage Marine flooring Hot water and fresh water Retrofit and upgrades Selected represented technologies We are the local engineering arm behind these technologies â not a reseller of catalogues. For manufacturers, shipyards and integrators Why partner with MITSA in Chile ? One local partner across the whole chain Engineering, supply, installation and after-sales handled by the same team â no hand-off between suppliers. Direct access to the Chilean market Existing relationships with the Navy, ASMAR, shipyards and operators, built over four decades. We know the local rules and the local yard Class, environmental requirements, dock windows and how work actually gets scheduled in Chile. Continuity after commissioning Spares, part numbers and technical support in country â not a ticket routed overseas. Representation done properly We defend your technology technically: correct sizing, correct installation, documented results. We integrate technology. We solve challenges. See you in Chile EXPONAVAL 2026 Â· DEC 1â3 Santiago, Chile Â· International Naval & Maritime Exhibition Visit our booth MITSA Â· Stand N-206 Let's talk at SMM Four days in Hamburg to start something in Chile Save the contact now and we pick it up after the show with a concrete technical conversation â or meet us in Chile at EXPONAVAL 2026 (Stand N-206). Francisco De la Iglesia Managing Director Â· MITSA SpA Â· Chile Email fjdelaiglesia@mitsachile.com Mobile +56 9 8552 6282 Web www.mitsachile.com Save contact Send email Continue on mitsachile.com â MITSA SpA Â· Chile Marine, aquaculture, offshore and land-based systems SMM Hamburg 2026 (Sep 1â4)  Â·  EXPONAVAL 2026 (Dec 1â3 Â· Stand N-206) Desarrollado por AplicacionesWeb",
+      "links": [
+        "https://www.mitsachile.com",
+        "francisco-de-la-iglesia.vcf",
+        "mailto:fjdelaiglesia@mitsachile.com?subject=SMM%202026%20%E2%80%94%20MITSA%20Chile",
+        "MITSA-Company-Profile-2026.pdf",
+        "https://www.mitsachile.com",
+        "mailto:fjdelaiglesia@mitsachile.com",
+        "tel:+56985526282",
+        "https://www.mitsachile.com",
+        "francisco-de-la-iglesia.vcf",
+        "mailto:fjdelaiglesia@mitsachile.com?subject=SMM%202026%20%E2%80%94%20MITSA%20Chile",
+        "https://www.mitsachile.com",
+        "https://aplicacionesweb.cl/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/terrestre-y-construccion/",
+      "status": 200,
+      "final": "https://mitsachile.com/industrias/instalaciones-en-tierra/",
+      "title": "Industria e instalaciones terrestres: aguas y drenajes",
+      "h1": [
+        "Industria e instalaciones terrestres"
+      ],
+      "text": "Inicio Industrias Industria e instalaciones terrestres Industria Industria e instalaciones terrestres Aplicaciones de tratamiento de aguas, drenaje y otras tecnologías especializadas, definidas según el proceso y los requisitos del sitio. Solicitar evaluación Otras industrias Naval y defensa Acuicultura Offshore y energía Astilleros y reparación Transporte marítimo y carga ¿En qué industria está su proyecto? Indíquenos el tipo de nave o instalación y las condiciones de operación. Revisamos la aplicación y le proponemos alternativas. Consultar por un proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "https://mitsachile.com/industrias/naval-y-defensa/",
+        "https://mitsachile.com/industrias/acuicultura/",
+        "https://mitsachile.com/industrias/offshore-y-energia/",
+        "https://mitsachile.com/industrias/astilleros-y-reparacion/",
+        "https://mitsachile.com/industrias/transporte-maritimo-y-carga/",
+        "https://mitsachile.com/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/trituradores-organicos/",
+      "status": 404,
+      "final": "https://mitsachile.com/trituradores-organicos/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsachile.com/tt-service/productos/",
+      "status": 404,
+      "final": "https://mitsachile.com/tt-service/productos/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/soluciones/",
+        "https://mitsachile.com/industrias/",
+        "https://mitsachile.com/servicios/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/representadas/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/contacto/",
+        "https://mitsachile.com/",
+        "https://mitsachile.com/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsachile.com/nosotros/",
+        "https://mitsachile.com/proyectos/",
+        "https://mitsachile.com/centro-tecnico/",
+        "https://mitsachile.com/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/",
+      "status": 200,
+      "final": "https://mitsa.org/",
+      "title": "MITSA Chile | Ingeniería & Soluciones",
+      "h1": [
+        "Integramos tecnología. Resolvemos desafíos."
+      ],
+      "text": "MITSA · Ingeniería & Soluciones Integramos tecnología. Resolvemos desafíos. Desde 1984 acompañamos a clientes de los sectores marítimo, naval e industrial en la selección e incorporación de soluciones tecnológicas. Evaluamos necesidades, trabajamos con fabricantes internacionales y definimos el alcance técnico de cada proyecto: suministro, integración, instalación, puesta en marcha, soporte y repuestos, según corresponda. Evaluar un proyecto Explorar soluciones 1984 año de fundación 40+ años y cientos de proyectos y suministros 8 fabricantes internacionales representados 14 familias de solución en portafolio Qué hacemos De la necesidad técnica a una solución implementable. Evaluamos condiciones de operación, normativa, espacio disponible e interfaces. Luego seleccionamos tecnologías, coordinamos con fabricantes especializados y acompañamos el suministro y los servicios asociados según el alcance requerido. Evaluación técnica Necesidad, normativa, restricciones y condición existente. Ingeniería de aplicación Selección, dimensionamiento e interfaces. Suministro y coordinación Equipos, documentación, logística y fabricante. Soporte y continuidad Puesta en marcha, repuestos, retrofit y asistencia según proyecto. Soluciones destacadas Tecnologías para problemas concretos. Si tu necesidad no aparece aquí, la evaluamos con nuestras representadas. Agua y residuos Sanitarios al vacío Aguas residuales Agua dulce y ósmosis inversa Agua de lastre (BWTS) Aguas oleosas y sentina Gestión de residuos Protección de embarcaciones Protección catódica ICCP MGPS / ICAF Antifouling ultrasónico Drenaje y superficies Drenaje inoxidable Pisos y revestimientos Aire comprimido y fluidos Aire comprimido y partida Lubricación y fluidos Continuidad Repuestos, retrofit y modernización ¿No aparece tu necesidad? → Ver detalle de cada solución → Representadas Quién está detrás de cada solución Ocho fabricantes internacionales respaldan nuestro portafolio. Pasa el cursor sobre una marca para ver sus líneas y aplicaciones. Gestión integral de agua y residuos Aplicaciones Nueva construcción, retrofit, habitabilidad a bordo, servicios sanitarios y proyectos terrestres que requieren evaluar recolección al vacío o tratamiento. Recolección al vacío Aguas residuales Agua dulce Residuos húmedos y food waste Residuos secos Soluciones terrestres Protección de embarcaciones y agua de mar Aplicaciones Cascos, tomas de mar, circuitos de enfriamiento, modernizaciones y mantenimiento de embarcaciones. ICCP MGPS Desaladores por ósmosis inversa USP DragGone ultrasónico Agua, wastewater y descarbonización marítima Aplicaciones Embarcaciones, offshore, retrofit y aplicaciones de agua técnicamente compatibles. BWTS · múltiples tecnologías STP MBBR / MBR Fisicoquímico y electroquímico Separadores de sentina Agua dulce por RO Generación de cloro Gestión de residuos a bordo Aplicaciones Embarcaciones, instalaciones offshore y espacios donde la logística de residuos requiere optimizar almacenamiento y retiro. Reducción de volumen Compactación Trituración Manejo de residuos secos Drenaje en acero inoxidable Aplicaciones Cocinas, zonas sanitarias, cubiertas y áreas técnicas; alimentos y bebidas, infraestructura e instalaciones industriales compatibles. Drenajes y canales marinos Tuberías y fittings Penetraciones Drenaje higiénico e industrial Pisos técnicos y marinos Aplicaciones Recintos a bordo, renovación de superficies y proyectos que requieren combinar resistencia, mantenimiento y diseño. Streamo Interiores de buques Offshore Interiores técnicos Aire comprimido y partida neumática Aplicaciones Embarcaciones, equipos de generación, instalaciones industriales y sistemas auxiliares. Compresores de aire de partida Utility e instrument air Tornillo lubricado y oil-free Paquetes especiales Repuestos Lubricación y transferencia de fluidos Aplicaciones Talleres, mantenimiento de flotas, industria, faenas y servicios técnicos. Distribución de grasa y aceite Bombas de diafragma Carretes Aceite usado Diésel, gasolina y AdBlue Gestión de fluidos Ver el portafolio completo → Expo Naval 2026 · 1–3 diciembre · Espacio Riesco Agenda 20 minutos con MITSA en el stand N-206. Sitio web Empresa Nombre y cargo * Correo * Teléfono / WhatsApp Tipo de nave / instalación Día preferido A coordinar 1 de diciembre 2 de diciembre 3 de diciembre Agendar reunión Stand N-206 Evento Expo Naval + Trans-Port 2026 Fechas 1–3 de diciembre de 2026 Lugar Espacio Riesco Av. El Salto 5000, Huechuraba · Santiago Por qué MITSA Más de cuatro décadas de trayectoria, y una nueva etapa por delante. Más de 40 años de trayectoria y cientos de proyectos y suministros nos permiten conectar las necesidades de nuestros clientes con tecnologías de fabricantes internacionales. Nuestra experiencia abarca construcción naval, modernización, mantenimiento y aplicaciones industriales. 1984 Fundación de MITSA Comenzamos nuestra trayectoria en Chile, vinculando necesidades técnicas con soluciones de fabricantes internacionales. 1991 Experiencia ambiental marítima Según la historia de su fundador, a comienzos de la década de 1990 participó en gestiones relacionadas con la implementación de exigencias MARPOL en Chile. 2006 Expansión de representaciones Hacia 2006 ampliamos nuestras relaciones con fabricantes internacionales y las tecnologías disponibles para nuestros clientes. 2018 Consolidación naval e industrial Hacia 2018 consolidamos una trayectoria de proyectos y suministros para aplicaciones navales e industriales. 2026 Ingeniería y nuevas aplicaciones Fortalecemos nuestra propuesta de ingeniería y soluciones, con foco en integración tecnológica, soporte y diversificación de aplicaciones. Industrias Experiencia marítima que se proyecta a nuevas aplicaciones. 01 Naval y defensa → 02 Astilleros y reparación → 03 Armadores y operadores → 04 Acuicultura → 05 Offshore y energía → 06 Industria e instalaciones terrestres → 07 Minería y agricultura → Proyectos Más de 40 años desarrollando soluciones. Desde 1984, MITSA ha participado en cientos de proyectos y suministros. Esta es una selección reciente de nuevas construcciones, modernizaciones, mantenimiento y continuidad operacional. SOCIBER · Dique Valparaíso Tratamiento de aguas residuales Suministro de equipos TRITON FIT 12 y TRITON FIT 6 para el tratamiento de aguas residuales del proyecto, con coordinación técnica y comercial con el fabricante. EPE / ERMA TECH ASENAV · P193 Agua caliente sanitaria Suministro de soluciones para generación y acumulación de agua caliente sanitaria, intercambio térmico, expansión y recirculación, según el alcance definido para el proyecto. EVAC Fragata Condell · FF06 Sanitarios al vacío Suministro de kits y componentes para el sistema sanitario al vacío, orientado al mantenimiento y continuidad del equipamiento existente. EVAC Ver proyectos recientes → Integramos tecnología. Resolvemos desafíos. Cuéntanos qué necesitas resolver. No es necesario conocer el modelo exacto: con antecedentes básicos, fotografías de placa o información del proyecto podemos orientar el siguiente paso. Cuéntanos tu proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "status": 200,
+      "final": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "title": "Aviso Publicitario ORCA IV. - MITSA",
+      "h1": [
+        "Aviso Publicitario ORCA IV."
+      ],
+      "text": "Inicio Centro Técnico Aviso Publicitario ORCA IV. Noticias y actualidad · Lectura 1 min Aviso Publicitario ORCA IV. Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Junio 15, 2026 Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Siga leyendo Todos los artículos → Lectura · 1 min Columna Técnica Visión Aquícola 12/18 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Lectura · 1 min Columna Revista Visión Aquícola 10/18 Columna de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre tecnologías avanzadas en el tratamiento de aguas servidas, publicada en la revista Visión Aquícola (edición 10/18). Lectura · 1 min Visión Acuícola Les dejamos nuestra publicación en la revista Visión Acuícola sobre la selección de plantas de tratamiento de aguas servidas. La sanitización del circuito sanitario se efectúa a través de los WC (toilets). La ORCA IV cumple con creces la actual y vigente norma IMO/MARPOL MEPC 227(64). REV.A.- Diciembre 2017. ¿Tiene un caso concreto a bordo? Cuéntenos la necesidad y la normativa que aplica. La evaluación técnica inicial no tiene costo. Solicitar evaluación técnica",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/columna-tecnica-vision-aquicola/",
+        "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+        "https://mitsa.org/vision-acuicola/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "status": 200,
+      "final": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "title": "Columna Técnica Visión Aquícola 12/18 - MITSA",
+      "h1": [
+        "Columna Técnica Visión Aquícola 12/18"
+      ],
+      "text": "Inicio Centro Técnico Columna Técnica Visión Aquícola 12/18 Noticias y actualidad · Lectura 1 min Columna Técnica Visión Aquícola 12/18 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Mayo 20, 2026 Columna técnica de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre cómo seleccionar una Planta de Tratamiento IMO/MARPOL 227(64), publicada en la revista Visión Aquícola (edición 12/18). Siga leyendo Todos los artículos → Lectura · 1 min Aviso Publicitario ORCA IV. Aviso en la revista Visión Aquícola de nuestra ORCA IV, la planta de tratamiento de aguas servidas de Evac que cumple con la norma IMO/MARPOL MEPC 227(64). Lectura · 1 min Columna Revista Visión Aquícola 10/18 Columna de nuestro Director Gerente, Don Eduardo De la Iglesia, sobre tecnologías avanzadas en el tratamiento de aguas servidas, publicada en la revista Visión Aquícola (edición 10/18). Lectura · 1 min Visión Acuícola Les dejamos nuestra publicación en la revista Visión Acuícola sobre la selección de plantas de tratamiento de aguas servidas. La sanitización del circuito sanitario se efectúa a través de los WC (toilets). La ORCA IV cumple con creces la actual y vigente norma IMO/MARPOL MEPC 227(64). REV.A.- Diciembre 2017. ¿Tiene un caso concreto a bordo? Cuéntenos la necesidad y la normativa que aplica. La evaluación técnica inicial no tiene costo. Solicitar evaluación técnica",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/aviso-publicitario-orca-iv/",
+        "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+        "https://mitsa.org/vision-acuicola/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/contacto/",
+      "status": 200,
+      "final": "https://mitsa.org/contacto/",
+      "title": "Contacto y consultas técnicas | MITSA Chile",
+      "h1": [
+        "Cuéntanos qué necesitas resolver."
+      ],
+      "text": "Contacto Cuéntanos qué necesitas resolver. Cuéntenos qué necesita resolver. Seleccione el tipo de consulta y comparta los antecedentes disponibles para que nuestro equipo pueda revisar su necesidad y coordinar el siguiente paso. 01 Evaluación técnica Solución, tipo de instalación, normativa, plazo, adjuntar planos. 02 Repuestos Fabricante, modelo, N° de serie, N° de parte, cantidad, foto de la placa. 03 Servicio técnico Equipo, síntoma, ubicación de la nave, urgencia, si está en operación. 04 Contacto general Sólo campos base y mensaje libre. Sitio web Evaluación técnica Evaluar un proyecto Describa la aplicación, las condiciones de operación y lo que necesita resolver. Puede adjuntar planos o antecedentes técnicos. Sus datos Nombre * Empresa o institución Correo * Teléfono Detalle de la consulta Solución de interés Seleccione… Sanitarios y recolección al vacío Tratamiento de aguas residuales Agua dulce y sistemas de agua Agua caliente sanitaria Tratamiento de agua de lastre Aguas oleosas y sentina Gestión de residuos Protección catódica ICCP Prevención de crecimiento marino MGPS e ICAF Prevención de bioincrustación por ultrasonido Drenaje en acero inoxidable Pisos y revestimientos técnicos Aire de partida e instrumentación Lubricación y manejo de fluidos Repuestos y modernización Otra / Necesito orientación Tipo de buque o instalación Normativa aplicable Plazo estimado Descripción del requerimiento * Planos o especificaciones Arrastre archivos o haga clic para elegirlos PDF, DWG, DXF, imágenes o ZIP · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Fabricante * Seleccione… BLÜCHER Cathelco ERMA TECH ERVOR EVAC GERFLOR MECLUBE USON MARINE Otra / No identificada Modelo N° de serie N° de parte Cantidad Detalle Foto de la placa Arrastre archivos o haga clic para elegirlos Imagen o PDF · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Equipo (fabricante y modelo) * Ubicación de la nave o instalación Urgencia Seleccione… Programable Esta semana Sistema detenido ¿El sistema sigue en operación? Seleccione… Sí Parcialmente No Síntoma * Fotos o registros Arrastre archivos o haga clic para elegirlos Imágenes, PDF o video corto · máx. 10 MB por archivo. Si necesita enviar archivos de mayor tamaño, indíquelo en su consulta para coordinar su entrega. Detalle de la consulta Asunto Mensaje * Enviar consulta Qué pasa después Nuestro equipo revisará los antecedentes y se pondrá en contacto con usted para coordinar el siguiente paso. MITSA Dirección Av. Vicuña Mackenna 882, Reñaca, Viña del Mar Teléfono +56 9 8552 6282 WhatsApp Escribir por WhatsApp Correo info@mitsachile.com",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "https://mitsa.org/contacto/?puerta=repuestos#formulario",
+        "https://mitsa.org/contacto/?puerta=servicio#formulario",
+        "https://mitsa.org/contacto/?puerta=general#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/marina-e-industrial/",
+      "status": 200,
+      "final": "https://mitsa.org/industrias/",
+      "title": "Industrias y aplicaciones | MITSA Chile",
+      "h1": [
+        "Experiencia marítima que se proyecta a nuevas aplicaciones."
+      ],
+      "text": "Industrias Experiencia marítima que se proyecta a nuevas aplicaciones. Aplicamos tecnologías a necesidades de construcción, operación, mantenimiento y modernización en los sectores marítimo, naval e industrial. La solución se define según el uso real, las condiciones de instalación y el alcance del proyecto. Ver soluciones Evaluar un proyecto 01 Naval y defensa Sistemas sanitarios, tratamiento de aguas, protección de casco y circuitos de agua de mar, aire comprimido, drenaje, revestimientos, repuestos y modernizaciones para unidades navales y programas de construcción o refit. Sanitarios al vacío ICCP MGPS / ICAF Aire de partida 02 Astilleros y reparación Apoyo técnico para nuevas construcciones, retrofit, reemplazos y períodos de dique: selección de equipos, coordinación con fabricantes, documentación y suministro. Aguas residuales Drenaje inoxidable Pisos Retrofit 03 Armadores y operadores Soluciones orientadas a disponibilidad, cumplimiento, reducción de mantenimiento y continuidad operacional durante la vida de la nave. BWTS Sentina Residuos Repuestos 04 Acuicultura Tecnologías para wellboats, pontones, embarcaciones e instalaciones terrestres: tratamiento, saneamiento, agua, drenaje y sistemas auxiliares. Aguas residuales Agua dulce Drenaje Sanitarios 05 Offshore y energía Protección contra corrosión y biofouling, agua y residuos, drenaje, aire comprimido y soluciones para activos expuestos a condiciones exigentes. ICCP Antifouling Aire comprimido Pisos 06 Industria e instalaciones terrestres Tratamiento de aguas, vacío, drenaje inoxidable, aire comprimido, lubricación y manejo de fluidos para instalaciones industriales. Vacío terrestre Drenaje higiénico Aire comprimido Fluidos 07 Nueva línea Minería y agricultura Equipos de lubricación, transferencia, bombas, carretes y gestión de fluidos, además de soluciones industriales aplicables del portafolio. Lubricación Bombas de diafragma Carretes AdBlue Imágenes referenciales de los sectores de aplicación. Integramos tecnología. Resolvemos desafíos. ¿Tu sector no aparece? Si la aplicación usa agua, residuos, fluidos, aire comprimido o protección contra corrosión, probablemente tenemos una tecnología para evaluar. Cuéntanos tu proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "https://mitsa.org/soluciones/#sanitarios-vacio",
+        "https://mitsa.org/soluciones/#iccp",
+        "https://mitsa.org/soluciones/#mgps",
+        "https://mitsa.org/soluciones/#aire-comprimido",
+        "https://mitsa.org/soluciones/#aguas-residuales",
+        "https://mitsa.org/soluciones/#drenaje",
+        "https://mitsa.org/soluciones/#pisos",
+        "https://mitsa.org/soluciones/#repuestos-retrofit",
+        "https://mitsa.org/soluciones/#agua-lastre",
+        "https://mitsa.org/soluciones/#sentina",
+        "https://mitsa.org/soluciones/#residuos",
+        "https://mitsa.org/soluciones/#repuestos-retrofit",
+        "https://mitsa.org/soluciones/#aguas-residuales",
+        "https://mitsa.org/soluciones/#agua-dulce",
+        "https://mitsa.org/soluciones/#drenaje",
+        "https://mitsa.org/soluciones/#sanitarios-vacio",
+        "https://mitsa.org/soluciones/#iccp",
+        "https://mitsa.org/soluciones/#mgps",
+        "https://mitsa.org/soluciones/#aire-comprimido",
+        "https://mitsa.org/soluciones/#pisos",
+        "https://mitsa.org/soluciones/#sanitarios-vacio",
+        "https://mitsa.org/soluciones/#drenaje",
+        "https://mitsa.org/soluciones/#aire-comprimido",
+        "https://mitsa.org/soluciones/#lubricacion",
+        "https://mitsa.org/soluciones/#lubricacion",
+        "https://mitsa.org/soluciones/#lubricacion",
+        "https://mitsa.org/soluciones/#lubricacion",
+        "https://mitsa.org/soluciones/#lubricacion",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/mitsa-audit-inexistente-20261020/",
+      "status": 404,
+      "final": "https://mitsa.org/mitsa-audit-inexistente-20261020/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/nosotros/",
+      "status": 200,
+      "final": "https://mitsa.org/nosotros/",
+      "title": "Nosotros y trayectoria | MITSA Chile",
+      "h1": [
+        "Ingeniería y soluciones desde 1984."
+      ],
+      "text": "Nosotros Ingeniería y soluciones desde 1984. MITSA es una empresa chilena fundada en 1984. Durante más de cuatro décadas hemos participado en cientos de proyectos y suministros para clientes de los sectores marítimo, naval e industrial. Hoy fortalecemos una propuesta que combina experiencia, selección tecnológica y coordinación técnica para responder a desafíos cada vez más diversos. Trayectoria Construida en el mar. Proyectada a tierra. Nuestra historia se ha construido principalmente en los sectores marítimo y naval, trabajando con astilleros, operadores y proyectos que exigen confiabilidad, documentación y soporte técnico. Hoy esa experiencia se proyecta también hacia nuevas aplicaciones industriales y terrestres. El objetivo sigue siendo el mismo: comprender el desafío, seleccionar una solución técnicamente adecuada y mantener una contraparte local durante el proyecto y la vida del sistema. 01 Comprender el desafío Condición existente, normativa, espacio e interfaces antes de cualquier propuesta. 02 Selección tecnológica Seleccionamos tecnología según las condiciones reales del proyecto. 03 Acompañamiento Acompañamos el ciclo de vida del sistema con soporte y repuestos según el alcance acordado. Por qué MITSA Más de cuatro décadas de trayectoria, y una nueva etapa por delante. 1984 Fundación de MITSA Comenzamos nuestra trayectoria en Chile, vinculando necesidades técnicas con soluciones de fabricantes internacionales. 1991 Experiencia ambiental marítima Según la historia de su fundador, a comienzos de la década de 1990 participó en gestiones relacionadas con la implementación de exigencias MARPOL en Chile. 2006 Expansión de representaciones Hacia 2006 ampliamos nuestras relaciones con fabricantes internacionales y las tecnologías disponibles para nuestros clientes. 2018 Consolidación naval e industrial Hacia 2018 consolidamos una trayectoria de proyectos y suministros para aplicaciones navales e industriales. 2026 Ingeniería y nuevas aplicaciones Fortalecemos nuestra propuesta de ingeniería y soluciones, con foco en integración tecnológica, soporte y diversificación de aplicaciones. Fabricantes Trabajamos con fabricantes que complementan nuestras capacidades. Agua y residuos Protección de embarcaciones Drenaje Superficies Aire comprimido Lubricación Manejo de fluidos EVAC Gestión integral de agua y residuos Cathelco Protección de embarcaciones y agua de mar ERMA TECH Agua, wastewater y descarbonización marítima Uson Marine Gestión de residuos a bordo BLÜCHER Drenaje en acero inoxidable Gerflor Pisos técnicos y marinos Ervor Aire comprimido y partida neumática Meclube Lubricación y transferencia de fluidos Integramos tecnología. Resolvemos desafíos. Más de 40 años después, la conversación empieza igual. Cuéntanos qué necesitas resolver. Evaluar un proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/noticias/",
+      "status": 200,
+      "final": "https://mitsa.org/centro-tecnico/",
+      "title": "Centro técnico y recursos | MITSA Chile",
+      "h1": [
+        "Criterios técnicos para decidir mejor."
+      ],
+      "text": "Centro Técnico Criterios técnicos para decidir mejor. Criterios y recursos para evaluar tecnologías, preparar consultas y acompañar la operación de sistemas. Compartimos orientaciones generales; la selección y los requisitos de cada solución se revisan para su aplicación específica. Ver artículos Solicitar documentación Destacados Por dónde empezar Agua y residuos 01 Cómo preparar la evaluación de una planta de aguas residuales Caracterizar el agua y la operación, comparar alternativas e interfaces y reunir los antecedentes para una primera consulta. Leer artículo → Protección 02 Funciones de ICCP, MGPS y ánodos de sacrificio La protección contra corrosión y la prevención de crecimiento marino responden a problemas distintos. Leer artículo → Agua y residuos 03 Evaluación de sanitarios al vacío para nuevas instalaciones y retrofit Recolección y tratamiento son etapas diferentes: puntos de uso, red, generación de vacío e interfaces. Leer artículo → Artículo 1 · Agua y residuos Cómo preparar la evaluación de una planta de aguas residuales Elegir una planta empieza por conocer el agua que recibirá y las condiciones en que operará. Una capacidad nominal, por sí sola, no permite confirmar que el equipo sea adecuado para una embarcación o instalación. Caracterizar el agua y la operación Identifique los flujos que se tratarán: aguas negras, grises y otros aportes previstos. Reúna caudal promedio y máximo, número de usuarios, variaciones de ocupación y antecedentes de carga contaminante disponibles. El caudal y la carga orgánica son variables diferentes y ambas deben considerarse en la evaluación. Comparar alternativas e interfaces Existen familias biológicas con membranas o biomasa soportada, así como alternativas electroquímicas o fisicoquímicas. Su selección depende de la aplicación. Revise espacio, accesos de mantenimiento, servicios eléctricos, tuberías, almacenamiento y manejo de residuos del proceso. En retrofit conviene identificar los componentes existentes que se conservarán. Revisar requisitos y alcance La documentación técnica y las aprobaciones deben corresponder al modelo y configuración seleccionados. Las condiciones de descarga y operación se revisan con los responsables del proyecto; la certificación de una familia no reemplaza esta revisión. También debe quedar definido quién suministra, instala, prueba, opera y mantiene cada componente. Antecedentes para una primera consulta Envíe una descripción de la aplicación, caudales, ocupación, planos, fotografías, restricciones de espacio y requisitos conocidos. Si faltan datos, identifique cuáles están disponibles y cuáles deberán levantarse. MITSA puede ayudar a ordenar los antecedentes y consultar alternativas con los fabricantes. Evaluar tratamiento de aguas residuales ↑ Volver a los artículos Artículo 2 · Protección Funciones de ICCP, MGPS y ánodos de sacrificio La protección contra corrosión y la prevención de crecimiento marino responden a problemas distintos. Comprender esa diferencia ayuda a solicitar el sistema o repuesto correcto y a evitar confusiones entre tecnologías que pueden coexistir en una embarcación. ICCP para protección contra corrosión La protección catódica por corriente impresa utiliza alimentación eléctrica, ánodos y celdas de referencia para controlar la protección de superficies metálicas sumergidas. La configuración depende del casco, recubrimiento y condiciones de operación. En una evaluación de repuestos conviene identificar panel, componentes instalados y documentación del sistema. Ánodos de sacrificio Son otra forma de protección catódica. El material del ánodo se consume durante su función protectora, por lo que su selección y reposición requieren revisar material, dimensiones, ubicación y condiciones del elemento protegido. Un ánodo de sacrificio no debe confundirse con un ánodo de un sistema ICCP ni reemplazarse únicamente por parecido visual. MGPS e ICAF para circuitos de agua de mar Estos sistemas se orientan a prevenir el asentamiento de organismos en tomas y circuitos de agua de mar. Las configuraciones de CATHELCO utilizan ánodos seleccionados según caudal y materiales del circuito. No cumplen la misma función que la protección catódica del casco, aunque algunas configuraciones incorporan funciones complementarias para las tuberías. Datos para consultar Indique si la necesidad está en el casco, una toma de mar o un circuito interno. Adjunte marca, modelo, fotografías de la placa y componentes, planos y antecedentes de operación. Para un repuesto, incluya part number o medidas cuando estén disponibles. Para una modernización, describa el sistema instalado y los cambios previstos. MITSA puede apoyar la identificación de componentes y coordinar con el fabricante una evaluación de compatibilidad. La solución y su alcance se confirman para cada aplicación; no deben suponerse equivalencias automáticas entre sistemas. Consultar protección y componentes Solicitar un repuesto ↑ Volver a los artículos Artículo 3 · Agua y residuos Evaluación de sanitarios al vacío para nuevas instalaciones y retrofit Un sistema sanitario al vacío permite recolectar aguas sanitarias con una arquitectura distinta de una red por gravedad. Su evaluación debe considerar el conjunto: puntos de uso, red, generación de vacío, interfaces y destino del agua recolectada. Recolección y tratamiento son etapas diferentes El sanitario y la red al vacío forman parte de la recolección. El tratamiento requiere una solución seleccionada para el agua recibida y las condiciones de descarga. Al preparar un proyecto, identifique qué etapas existen, cuáles se conservarán y cuáles deben incorporarse o modernizarse. Diseñar para la aplicación real Reúna el número y tipo de puntos de uso, ocupación prevista, planos, recorridos disponibles y ubicación de los equipos. Revise las conexiones eléctricas, accesos y espacio para mantenimiento. La flexibilidad del trazado debe comprobarse con el fabricante para la configuración específica, sin asumir que cualquier recorrido es admisible. En retrofit identificar antes de reemplazar Registre marca, modelo, número de serie y componentes del sistema existente. Las fotografías de placas, unidades y conexiones ayudan a identificar repuestos. Un cambio de sanitario o unidad debe evaluarse dentro de su sistema, incluyendo interfaces y documentación disponible. Aplicaciones más allá de las embarcaciones EVAC dispone también de soluciones de recolección al vacío para edificios y otras aplicaciones terrestres. Esto abre posibilidades que conviene evaluar cuando el proyecto requiere revisar trazados o restricciones de instalación. La existencia de una familia terrestre no implica que todos sus modelos sean adecuados o estén disponibles para cualquier proyecto en Chile. Preparar el alcance Defina si necesita suministro, apoyo para integración, instalación, puesta en marcha o repuestos. MITSA puede ordenar los antecedentes, consultar con el fabricante y proponer un alcance acorde con la necesidad. Una consulta completa permite distinguir una reposición puntual de una intervención más amplia. Evaluar una solución al vacío ↑ Volver a los artículos Biblioteca Técnica Biblioteca técnica ¿Necesita una ficha, manual o antecedente de una tecnología? Indique marca, equipo y aplicación para ayudarle a identificar la documentación disponible y sus condiciones de uso. Solicitar documentación técnica ¿Una pregunta técnica que no está aquí? Cuéntenos su consulta técnica y la revisaremos con nuestro equipo y, cuando corresponda, con los fabricantes. Hacer una consulta técnica",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "#articulos",
+        "https://mitsa.org/contacto/?puerta=general&asunto=documentacion#formulario",
+        "#articulo-aguas-residuales",
+        "#articulo-proteccion",
+        "#articulo-sanitarios-vacio",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=aguas-residuales#formulario",
+        "#articulos",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=iccp#formulario",
+        "https://mitsa.org/contacto/?puerta=repuestos#formulario",
+        "#articulos",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=sanitarios-vacio#formulario",
+        "#articulos",
+        "https://mitsa.org/contacto/?puerta=general&asunto=documentacion#formulario",
+        "https://mitsa.org/contacto/?puerta=general#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/representaciones/",
+      "status": 200,
+      "final": "https://mitsa.org/soluciones/",
+      "title": "Soluciones tecnológicas | MITSA Chile",
+      "h1": [
+        "Entra por el problema. Te mostramos la tecnología."
+      ],
+      "text": "Soluciones Entra por el problema. Te mostramos la tecnología. Seleccionamos tecnologías para resolver necesidades de agua, saneamiento, residuos, protección, sistemas auxiliares y mantenimiento. Explore nuestras familias de soluciones y cuéntenos las condiciones de su proyecto. Evaluaremos la alternativa técnica y el alcance de participación de MITSA. Cuéntenos su necesidad Agua y saneamiento · 3 Tratamiento y residuos · 4 Protección y superficies · 4 Sistemas auxiliares y continuidad · 3 Soluciones de agua y saneamiento 01 Sanitarios y recolección al vacío EVAC Consultar solución Sistemas para transportar aguas sanitarias mediante vacío en embarcaciones y aplicaciones terrestres compatibles. Evaluamos nuevas instalaciones y retrofit considerando puntos de uso, trazado, capacidad de recolección y conexión con almacenamiento o tratamiento. Tecnologías y marcas EVAC: sanitarios, unidades de vacío, interfaces de recolección y componentes del sistema. Para iniciar la evaluación Número de usuarios y puntos de uso, planos, disponibilidad de servicios y sistema existente. Evaluar esta solución 02 Tratamiento de aguas residuales EVAC · ERMA TECH Consultar solución Soluciones para aguas negras y grises seleccionadas según caudal, carga, operación, espacio y exigencias de descarga. MITSA acompaña la evaluación de alternativas y la definición de interfaces; el alcance de suministro, instalación y puesta en marcha se acuerda para cada proyecto. Tecnologías y marcas EVAC y ERMA TECH: procesos biológicos, membranas y alternativas electroquímicas o fisicoquímicas, según la línea y configuración. Para iniciar la evaluación Origen del agua, caudal diario y máximo, ocupación, restricciones de espacio y requisitos de la aplicación. Evaluar esta solución 03 Agua dulce y sistemas de agua EVAC · CATHELCO · ERMA TECH Consultar solución Generación de agua dulce por ósmosis inversa y alternativas de tratamiento para uso de servicio, proceso o consumo, según la configuración y los requisitos aplicables. Podemos evaluar también sistemas de agua caliente sanitaria, acumulación e intercambio térmico según el alcance del proyecto. Tecnologías y marcas EVAC, CATHELCO y ERMA TECH: líneas de agua dulce y tratamiento a seleccionar según aplicación. Agua caliente sanitaria: soluciones de proyecto coordinadas con el fabricante correspondiente. Para iniciar la evaluación Fuente y calidad del agua, demanda, uso final, energía disponible y condiciones de instalación. Evaluar esta solución Soluciones de tratamiento y residuos 04 Tratamiento de agua de lastre ERMA TECH Consultar solución Evaluamos sistemas de tratamiento de agua de lastre para nueva construcción y retrofit. La selección considera operación del buque, caudal, condiciones del agua, espacios, servicios e integración con el sistema existente. Tecnologías y marcas ERMA TECH: familias de tratamiento de agua de lastre con distintas arquitecturas y procesos. La homologación se revisa para el modelo y configuración requeridos. Para iniciar la evaluación Caudal de las bombas, planos de lastre, rutas de operación, salinidad, temperatura y requisitos de bandera o clase. Evaluar esta solución 05 Aguas oleosas y sentina ERMA TECH Consultar solución Equipos y componentes para separar y tratar aguas de sentina con presencia de hidrocarburos. Evaluamos la composición del flujo, caudal y condiciones de operación para seleccionar una configuración compatible con los requisitos del proyecto. Tecnologías y marcas ERMA TECH: separadores y sistemas de tratamiento de aguas oleosas de sus líneas marinas. Para iniciar la evaluación Caudal, composición del agua, equipo existente, restricciones de espacio y requisitos de descarga. Evaluar esta solución 06 Gestión de residuos EVAC · USON MARINE Consultar solución Soluciones para reducir volumen y organizar el manejo de residuos a bordo y en instalaciones compatibles. La alternativa depende del tipo de residuo, cantidad generada, logística de retiro, espacio y operación. Tecnologías y marcas EVAC y USON MARINE: compactación, trituración y otras familias de tratamiento de residuos secos y orgánicos, según producto y aplicación. Para iniciar la evaluación Tipo y volumen de residuos, frecuencia de generación, espacio disponible y destino final. Evaluar esta solución 07 Protección catódica ICCP CATHELCO Consultar solución Sistemas de protección catódica por corriente impresa para controlar la corrosión de superficies metálicas sumergidas. Evaluamos nuevas instalaciones, modernización y reposición de componentes considerando casco, recubrimiento y condiciones de operación. Tecnologías y marcas CATHELCO: paneles de control, ánodos, celdas de referencia y componentes del sistema ICCP. Para iniciar la evaluación Tipo de embarcación, material y dimensiones del casco, planos, sistema existente y antecedentes técnicos disponibles. Evaluar esta solución Soluciones de protección y superficies 08 Prevención de crecimiento marino MGPS e ICAF CATHELCO Consultar solución Sistemas para prevenir el asentamiento de organismos en circuitos de agua de mar. Su configuración depende del caudal, materiales de tuberías, ubicación de ánodos y características de las tomas. MITSA evalúa equipos, modernizaciones y repuestos compatibles. Tecnologías y marcas CATHELCO: sistemas MGPS/ICAF, paneles, ánodos y componentes para tomas, filtros y circuitos de agua de mar. Para iniciar la evaluación Caudales, materiales, planos del circuito, sistema instalado y acceso para mantenimiento. Evaluar esta solución 09 Prevención de bioincrustación por ultrasonido CATHELCO · ERMA TECH Consultar solución Tecnologías ultrasónicas para aplicaciones de prevención de bioincrustación. Su pertinencia se evalúa según geometría, materiales, superficie o circuito a proteger y condiciones de operación. No reemplazan automáticamente las demás medidas de protección o mantenimiento. Tecnologías y marcas CATHELCO y ERMA TECH/HASYTEC: líneas ultrasónicas con aplicaciones específicas. Disponibilidad y alcance se confirman para cada caso. Para iniciar la evaluación Elemento a proteger, dimensiones, materiales, planos, condiciones de operación y sistema actual. Evaluar esta solución 10 Drenaje en acero inoxidable BLÜCHER Consultar solución Drenajes, canales y tuberías de acero inoxidable para aplicaciones marinas e industriales. Evaluamos soluciones para zonas sanitarias, cocinas, áreas de proceso y espacios donde importan higiene, durabilidad y facilidad de limpieza. Tecnologías y marcas BLÜCHER: drenajes marinos, canales, sistemas de tuberías EuroPipe y familias de drenaje higiénico. Para iniciar la evaluación Uso del área, caudal, planos, terminaciones, requisitos de limpieza y condiciones de montaje. Evaluar esta solución 11 Pisos y revestimientos técnicos GERFLOR Consultar solución Superficies para espacios de circulación, trabajo y habitabilidad, seleccionadas según tránsito, mantenimiento, diseño y requisitos de la aplicación. Para proyectos marinos revisamos la documentación del producto y la configuración de instalación. Tecnologías y marcas GERFLOR: portafolio marino Streamo y alternativas técnicas cuya disponibilidad y alcance comercial se confirman para el proyecto. Para iniciar la evaluación Uso del recinto, superficie, soporte existente, tránsito, terminación deseada y requisitos técnicos. Evaluar esta solución Sistemas auxiliares y continuidad operativa 12 Aire de partida e instrumentación ERVOR Consultar solución Equipos y sistemas de aire comprimido para partida, instrumentación y servicios auxiliares. La selección considera presión, caudal, calidad del aire, régimen de operación, redundancia y condiciones de instalación. Tecnologías y marcas ERVOR: compresores, conjuntos de aire de partida y equipos de tratamiento de aire, según configuración. Para iniciar la evaluación Uso, presión y caudal requeridos, calidad del aire, servicios disponibles y equipo existente. Evaluar esta solución 13 Lubricación y manejo de fluidos MECLUBE Consultar solución Equ",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "#agua-y-saneamiento",
+        "#tratamiento-y-residuos",
+        "#proteccion-y-superficies",
+        "#sistemas-auxiliares",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=sanitarios-vacio#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=aguas-residuales#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=agua-dulce#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=agua-lastre#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=sentina#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=residuos#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=iccp#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=mgps#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=ultrasonido#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=drenaje#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=pisos#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=aire-comprimido#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=lubricacion#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion&sol=repuestos-retrofit#formulario",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/smm2026/",
+      "status": 404,
+      "final": "https://mitsa.org/smm2026/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/terrestre-y-construccion/",
+      "status": 200,
+      "final": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "title": "Industria e instalaciones terrestres: aguas y drenajes",
+      "h1": [
+        "Industria e instalaciones terrestres"
+      ],
+      "text": "Inicio Industrias Industria e instalaciones terrestres Industria Industria e instalaciones terrestres Aplicaciones de tratamiento de aguas, drenaje y otras tecnologías especializadas, definidas según el proceso y los requisitos del sitio. Solicitar evaluación Otras industrias Naval y defensa Acuicultura Offshore y energía Astilleros y reparación Transporte marítimo y carga ¿En qué industria está su proyecto? Indíquenos el tipo de nave o instalación y las condiciones de operación. Revisamos la aplicación y le proponemos alternativas. Consultar por un proyecto",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "https://mitsa.org/industrias/naval-y-defensa/",
+        "https://mitsa.org/industrias/acuicultura/",
+        "https://mitsa.org/industrias/offshore-y-energia/",
+        "https://mitsa.org/industrias/astilleros-y-reparacion/",
+        "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+        "https://mitsa.org/contacto/?puerta=evaluacion#formulario",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/trituradores-organicos/",
+      "status": 404,
+      "final": "https://mitsa.org/trituradores-organicos/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    },
+    {
+      "url": "https://mitsa.org/tt-service/productos/",
+      "status": 404,
+      "final": "https://mitsa.org/tt-service/productos/",
+      "title": "Página no encontrada - MITSA",
+      "h1": [
+        "No encontramos esta página"
+      ],
+      "text": "Error 404 No encontramos esta página Puede que el enlace haya cambiado con el nuevo sitio. Vuelva al inicio o cuéntenos qué necesita resolver. Ir al inicio Conversemos",
+      "links": [
+        "#contenido",
+        "https://mitsa.org/",
+        "https://mitsa.org/soluciones/",
+        "https://mitsa.org/industrias/",
+        "https://mitsa.org/servicios/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/representadas/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/contacto/",
+        "https://mitsa.org/",
+        "https://mitsa.org/contacto/",
+        "tel:+56985526282",
+        "https://wa.me/56985526282",
+        "mailto:info@mitsachile.com",
+        "https://mitsa.org/nosotros/",
+        "https://mitsa.org/proyectos/",
+        "https://mitsa.org/centro-tecnico/",
+        "https://mitsa.org/contacto/"
+      ]
+    }
+  ],
+  "rest": {
+    "mitsachile.com": {
+      "post": {
+        "status": 200,
+        "total": "6",
+        "pages": "1",
+        "items": [
+          {
+            "id": 1,
+            "slug": "hello-world",
+            "status": "publish",
+            "link": "https://mitsachile.com/hello-world/",
+            "title": {
+              "rendered": "Hello world!"
+            }
+          },
+          {
+            "id": 109,
+            "slug": "aviso-publicitario-orca-iv",
+            "status": "publish",
+            "link": "https://mitsachile.com/aviso-publicitario-orca-iv/",
+            "title": {
+              "rendered": "Aviso Publicitario ORCA IV."
+            }
+          },
+          {
+            "id": 111,
+            "slug": "columna-tecnica-vision-aquicola",
+            "status": "publish",
+            "link": "https://mitsachile.com/columna-tecnica-vision-aquicola/",
+            "title": {
+              "rendered": "Columna Técnica Visión Aquícola 12/18"
+            }
+          },
+          {
+            "id": 113,
+            "slug": "columna-revista-vision-aquicola-10-18",
+            "status": "publish",
+            "link": "https://mitsachile.com/columna-revista-vision-aquicola-10-18/",
+            "title": {
+              "rendered": "Columna Revista Visión Aquícola 10/18"
+            }
+          },
+          {
+            "id": 115,
+            "slug": "vision-acuicola",
+            "status": "publish",
+            "link": "https://mitsachile.com/vision-acuicola/",
+            "title": {
+              "rendered": "Visión Acuícola"
+            }
+          },
+          {
+            "id": 116,
+            "slug": "orca-iv",
+            "status": "publish",
+            "link": "https://mitsachile.com/orca-iv/",
+            "title": {
+              "rendered": "ORCA IV"
+            }
+          }
+        ]
+      },
+      "page": {
+        "status": 200,
+        "total": "10",
+        "pages": "1",
+        "items": [
+          {
+            "id": 133,
+            "slug": "representadas",
+            "status": "publish",
+            "link": "https://mitsachile.com/representadas/",
+            "title": {
+              "rendered": "Representadas"
+            }
+          },
+          {
+            "id": 103,
+            "slug": "nosotros",
+            "status": "publish",
+            "link": "https://mitsachile.com/nosotros/",
+            "title": {
+              "rendered": "Nosotros"
+            }
+          },
+          {
+            "id": 90,
+            "slug": "centro-tecnico",
+            "status": "publish",
+            "link": "https://mitsachile.com/centro-tecnico/",
+            "title": {
+              "rendered": "Centro Técnico"
+            }
+          },
+          {
+            "id": 89,
+            "slug": "contacto",
+            "status": "publish",
+            "link": "https://mitsachile.com/contacto/",
+            "title": {
+              "rendered": "Contacto"
+            }
+          },
+          {
+            "id": 88,
+            "slug": "recursos",
+            "status": "publish",
+            "link": "https://mitsachile.com/recursos/",
+            "title": {
+              "rendered": "Recursos"
+            }
+          },
+          {
+            "id": 87,
+            "slug": "proyectos",
+            "status": "publish",
+            "link": "https://mitsachile.com/proyectos/",
+            "title": {
+              "rendered": "Proyectos"
+            }
+          },
+          {
+            "id": 86,
+            "slug": "servicios",
+            "status": "publish",
+            "link": "https://mitsachile.com/servicios/",
+            "title": {
+              "rendered": "Servicios"
+            }
+          },
+          {
+            "id": 85,
+            "slug": "industrias",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/",
+            "title": {
+              "rendered": "Industrias"
+            }
+          },
+          {
+            "id": 84,
+            "slug": "soluciones",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/",
+            "title": {
+              "rendered": "Soluciones"
+            }
+          },
+          {
+            "id": 83,
+            "slug": "inicio",
+            "status": "publish",
+            "link": "https://mitsachile.com/",
+            "title": {
+              "rendered": "Inicio"
+            }
+          }
+        ]
+      },
+      "nav_menu_item": {
+        "status": 401,
+        "total": null,
+        "pages": null,
+        "items": {
+          "code": "rest_cannot_view",
+          "message": "Lo siento, no tienes permiso para ver los elementos del menú.",
+          "data": {
+            "status": 401
+          }
+        }
+      },
+      "wp_global_styles": {
+        "status": 404,
+        "total": null,
+        "pages": null,
+        "items": {
+          "code": "rest_no_route",
+          "message": "No se encontró una ruta que coincida con la URL y el método de la petición.",
+          "data": {
+            "status": 404
+          }
+        }
+      },
+      "solucion": {
+        "status": 200,
+        "total": "9",
+        "pages": "1",
+        "items": [
+          {
+            "id": 123,
+            "slug": "equipamiento-auxiliar",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/equipamiento-auxiliar/",
+            "title": {
+              "rendered": "Equipamiento auxiliar"
+            }
+          },
+          {
+            "id": 122,
+            "slug": "revestimientos-y-superficies",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/revestimientos-y-superficies/",
+            "title": {
+              "rendered": "Revestimientos y superficies"
+            }
+          },
+          {
+            "id": 55,
+            "slug": "drenajes-inoxidables",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/drenajes-inoxidables/",
+            "title": {
+              "rendered": "Drenajes de acero inoxidable"
+            }
+          },
+          {
+            "id": 54,
+            "slug": "sistemas-de-agua-caliente",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/sistemas-de-agua-caliente/",
+            "title": {
+              "rendered": "Agua caliente sanitaria"
+            }
+          },
+          {
+            "id": 52,
+            "slug": "bioincrustaciones-icaf",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/bioincrustaciones-icaf/",
+            "title": {
+              "rendered": "Prevención de bioincrustaciones ICAF/MGPS"
+            }
+          },
+          {
+            "id": 51,
+            "slug": "proteccion-catodica-iccp",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/proteccion-catodica-iccp/",
+            "title": {
+              "rendered": "Protección catódica ICCP"
+            }
+          },
+          {
+            "id": 50,
+            "slug": "agua-de-lastre-bwts",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/agua-de-lastre-bwts/",
+            "title": {
+              "rendered": "Tratamiento de agua de lastre"
+            }
+          },
+          {
+            "id": 49,
+            "slug": "tratamiento-de-aguas-residuales",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/tratamiento-de-aguas-residuales/",
+            "title": {
+              "rendered": "Tratamiento de aguas residuales"
+            }
+          },
+          {
+            "id": 48,
+            "slug": "sistemas-sanitarios-al-vacio",
+            "status": "publish",
+            "link": "https://mitsachile.com/soluciones/sistemas-sanitarios-al-vacio/",
+            "title": {
+              "rendered": "Sistemas sanitarios al vacío"
+            }
+          }
+        ]
+      },
+      "industria": {
+        "status": 200,
+        "total": "6",
+        "pages": "1",
+        "items": [
+          {
+            "id": 47,
+            "slug": "instalaciones-en-tierra",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/instalaciones-en-tierra/",
+            "title": {
+              "rendered": "Industria e instalaciones terrestres"
+            }
+          },
+          {
+            "id": 46,
+            "slug": "transporte-maritimo-y-carga",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/transporte-maritimo-y-carga/",
+            "title": {
+              "rendered": "Transporte marítimo y carga"
+            }
+          },
+          {
+            "id": 45,
+            "slug": "astilleros-y-reparacion",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/astilleros-y-reparacion/",
+            "title": {
+              "rendered": "Astilleros y reparación"
+            }
+          },
+          {
+            "id": 44,
+            "slug": "offshore-y-energia",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/offshore-y-energia/",
+            "title": {
+              "rendered": "Offshore y energía"
+            }
+          },
+          {
+            "id": 43,
+            "slug": "acuicultura",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/acuicultura/",
+            "title": {
+              "rendered": "Acuicultura"
+            }
+          },
+          {
+            "id": 42,
+            "slug": "naval-y-defensa",
+            "status": "publish",
+            "link": "https://mitsachile.com/industrias/naval-y-defensa/",
+            "title": {
+              "rendered": "Naval y defensa"
+            }
+          }
+        ]
+      },
+      "proyecto": {
+        "status": 200,
+        "total": "2",
+        "pages": "1",
+        "items": [
+          {
+            "id": 125,
+            "slug": "asenav-proyecto-193",
+            "status": "publish",
+            "link": "https://mitsachile.com/proyectos/asenav-proyecto-193/",
+            "title": {
+              "rendered": "ASENAV · Proyecto 193"
+            }
+          },
+          {
+            "id": 124,
+            "slug": "sociber-dique-valparaiso",
+            "status": "publish",
+            "link": "https://mitsachile.com/proyectos/sociber-dique-valparaiso/",
+            "title": {
+              "rendered": "SOCIBER · Dique Valparaíso"
+            }
+          }
+        ]
+      }
+    },
+    "mitsa.org": {
+      "post": {
+        "status": 200,
+        "total": "6",
+        "pages": "1",
+        "items": [
+          {
+            "id": 1,
+            "slug": "hello-world",
+            "status": "publish",
+            "link": "https://mitsa.org/hello-world/",
+            "title": {
+              "rendered": "Hello world!"
+            }
+          },
+          {
+            "id": 109,
+            "slug": "aviso-publicitario-orca-iv",
+            "status": "publish",
+            "link": "https://mitsa.org/aviso-publicitario-orca-iv/",
+            "title": {
+              "rendered": "Aviso Publicitario ORCA IV."
+            }
+          },
+          {
+            "id": 111,
+            "slug": "columna-tecnica-vision-aquicola",
+            "status": "publish",
+            "link": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+            "title": {
+              "rendered": "Columna Técnica Visión Aquícola 12/18"
+            }
+          },
+          {
+            "id": 113,
+            "slug": "columna-revista-vision-aquicola-10-18",
+            "status": "publish",
+            "link": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+            "title": {
+              "rendered": "Columna Revista Visión Aquícola 10/18"
+            }
+          },
+          {
+            "id": 115,
+            "slug": "vision-acuicola",
+            "status": "publish",
+            "link": "https://mitsa.org/vision-acuicola/",
+            "title": {
+              "rendered": "Visión Acuícola"
+            }
+          },
+          {
+            "id": 116,
+            "slug": "orca-iv",
+            "status": "publish",
+            "link": "https://mitsa.org/orca-iv/",
+            "title": {
+              "rendered": "ORCA IV"
+            }
+          }
+        ]
+      },
+      "page": {
+        "status": 200,
+        "total": "10",
+        "pages": "1",
+        "items": [
+          {
+            "id": 133,
+            "slug": "representadas",
+            "status": "publish",
+            "link": "https://mitsa.org/representadas/",
+            "title": {
+              "rendered": "Representadas"
+            }
+          },
+          {
+            "id": 103,
+            "slug": "nosotros",
+            "status": "publish",
+            "link": "https://mitsa.org/nosotros/",
+            "title": {
+              "rendered": "Nosotros"
+            }
+          },
+          {
+            "id": 90,
+            "slug": "centro-tecnico",
+            "status": "publish",
+            "link": "https://mitsa.org/centro-tecnico/",
+            "title": {
+              "rendered": "Centro Técnico"
+            }
+          },
+          {
+            "id": 89,
+            "slug": "contacto",
+            "status": "publish",
+            "link": "https://mitsa.org/contacto/",
+            "title": {
+              "rendered": "Contacto"
+            }
+          },
+          {
+            "id": 88,
+            "slug": "recursos",
+            "status": "publish",
+            "link": "https://mitsa.org/recursos/",
+            "title": {
+              "rendered": "Recursos"
+            }
+          },
+          {
+            "id": 87,
+            "slug": "proyectos",
+            "status": "publish",
+            "link": "https://mitsa.org/proyectos/",
+            "title": {
+              "rendered": "Proyectos"
+            }
+          },
+          {
+            "id": 86,
+            "slug": "servicios",
+            "status": "publish",
+            "link": "https://mitsa.org/servicios/",
+            "title": {
+              "rendered": "Servicios"
+            }
+          },
+          {
+            "id": 85,
+            "slug": "industrias",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/",
+            "title": {
+              "rendered": "Industrias"
+            }
+          },
+          {
+            "id": 84,
+            "slug": "soluciones",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/",
+            "title": {
+              "rendered": "Soluciones"
+            }
+          },
+          {
+            "id": 83,
+            "slug": "inicio",
+            "status": "publish",
+            "link": "https://mitsa.org/",
+            "title": {
+              "rendered": "Inicio"
+            }
+          }
+        ]
+      },
+      "nav_menu_item": {
+        "status": 401,
+        "total": null,
+        "pages": null,
+        "items": {
+          "code": "rest_cannot_view",
+          "message": "Lo siento, no tienes permiso para ver los elementos del menú.",
+          "data": {
+            "status": 401
+          }
+        }
+      },
+      "wp_global_styles": {
+        "status": 404,
+        "total": null,
+        "pages": null,
+        "items": {
+          "code": "rest_no_route",
+          "message": "No se encontró una ruta que coincida con la URL y el método de la petición.",
+          "data": {
+            "status": 404
+          }
+        }
+      },
+      "solucion": {
+        "status": 200,
+        "total": "9",
+        "pages": "1",
+        "items": [
+          {
+            "id": 123,
+            "slug": "equipamiento-auxiliar",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+            "title": {
+              "rendered": "Equipamiento auxiliar"
+            }
+          },
+          {
+            "id": 122,
+            "slug": "revestimientos-y-superficies",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+            "title": {
+              "rendered": "Revestimientos y superficies"
+            }
+          },
+          {
+            "id": 55,
+            "slug": "drenajes-inoxidables",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+            "title": {
+              "rendered": "Drenajes de acero inoxidable"
+            }
+          },
+          {
+            "id": 54,
+            "slug": "sistemas-de-agua-caliente",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+            "title": {
+              "rendered": "Agua caliente sanitaria"
+            }
+          },
+          {
+            "id": 52,
+            "slug": "bioincrustaciones-icaf",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+            "title": {
+              "rendered": "Prevención de bioincrustaciones ICAF/MGPS"
+            }
+          },
+          {
+            "id": 51,
+            "slug": "proteccion-catodica-iccp",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+            "title": {
+              "rendered": "Protección catódica ICCP"
+            }
+          },
+          {
+            "id": 50,
+            "slug": "agua-de-lastre-bwts",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+            "title": {
+              "rendered": "Tratamiento de agua de lastre"
+            }
+          },
+          {
+            "id": 49,
+            "slug": "tratamiento-de-aguas-residuales",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+            "title": {
+              "rendered": "Tratamiento de aguas residuales"
+            }
+          },
+          {
+            "id": 48,
+            "slug": "sistemas-sanitarios-al-vacio",
+            "status": "publish",
+            "link": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+            "title": {
+              "rendered": "Sistemas sanitarios al vacío"
+            }
+          }
+        ]
+      },
+      "industria": {
+        "status": 200,
+        "total": "6",
+        "pages": "1",
+        "items": [
+          {
+            "id": 47,
+            "slug": "instalaciones-en-tierra",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+            "title": {
+              "rendered": "Industria e instalaciones terrestres"
+            }
+          },
+          {
+            "id": 46,
+            "slug": "transporte-maritimo-y-carga",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+            "title": {
+              "rendered": "Transporte marítimo y carga"
+            }
+          },
+          {
+            "id": 45,
+            "slug": "astilleros-y-reparacion",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+            "title": {
+              "rendered": "Astilleros y reparación"
+            }
+          },
+          {
+            "id": 44,
+            "slug": "offshore-y-energia",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/offshore-y-energia/",
+            "title": {
+              "rendered": "Offshore y energía"
+            }
+          },
+          {
+            "id": 43,
+            "slug": "acuicultura",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/acuicultura/",
+            "title": {
+              "rendered": "Acuicultura"
+            }
+          },
+          {
+            "id": 42,
+            "slug": "naval-y-defensa",
+            "status": "publish",
+            "link": "https://mitsa.org/industrias/naval-y-defensa/",
+            "title": {
+              "rendered": "Naval y defensa"
+            }
+          }
+        ]
+      },
+      "proyecto": {
+        "status": 200,
+        "total": "2",
+        "pages": "1",
+        "items": [
+          {
+            "id": 125,
+            "slug": "asenav-proyecto-193",
+            "status": "publish",
+            "link": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+            "title": {
+              "rendered": "ASENAV · Proyecto 193"
+            }
+          },
+          {
+            "id": 124,
+            "slug": "sociber-dique-valparaiso",
+            "status": "publish",
+            "link": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+            "title": {
+              "rendered": "SOCIBER · Dique Valparaíso"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

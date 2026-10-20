@@ -1,0 +1,2230 @@
+{
+  "mode": "after",
+  "captured_at_utc": "2026-10-20T22:00:10.257932+00:00",
+  "passed": 292,
+  "failed": 0,
+  "checks": [
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/",
+      "expected_location": "https://mitsa.org/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/author/juanaplicacionesweb-cl/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/author/juanaplicacionesweb-cl/",
+      "expected_location": "https://mitsa.org/author/juanaplicacionesweb-cl/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/aviso-publicitario-orca-iv/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "expected_location": "https://mitsa.org/aviso-publicitario-orca-iv/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/category/noticias-y-actualidad/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/category/noticias-y-actualidad/",
+      "expected_location": "https://mitsa.org/category/noticias-y-actualidad/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/category/uncategorized/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/category/uncategorized/",
+      "expected_location": "https://mitsa.org/category/uncategorized/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/centro-tecnico/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/centro-tecnico/",
+      "expected_location": "https://mitsa.org/centro-tecnico/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/columna-revista-vision-aquicola-10-18/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+      "expected_location": "https://mitsa.org/columna-revista-vision-aquicola-10-18/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/columna-tecnica-vision-aquicola/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "expected_location": "https://mitsa.org/columna-tecnica-vision-aquicola/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/contacto/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/contacto/",
+      "expected_location": "https://mitsa.org/contacto/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/hello-world/",
+      "ok": true,
+      "status": 410,
+      "expected_status": 410,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/",
+      "expected_location": "https://mitsa.org/industrias/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/acuicultura/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/acuicultura/",
+      "expected_location": "https://mitsa.org/industrias/acuicultura/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/astilleros-y-reparacion/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+      "expected_location": "https://mitsa.org/industrias/astilleros-y-reparacion/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/instalaciones-en-tierra/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "expected_location": "https://mitsa.org/industrias/instalaciones-en-tierra/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/naval-y-defensa/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/naval-y-defensa/",
+      "expected_location": "https://mitsa.org/industrias/naval-y-defensa/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/offshore-y-energia/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/offshore-y-energia/",
+      "expected_location": "https://mitsa.org/industrias/offshore-y-energia/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/industrias/transporte-maritimo-y-carga/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+      "expected_location": "https://mitsa.org/industrias/transporte-maritimo-y-carga/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/nosotros/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/nosotros/",
+      "expected_location": "https://mitsa.org/nosotros/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/orca-iv/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/orca-iv/",
+      "expected_location": "https://mitsa.org/orca-iv/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/proyectos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/",
+      "expected_location": "https://mitsa.org/proyectos/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/proyectos/asenav-proyecto-193/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+      "expected_location": "https://mitsa.org/proyectos/asenav-proyecto-193/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/proyectos/sociber-dique-valparaiso/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+      "expected_location": "https://mitsa.org/proyectos/sociber-dique-valparaiso/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/recursos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/recursos/",
+      "expected_location": "https://mitsa.org/recursos/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/representadas/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/representadas/",
+      "expected_location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/servicios/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/servicios/",
+      "expected_location": "https://mitsa.org/servicios/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/agua-de-lastre-bwts/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+      "expected_location": "https://mitsa.org/soluciones/agua-de-lastre-bwts/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/bioincrustaciones-icaf/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+      "expected_location": "https://mitsa.org/soluciones/bioincrustaciones-icaf/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/drenajes-inoxidables/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+      "expected_location": "https://mitsa.org/soluciones/drenajes-inoxidables/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/equipamiento-auxiliar/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+      "expected_location": "https://mitsa.org/soluciones/equipamiento-auxiliar/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/proteccion-catodica-iccp/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+      "expected_location": "https://mitsa.org/soluciones/proteccion-catodica-iccp/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/revestimientos-y-superficies/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+      "expected_location": "https://mitsa.org/soluciones/revestimientos-y-superficies/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/sistemas-de-agua-caliente/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+      "expected_location": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/sistemas-sanitarios-al-vacio/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+      "expected_location": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/soluciones/tratamiento-de-aguas-residuales/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+      "expected_location": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/vision-acuicola/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/vision-acuicola/",
+      "expected_location": "https://mitsa.org/vision-acuicola/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/marina-e-industrial/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/",
+      "expected_location": "https://mitsa.org/industrias/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/noticias/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/centro-tecnico/",
+      "expected_location": "https://mitsa.org/centro-tecnico/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/representaciones/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/representadas/",
+      "expected_location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/terrestre-y-construccion/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "expected_location": "https://mitsa.org/industrias/instalaciones-en-tierra/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/tt-service/productos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/trituradores-organicos/",
+      "ok": true,
+      "status": 404,
+      "expected_status": 404,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/smm2026/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/smm2026/",
+      "expected_location": "https://mitsa.org/smm2026/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/productos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/a-sample-blog-post/",
+      "ok": true,
+      "status": 410,
+      "expected_status": 410,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "query-preservation",
+      "url": "https://mitsachile.com/contacto/?puerta=evaluacion&sol=iccp&mensaje=Prueba%20de%20ruta&utm_source=seo-migration-test",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/contacto/?puerta=evaluacion&sol=iccp&mensaje=Prueba%20de%20ruta&utm_source=seo-migration-test"
+    },
+    {
+      "kind": "unknown-remains-404",
+      "url": "https://mitsachile.com/mitsa-audit-inexistente-20261020/",
+      "ok": true,
+      "status": 404
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/nosotros",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/nosotros/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/productos",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/representaciones",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/contacto",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/contacto/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/smm2026",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/smm2026/"
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/sitemap_index.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/sitemap_index.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/smm2026/sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/smm2026/sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/category-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/category-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/proyecto-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/proyecto-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/industria-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/industria-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/solucion-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/solucion-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/page-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/page-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-http",
+      "url": "https://mitsa.org/post-sitemap.xml",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "sitemap-host",
+      "url": "https://mitsa.org/post-sitemap.xml",
+      "ok": true
+    },
+    {
+      "kind": "sitemap-policy",
+      "url": "https://mitsa.org/sitemap_index.xml",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/aviso-publicitario-orca-iv/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/category/noticias-y-actualidad/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/category/noticias-y-actualidad/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/category/noticias-y-actualidad/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/category/noticias-y-actualidad/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/centro-tecnico/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/centro-tecnico/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/centro-tecnico/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/centro-tecnico/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/columna-revista-vision-aquicola-10-18/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/columna-tecnica-vision-aquicola/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/contacto/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/contacto/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/contacto/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/contacto/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/acuicultura/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/acuicultura/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/acuicultura/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/acuicultura/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/astilleros-y-reparacion/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/instalaciones-en-tierra/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/naval-y-defensa/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/naval-y-defensa/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/naval-y-defensa/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/naval-y-defensa/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/offshore-y-energia/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/offshore-y-energia/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/offshore-y-energia/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/offshore-y-energia/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/industrias/transporte-maritimo-y-carga/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/nosotros/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/nosotros/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/nosotros/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/nosotros/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/orca-iv/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/orca-iv/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/orca-iv/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/orca-iv/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/proyectos/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/proyectos/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/proyectos/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/proyectos/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/proyectos/asenav-proyecto-193/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/proyectos/sociber-dique-valparaiso/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/recursos/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/recursos/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/recursos/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/recursos/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/representadas/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/representadas/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/representadas/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/representadas/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/servicios/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/servicios/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/servicios/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/servicios/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/smm2026/",
+      "ok": true,
+      "status": 200,
+      "robots": "",
+      "canonical": [
+        "https://mitsa.org/smm2026/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/smm2026/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/agua-de-lastre-bwts/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/bioincrustaciones-icaf/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/drenajes-inoxidables/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/equipamiento-auxiliar/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/proteccion-catodica-iccp/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/revestimientos-y-superficies/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/sistemas-de-agua-caliente/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+      "ok": true
+    },
+    {
+      "kind": "indexable-destination",
+      "url": "https://mitsa.org/vision-acuicola/",
+      "ok": true,
+      "status": 200,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "canonical": [
+        "https://mitsa.org/vision-acuicola/"
+      ],
+      "h1_count": 1
+    },
+    {
+      "kind": "analytics-tag",
+      "url": "https://mitsa.org/vision-acuicola/",
+      "ok": true
+    },
+    {
+      "kind": "meta-description",
+      "url": "https://mitsa.org/vision-acuicola/",
+      "ok": true
+    },
+    {
+      "kind": "destination-retired-or-unknown",
+      "url": "https://mitsa.org/hello-world/",
+      "ok": true,
+      "status": 410
+    },
+    {
+      "kind": "destination-retired-or-unknown",
+      "url": "https://mitsa.org/a-sample-blog-post/",
+      "ok": true,
+      "status": 410
+    },
+    {
+      "kind": "destination-retired-or-unknown",
+      "url": "https://mitsa.org/trituradores-organicos/",
+      "ok": true,
+      "status": 404
+    },
+    {
+      "kind": "destination-retired-or-unknown",
+      "url": "https://mitsa.org/mitsa-audit-inexistente-20261020/",
+      "ok": true,
+      "status": 404
+    },
+    {
+      "kind": "utility-noindex",
+      "url": "https://mitsa.org/author/juanaplicacionesweb-cl/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "utility-noindex",
+      "url": "https://mitsa.org/category/uncategorized/",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/smm2026/MITSA-Company-Profile-2026.pdf",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/smm2026/MITSA-Company-Profile-2026.pdf",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/smm2026/francisco-de-la-iglesia.vcf",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/smm2026/francisco-de-la-iglesia.vcf",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/astillero-aereo.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/astillero-aereo.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/buque-var.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/buque-var.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/continuidad.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/continuidad.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/02071c91135e.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/02071c91135e.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/06d03541af9b.svg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/06d03541af9b.svg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/0cb3e2041670.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/0cb3e2041670.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/10efd19fc376.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/10efd19fc376.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/2019dcf5153b.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/2019dcf5153b.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/2dd1f1ebfda0.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/2dd1f1ebfda0.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/4f077841e20a.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/4f077841e20a.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/645931321b70.svg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/645931321b70.svg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/6de600555aee.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/6de600555aee.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/7a23f91de7e2.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/7a23f91de7e2.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/80f7a5494d31.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/80f7a5494d31.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/8816c19f9a83.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/8816c19f9a83.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/9466ca47aeed.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/9466ca47aeed.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/a9f52756c478.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/a9f52756c478.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/c3f5ee3ba7a1.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/c3f5ee3ba7a1.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/cb34ffef5e0f.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/cb34ffef5e0f.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/cd836e4403d9.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/cd836e4403d9.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/d7683e69ccb4.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/d7683e69ccb4.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/d/ffb787fcc457.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/d/ffb787fcc457.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/granja-acuicola.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/granja-acuicola.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/industrias-hero-tech3.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/industrias-hero-tech3.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-blucher.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-blucher.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-cathelco.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-cathelco.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-blucher.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-blucher.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-cathelco.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-cathelco.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-erma-tech.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-erma-tech.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-ervor.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-ervor.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-evac.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-evac.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-gerflor.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-gerflor.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-meclube.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-meclube.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-uson-marine.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-dark-uson-marine.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-erma-tech.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-erma-tech.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-ervor.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-ervor.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-evac.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-evac.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-gerflor.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-gerflor.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-meclube.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-meclube.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/logos/logo-uson-marine.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/logos/logo-uson-marine.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/plataforma-offshore.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/plataforma-offshore.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/que-hacemos.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/que-hacemos.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/blucher-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/blucher-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/blucher-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/blucher-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/cathelco-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/cathelco-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/cathelco-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/cathelco-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/erma-tech-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/erma-tech-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/erma-tech-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/erma-tech-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/ervor-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/ervor-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/ervor-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/ervor-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/evac-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/evac-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/evac-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/evac-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/gerflor-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/gerflor-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/gerflor-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/gerflor-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/meclube-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/meclube-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/meclube-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/meclube-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/uson-marine-1.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/uson-marine-1.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/rep/uson-marine-2.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/rep/uson-marine-2.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/themes/mitsa-v2/assets/img/tecnico-hero.webp",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/themes/mitsa-v2/assets/img/tecnico-hero.webp",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/1991321-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/1991321-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/Evac_logo_rgb_300dpi-300x300-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/Evac_logo_rgb_300dpi-300x300-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/blucher-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/blucher-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/burks_logo1-400x151-300x300.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/burks_logo1-400x151-300x300.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/descarga-1-300x300.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/descarga-1-300x300.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/descarga-300x300-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/descarga-300x300-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/egger-logo.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/egger-logo.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/ervor-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/ervor-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/esp-top-logo.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/esp-top-logo.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/haigh-logo.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/haigh-logo.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/incorr-2.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/incorr-2.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/logo-1-300x300.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/logo-1-300x300.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/logo-besta.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/logo-besta.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/logo23-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/logo23-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/logo2b2.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/logo2b2.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/meclube-logo-S-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/meclube-logo-S-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/moyno.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/moyno.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/02/sihi-logo-2.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/02/sihi-logo-2.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/03/23_evac_910_floorl__x555_z-1.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/03/23_evac_910_floorl__x555_z-1.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/03/3.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/03/3.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/03/Evac-ORCA-e1469193232601-1.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/03/Evac-ORCA-e1469193232601-1.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/04/foto-770x310.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/04/foto-770x310.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2016/04/orca4-770x310.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2016/04/orca4-770x310.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/2.-buques-de-guerra-usa.jpg-300x300.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/2.-buques-de-guerra-usa.jpg-300x300.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/Marinos-e-industrial-2.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/Marinos-e-industrial-2.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/Marinos-e-industrial.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/Marinos-e-industrial.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/Terrestre-y-construccion-4.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/Terrestre-y-construccion-4.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/construccion-1-300x300.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/construccion-1-300x300.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/hero_.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/hero_.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/11/logo-mitsa-copy.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/11/logo-mitsa-copy.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/12/7-1.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/12/7-1.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/12/Passenger_Airplanes_Ships_517418_1920x1080.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/12/Passenger_Airplanes_Ships_517418_1920x1080.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2017/12/mitza.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2017/12/mitza.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2018/10/logo-cram.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2018/10/logo-cram.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/04/foto-770x310-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/04/foto-770x310-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/05/acuicultura-embarcacion-800x520.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/05/acuicultura-embarcacion-800x520.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/05/acuicultura-embarcacion.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/05/acuicultura-embarcacion.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/06/orca4-770x310-1.png",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/06/orca4-770x310-1.png",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/cta-fondo.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/cta-fondo.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-acuicultura.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-acuicultura.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-astilleros.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-astilleros.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-naval-defensa.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-naval-defensa.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-offshore-energia.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-offshore-energia.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-tierra.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-tierra.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/ind-transporte.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/ind-transporte.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/plataforma-offshore.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/plataforma-offshore.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "resource-pair",
+      "url": "https://mitsachile.com/wp-content/uploads/2026/09/recursos-hero.jpg",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/wp-content/uploads/2026/09/recursos-hero.jpg",
+      "new_status": 200
+    },
+    {
+      "kind": "domain-variant",
+      "url": "http://mitsachile.com/",
+      "ok": true,
+      "final": "https://mitsa.org/",
+      "chain": [
+        301,
+        301
+      ]
+    },
+    {
+      "kind": "domain-variant",
+      "url": "http://www.mitsachile.com/",
+      "ok": true,
+      "final": "https://mitsa.org/",
+      "chain": [
+        301,
+        301
+      ]
+    },
+    {
+      "kind": "domain-variant",
+      "url": "https://mitsachile.com/",
+      "ok": true,
+      "final": "https://mitsa.org/",
+      "chain": [
+        301
+      ]
+    },
+    {
+      "kind": "domain-variant",
+      "url": "https://www.mitsachile.com/",
+      "ok": true,
+      "final": "https://mitsa.org/",
+      "chain": [
+        301
+      ]
+    },
+    {
+      "kind": "old-operational-endpoint",
+      "url": "https://mitsachile.com/robots.txt",
+      "ok": true,
+      "status": 200,
+      "location": null
+    },
+    {
+      "kind": "old-operational-endpoint",
+      "url": "https://mitsachile.com/sitemap_index.xml",
+      "ok": true,
+      "status": 200,
+      "location": null
+    },
+    {
+      "kind": "old-operational-endpoint",
+      "url": "https://mitsachile.com/wp-json/wp/v2/types",
+      "ok": true,
+      "status": 200,
+      "location": null
+    },
+    {
+      "kind": "old-operational-endpoint",
+      "url": "https://mitsachile.com/wp-login.php",
+      "ok": true,
+      "status": 200,
+      "location": null
+    }
+  ]
+}

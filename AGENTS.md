@@ -54,6 +54,8 @@ Producción actual corre en **Hostinger con PHP 8.4** — tanto el sitio interme
 
 ## Estructura del repo
 
+**Producción verificada el 2026-10-20:** el dominio canónico aprobado es `https://mitsa.org/`, servido por WordPress con el tema remoto `mitsa-v2` en Hostinger. `mitsachile.com` conserva su instalación y accesos administrativos, y redirige las URLs públicas migradas mediante 301. El frontend Astro y el tema local `mitsa/` no deben desplegarse suponiendo que coinciden con ese tema remoto. Las reglas, el mu-plugin y las herramientas de esta migración están en `scripts/seo-migration/`, `wp-content/mu-plugins/mitsa-seo-migration.php` y `docs/entregables/migracion-seo-mitsa-org-2026-10-20/`.
+
 - `docs/` — material fuente entregado por el cliente (PDFs: brochure, propuesta, mapas de sitio, correos). No editar, son insumo.
 - `docs/DECISIONS.md` — log de decisiones pendientes/tomadas (dominio, marca "MITSA" vs "MITSA Chile", fee mensual 9 vs 12 UF, etc.) para no perder contexto entre sesiones.
 - `docs/entregables/` — informes y entregables ya enviados/preparados para el cliente (HTML, PDF, previews).
@@ -74,9 +76,9 @@ CLAUDE.md es la fuente de verdad de instrucciones. `AGENTS.md` (Codex) es espejo
 - Marca: proyectar como **"MITSA"** (no "MITSA Chile") para expansión regional a Latinoamérica.
 - Cliente es propietario de todos los activos digitales (dominio, hosting, sitio WordPress, base de datos, contenidos, material gráfico). Hosting puede quedar administrado por AplicacionesWeb dentro del servicio mensual, pero portable — se debe poder entregar copia completa sin pagos pendientes.
 - Analítica: GA4 + GSC + GTM desde el día 1 — ya implementado en producción vía Site Kit (jul 2026).
+- Dominio final: `mitsa.org`, aprobado por Juan el 2026-10-20; migración desde `mitsachile.com` implementada con redirecciones permanentes y conservación de rutas equivalentes.
 
 ## Decisiones abiertas (no asumir, ver `docs/DECISIONS.md`)
 
 - Fee mensual de mantención: propuesta original 12 UF/mes, cliente propuso 9 UF/mes o 12 UF atadas a entregables — sin cerrar en el último correo del hilo.
-- Dominio final a usar.
 - Validación final de secciones Representadas, Sectores, Servicios, Contacto contra el "documento maestro" que el cliente prometió entregar (aún no llegó en los correos disponibles).

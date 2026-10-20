@@ -1,0 +1,10 @@
+{
+  "off": {
+    "status": 301,
+    "location": "https://mitsachile.com/nosotros/"
+  },
+  "on": {
+    "status": 301,
+    "location": "https://mitsa.org/nosotros/"
+  }
+}

@@ -1,0 +1,114 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MITSA — Estado de migración SEO</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#173140;max-width:1100px;margin:40px auto;padding:0 28px}h1{font-size:36px;line-height:1.2;color:#07536a}h2{margin-top:34px;border-bottom:2px solid #d9e9ee;padding-bottom:8px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:11px;border:1px solid #d1dee3;text-align:left;vertical-align:top}th{background:#eaf3f6}tr:nth-child(even){background:#f7fafb}a{color:#006980}code{font-size:.88em}p,td,code{overflow-wrap:anywhere}@media print{body{font-size:10pt;margin:0}h1{font-size:25pt}h2{break-after:avoid}tr{break-inside:avoid}@page{size:A4;margin:16mm}}</style></head><body><h1>Estado de la migración SEO MITSA</h1>
+<p><strong>La migración técnica está activa y verificada. Queda pendiente enviar el Cambio de dirección en Search Console: su formulario abre en blanco en la sesión disponible.</strong></p>
+<p>Origen: <strong>https://mitsachile.com/</strong> → destino canónico: <strong>https://mitsa.org/</strong>.</p>
+<p>Corte aplicado el <strong>20 de octubre de 2026, 18:56:47 America/Santiago (21:56:47 UTC)</strong>, tras la aprobación explícita de Juan. No se cambiaron DNS ni correo corporativo.</p>
+<h2>Lo implementado y comprobado</h2>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Estado y evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redirecciones de páginas</td>
+<td>42 rutas con 301 al destino correspondiente, incluidas las URLs históricas de Productos, Representaciones, Noticias y sectores. Las variantes sin barra final se normalizan directamente.</td>
+</tr>
+<tr>
+<td>Rutas retiradas</td>
+<td><code>/hello-world/</code> y <code>/a-sample-blog-post/</code> devuelven 410. <code>/trituradores-organicos/</code> conserva 404 al no existir un equivalente confirmado. Las rutas desconocidas también conservan un 404 real.</td>
+</tr>
+<tr>
+<td>Recursos</td>
+<td>108 parejas de archivos comprobadas: 301 del origen y 200 en destino. Las 34 imágenes históricas recuperadas coinciden por SHA256 con la réplica local. El PDF SMM coincide por SHA256 con el original.</td>
+</tr>
+<tr>
+<td>SMM 2026</td>
+<td>Landing, brochure y vCard recuperados en mitsa.org. Canonical, Open Graph, vínculos web y URL de la vCard actualizados. El correo del contacto conserva su dominio corporativo.</td>
+</tr>
+<tr>
+<td>Indexación</td>
+<td>Eliminado el bloqueo global de WordPress en mitsa.org. Hay 34 URLs indexables en el sitemap, con canonical correcto; se excluyen muestras, autores y Uncategorized.</td>
+</tr>
+<tr>
+<td>Metadatos</td>
+<td>Completadas las descripciones faltantes de cinco publicaciones, dos proyectos y la categoría de noticias.</td>
+</tr>
+<tr>
+<td>Search Console</td>
+<td>mitsa.org verificado; conservado el acceso de Juan, que ya era propietario del origen. Site Kit del destino utiliza la propiedad nueva. Sitemap enviado el 20/oct a las 21:57:32 UTC; Google lo dejó pendiente de procesamiento, sin errores reportados en el envío.</td>
+</tr>
+<tr>
+<td>GA4</td>
+<td>Se conserva la propiedad <code>546711733</code>, el flujo <code>15305402446</code> y la medición <code>G-BNP4L272V2</code>. URL del flujo actualizada a mitsa.org. Google recibió <strong>1 evento <code>seo_migration_check</code></strong> emitido desde el navegador en el dominio nuevo.</td>
+</tr>
+<tr>
+<td>Formulario</td>
+<td>Petición real con nonce, guardado de consulta y página de confirmación comprobados. Correo interceptado antes del transporte; no se probó entrega externa. Registro sintético, filtro y clave de prueba eliminados.</td>
+</tr>
+<tr>
+<td>Operación del origen</td>
+<td>Login, REST API, robots y sitemap siguen disponibles. Se conserva la instalación de WordPress para administración y reversión.</td>
+</tr>
+<tr>
+<td>Monitoreo</td>
+<td>Cron Hostinger <code>eV1MTMFDzg</code>, todos los días a las 11:30 UTC / 08:30 America/Santiago. Primer control y wrapper del cron: <strong>51 comprobaciones aprobadas, cero fallos; GSC de ambos dominios accesible</strong>.</td>
+</tr>
+<tr>
+<td>Respaldos</td>
+<td>Copias completas de archivos y bases de datos en servidor y equipo local, fuera del directorio público y de Git. SHA256 verificados. Reversión de enrutamiento preparada y probada en una ruta aislada.</td>
+</tr>
+</tbody>
+</table>
+<p>La aceptación del corte terminó con <strong>292 comprobaciones aprobadas y cero fallos</strong>. Abarca todas las rutas del mapa ampliado, las 108 parejas de recursos, destinos del sitemap, metadatos, parámetros, errores HTTP, variantes de dominio y accesos operativos. No demuestra que Google ya haya terminado de indexar ni garantiza posiciones futuras.</p>
+<h2>Línea base de posicionamiento</h2>
+<p>Se exportó Search Console usando su conexión existente de Site Kit, sin extraer ni publicar credenciales. Se obtuvieron páginas, consultas y fechas para 16 meses, 90 días y 28 días, con fecha final <strong>17/oct/2026</strong> para dejar margen de procesamiento.</p>
+<table>
+<thead>
+<tr>
+<th>Ventana</th>
+<th style="text-align: right;">Clics, suma del informe diario</th>
+<th style="text-align: right;">Impresiones, suma del informe diario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90 días: 20/jul–17/oct</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">883</td>
+</tr>
+<tr>
+<td>28 días: 20/sep–17/oct</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">328</td>
+</tr>
+</tbody>
+</table>
+<p>El informe de páginas contiene 13 URLs históricas. En 90 días destacan la portada (70 clics), <code>/marina-e-industrial/</code> (5), <code>/nosotros/</code> (3) y <code>/productos/</code> (1). Se incorporaron al traslado las URLs que no aparecían en el sitemap vigente.</p>
+<p><strong>Las agrupaciones no se reemplazaron entre sí:</strong> la suma por páginas da 79 clics/1.468 impresiones en 90 días y 44/715 en 28 días. Para la línea base agregada se usa el informe diario; para priorizar URLs se conserva el informe por página. Los datos completos de Google y la exportación GA4 por hostname/canal/landing se mantienen en los respaldos privados. <code>linea-base-gsc-paginas.csv</code> contiene únicamente las URLs de MITSA y sus métricas.</p>
+<p>El panel de GSC del origen mostraba 13 páginas indexadas antes del traslado. Ese dato es histórico y no representa páginas ya indexadas en el dominio nuevo.</p>
+<h2>Corrección de la detección inicial de analítica</h2>
+<p>La auditoría previa buscaba identificadores <code>G-…</code> y <code>GTM-…</code>, y no detectaba el formato <strong>Google tag <code>GT-…</code></strong>. Se comprobó la etiqueta <code>GT-577M5DL3</code> de Site Kit y su destino GA4 existente. Por tanto, no se concluye que faltara analítica: <strong>se conservó la medición que ya existía</strong>. La landing estática SMM recibió la misma etiqueta y la recepción del evento controlado se confirmó posteriormente con la API de Analytics.</p>
+<h2>Pendiente para cerrar la declaración a Google</h2>
+<p>Está abierta la página:</p>
+<p><a href="https://search.google.com/search-console/settings/change-address?resource_id=https%3A%2F%2Fmitsachile.com%2F">Search Console → Cambio de dirección de mitsachile.com</a>.</p>
+<p>En la sesión de Juan se pudo añadir mitsa.org como propiedad verificada y comprobar que Google no informa acciones manuales ni problemas de seguridad. Sin embargo, el formulario de Cambio de dirección queda completamente en blanco, incluso después de una recarga nativa. No se seleccionó un destino ni se envió una solicitud de traslado; <strong>no existe confirmación de aceptación de ese trámite</strong>.</p>
+<p>Cuando cargue el formulario, falta seleccionar <code>https://mitsa.org/</code>, ejecutar sus comprobaciones y confirmar el traslado. Las redirecciones y los destinos ya están preparados. La revisión de retiradas y el inventario de enlaces externos del panel tampoco se completaron en esta sesión de navegador; conviene incorporarlos a esa revisión final. El objetivo permanece abierto por ese trabajo pendiente.</p>
+<h2>Seguimiento y reversión</h2>
+<p>El monitoreo diario revisa 45 rutas del origen, seis destinos prioritarios y rendimiento GSC de ambos dominios. Guarda informes privados en <code>/home/u549101671/mitsa-seo-migration-20261020/daily/YYYY-MM-DD.json</code>; el resumen más reciente está en <code>monitor-last.log</code>. No envía mensajes ni altera automáticamente el sitio.</p>
+<p>Revisiones de evolución previstas: <strong>27/oct, 3/nov, 19/nov y 19/dic de 2026; 18/ene de 2027</strong>. Comparar el rendimiento combinado de ambos dominios durante la transición. Después del día 90 se deben revisar los resultados y retirar el cron; el script deja de consultar sitios y Google a partir del día 91.</p>
+<p>Mantener dominio antiguo, HTTPS y 301 al menos hasta <strong>20/oct/2027</strong>, preferiblemente de forma permanente por enlaces y material comercial existente.</p>
+<p>La reversión puntual es <code>bash scripts/seo-migration/rollback-redirects.sh --apply</code>. Restablece el <code>.htaccess</code> previo, preservando las bases de datos actuales. No restaurar un dump antiguo para revertir únicamente el enrutamiento. Si posteriormente se envía Cambio de dirección, incluir su posible cancelación al evaluar una reversión.</p>
+<h2>Evidencia entregada</h2>
+<ul>
+<li><code>verificacion-post-corte.json</code>: 292 pruebas, cero fallos.</li>
+<li><code>preflight.json</code>: 52 pruebas de reglas aisladas.</li>
+<li><code>destino-preparado.json</code>: 236 controles finales del destino; el primer resultado, con una descripción pendiente, se conserva en <code>destino-preparado-inicial.json</code>.</li>
+<li><code>prueba-reversion.json</code>: cambio del destino aislado antiguo → nuevo después de restituir las reglas.</li>
+<li><code>prueba-formulario.json</code> y <code>prueba-analytics.json</code>: comprobaciones del formulario y recepción real de Analytics.</li>
+<li><code>linea-base-gsc-paginas.csv</code>: métricas por URL y ventana.</li>
+<li><code>google-acciones-manuales.png</code> y <code>google-seguridad.png</code>: comprobaciones del destino en GSC.</li>
+<li><code>../../../scripts/seo-migration/README.md</code>: herramientas, cron, respaldo y comandos operativos.</li>
+</ul>
+<p>Los respaldos y exportaciones privadas están excluidos de Git. No se desplegó el frontend Astro, no se sustituyó el tema remoto <code>mitsa-v2</code> y no se publicaron los cinco artículos regulatorios pendientes de aprobación.</p></body></html>

@@ -1,0 +1,20 @@
+{
+  "completed_at_utc": "2026-10-20T18:59:30.957264+00:00",
+  "scope": "Read-only remote audit; local reports only",
+  "files": {
+    "informe.md": "158add951baf1f654406493d2082f4fe914467973be48b10c2a73ca9abab37f8",
+    "home-mitsachile.com.html": "920a908f3e18740fea09fec6052cba12145730f278fc4ce7badc791c639b5b2a",
+    "inventario-recursos.csv": "36d7f4475f6dfc266e4f8d466228e751aff0d512cedf09c26d66bd35b4bd3b88",
+    "mapa-redirecciones.csv": "64a70b30159dc1e6940e408544dd6f047ba23fea34798bc755e44bf2944c95e8",
+    "tabla-equivalencias.md": "c76ac49941eef662bf5b7de679fcf4fc0fa17f1fdcf092a0bcbcf4b3e3d22d70",
+    "inventario-seo.csv": "e16ef4ebb2400028c134f968c0ff3b024499088e136efb152381aaa3dbb486d5",
+    "htaccess-mitsa.org.txt": "28f614476cc6df08985b364a76fd32773f0f58e239a9c8e300e422ca890957ef",
+    "supplement.json": "a93ebfbe483dff8eb5d315dfd0e923c88eaaf8c7918fad78876a0ed77e73a7d4",
+    "informe.html": "ef9bf64b532e72dca55da30307413ad874e7748f2aed1f5c5b18c07da34999cd",
+    "crawl.json": "74eddd777b0d244d81640eabce8fba0f03be029446b017a3ae7dd86cc5080533",
+    "recheck.json": "38c3d1396d800127197d265ad03bd9a8a3ca15b1220d2810c426bc1c530eea41",
+    "home-mitsa.org.html": "aa4f9c046b74837ec53eb5d4b55380ba2965e4e12339de160c49813d646fb916",
+    "assets.json": "fd8c5bf7c8b9496c69d8166877ade08a548a123c38a2f931b420c76fd3b66771",
+    "htaccess-mitsachile.com.txt": "28f614476cc6df08985b364a76fd32773f0f58e239a9c8e300e422ca890957ef"
+  }
+}

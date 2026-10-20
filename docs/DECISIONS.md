@@ -23,6 +23,7 @@ Log vivo. Actualizar cuando se resuelva algo o llegue el "documento maestro" del
 | 2026-08-26 | Landing SMM Hamburgo 2026 en `/smm2026/`: landing específica en inglés, móvil-first, con vCard de Francisco De la Iglesia, subida a producción en Hostinger (`domains/mitsachile.com/public_html/smm2026/`) y validada con Playwright | Solicitud cliente Francisco De la Iglesia (kit comercial SMM 2026) |
 | 2026-08-26 | SSL & Redirección canónica 301: SSL reinstalado en Hostinger para cubrir `mitsachile.com` y `www.mitsachile.com`; `.htaccess` actualizado para forzar HTTPS y redirigir `www` a sin-`www` (`https://mitsachile.com/`) | Corrección bug certificado SSL / consolidación canónica |
 | 2026-09-01 | Arquitectura Headless + Monorepo: Nueva web 2026 construida en `frontend/` con Astro SSG consumiendo WordPress como backoffice puro (REST API), manteniendo el monorepo unificado para centralizar la estrategia y fee de SEO. | Juan Jorquera, sesión 2026-09-01 |
+| 2026-10-20 | Dominio final `mitsa.org`: Juan aprueba el plan de migración SEO desde `mitsachile.com`. Corte 301 activado el 20/oct a las 18:56:47 America/Santiago (21:56:47 UTC). Ambos sitios realmente servían WordPress con `mitsa-v2`; se conservan las rutas homólogas, SMM y sus descargas, y se recuperan 34 imágenes históricas. Se mantiene la misma propiedad/flujo GA4 y se verifica GSC en destino. | Aprobación explícita de Juan en esta conversación; evidencia en `docs/entregables/migracion-seo-mitsa-org-2026-10-20/` |
 
 ## Abiertas — requieren decisión del cliente o de Juan/Luis (NO resolver solo)
 

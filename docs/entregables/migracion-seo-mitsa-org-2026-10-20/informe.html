@@ -1,0 +1,455 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MITSA — Informe de migración SEO</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#172d3a;max-width:1120px;margin:40px auto;padding:0 28px}h1{font-size:36px;line-height:1.15;color:#07536a}h2{margin-top:42px;border-bottom:2px solid #d9e9ee;padding-bottom:8px}h3{margin-top:28px}table{border-collapse:collapse;width:100%;font-size:13px;display:block;overflow:auto}th,td{padding:10px;border:1px solid #d1dee3;text-align:left;vertical-align:top}th{background:#eaf3f6}tr:nth-child(even){background:#f7fafb}a{color:#006980}code{font-size:.88em;overflow-wrap:anywhere}p,td{overflow-wrap:anywhere}@media print{body{max-width:none;margin:0;font-size:10pt}h1{font-size:26pt}h2,h3{break-after:avoid}table{font-size:8pt;display:table}tr{break-inside:avoid}@page{size:A4;margin:16mm}}</style></head><body><h1>Migración SEO de mitsachile.com a mitsa.org</h1>
+<p><strong>Informe de revisión y plan para aprobación · 20 de octubre de 2026 · America/Santiago</strong></p>
+<p><strong>Dictamen: la migración es viable, pero el destino todavía no está preparado para recibir tráfico orgánico.</strong> Hay equivalencia comprobada para las 36 URLs de los sitemaps actuales. El bloqueo principal es que ambos sitios entregan <code>noindex, nofollow</code>. También deben resolverse URLs históricas y recursos ausentes antes de activar redirecciones.</p>
+<p>Se realizaron únicamente consultas públicas y lecturas mediante MCP de Hostinger. No se modificaron sitios, WordPress, archivos remotos, DNS ni redirecciones. Este documento propone trabajo; no constituye autorización de implementación.</p>
+<h2>1. Qué se verificó</h2>
+<table>
+<thead>
+<tr>
+<th>Revisión</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostinger MCP</td>
+<td>Ambos dominios activos, WordPress, misma cuenta y orden de hosting; directorios separados</td>
+</tr>
+<tr>
+<td>Sitemaps</td>
+<td>7 sitemaps hijos por dominio; 36 URLs únicas por sitio</td>
+</tr>
+<tr>
+<td>Páginas</td>
+<td>72 respuestas HTML revisadas; todas HTTP 200, un H1 por página</td>
+</tr>
+<tr>
+<td>Equivalencia</td>
+<td>Las 36 parejas tienen la misma ruta y el mismo texto principal extraído del HTML</td>
+</tr>
+<tr>
+<td>Inventario público WordPress</td>
+<td>Por dominio: 10 páginas, 6 entradas, 9 soluciones, 6 industrias y 2 proyectos; una sola página de resultados por tipo</td>
+</tr>
+<tr>
+<td>URLs adicionales</td>
+<td>7 rutas históricas o fuera del sitemap, comprobadas en ambos dominios</td>
+</tr>
+<tr>
+<td>Recursos</td>
+<td>108 parejas de URLs: 72 recursos del sitio actual, 34 imágenes históricas y 2 descargas SMM</td>
+</tr>
+<tr>
+<td>Variantes de dominio</td>
+<td>HTTP/HTTPS y con/sin www en ambos dominios</td>
+</tr>
+<tr>
+<td>Configuración</td>
+<td>Lectura de ambos <code>.htaccess</code>; contienen bloques de LiteSpeed y WordPress, sin traslado de dominio explícito</td>
+</tr>
+</tbody>
+</table>
+<p>Las equivalencias se apoyan en estado HTTP, ruta, título, H1 y comparación exacta del texto de <code>main</code> (o su alternativa). No equivalen a una comparación visual, funcional o binaria completa. Para recursos se comprobó HTTP y tipo mediante HEAD, no identidad de archivos. El inventario no incluye todas las variantes <code>srcset</code>, fondos CSS ni URLs huérfanas desconocidas.</p>
+<h2>2. Hallazgos que condicionan la migración</h2>
+<h3>P0 — Indexación bloqueada en los dos sitios</h3>
+<p>Las 36 páginas de cada dominio contienen <code>&lt;meta name='robots' content='noindex, nofollow'&gt;</code>. Ninguna de estas 72 páginas contiene <code>rel="canonical"</code>. El resultado se confirmó además en ambas portadas con una URL de comprobación y respuesta de caché <strong>miss</strong>.</p>
+<p>Los dos <code>robots.txt</code> permiten el rastreo y anuncian su propio sitemap. Esto no anula <code>noindex</code>: Google puede leer la página y excluirla de los resultados. <a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing">Documentación de Google sobre noindex</a>.</p>
+<p><strong>Trabajo propuesto:</strong> identificar el origen en visibilidad de WordPress, tema o filtros SEO; habilitar indexación únicamente en contenidos aprobados; verificar canonical autorreferente en mitsa.org y coherencia con sitemap, Open Graph y schema. Mientras se prepara el traslado, decidir si corresponde retirar también el bloqueo del sitio actual. No puede determinarse desde este rastreo cuándo comenzó ni cuánto posicionamiento se perdió.</p>
+<h3>P0 — Landing SMM y descargas sin destino</h3>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th style="text-align: right;">mitsachile.com</th>
+<th style="text-align: right;">mitsa.org</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/smm2026/</code></td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">404</td>
+</tr>
+<tr>
+<td><code>/smm2026/MITSA-Company-Profile-2026.pdf</code></td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">404</td>
+</tr>
+<tr>
+<td><code>/smm2026/francisco-de-la-iglesia.vcf</code></td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">404</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Propuesta preferida:</strong> conservar la landing y copiar sus recursos al mismo path en mitsa.org antes del traslado. Así se conservan enlaces comerciales y códigos QR. Si se decide retirarla, definir una alternativa comercial realmente equivalente; no enviar automáticamente todo a la portada.</p>
+<h3>P1 — URLs históricas que requieren reglas específicas</h3>
+<table>
+<thead>
+<tr>
+<th>Origen en mitsachile.com</th>
+<th>Estado actual</th>
+<th>Destino propuesto en mitsa.org</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/representaciones/</code></td>
+<td>301 → <code>/soluciones/</code></td>
+<td><code>/representadas/</code></td>
+<td>El contenido histórico es un directorio de fabricantes; corregir la equivalencia semántica</td>
+</tr>
+<tr>
+<td><code>/tt-service/productos/</code></td>
+<td>404</td>
+<td><code>/soluciones/</code></td>
+<td>Recuperar la antigua entrada al catálogo; validar cobertura de productos</td>
+</tr>
+<tr>
+<td><code>/noticias/</code></td>
+<td>301 → <code>/centro-tecnico/</code></td>
+<td><code>/centro-tecnico/</code></td>
+<td>Archivo de publicaciones</td>
+</tr>
+<tr>
+<td><code>/marina-e-industrial/</code></td>
+<td>301 → <code>/industrias/</code></td>
+<td><code>/industrias/</code></td>
+<td>Equivalencia amplia; comprobar si requiere landing marina específica</td>
+</tr>
+<tr>
+<td><code>/terrestre-y-construccion/</code></td>
+<td>301 → <code>/industrias/instalaciones-en-tierra/</code></td>
+<td><code>/industrias/instalaciones-en-tierra/</code></td>
+<td>Continuidad temática</td>
+</tr>
+<tr>
+<td><code>/trituradores-organicos/</code></td>
+<td>404</td>
+<td><strong>Sin homólogo confirmado</strong></td>
+<td>Recuperar contenido histórico y confirmar oferta; había inconsistencia de nombre en el menú</td>
+</tr>
+<tr>
+<td><code>/smm2026/</code></td>
+<td>200</td>
+<td><code>/smm2026/</code>, después de migrarla</td>
+<td>No activar regla hacia un 404</td>
+</tr>
+</tbody>
+</table>
+<p>Las cuatro redirecciones históricas existentes también se reproducen dentro de mitsa.org. Las reglas del traslado deben apuntar directamente al destino final aprobado.</p>
+<h3>P1 — Recursos históricos ya perdidos</h3>
+<p>Los 72 recursos actuales comprobados responden 200 en ambos dominios. Las 34 imágenes de rutas históricas de 2016–2018 devuelven 404 en ambos. El problema ya existe antes del cambio de dominio.</p>
+<p>Recuperar originales desde respaldos o réplica antigua y contrastar imágenes equivalentes antes de decidir su nueva ruta. Hay candidatos por nombre, como <code>foto-770x310.png</code> y <code>orca4-770x310.png</code>, pero no se verificó equivalencia visual: no están aprobados como sustitutos. Priorizar recuperación según enlaces y tráfico de imágenes cuando se obtenga Search Console.</p>
+<h3>P1 — Falta línea base de posicionamiento</h3>
+<p>El conector OpenSEO accesible solo contiene el proyecto aplicacionesweb.cl; no hay un proyecto MITSA conectado allí. No se obtuvieron datos privados de Search Console, GA4 ni logs HTTP históricos. La búsqueda de operaciones de hosting no proporcionó un endpoint de logs HTTP aplicable a estos WordPress.</p>
+<p><strong>No se puede afirmar cuántas visitas, posiciones o enlaces se conservarán.</strong> Antes del lanzamiento: obtener propiedades verificadas de ambos dominios; exportar rendimiento por página y consulta de los últimos 16 meses disponibles, con comparación reciente de 90 y 28 días; revisar indexación, enlaces externos, acciones manuales y retiradas. Complementar el mapa con URLs de esos informes y logs. La ausencia del proyecto en OpenSEO no demuestra que Search Console o Site Kit estén desactivados.</p>
+<h3>P2 — Limpieza editorial y medición</h3>
+<ul>
+<li><code>/hello-world/</code> es la entrada de ejemplo de WordPress y está incluida en el sitemap. Proponer retirada y 404/410 después de revisar enlaces; no indexarla por habilitar el sitio globalmente.</li>
+<li>Revisar la utilidad de <code>/category/uncategorized/</code> y del archivo <code>/author/juanaplicacionesweb-cl/</code>. El autor visible es una cuenta de la agencia. La equivalencia técnica no implica que deban indexarse.</li>
+<li>Faltan metadescripciones en 11 páginas por dominio: archivos, entradas y los dos proyectos. Redactarlas para las páginas que deban indexarse.</li>
+<li>No se detectaron identificadores GA4/GTM en el HTML revisado. Confirmar medición real con navegador y eventos antes del lanzamiento; el HTML por sí solo no prueba ausencia total de analítica.</li>
+<li>En mitsa.org los enlaces HTTP extraídos no apuntan a mitsachile.com. Sí se conserva <code>mailto:info@mitsachile.com</code>: es correo corporativo, no un error de migración. Mantener correo, MX y servicios asociados salvo instrucción independiente.</li>
+<li>El contenido en vivo habla de 1984 y títulos “MITSA Chile”; contrastarlo con las fuentes aprobadas del cliente antes de cambios editoriales. Evitar mezclar el traslado técnico con reescrituras generales.</li>
+</ul>
+<h2>3. Mapa de equivalencias</h2>
+<p>Se entrega <strong><code>mapa-redirecciones.csv</code> con 43 filas</strong>: 36 parejas actuales y 7 excepciones. Incluye origen, destino propuesto, estado HTTP, evidencia temática y decisión pendiente. <strong>Es un documento de revisión, no un archivo importable de reglas.</strong></p>
+<p>Las 36 rutas actuales coinciden: portada; Nosotros, Contacto, Representadas, Servicios, Recursos, Soluciones, Industrias, Proyectos y Centro Técnico; 9 soluciones; 6 industrias; 2 proyectos; 6 entradas; 2 categorías y un archivo de autor. Los detalles completos están en <code>tabla-equivalencias.md</code> y en el CSV. Las entradas de ejemplo y archivos tienen un tratamiento editorial separado.</p>
+<p>La propuesta central es conservar las rutas actuales en mitsa.org. La igualdad del texto principal entre dominios reduce el cambio necesario; no es preciso inventar una estructura nueva para realizar este traslado.</p>
+<h2>4. Plan de trabajo propuesto</h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Trabajo concreto</th>
+<th>Entregable / condición de salida</th>
+<th>Estimación orientativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Línea base y aprobación del mapa</td>
+<td>Obtener GSC/GA4 y URLs históricas; decidir SMM, trituradores y archivos; priorizar por tráfico y enlaces</td>
+<td>Mapa final sin URLs relevantes sin tratamiento</td>
+<td>0,5–1 jornada, sujeto a accesos</td>
+</tr>
+<tr>
+<td>2. Preparar mitsa.org</td>
+<td>Corregir indexación/canonical, migrar SMM y recursos aprobados, limpiar sitemap y comprobar medición</td>
+<td>Destinos aprobados con 200, contenido correcto e indexación permitida</td>
+<td>1–2 jornadas; recuperación histórica aparte si falta respaldo</td>
+</tr>
+<tr>
+<td>3. Preparar traslado</td>
+<td>Respaldar archivos/BD/configuración; generar y revisar reglas; probar copia aislada</td>
+<td>Matriz de pruebas completa y reversión preparada</td>
+<td>0,5–1 jornada</td>
+</tr>
+<tr>
+<td>4. Ejecutar tras aprobación</td>
+<td>Activar reglas, purgar caché, comprobar rutas, actualizar señales y solicitar cambio de dirección</td>
+<td>Verificación técnica y registro horario del corte</td>
+<td>Ventana de 1–2 horas</td>
+</tr>
+<tr>
+<td>5. Seguimiento</td>
+<td>Revisar errores, rastreo, indexación y rendimiento combinado de ambos dominios</td>
+<td>Reportes a 7, 14, 30, 60 y 90 días</td>
+<td>Seguimiento; no plazo garantizado de recuperación</td>
+</tr>
+</tbody>
+</table>
+<p>Son estimaciones de trabajo, no cotización ni promesa de posicionamiento. La corrección de indexación del dominio actual podría aprobarse como intervención urgente separada si la migración completa se posterga.</p>
+<h3>Diseño de redirecciones y operación</h3>
+<p>Proponer <strong>301 de servidor</strong>, restringidas a los hosts antiguos, con excepciones históricas explícitas antes de reglas generales. Las permanentes señalan el destino preferido a Google. <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects">Google: redirecciones</a>.</p>
+<p>Para este hosting, evaluar reglas fuera de los bloques autogenerados de WordPress/LiteSpeed. No instalar todavía una regla global que arrastre las excepciones a páginas inexistentes. Contemplar las variantes www, HTTP y HTTPS: hoy HTTP+www recorre dos saltos dentro de cada dominio. Procurar un salto directo al destino HTTPS sin www; verificar si las normalizaciones previas ocurren en hPanel.</p>
+<p>Conservar parámetros de contacto (<code>puerta</code>, <code>solucion</code>, <code>sol</code>, <code>mensaje</code>) y atribución. Definir tratamiento propio para robots, sitemaps, verificaciones de propiedad, administración y API; evitar que una redirección indiscriminada interrumpa el backoffice. Las rutas desconocidas deben conservar un 404/410 real, sin convertirse en portada con 200.</p>
+<p>Mantener el dominio antiguo, HTTPS válido y redirecciones durante <strong>al menos un año</strong>, preferiblemente de forma indefinida por enlaces y materiales impresos. Preparar sitemap del destino con URLs canónicas indexables y mantener inventario del origen para seguimiento. Google recomienda mapear URLs, trasladar recursos y monitorizar ambos sitios; puede haber fluctuaciones temporales. <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes">Google: traslado con cambio de URL</a>.</p>
+<p>Después de verificar las redirecciones y la titularidad de ambos sitios con la misma cuenta, solicitar <strong>Cambio de dirección</strong> desde la propiedad antigua en Search Console. Este paso se realiza después del traslado, no lo sustituye. <a href="https://support.google.com/webmasters/answer/9370220">Google: herramienta de cambio de dirección</a>.</p>
+<h3>Pruebas y reversión</h3>
+<p>Antes del corte deben estar aprobadas todas las filas relevantes y existir respaldo recuperable. Tras el corte comprobar el 100% del mapa y los recursos seleccionados: 301 correcto, destino 200, ausencia de bucles y de noindex en páginas prioritarias, canonical, sitemap y equivalencia de contenido. Probar con/sin barra, www/HTTPS, rutas inexistentes y parámetros de contacto. Verificar formularios y eventos con un envío de prueba acordado durante la implementación.</p>
+<p>Si aparecen bucles, errores 5xx, 404 masivos o falla de contacto, restaurar configuración previa y caché; preservar nuevas consultas recibidas, sin restaurar indiscriminadamente una BD antigua. Si ya se envió Cambio de dirección, evaluar su cancelación junto con la reversión. La reversión técnica no garantiza una reversión instantánea de lo procesado por Google.</p>
+<p>Seguimiento diario la primera semana. Comparar clics e impresiones <strong>sumando ambos dominios</strong> durante la transición y segmentar páginas/consultas importantes; la caída aislada del dominio antiguo es esperable. Investigar cualquier nueva exclusión por noindex, destino roto o caída sostenida frente a la línea base, considerando estacionalidad y retraso de GSC.</p>
+<h2>5. Aprobación que habilitaría el trabajo</h2>
+<p>Aprobar la migración hacia <code>https://mitsa.org/</code> con conservación de rutas; las correcciones técnicas previas; recuperación del catálogo histórico y cambio de <code>/representaciones/</code> hacia <code>/representadas/</code>; conservación de SMM con sus descargas; y las decisiones editoriales pendientes del CSV. Resolver <code>/trituradores-organicos/</code> según contenido real antes de cerrar sus reglas.</p>
+<p>El lanzamiento queda condicionado a línea base, destinos comprobados, mapa aprobado, respaldo y pruebas. <strong>No se ha ejecutado ninguna de estas modificaciones.</strong></p>
+<h2>Evidencia y límites</h2>
+<ul>
+<li><code>crawl.json</code>: HTML analizado, texto, metadatos, enlaces y sitemaps de ambos sitios.</li>
+<li><code>inventario-seo.csv</code>: 72 páginas para revisión tabular.</li>
+<li><code>mapa-redirecciones.csv</code> y <code>tabla-equivalencias.md</code>: correspondencias y excepciones.</li>
+<li><code>supplement.json</code>: variantes, rutas históricas y tipos de contenido públicos de WordPress. Endpoints administrativos respondieron 401/404; no se intentó acceder a ellos autenticadamente.</li>
+<li><code>assets.json</code> e <code>inventario-recursos.csv</code>: 108 parejas de recursos y cadenas históricas.</li>
+<li><code>home-*.html</code> y <code>recheck.json</code>: confirmación adicional de noindex sin hit de caché.</li>
+<li><code>htaccess-*.txt</code>: configuración leída por MCP, sin secretos.</li>
+</ul>
+<p>Captura puntual del 20/10/2026. Se revisó el sitio público realmente servido, que actualmente usa WordPress y tema <code>mitsa-v2</code>, sin asumir que el frontend Astro del repositorio sea producción. Los hallazgos antiguos del repo sobre robots, DNS y hosting no se trataron como estado vigente. Falta cobertura de URLs solo presentes en GSC, backlinks o logs, y no se auditó rendimiento visual/Core Web Vitals ni funcionamiento completo del formulario en esta fase de lectura.</p>
+<h2>Anexo: las 43 correspondencias</h2>
+<table>
+<thead>
+<tr>
+<th>URL de mitsachile.com</th>
+<th>Destino en mitsa.org</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/author/juanaplicacionesweb-cl/</td>
+<td>/author/juanaplicacionesweb-cl/</td>
+<td>Política de archivo pendiente de aprobación</td>
+</tr>
+<tr>
+<td>/aviso-publicitario-orca-iv/</td>
+<td>/aviso-publicitario-orca-iv/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/category/noticias-y-actualidad/</td>
+<td>/category/noticias-y-actualidad/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/category/uncategorized/</td>
+<td>/category/uncategorized/</td>
+<td>Decisión editorial pendiente; no indexar automáticamente</td>
+</tr>
+<tr>
+<td>/centro-tecnico/</td>
+<td>/centro-tecnico/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/columna-revista-vision-aquicola-10-18/</td>
+<td>/columna-revista-vision-aquicola-10-18/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/columna-tecnica-vision-aquicola/</td>
+<td>/columna-tecnica-vision-aquicola/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/contacto/</td>
+<td>/contacto/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/hello-world/</td>
+<td>/hello-world/</td>
+<td>Decisión editorial pendiente; no indexar automáticamente</td>
+</tr>
+<tr>
+<td>/industrias/</td>
+<td>/industrias/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/acuicultura/</td>
+<td>/industrias/acuicultura/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/astilleros-y-reparacion/</td>
+<td>/industrias/astilleros-y-reparacion/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/instalaciones-en-tierra/</td>
+<td>/industrias/instalaciones-en-tierra/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/naval-y-defensa/</td>
+<td>/industrias/naval-y-defensa/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/offshore-y-energia/</td>
+<td>/industrias/offshore-y-energia/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/industrias/transporte-maritimo-y-carga/</td>
+<td>/industrias/transporte-maritimo-y-carga/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/nosotros/</td>
+<td>/nosotros/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/orca-iv/</td>
+<td>/orca-iv/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/proyectos/</td>
+<td>/proyectos/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/proyectos/asenav-proyecto-193/</td>
+<td>/proyectos/asenav-proyecto-193/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/proyectos/sociber-dique-valparaiso/</td>
+<td>/proyectos/sociber-dique-valparaiso/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/recursos/</td>
+<td>/recursos/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/representadas/</td>
+<td>/representadas/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/servicios/</td>
+<td>/servicios/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/</td>
+<td>/soluciones/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/agua-de-lastre-bwts/</td>
+<td>/soluciones/agua-de-lastre-bwts/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/bioincrustaciones-icaf/</td>
+<td>/soluciones/bioincrustaciones-icaf/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/drenajes-inoxidables/</td>
+<td>/soluciones/drenajes-inoxidables/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/equipamiento-auxiliar/</td>
+<td>/soluciones/equipamiento-auxiliar/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/proteccion-catodica-iccp/</td>
+<td>/soluciones/proteccion-catodica-iccp/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/revestimientos-y-superficies/</td>
+<td>/soluciones/revestimientos-y-superficies/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/sistemas-de-agua-caliente/</td>
+<td>/soluciones/sistemas-de-agua-caliente/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/sistemas-sanitarios-al-vacio/</td>
+<td>/soluciones/sistemas-sanitarios-al-vacio/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/soluciones/tratamiento-de-aguas-residuales/</td>
+<td>/soluciones/tratamiento-de-aguas-residuales/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/vision-acuicola/</td>
+<td>/vision-acuicola/</td>
+<td>Equivalencia comprobada; implementación pendiente</td>
+</tr>
+<tr>
+<td>/marina-e-industrial/</td>
+<td>/industrias/</td>
+<td>Equivalencia amplia; validación editorial</td>
+</tr>
+<tr>
+<td>/noticias/</td>
+<td>/centro-tecnico/</td>
+<td>Equivalencia de archivo propuesta</td>
+</tr>
+<tr>
+<td>/representaciones/</td>
+<td>/representadas/</td>
+<td>Corrección semántica propuesta</td>
+</tr>
+<tr>
+<td>/terrestre-y-construccion/</td>
+<td>/industrias/instalaciones-en-tierra/</td>
+<td>Equivalencia propuesta</td>
+</tr>
+<tr>
+<td>/tt-service/productos/</td>
+<td>/soluciones/</td>
+<td>Recuperación de URL histórica propuesta</td>
+</tr>
+<tr>
+<td>/trituradores-organicos/</td>
+<td>Por definir</td>
+<td>SIN HOMÓLOGO CONFIRMADO</td>
+</tr>
+<tr>
+<td>/smm2026/</td>
+<td>/smm2026/</td>
+<td>DESTINO NO EXISTE; bloquea redirección de esta ruta</td>
+</tr>
+</tbody>
+</table></body></html>

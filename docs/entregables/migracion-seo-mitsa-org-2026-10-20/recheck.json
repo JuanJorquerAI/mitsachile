@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://mitsachile.com/?mitsa_audit=20261020",
+    "status": 200,
+    "robots": [
+      "noindex, nofollow"
+    ],
+    "canonical": [],
+    "cache": "miss"
+  },
+  {
+    "url": "https://mitsa.org/?mitsa_audit=20261020",
+    "status": 200,
+    "robots": [
+      "noindex, nofollow"
+    ],
+    "canonical": [],
+    "cache": "miss"
+  }
+]

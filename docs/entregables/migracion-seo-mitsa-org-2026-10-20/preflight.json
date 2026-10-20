@@ -1,0 +1,461 @@
+{
+  "mode": "preflight",
+  "captured_at_utc": "2026-10-20T21:36:43.400604+00:00",
+  "passed": 52,
+  "failed": 0,
+  "checks": [
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/",
+      "expected_location": "https://mitsa.org/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/author/juanaplicacionesweb-cl/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/author/juanaplicacionesweb-cl/",
+      "expected_location": "https://mitsa.org/author/juanaplicacionesweb-cl/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/aviso-publicitario-orca-iv/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/aviso-publicitario-orca-iv/",
+      "expected_location": "https://mitsa.org/aviso-publicitario-orca-iv/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/category/noticias-y-actualidad/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/category/noticias-y-actualidad/",
+      "expected_location": "https://mitsa.org/category/noticias-y-actualidad/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/category/uncategorized/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/category/uncategorized/",
+      "expected_location": "https://mitsa.org/category/uncategorized/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/centro-tecnico/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/centro-tecnico/",
+      "expected_location": "https://mitsa.org/centro-tecnico/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/columna-revista-vision-aquicola-10-18/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/columna-revista-vision-aquicola-10-18/",
+      "expected_location": "https://mitsa.org/columna-revista-vision-aquicola-10-18/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/columna-tecnica-vision-aquicola/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/columna-tecnica-vision-aquicola/",
+      "expected_location": "https://mitsa.org/columna-tecnica-vision-aquicola/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/contacto/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/contacto/",
+      "expected_location": "https://mitsa.org/contacto/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/hello-world/",
+      "ok": true,
+      "status": 410,
+      "expected_status": 410,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/",
+      "expected_location": "https://mitsa.org/industrias/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/acuicultura/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/acuicultura/",
+      "expected_location": "https://mitsa.org/industrias/acuicultura/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/astilleros-y-reparacion/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/astilleros-y-reparacion/",
+      "expected_location": "https://mitsa.org/industrias/astilleros-y-reparacion/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/instalaciones-en-tierra/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "expected_location": "https://mitsa.org/industrias/instalaciones-en-tierra/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/naval-y-defensa/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/naval-y-defensa/",
+      "expected_location": "https://mitsa.org/industrias/naval-y-defensa/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/offshore-y-energia/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/offshore-y-energia/",
+      "expected_location": "https://mitsa.org/industrias/offshore-y-energia/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/industrias/transporte-maritimo-y-carga/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/transporte-maritimo-y-carga/",
+      "expected_location": "https://mitsa.org/industrias/transporte-maritimo-y-carga/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/nosotros/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/nosotros/",
+      "expected_location": "https://mitsa.org/nosotros/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/orca-iv/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/orca-iv/",
+      "expected_location": "https://mitsa.org/orca-iv/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/proyectos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/",
+      "expected_location": "https://mitsa.org/proyectos/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/proyectos/asenav-proyecto-193/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/asenav-proyecto-193/",
+      "expected_location": "https://mitsa.org/proyectos/asenav-proyecto-193/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/proyectos/sociber-dique-valparaiso/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/proyectos/sociber-dique-valparaiso/",
+      "expected_location": "https://mitsa.org/proyectos/sociber-dique-valparaiso/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/recursos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/recursos/",
+      "expected_location": "https://mitsa.org/recursos/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/representadas/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/representadas/",
+      "expected_location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/servicios/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/servicios/",
+      "expected_location": "https://mitsa.org/servicios/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/agua-de-lastre-bwts/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/agua-de-lastre-bwts/",
+      "expected_location": "https://mitsa.org/soluciones/agua-de-lastre-bwts/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/bioincrustaciones-icaf/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/bioincrustaciones-icaf/",
+      "expected_location": "https://mitsa.org/soluciones/bioincrustaciones-icaf/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/drenajes-inoxidables/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/drenajes-inoxidables/",
+      "expected_location": "https://mitsa.org/soluciones/drenajes-inoxidables/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/equipamiento-auxiliar/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/equipamiento-auxiliar/",
+      "expected_location": "https://mitsa.org/soluciones/equipamiento-auxiliar/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/proteccion-catodica-iccp/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/proteccion-catodica-iccp/",
+      "expected_location": "https://mitsa.org/soluciones/proteccion-catodica-iccp/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/revestimientos-y-superficies/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/revestimientos-y-superficies/",
+      "expected_location": "https://mitsa.org/soluciones/revestimientos-y-superficies/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/sistemas-de-agua-caliente/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/",
+      "expected_location": "https://mitsa.org/soluciones/sistemas-de-agua-caliente/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/sistemas-sanitarios-al-vacio/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/",
+      "expected_location": "https://mitsa.org/soluciones/sistemas-sanitarios-al-vacio/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/soluciones/tratamiento-de-aguas-residuales/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/",
+      "expected_location": "https://mitsa.org/soluciones/tratamiento-de-aguas-residuales/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/vision-acuicola/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/vision-acuicola/",
+      "expected_location": "https://mitsa.org/vision-acuicola/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/marina-e-industrial/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/",
+      "expected_location": "https://mitsa.org/industrias/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/noticias/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/centro-tecnico/",
+      "expected_location": "https://mitsa.org/centro-tecnico/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/representaciones/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/representadas/",
+      "expected_location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/terrestre-y-construccion/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/industrias/instalaciones-en-tierra/",
+      "expected_location": "https://mitsa.org/industrias/instalaciones-en-tierra/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/tt-service/productos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/trituradores-organicos/",
+      "ok": true,
+      "status": 404,
+      "expected_status": 404,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/smm2026/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/smm2026/",
+      "expected_location": "https://mitsa.org/smm2026/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/productos/",
+      "ok": true,
+      "status": 301,
+      "expected_status": 301,
+      "location": "https://mitsa.org/soluciones/",
+      "expected_location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "old-route",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/a-sample-blog-post/",
+      "ok": true,
+      "status": 410,
+      "expected_status": 410,
+      "location": null,
+      "expected_location": null
+    },
+    {
+      "kind": "query-preservation",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/contacto/?puerta=evaluacion&sol=iccp&mensaje=Prueba%20de%20ruta&utm_source=seo-migration-test",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/contacto/?puerta=evaluacion&sol=iccp&mensaje=Prueba%20de%20ruta&utm_source=seo-migration-test"
+    },
+    {
+      "kind": "unknown-remains-404",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/mitsa-audit-inexistente-20261020/",
+      "ok": true,
+      "status": 404
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/nosotros",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/nosotros/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/productos",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/soluciones/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/representaciones",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/representadas/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/contacto",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/contacto/"
+    },
+    {
+      "kind": "slash-normalization",
+      "url": "https://mitsachile.com/__mitsa_migration_preflight_20261020/smm2026",
+      "ok": true,
+      "status": 301,
+      "location": "https://mitsa.org/smm2026/"
+    }
+  ]
+}
