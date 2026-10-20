@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier de Revisión Técnica · MITSA (mitsa.org)</title>
+  <style>
+    :root {
+      --primary: #0D1B2A;
+      --secondary: #1B263B;
+      --accent: #0077B6;
+      --accent-light: #E0F2FE;
+      --light-bg: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --warning: #D97706;
+      --warning-bg: #FEF3C7;
+      --success: #059669;
+      --success-bg: #D1FAE5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--light-bg);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+    }
+    .header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--warning-bg);
+      color: var(--warning);
+      margin-bottom: 12px;
+    }
+    .badge-success {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+    h1 {
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      padding: 16px;
+      background: var(--light-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .meta-grid strong { color: var(--primary); }
+    h2 {
+      font-size: 20px;
+      color: var(--secondary);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    p { margin-bottom: 16px; font-size: 15px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 32px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background-color: #F1F5F9;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    tr:hover { background-color: #F8FAFC; }
+    .btn {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #005F92; }
+    .btn-secondary { background: #E2E8F0; color: #334155; }
+    .btn-secondary:hover { background: #CBD5E1; }
+    .article-card {
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .article-card h3 {
+      font-size: 17px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .article-card .tag {
+      font-size: 11px;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .checklist {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .checklist li {
+      padding: 6px 0;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .checklist input[type="checkbox"] {
+      margin-top: 4px;
+    }
+    .note-box {
+      background: #EFF6FF;
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .wrapper { box-shadow: none; border: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <span class="badge">Validación Editorial Requerida</span>
+    <h1>Dossier de Revisión Técnica y Validación de Contenidos</h1>
+    <div class="subtitle">Cluster de Contenidos Regulatorios B2B · MITSA (mitsa.org)</div>
+    
+    <div class="meta-grid">
+      <div><strong>Fecha:</strong> 20 de Octubre de 2026</div>
+      <div><strong>Destinatario:</strong> Francisco De la Iglesia (MITSA SpA)</div>
+      <div><strong>Agencia:</strong> AplicacionesWeb (Juan Jorquera)</div>
+      <div><strong>Estado WP:</strong> 5 Borradores en mitsa.org</div>
+    </div>
+  </div>
+
+  <h2>1. Contexto y Objetivos Estratégicos</h2>
+  <p>
+    Para consolidar el liderazgo digital y orgánico de <strong>MITSA</strong> en el mercado marítimo e industrial chileno, se ha desarrollado un cluster de <strong>5 artículos técnicos de profundidad</strong>. Estos contenidos abordan directamente la normativa internacional (OMI) y las resoluciones de DIRECTEMAR que condicionan las decisiones de compra de armadores, astilleros (ASMAR, Detroit, etc.), navieras y faenas acuícolas.
+  </p>
+  <p>
+    Los 5 artículos ya se encuentran cargados en el WordPress de <strong>mitsa.org</strong> en estado de <strong>Borrador (draft)</strong>, por lo que son completamente invisibles para motores de búsqueda y visitantes anónimos hasta contar con su validación formal.
+  </p>
+
+  <div class="note-box">
+    <strong>Instrucciones para revisión:</strong> Puede previsualizar cada artículo maquetado en el diseño web real iniciando sesión previamente en el panel de WordPress en <code>https://mitsa.org/wp-admin/</code> y haciendo clic en los botones de <em>Previsualizar</em> a continuación.
+  </div>
+
+  <h2>2. Matriz de Artículos en WordPress</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título del Artículo</th>
+        <th>Categoría</th>
+        <th>Solución Asociada</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>01</strong></td>
+        <td><strong>Norma D-2 en Chile: qué revisar antes de operar un BWTS</strong></td>
+        <td><span class="tag">Normativa</span></td>
+        <td>Tratamiento agua lastre (50)</td>
+        <td>
+          <a class="btn btn-secondary" href="https://mitsa.org/wp-admin/post.php?post=143&action=edit" target="_blank">Editar #143</a>
+          <a class="btn btn-primary" href="https://mitsa.org/?p=143&preview=true" target="_blank">Previsualizar</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>02</strong></td>
+        <td><strong>Circular A-52/007: limpieza de cascos a flote en Chile</strong></td>
+        <td><span class="tag">Normativa</span></td>
+        <td>Protección casco / ICAF (51, 52)</td>
+        <td>
+          <a class="btn btn-secondary" href="https://mitsa.org/wp-admin/post.php?post=67&action=edit" target="_blank">Editar #67</a>
+          <a class="btn btn-primary" href="https://mitsa.org/?p=67&preview=true" target="_blank">Previsualizar</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>03</strong></td>
+        <td><strong>ICCP o ánodos de sacrificio: cómo decidir la protección catódica</strong></td>
+        <td><span class="tag">Tecnologías</span></td>
+        <td>Protección catódica ICCP (51)</td>
+        <td>
+          <a class="btn btn-secondary" href="https://mitsa.org/wp-admin/post.php?post=66&action=edit" target="_blank">Editar #66</a>
+          <a class="btn btn-primary" href="https://mitsa.org/?p=66&preview=true" target="_blank">Previsualizar</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>04</strong></td>
+        <td><strong>Ósmosis inversa a bordo: los datos que definen una planta</strong></td>
+        <td><span class="tag">Tecnologías</span></td>
+        <td>Generación agua dulce (53)</td>
+        <td>
+          <a class="btn btn-secondary" href="https://mitsa.org/wp-admin/post.php?post=65&action=edit" target="_blank">Editar #65</a>
+          <a class="btn btn-primary" href="https://mitsa.org/?p=65&preview=true" target="_blank">Previsualizar</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>05</strong></td>
+        <td><strong>MARPOL Anexo IV: cómo elegir el sistema de aguas sucias</strong></td>
+        <td><span class="tag">Normativa</span></td>
+        <td>Sanitarios vacío / Plantas (48, 49)</td>
+        <td>
+          <a class="btn btn-secondary" href="https://mitsa.org/wp-admin/post.php?post=64&action=edit" target="_blank">Editar #64</a>
+          <a class="btn btn-primary" href="https://mitsa.org/?p=64&preview=true" target="_blank">Previsualizar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Fichas de Validación por Artículo</h2>
+
+  <div class="article-card">
+    <h3>Artículo 1: Norma D-2 en Chile (Agua de Lastre / BWTS)</h3>
+    <p><em>Enfocado en armadores y capitanes: criterios técnicos para no ser retenidos en puerto chileno por inspección de descarga de lastre.</em></p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> <strong>Firma / Revisor:</strong> Confirmar autor/revisor técnico (ej. Francisco De la Iglesia, Eduardo De la Iglesia o institucional).</label></li>
+      <li><label><input type="checkbox"> <strong>Representada ERMA FIRST:</strong> Validar vigencia de modelos ERMA FIRST FIT (filtración 40 micras + electrólisis, 50–3.740 m³/h).</label></li>
+      <li><label><input type="checkbox"> <strong>Material Gráfico:</strong> Disponer de 1 imagen autorizada de equipo o sala técnica.</label></li>
+    </ul>
+  </div>
+
+  <div class="article-card">
+    <h3>Artículo 2: Circular A-52/007 de DIRECTEMAR (Limpieza de Casco a Flote)</h3>
+    <p><em>Enfocado en la regulación de bioincrustaciones actualizada a abril 2025: cuándo se exige ir a dique vs faena a flote.</em></p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> <strong>Servicios MITSA:</strong> Ratificar alcance de asesoría o suministro en inspección de zonas nicho y sistemas ICAF/MGPS Cathelco.</label></li>
+      <li><label><input type="checkbox"> <strong>Material Gráfico:</strong> Fotografía de inspección submarina o cajas de mar.</label></li>
+    </ul>
+  </div>
+
+  <div class="article-card">
+    <h3>Artículo 3: ICCP vs Ánodos de Sacrificio</h3>
+    <p><em>Criterios electroquímicos y económicos de protección catódica activa por corriente impresa vs pasiva por zinc/aluminio.</em></p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> <strong>Representación Cathelco:</strong> Confirmar disponibilidad y soporte de sistemas ICCP y electrodos de referencia en Chile.</label></li>
+      <li><label><input type="checkbox"> <strong>Criterio Técnico:</strong> Añadir alguna observación de campo sobre variaciones de salinidad en el sur de Chile.</label></li>
+    </ul>
+  </div>
+
+  <div class="article-card">
+    <h3>Artículo 4: Ósmosis Inversa Marina (Plantas de Agua Dulce)</h3>
+    <p><em>Metodología de dimensionamiento real por horas operacionales y demanda neta en navegación.</em></p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> <strong>Representada FCI Watermakers / Evac:</strong> Ratificar marcas representadas y soporte local de membranas/repuestos.</label></li>
+      <li><label><input type="checkbox"> <strong>Perfil de Naves:</strong> Confirmar si se prioriza flota pesquera, remolcadores o artefactos navales.</label></li>
+    </ul>
+  </div>
+
+  <div class="article-card">
+    <h3>Artículo 5: MARPOL Anexo IV y Resolución MEPC.227(64)</h3>
+    <p><em>Tratamiento de aguas negras/grises a bordo y homologación nacional ante DIRECTEMAR.</em></p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> <strong>Plantas Evac y EPE:</strong> Confirmar plantas biológicas y físico-químicas en cartera.</label></li>
+      <li><label><input type="checkbox"> <strong>Columna Histórica:</strong> Autorización para reutilizar criterios de la columna técnica histórica de MITSA.</label></li>
+    </ul>
+  </div>
+
+  <footer>
+    <div>MITSA SpA &middot; AplicacionesWeb Agencia</div>
+    <div>Plataforma WordPress en <strong>mitsa.org</strong></div>
+  </footer>
+</div>
+</body>
+</html>
