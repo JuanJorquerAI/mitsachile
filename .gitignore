@@ -41,6 +41,7 @@ staging/
 .serena/
 
 .playwright-mcp/
+.codegraph/
 
 # Frontend build & temporary dumps
 frontend/dist/
