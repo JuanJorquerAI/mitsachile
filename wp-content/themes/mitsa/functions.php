@@ -116,13 +116,13 @@ add_action( 'widgets_init', 'mitsa_widgets_init' );
 /**
  * Incluye los módulos del tema alojados en /inc.
  *
- * Cada archivo es responsable de un dominio específico (CPTs, SEO,
- * analítica) para mantener funciones.php corto y legible.
+ * Cada archivo es responsable de un dominio específico (CPTs, SEO) para
+ * mantener funciones.php corto y legible. La analítica (GA4/GSC/GTM) la
+ * gestiona el plugin Site Kit en producción, no este tema.
  */
 require MITSA_THEME_DIR . '/inc/cpt-producto.php';
 require MITSA_THEME_DIR . '/inc/cpt-representada.php';
 require MITSA_THEME_DIR . '/inc/seo.php';
-require MITSA_THEME_DIR . '/inc/analytics.php';
 require MITSA_THEME_DIR . '/inc/acf-fields.php';
 require MITSA_THEME_DIR . '/inc/site-options.php';
 require MITSA_THEME_DIR . '/inc/api-sections.php';

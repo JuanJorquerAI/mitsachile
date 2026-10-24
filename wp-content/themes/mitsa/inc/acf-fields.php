@@ -15,12 +15,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Registra los grupos de campos locales para las secciones de la Home y páginas.
  */
+
+/**
+ * Registra los grupos de campos locales (ACF) para las secciones de la
+ * Home y páginas del tema MITSA.
+ *
+ * Cada grupo vive en su propia función mitsa_acf_group_*() (ver más abajo)
+ * para no acumular las 8 definiciones en un único bloque de miles de líneas.
+ */
 function mitsa_register_acf_field_groups() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
 	}
 
-	// Grupo Maestro Unificado: Administración de la Página de Inicio (Home) con Pestañas ACF
+	mitsa_acf_group_home();
+	mitsa_acf_group_nosotros();
+	mitsa_acf_group_servicios();
+	mitsa_acf_group_industrias();
+	mitsa_acf_group_proyectos();
+	mitsa_acf_group_recursos();
+	mitsa_acf_group_contacto();
+	mitsa_acf_group_representadas();
+}
+add_action( 'acf/init', 'mitsa_register_acf_field_groups' );
+
+/**
+ * Grupo ACF: Página de Inicio (Home).
+ */
+function mitsa_acf_group_home() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_home_master',
@@ -887,10 +909,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// =========================================================================
-	// GRUPO MAESTRO: ADMINISTRACIÓN DE PÁGINA "NOSOTROS"
-	// =========================================================================
+/**
+ * Grupo ACF: Página "Nosotros".
+ */
+function mitsa_acf_group_nosotros() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_nosotros_master',
@@ -1214,10 +1238,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// =========================================================================
-	// GRUPO MAESTRO: ADMINISTRACIÓN DE PÁGINA "SERVICIOS"
-	// =========================================================================
+/**
+ * Grupo ACF: Página "Servicios".
+ */
+function mitsa_acf_group_servicios() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_servicios_master',
@@ -1592,10 +1618,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// =========================================================================
-	// GRUPO MAESTRO: ADMINISTRACIÓN DE PÁGINA "INDUSTRIAS / SECTORES"
-	// =========================================================================
+/**
+ * Grupo ACF: Página "Industrias / Sectores".
+ */
+function mitsa_acf_group_industrias() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_industrias_master',
@@ -1921,10 +1949,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// ==========================================
-	// GRUPO 6: PÁGINA "PROYECTOS" (Post ID 401)
-	// ==========================================
+/**
+ * Grupo ACF: Página "Proyectos".
+ */
+function mitsa_acf_group_proyectos() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_proyectos_master',
@@ -2295,10 +2325,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// ==========================================
-	// GRUPO 7: PÁGINA "RECURSOS" (Post ID 402)
-	// ==========================================
+/**
+ * Grupo ACF: Página "Recursos".
+ */
+function mitsa_acf_group_recursos() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_recursos_master',
@@ -2616,10 +2648,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// ==========================================
-	// GRUPO 8: PÁGINA "CONTACTO" (Post ID 11)
-	// ==========================================
+/**
+ * Grupo ACF: Página "Contacto".
+ */
+function mitsa_acf_group_contacto() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_contacto_master',
@@ -2856,10 +2890,12 @@ function mitsa_register_acf_field_groups() {
 			),
 		)
 	);
+}
 
-	// ==========================================
-	// GRUPO 9: PÁGINA "REPRESENTADAS" (Post ID 8)
-	// ==========================================
+/**
+ * Grupo ACF: Página "Representadas".
+ */
+function mitsa_acf_group_representadas() {
 	acf_add_local_field_group(
 		array(
 			'key'                   => 'group_mitsa_representadas_master',
@@ -3319,7 +3355,6 @@ function mitsa_register_acf_field_groups() {
 		)
 	);
 }
-add_action( 'acf/init', 'mitsa_register_acf_field_groups' );
 
 /**
  * Configura la ruta de guardado automático de ACF JSON.

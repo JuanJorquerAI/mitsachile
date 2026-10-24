@@ -119,9 +119,7 @@ export function buildPageSeo(pageData: PageSectionsResponse, currentUrl: string)
   const metaDescription = pageData.seo?.meta_description || 'Tecnología marina y tratamiento de aguas.';
   const ogImage = pageData.seo?.og_image || 'https://mitsachile.com/images/plataforma-offshore-8886341c.jpg';
   const canonicalUrl = pageData.seo?.canonical_url || currentUrl;
-  const faqs = Array.isArray(pageData.sections?.faqs)
-    ? pageData.sections.faqs
-    : (pageData.sections?.faqs?.items || []);
+  const faqs = pageData.sections?.faqs?.items || [];
 
   const jsonLd = generateSchemaGraph({
     url: canonicalUrl,

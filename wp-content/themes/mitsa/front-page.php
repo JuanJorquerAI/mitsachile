@@ -1,14 +1,25 @@
 <?php
 /**
- * Template de portada (Home).
+ * Template de portada (Home) — renderizado clásico de WordPress.
+ *
+ * ADVERTENCIA: el sitio de producción real es headless (frontend/ Astro
+ * consume /wp-json/mitsa/v1/sections/home, ver inc/api-sections.php). Este
+ * template clásico puede seguir sirviendo el "sitio intermedio" mencionado
+ * en CLAUDE.md; si ya no se usa en ningún flujo (previsualización en
+ * wp-admin, etc.), es candidato a eliminar. Mientras exista, su contenido
+ * debe mantenerse sincronizado con inc/api-sections.php (fuente real que
+ * alimenta el frontend) para no mostrar datos divergentes según qué capa
+ * sirva la petición.
  *
  * Estructura: hero + contenido editable + grid de categorías, seguido de las
  * secciones comerciales de la Home: destacado BWTS/regulatorio, marcas
  * representadas, sectores, por qué MITSA y CTA de cierre.
  *
- * Copy: content/01-home.md (P10). Solo se publican marcas confirmadas del
- * brochure; no se incluyen Ervor/EGGE (DECISIONS #5) ni Cathelco/Evac/Uson
- * Marine (DECISIONS #7).
+ * Copy: content/01-home.md (P10). DECISIONS #7 (Cathelco/Evac) quedó
+ * resuelta el 2026-07-16 (ver docs/DECISIONS.md) — Cathelco/Evac ya están
+ * desbloqueadas como marca. Lista de marcas sincronizada con las 5
+ * representadas oficiales que expone inc/api-sections.php: EVAC, Cathelco,
+ * ERMA FIRST, EPE, BLÜCHER.
  *
  * @package mitsa
  */
@@ -113,7 +124,7 @@ get_header();
 	</div>
 </section>
 
-<?php // Bloque 3 — Marcas representadas. Solo marcas confirmadas del brochure. ?>
+<?php // Bloque 3 — Marcas representadas. Sincronizado con inc/api-sections.php. ?>
 <section class="mitsa-section mitsa-section--alt" aria-labelledby="mitsa-home-marcas-title">
 	<div class="mitsa-container">
 		<span class="mitsa-kicker"><?php esc_html_e( 'Representadas', 'mitsa' ); ?></span>
@@ -126,8 +137,8 @@ get_header();
 			</p>
 
 			<?php
-			// Marcas confirmadas en el brochure. Ampliar solo con validación del cliente.
-			$mitsa_marcas = array( 'Erma First', 'Herborner Pumpen', 'EPE' );
+			// Sincronizado con las 5 representadas oficiales de inc/api-sections.php (mitsa_get_home_sections_data).
+			$mitsa_marcas = array( 'EVAC', 'Cathelco', 'ERMA FIRST', 'EPE', 'BLÜCHER' );
 			?>
 			<div class="mitsa-grid mitsa-grid--3">
 				<?php foreach ( $mitsa_marcas as $mitsa_marca ) : ?>

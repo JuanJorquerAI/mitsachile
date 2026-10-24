@@ -534,7 +534,6 @@ export interface PageSectionsResponse {
     why_mitsa?: WhyMitsaSectionData;
     cta_banner?: CtaBannerSectionData;
     faqs?: FaqsSectionData;
-    [key: string]: any;
   };
 }
 
